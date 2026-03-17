@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Primary Blue Spectrum */
+  --color-ice: #E8EEF6;
+  --color-mist: #C5D4E8;
+  --color-slate: #7BA3CC;
+  --color-harbor: #3B6FA0;
+  --color-deep: #2A5580;
+  --color-anchor: #1B3A5C;
+  --color-midnight: #0F2440;
+
+  /* Paper Whites */
+  --color-paper: #FAFAF7;
+  --color-linen: #F5F3EF;
+  --color-parchment: #EDEAE4;
+  --color-pure: #FFFFFF;
+
+  /* Warm Accent */
+  --color-glow: #FAF0E4;
+  --color-amber: #E8C896;
+  --color-copper: #C4935A;
+  --color-bronze: #9A6E3A;
+  --color-walnut: #7A5A2E;
+
+  /* Neutrals */
+  --color-ink: #1A1A18;
+  --color-charcoal: #4A4A46;
+  --color-stone: #8A8778;
+  --color-fog: #C4C0B6;
+  --color-ash: #E0DDD6;
+
+  /* Semantic */
+  --color-success: #1B7A4A;
+  --color-warning: #C47A1A;
+  --color-danger: #C43A3A;
+
+  /* Font */
+  --font-sans: "DM Sans", "Inter", system-ui, sans-serif;
+}
+
+body {
+  background-color: #FAFAF7;
+  color: #4A4A46;
+  font-family: var(--font-sans);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: #E8EEF6;
+  color: #1B3A5C;
+}
