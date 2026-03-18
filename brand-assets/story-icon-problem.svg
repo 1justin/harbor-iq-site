@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Laptop screen -->
+  <rect x="10" y="10" width="44" height="30" rx="3" fill="none" stroke="#1A1A18" stroke-width="2"/>
+  <!-- Laptop base -->
+  <path d="M6 42 L10 40 L54 40 L58 42 L6 42Z" fill="none" stroke="#1A1A18" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Browser tabs (3 tabs suggesting multiple carriers) -->
+  <rect x="14" y="14" width="12" height="4" rx="1" fill="none" stroke="#1A1A18" stroke-width="1.2"/>
+  <rect x="27" y="14" width="12" height="4" rx="1" fill="none" stroke="#1A1A18" stroke-width="1.2"/>
+  <rect x="40" y="14" width="10" height="4" rx="1" fill="none" stroke="#1A1A18" stroke-width="1.2"/>
+  <!-- Content lines suggesting form fields -->
+  <line x1="14" y1="22" x2="50" y2="22" stroke="#1A1A18" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <line x1="14" y1="26" x2="40" y2="26" stroke="#1A1A18" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <line x1="14" y1="30" x2="45" y2="30" stroke="#1A1A18" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <line x1="14" y1="34" x2="35" y2="34" stroke="#1A1A18" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <!-- Sticky note on side -->
+  <rect x="48" y="46" width="12" height="12" rx="1" fill="none" stroke="#1A1A18" stroke-width="1.5" transform="rotate(-8 54 52)"/>
+  <line x1="50" y1="50" x2="56" y2="50" stroke="#1A1A18" stroke-width="0.8" stroke-linecap="round" transform="rotate(-8 54 52)"/>
+  <line x1="50" y1="53" x2="54" y2="53" stroke="#1A1A18" stroke-width="0.8" stroke-linecap="round" transform="rotate(-8 54 52)"/>
+</svg>

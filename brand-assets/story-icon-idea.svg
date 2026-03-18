@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Lightbulb shape -->
+  <path d="M32 8 C22 8 14 16 14 26 C14 32 18 36 22 40 L22 46 L42 46 L42 40 C46 36 50 32 50 26 C50 16 42 8 32 8Z" fill="none" stroke="#1A1A18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bulb base lines -->
+  <line x1="24" y1="50" x2="40" y2="50" stroke="#1A1A18" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="54" x2="38" y2="54" stroke="#1A1A18" stroke-width="2" stroke-linecap="round"/>
+  <!-- Filament -->
+  <path d="M28 30 C28 24 32 22 32 22 C32 22 36 24 36 30" fill="none" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Light rays -->
+  <line x1="32" y1="2" x2="32" y2="5" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="52" y1="10" x2="50" y2="12" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="10" x2="14" y2="12" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="56" y1="26" x2="53" y2="26" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="8" y1="26" x2="11" y2="26" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

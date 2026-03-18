@@ -36,7 +36,7 @@ const faqs = [
     a: "We help you migrate during onboarding. Bring your client list and we'll get you set up.",
   },
   {
-    q: '"AI-powered" — what does that actually mean?',
+    q: '"AI-powered" \u2014 what does that actually mean?',
     a: 'It means intelligence is built into the platform, not sprinkled on top. AI in HarborIQ understands carrier differences (it knows Progressive\'s "rental reimbursement" is Travelers\' "loss of use"). It tells your team what to do next each morning by analyzing your pipeline. It generates your marketing content, from social posts to re-engagement emails. This isn\'t a chatbot we bolted on. The intelligence is in the foundation.',
   },
   {
@@ -54,9 +54,9 @@ export function FAQ() {
         <div key={i}>
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            className="w-full flex justify-between items-center py-5 text-left gap-4"
+            className="w-full flex justify-between items-center py-6 text-left gap-4"
           >
-            <span className="text-[15px] font-medium text-ink">{faq.q}</span>
+            <span className="text-[17px] font-medium text-ink">{faq.q}</span>
             <svg
               width="20"
               height="20"
@@ -70,7 +70,7 @@ export function FAQ() {
             </svg>
           </button>
           {openIndex === i && (
-            <p className="pb-5 text-[15px] text-charcoal leading-relaxed pr-8">
+            <p className="pb-6 text-[16px] text-charcoal leading-relaxed pr-8">
               {faq.a}
             </p>
           )}

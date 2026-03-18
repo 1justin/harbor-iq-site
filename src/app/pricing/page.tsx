@@ -34,21 +34,22 @@ export default function PricingPage() {
   return (
     <>
       {/* ─── HEADER ─── */}
-      <section className="bg-paper pt-20 pb-12 md:pt-28 md:pb-16">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-medium text-ink leading-tight tracking-tight">
+      <section className="bg-paper pt-16 pb-8 md:pt-24 md:pb-12">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+          <h1 className="text-3xl md:text-4xl font-medium text-ink leading-tight tracking-tight">
             Simple pricing. No&nbsp;surprises.
           </h1>
-          <p className="mt-4 text-lg text-charcoal leading-relaxed">
-            Flat monthly fee. No per-quote charges. No usage metering. You know exactly what you&rsquo;re&nbsp;paying.
+          <p className="mt-3 text-[17px] text-charcoal leading-relaxed">
+            Flat monthly fee. No per-quote charges. No usage metering.<br className="hidden md:inline" />
+            You know exactly what you&rsquo;re&nbsp;paying.
           </p>
         </div>
       </section>
 
       {/* ─── PER-SEAT CALLOUT ─── */}
-      <section className="bg-paper pb-8">
-        <div className="max-w-2xl mx-auto px-6">
-          <div className="bg-glow border border-amber/40 rounded-xl px-6 py-5 text-center">
+      <section className="bg-paper pb-6">
+        <div className="max-w-2xl mx-auto px-6 md:px-10">
+          <div className="bg-glow border border-amber/40 rounded-xl px-6 py-4 text-center">
             <p className="text-[15px] text-walnut leading-relaxed">
               Not per seat. Not per user. Not per agent. <strong className="font-medium text-ink">One flat price for your whole&nbsp;team.</strong>
             </p>
@@ -57,9 +58,9 @@ export default function PricingPage() {
       </section>
 
       {/* ─── PRICING TIERS ─── */}
-      <section className="bg-paper py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <section className="bg-paper py-10 md:py-14">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start max-w-4xl mx-auto">
 
             {/* Core */}
             <div className="bg-pure rounded-xl border border-ash p-8">
@@ -67,7 +68,7 @@ export default function PricingPage() {
               <p className="mt-2 text-3xl font-medium text-ink tracking-tight">
                 $299<span className="text-lg text-stone font-normal">/month</span>
               </p>
-              <p className="mt-1 text-[13px] text-stone">Your whole agency, up to 5 users</p>
+              <p className="mt-1 text-[13px] text-stone">Up to 5 users</p>
               <div className="mt-6 space-y-3">
                 {coreIncludes.map((item) => (
                   <div key={item} className="flex gap-3 text-[15px] text-charcoal">
@@ -89,9 +90,9 @@ export default function PricingPage() {
             </div>
 
             {/* Pro (Founding Offer) */}
-            <div className="relative bg-pure rounded-xl border-2 border-copper p-8">
-              {/* Founding badge */}
-              <div className="inline-block bg-copper text-white text-[13px] font-medium px-3 py-1 rounded-md mb-4">
+            <div className="relative bg-pure rounded-xl border-2 border-anchor p-8">
+              {/* Badge: Ice bg with Deep text (not copper) */}
+              <div className="inline-block bg-ice text-deep text-[13px] font-medium px-3 py-1 rounded-md mb-4">
                 Founding agency &middot; limited spots
               </div>
               <h3 className="text-lg font-medium text-ink">Pro</h3>
@@ -101,14 +102,7 @@ export default function PricingPage() {
                 </p>
                 <p className="text-lg text-stone line-through">$499</p>
               </div>
-              <p className="mt-1 text-[13px] text-stone">Your whole agency, up to 15 users</p>
-
-              {/* FOUNDER code callout */}
-              <div className="mt-4 bg-glow border border-amber/40 rounded-lg px-4 py-3">
-                <p className="text-[14px] text-walnut">
-                  Use code <strong className="font-medium text-ink tracking-wide">FOUNDER</strong> at checkout for $200/mo&nbsp;off
-                </p>
-              </div>
+              <p className="mt-1 text-[13px] text-stone">Up to 15 users</p>
 
               <div className="mt-6 space-y-3">
                 {proIncludes.map((item) => (
@@ -120,6 +114,7 @@ export default function PricingPage() {
                   </div>
                 ))}
               </div>
+              {/* CTA: Only copper element on the card */}
               <a
                 href={CREEM_PRO}
                 target="_blank"
@@ -137,45 +132,24 @@ export default function PricingPage() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="bg-linen py-16 md:py-20">
-        <div className="max-w-3xl mx-auto px-6">
+      <section className="bg-linen py-14 md:py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
           <h2 className="text-2xl font-medium text-ink tracking-tight text-center mb-10">
             Frequently asked questions
           </h2>
-          <FAQ />
-        </div>
-      </section>
-
-      {/* ─── AI DEMO ─── */}
-      <section className="bg-paper py-16 md:py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-medium text-ink tracking-tight">
-            See the IQ in&nbsp;action
-          </h2>
-          <p className="mt-4 text-[15px] text-charcoal leading-relaxed">
-            This is what AI-powered actually looks&nbsp;like.
-          </p>
-          <div className="mt-10 rounded-xl overflow-hidden border border-ash shadow-lg">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-auto"
-            >
-              <source src="/videos/ai-demo.mp4" type="video/mp4" />
-            </video>
+          <div className="max-w-4xl mx-auto">
+            <FAQ />
           </div>
         </div>
       </section>
 
       {/* ─── DEMO BOOKING ─── */}
-      <section className="bg-linen py-16 md:py-20">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-medium text-ink tracking-tight">
+      <section className="bg-paper py-14 md:py-20">
+        <div className="max-w-2xl mx-auto px-6 md:px-10 text-center">
+          <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight">
             Want to see it first? Let&rsquo;s&nbsp;talk.
           </h2>
-          <p className="mt-4 text-[15px] text-charcoal leading-relaxed">
+          <p className="mt-3 text-[16px] text-charcoal leading-relaxed">
             Book a 15-minute demo. No pitch deck. We&rsquo;ll show you the product and answer your&nbsp;questions.
           </p>
           <a
