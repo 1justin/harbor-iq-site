@@ -55,3 +55,69 @@ html {
   background-color: #E8EEF6;
   color: #1B3A5C;
 }
+
+/* ─── Typography: orphan control ─── */
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+/* ─── Micro-interactions: CTA buttons ─── */
+.cta-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-primary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(196, 147, 90, 0.3);
+}
+.cta-primary:active {
+  transform: scale(0.98);
+}
+
+.cta-secondary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-secondary:hover {
+  transform: scale(1.02);
+}
+.cta-secondary:active {
+  transform: scale(0.98);
+}
+
+/* ─── Micro-interactions: Feature cards ─── */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15, 36, 64, 0.08);
+}
+
+/* ─── Micro-interactions: Hero float ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.hero-float {
+  animation: float 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-float { animation: none; }
+}
+
+/* ─── Bento grid entrance animation ─── */
+@keyframes bento-enter {
+  to { opacity: 1; transform: translateY(0); }
+}
+.bento-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.bento-card.animate-in {
+  animation: bento-enter 0.5s ease forwards;
+}
+.bento-card:nth-child(1) { animation-delay: 0s; }
+.bento-card:nth-child(2) { animation-delay: 0.15s; }
+.bento-card:nth-child(3) { animation-delay: 0.3s; }
+.bento-card:nth-child(4) { animation-delay: 0.45s; }
+.bento-card:nth-child(5) { animation-delay: 0.6s; }
+.bento-card:nth-child(6) { animation-delay: 0.75s; }

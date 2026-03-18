@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" width="320" height="48">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&amp;display=swap');
+  </style>
+  <text x="0" y="36" font-family="'DM Sans', sans-serif" font-weight="500" font-size="36" fill="#FAFAF7" letter-spacing="-0.5">Harbor<tspan fill="#7BA3CC">IQ</tspan></text>
+</svg>

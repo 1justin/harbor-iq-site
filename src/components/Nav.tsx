@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export function Nav() {
@@ -9,9 +10,16 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-ash/60">
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Wordmark */}
-        <Link href="/" className="text-anchor text-xl font-medium tracking-tight">
-          Harbor<span className="text-harbor">IQ</span>
+        {/* Logo */}
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/images/harboriq-logo-primary.svg"
+            alt="HarborIQ"
+            width={140}
+            height={32}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -29,13 +37,13 @@ export function Nav() {
             href="https://tidycal.com/cjmayer/15-minute-intro"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-harbor border border-harbor rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
+            className="cta-secondary text-harbor border border-harbor rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
           >
             Book a demo
           </a>
           <Link
             href="/pricing"
-            className="bg-copper text-white rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
+            className="cta-primary bg-copper text-white rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
           >
             Get started
           </Link>

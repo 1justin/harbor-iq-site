@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,11 +8,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-paper text-xl font-medium tracking-tight">
-              Harbor<span className="text-copper">IQ</span>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/harboriq-logo-white.svg"
+                alt="HarborIQ"
+                width={140}
+                height={32}
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="mt-3 text-slate text-[15px] leading-relaxed">
-              One platform. Every carrier. Zero busywork.
+              One platform. Every carrier. Zero&nbsp;busywork.
             </p>
           </div>
 
@@ -44,10 +51,10 @@ export function Footer() {
             <h4 className="text-paper text-[13px] font-medium uppercase tracking-wider mb-4">Connect</h4>
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/harboriqsoftware"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate hover:text-paper transition-colors"
+                className="text-stone hover:text-harbor transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -55,10 +62,10 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://x.com"
+                href="https://x.com/harboriq"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate hover:text-paper transition-colors"
+                className="text-stone hover:text-harbor transition-colors"
                 aria-label="X (Twitter)"
               >
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Plate -->
+  <ellipse cx="24" cy="44" rx="18" ry="6" fill="none" stroke="#1A1A18" stroke-width="2" stroke-linecap="round"/>
+  <path d="M10 40 C10 40 14 32 24 32 C34 32 38 40 38 40" fill="none" stroke="#1A1A18" stroke-width="2" stroke-linecap="round"/>
+  <!-- Fork lines on plate -->
+  <line x1="18" y1="36" x2="18" y2="40" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="22" y1="35" x2="22" y2="40" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="26" y1="35" x2="26" y2="40" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="36" x2="30" y2="40" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Cocktail glass -->
+  <path d="M44 16 L54 16 L49 28 L49 38" fill="none" stroke="#1A1A18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="45" y1="38" x2="53" y2="38" stroke="#1A1A18" stroke-width="2" stroke-linecap="round"/>
+  <!-- Olive/garnish -->
+  <circle cx="51" cy="20" r="2" fill="none" stroke="#1A1A18" stroke-width="1.5"/>
+  <line x1="50" y1="14" x2="51" y2="20" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

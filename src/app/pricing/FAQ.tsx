@@ -4,24 +4,24 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Wait, $299 for my whole team? Not per user?",
-    a: "Not per user. Not per seat. Not per agent. $299/month covers your entire agency up to 5 people. The Growth plan covers up to 15. We priced it this way because per-seat pricing punishes you for growing your team, and that's backwards.",
+    q: "What's the difference between Core and Pro?",
+    a: "Core gives you the essentials: pipeline CRM, client profiles, renewals, and the Command Center for up to 5 users. Pro adds team performance analytics, marketing automation, AI-assisted quoting, dedicated onboarding, priority support, and covers up to 15 users.",
   },
   {
-    q: "What's included in the founding agency program?",
-    a: "Full platform access, priority support, direct input on the product roadmap, and a price that never increases. You're helping us build the product that the rest of the market will use.",
+    q: "How does the founding agency discount work?",
+    a: "Use the code FOUNDER at checkout on the Pro plan to get $200/month off, bringing it from $499 to $299/month. That's $2,400 in savings per year. This rate is locked for life. Founding agencies also get direct input on the product roadmap and priority access to new features.",
   },
   {
-    q: "Is the $100 deposit refundable?",
-    a: "Yes. Fully refundable if you decide not to proceed before onboarding. If you continue, it's applied to your first month.",
-  },
-  {
-    q: "When does billing start?",
-    a: "Your monthly subscription begins when your agency is onboarded and live on the platform. Not before.",
+    q: "Wait, those prices are for my whole team? Not per user?",
+    a: "Not per user. Not per seat. Not per agent. Core covers your agency up to 5 people. Pro covers up to 15. We priced it this way because per-seat pricing punishes you for growing your team, and that's backwards.",
   },
   {
     q: "Can I cancel anytime?",
     a: "Yes. No long-term contracts. Monthly billing, cancel anytime.",
+  },
+  {
+    q: "When does billing start?",
+    a: "Your monthly subscription begins when your agency is onboarded and live on the platform. Not before.",
   },
   {
     q: "What if I have more than 15 employees?",
@@ -34,6 +34,14 @@ const faqs = [
   {
     q: "What about my existing data?",
     a: "We help you migrate during onboarding. Bring your client list and we'll get you set up.",
+  },
+  {
+    q: '"AI-powered" — what does that actually mean?',
+    a: 'It means intelligence is built into the platform, not sprinkled on top. AI in HarborIQ understands carrier differences (it knows Progressive\'s "rental reimbursement" is Travelers\' "loss of use"). It tells your team what to do next each morning by analyzing your pipeline. It generates your marketing content, from social posts to re-engagement emails. This isn\'t a chatbot we bolted on. The intelligence is in the foundation.',
+  },
+  {
+    q: "Is AI going to replace my agents?",
+    a: "No. Full stop. HarborIQ makes your agents faster and smarter, not obsolete. AI handles the repetitive work (re-typing data, remembering follow-ups, drafting posts) so your team can do what actually requires a human: building relationships, advising clients, and closing business. The agent is the value. The AI is the tool.",
   },
 ];
 
@@ -56,7 +64,7 @@ export function FAQ() {
               stroke="currentColor"
               strokeWidth="1.5"
               viewBox="0 0 24 24"
-              className={`shrink-0 text-stone transition-transform ${openIndex === i ? "rotate-180" : ""}`}
+              className={`shrink-0 text-stone transition-transform duration-200 ${openIndex === i ? "rotate-180" : ""}`}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
             </svg>
