@@ -41,12 +41,14 @@ export function Nav() {
           >
             Book a demo
           </a>
-          <Link
-            href="/pricing"
+          <a
+            href="https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV"
+            target="_blank"
+            rel="noopener noreferrer"
             className="cta-primary bg-copper text-white rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
           >
             Get started
-          </Link>
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -85,13 +87,15 @@ export function Nav() {
           >
             Book a demo
           </a>
-          <Link
-            href="/pricing"
+          <a
+            href="https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="block bg-copper text-white rounded-lg px-4 py-2 text-[15px] font-medium text-center"
           >
             Get started
-          </Link>
+          </a>
         </div>
       )}
     </header>

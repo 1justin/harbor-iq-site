@@ -81,45 +81,45 @@ export default function PricingPage() {
                 ))}
               </div>
               <a
-                href={CREEM_CORE}
+                href="https://tidycal.com/cjmayer/harboriq-demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-secondary mt-8 block text-center text-harbor border border-harbor rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
               >
-                Get started
+                Book a Demo
               </a>
               <p className="mt-3 text-[13px] text-stone text-center">
                 Available at launch
               </p>
             </div>
 
-            {/* Pro (Founding Offer) — visual anchor, sits highest */}
-            <div className="relative bg-pure rounded-xl border-2 border-anchor p-8 overflow-hidden shadow-lg shadow-anchor/10">
-              {/* Badge: Blue background to draw the eye */}
+            {/* Pro (Founding Offer) — visual anchor, dark navy bg */}
+            <div className="relative bg-midnight rounded-xl p-8 overflow-hidden shadow-lg shadow-midnight/30">
+              {/* Banner */}
               <div className="absolute top-0 left-0 right-0 bg-anchor px-4 py-2">
-                <p className="text-[12px] font-medium text-ice text-center tracking-wide">Founding agency &middot; limited spots</p>
+                <p className="text-[12px] font-medium text-ice text-center tracking-wide">Founding Agency &middot; $100 reserves your spot</p>
               </div>
               <div className="pt-8">
-              <h3 className="text-lg font-medium text-ink">Pro</h3>
+              <h3 className="text-lg font-medium text-paper">Pro</h3>
               <div className="mt-2 flex items-baseline gap-3">
-                <p className="text-3xl font-medium text-ink tracking-tight">
-                  $299<span className="text-lg text-stone font-normal">/month</span>
+                <p className="text-3xl font-medium text-paper tracking-tight">
+                  $299<span className="text-lg text-mist font-normal">/month</span>
                 </p>
-                <p className="text-lg text-stone line-through">$499</p>
+                <p className="text-lg text-slate line-through">$499</p>
               </div>
-              <p className="mt-1 text-[13px] text-stone">Up to 15 users</p>
+              <p className="mt-1 text-[13px] text-slate">Up to 15 users</p>
 
               <div className="mt-6 space-y-3">
                 {proIncludes.map((item) => (
-                  <div key={item} className="flex gap-3 text-[15px] text-charcoal">
-                    <svg width="18" height="18" fill="none" stroke="#1B7A4A" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
+                  <div key={item} className="flex gap-3 text-[15px] text-mist">
+                    <svg width="18" height="18" fill="none" stroke="#C4935A" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     {item}
                   </div>
                 ))}
               </div>
-              {/* CTA: $100 reservation to lock in founding spot */}
+              {/* CTA */}
               <a
                 href={CREEM_RESERVE}
                 target="_blank"
@@ -128,7 +128,7 @@ export default function PricingPage() {
               >
                 Reserve Your Founding Spot
               </a>
-              <p className="mt-3 text-[13px] text-stone text-center">
+              <p className="mt-3 text-[13px] text-slate text-center">
                 Fully refundable. Only 10 spots&nbsp;available.
               </p>
               </div>
@@ -177,7 +177,7 @@ export default function PricingPage() {
                 rel="noopener noreferrer"
                 className="cta-secondary mt-8 block text-center text-harbor border border-harbor rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
               >
-                Contact us
+                Book a Demo
               </a>
               <p className="mt-3 text-[13px] text-stone text-center">
                 Available at launch
