@@ -47,16 +47,36 @@ const differentiators = [
     title: "Speaks your language.",
     description:
       "Every carrier has its own vocabulary for the same coverages. HarborIQ translates between them automatically, so your agents never have to wonder if two fields are asking the same question.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <path d="M8 9h2m-1-1v6m4-5c.6 0 1 .4 1 1v0c0 .6-.4 1-1 1h-1m1 0c.6 0 1 .4 1 1v0c0 .6-.4 1-1 1h-1" />
+      </svg>
+    ),
   },
   {
     title: "Tracks prospects, not just clients.",
     description:
       "Most agency management systems only manage your current book. HarborIQ tracks the full pipeline, from first inquiry to bound policy, with follow-up reminders that actually work.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="6" />
+        <circle cx="12" cy="12" r="2" />
+      </svg>
+    ),
   },
   {
     title: "Designed for generalists.",
     description:
       "Your agents sell, quote, service, and follow up. HarborIQ is built for people who wear every hat, not specialists who only do one thing.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
+      </svg>
+    ),
   },
 ];
 
@@ -64,7 +84,7 @@ export default function Home() {
   return (
     <>
       {/* ─── HERO: Full-width bg with gradient overlay ─── */}
-      <section className="relative w-full min-h-[520px] md:min-h-[580px] overflow-hidden flex items-center">
+      <section className="relative w-full min-h-[520px] md:min-h-[600px] overflow-hidden flex items-center">
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
@@ -78,37 +98,37 @@ export default function Home() {
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to right, #1B3A5C 0%, rgba(27,58,92,0.95) 30%, rgba(27,58,92,0.6) 60%, rgba(27,58,92,0.1) 85%, transparent 100%)",
+              background: "linear-gradient(to right, #0F2440 0%, rgba(15,36,64,0.97) 25%, rgba(15,36,64,0.88) 42%, rgba(15,36,64,0.5) 65%, rgba(15,36,64,0.15) 85%, transparent 100%)",
             }}
           />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
-          <div className="max-w-xl">
-            <h1 className="text-3xl md:text-[44px] lg:text-[48px] font-medium text-paper leading-[1.12] tracking-tight">
-              One platform. Every carrier.{" "}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full py-16 md:py-24">
+          <div className="max-w-lg">
+            <h1 className="text-4xl md:text-[56px] lg:text-[64px] font-medium text-paper leading-[1.08] tracking-tight">
+              One platform.<br />Every carrier.<br />
               <span className="text-copper">Zero&nbsp;busywork.</span>
             </h1>
-            <p className="mt-5 text-[17px] md:text-lg text-mist leading-relaxed">
-              HarborIQ is the AI-powered operating system built for independent insurance agencies. Pipeline, clients, quoting, team performance, and client engagement in one&nbsp;place.
+            <p className="mt-6 text-[16px] md:text-[17px] text-mist leading-relaxed">
+              The AI-powered operating system built for independent insurance agencies. Pipeline, clients, quoting, team performance, and client engagement in one&nbsp;place.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 flex flex-row gap-3">
               <a
                 href={CREEM_PRO}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-primary bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors text-center"
+                className="cta-primary bg-copper text-white rounded-lg px-5 py-2.5 text-[14px] md:text-[15px] font-medium hover:bg-bronze transition-colors text-center"
               >
                 Claim your founding spot
               </a>
               <a
-                href="https://tidycal.com/cjmayer/15-minute-intro"
+                href="https://tidycal.com/cjmayer/harboriq-demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-secondary border border-slate text-mist rounded-lg px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors text-center"
+                className="cta-secondary border border-slate text-mist rounded-lg px-5 py-2.5 text-[14px] md:text-[15px] font-medium hover:border-paper hover:text-paper transition-colors text-center"
               >
-                Book a 15-min demo
+                Book a demo
               </a>
             </div>
           </div>
@@ -117,7 +137,7 @@ export default function Home() {
 
       {/* ─── THE PROBLEM ─── */}
       <section className="bg-paper py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
             <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
               The reality
@@ -142,8 +162,8 @@ export default function Home() {
 
       {/* ─── THE VILLAIN: THE PATCHWORK ─── */}
       <section className="bg-midnight py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-3xl mx-auto">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl">
             <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
               The real problem
             </p>
@@ -170,7 +190,7 @@ export default function Home() {
 
       {/* ─── FEATURES: Alternating rows ─── */}
       <section id="features" className="bg-paper py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
             What HarborIQ replaces
           </p>
@@ -198,7 +218,7 @@ export default function Home() {
                   </div>
                   {/* Image */}
                   <div className="flex-[1.3] min-w-0">
-                    <div className="feature-image rounded-xl overflow-hidden shadow-md shadow-ink/5 border border-ash/60">
+                    <div className="feature-image rounded-xl overflow-hidden shadow-md shadow-ink/5">
                       <Image
                         src={f.image}
                         alt={`HarborIQ ${f.title}`}
@@ -217,7 +237,7 @@ export default function Home() {
 
       {/* ─── SEE THE IQ IN ACTION ─── */}
       <section className="bg-linen py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+        <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
             See the IQ in action
           </p>
@@ -227,7 +247,7 @@ export default function Home() {
           <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-2xl mx-auto">
             HarborIQ&rsquo;s built-in intelligence lets your team search across clients, carriers, policies, and tasks in natural language. No digging through tabs. Just&nbsp;ask.
           </p>
-          <div className="mt-10 max-w-3xl mx-auto rounded-xl overflow-hidden border border-ash shadow-lg">
+          <div className="mt-10 max-w-xl mx-auto rounded-xl overflow-hidden border border-ash shadow-lg">
             <video
               autoPlay
               muted
@@ -243,7 +263,7 @@ export default function Home() {
 
       {/* ─── DIFFERENTIATION ─── */}
       <section className="bg-paper py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
             Not another generic CRM
           </p>
@@ -257,7 +277,9 @@ export default function Home() {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {differentiators.map((d) => (
               <div key={d.title}>
-                <div className="w-1 h-8 bg-copper rounded-full mb-4" />
+                <div className="w-12 h-12 rounded-lg bg-glow flex items-center justify-center mb-4">
+                  {d.icon}
+                </div>
                 <h3 className="text-lg font-medium text-ink mb-2">{d.title}</h3>
                 <p className="text-[15px] text-charcoal leading-relaxed">{d.description}</p>
               </div>
@@ -303,7 +325,7 @@ export default function Home() {
               Claim your founding spot
             </a>
             <a
-              href="https://tidycal.com/cjmayer/15-minute-intro"
+              href="https://tidycal.com/cjmayer/harboriq-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-secondary border border-slate text-mist rounded-lg px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors"

@@ -35,7 +35,7 @@ export default function PricingPage() {
     <>
       {/* ─── HEADER ─── */}
       <section className="bg-paper pt-16 pb-8 md:pt-24 md:pb-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+        <div className="max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-medium text-ink leading-tight tracking-tight">
             Simple pricing. No&nbsp;surprises.
           </h1>
@@ -59,7 +59,7 @@ export default function PricingPage() {
 
       {/* ─── PRICING TIERS ─── */}
       <section className="bg-paper py-10 md:py-14">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start max-w-5xl mx-auto">
 
             {/* Core */}
@@ -90,11 +90,12 @@ export default function PricingPage() {
             </div>
 
             {/* Pro (Founding Offer) */}
-            <div className="relative bg-pure rounded-xl border-2 border-anchor p-8">
-              {/* Badge: Ice bg with Deep text (not copper) */}
-              <div className="inline-block bg-ice text-deep text-[13px] font-medium px-3 py-1 rounded-md mb-4">
-                Founding agency &middot; limited spots
+            <div className="relative bg-pure rounded-xl border-2 border-anchor p-8 overflow-hidden">
+              {/* Badge: Blue background to draw the eye */}
+              <div className="absolute top-0 left-0 right-0 bg-anchor px-4 py-2">
+                <p className="text-[12px] font-medium text-ice text-center tracking-wide">Founding agency &middot; limited spots</p>
               </div>
+              <div className="pt-8">
               <h3 className="text-lg font-medium text-ink">Pro</h3>
               <div className="mt-2 flex items-baseline gap-3">
                 <p className="text-3xl font-medium text-ink tracking-tight">
@@ -126,6 +127,7 @@ export default function PricingPage() {
               <p className="mt-3 text-[13px] text-stone text-center">
                 Price locked for life. Cancel&nbsp;anytime.
               </p>
+              </div>
             </div>
 
             {/* Enterprise */}
@@ -140,7 +142,7 @@ export default function PricingPage() {
                 </p>
               </div>
               <a
-                href="https://tidycal.com/cjmayer/15-minute-intro"
+                href="https://tidycal.com/cjmayer/harboriq-demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-secondary mt-8 block text-center text-harbor border border-harbor rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
@@ -167,7 +169,7 @@ export default function PricingPage() {
 
       {/* ─── FAQ ─── */}
       <section className="bg-linen py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl font-medium text-ink tracking-tight text-center mb-10">
             Frequently asked questions
           </h2>
@@ -187,7 +189,7 @@ export default function PricingPage() {
             Book a 15-minute demo. No pitch deck. We&rsquo;ll show you the product and answer your&nbsp;questions.
           </p>
           <a
-            href="https://tidycal.com/cjmayer/15-minute-intro"
+            href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
             className="cta-primary inline-block mt-8 bg-harbor text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"

@@ -34,7 +34,7 @@ export function Nav() {
             About
           </Link>
           <a
-            href="https://tidycal.com/cjmayer/15-minute-intro"
+            href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
             className="cta-secondary text-harbor border border-harbor rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
@@ -78,7 +78,7 @@ export function Nav() {
             About
           </Link>
           <a
-            href="https://tidycal.com/cjmayer/15-minute-intro"
+            href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-harbor text-[15px] font-medium"

@@ -42,7 +42,7 @@ const nameChapters = [
   {
     icon: "/images/story-icon-iq.svg",
     title: 'Why "IQ"',
-    text: "Every product in the WRKSTREAM portfolio carries the IQ suffix. It\u2019s a signal, not a slogan. Intelligence is built into the foundation, not bolted on as a feature. HarborIQ doesn\u2019t \u201Cuse AI.\u201D It thinks. It knows which fields map to each other across carriers, even when the terminology doesn\u2019t match. It knows which prospects are going stale and which quotes are about to expire. That\u2019s the IQ: real intelligence woven into every workflow so your team is always one step ahead.",
+    text: "Intelligence is built into the foundation, not bolted on as a feature. HarborIQ doesn\u2019t \u201Cuse AI.\u201D It thinks. It knows which fields map to each other across carriers, even when the terminology doesn\u2019t match. It knows which prospects are going stale and which quotes are about to expire. That\u2019s the IQ: real intelligence woven into every workflow so your team is always one step ahead.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function AboutPage() {
     <>
       {/* ─── HEADER ─── */}
       <section className="bg-midnight pt-16 pb-12 md:pt-24 md:pb-16">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-3xl md:text-4xl font-medium text-paper leading-tight tracking-tight max-w-3xl">
             Built by someone who sat next to agents and watched them&nbsp;work.
           </h1>
@@ -72,7 +72,7 @@ export default function AboutPage() {
 
       {/* ─── ORIGIN STORY TIMELINE ─── */}
       <section className="bg-paper py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl relative pl-[88px]">
             {/* Vertical timeline line */}
             <div className="absolute left-[31px] top-[80px] bottom-[80px] w-px bg-ash" />
@@ -102,7 +102,7 @@ export default function AboutPage() {
 
       {/* ─── WHY "HARBORIQ" ─── */}
       <section className="bg-linen py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-8">
             The name
           </p>
@@ -133,7 +133,7 @@ export default function AboutPage() {
 
       {/* ─── BELIEFS ─── */}
       <section className="bg-paper py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight mb-14">
             Our beliefs
           </h2>
@@ -155,7 +155,7 @@ export default function AboutPage() {
 
       {/* ─── TEAM ─── */}
       <section className="bg-linen py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight mb-12">
             Team
           </h2>
@@ -180,7 +180,7 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-4 flex gap-3">
                   <a
-                    href="https://www.linkedin.com/in/cabornjustinmayer/"
+                    href="https://www.linkedin.com/in/cjustinmayer"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-stone hover:text-harbor transition-colors"
@@ -223,7 +223,7 @@ export default function AboutPage() {
               Claim your founding spot
             </a>
             <a
-              href="https://tidycal.com/cjmayer/15-minute-intro"
+              href="https://tidycal.com/cjmayer/harboriq-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-secondary border border-slate text-mist rounded-lg px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors"

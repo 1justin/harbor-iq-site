@@ -36,7 +36,7 @@ export function Footer() {
                 About
               </Link>
               <a
-                href="https://tidycal.com/cjmayer/15-minute-intro"
+                href="https://tidycal.com/cjmayer/harboriq-demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-slate hover:text-paper text-[15px] transition-colors"
@@ -62,7 +62,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/in/cabornjustinmayer/"
+                href="https://www.linkedin.com/in/cjustinmayer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-stone hover:text-harbor transition-colors"
