@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What's the difference between Core and Pro?",
-    a: "Core gives you the essentials: pipeline CRM, client profiles, renewals, and the Command Center for up to 5 users. Pro adds team performance analytics, marketing automation, AI-assisted quoting, dedicated onboarding, priority support, and covers up to 15 users.",
+    a: "Core gives you the essentials: pipeline CRM, client profiles, renewals, and the Command Center for up to 5 users. Pro adds team performance analytics, client engagement automation, AI-assisted quoting, dedicated onboarding, priority support, and covers up to 15 users.",
   },
   {
     q: "How does the founding agency discount work?",
@@ -34,6 +34,10 @@ const faqs = [
   {
     q: "What about my existing data?",
     a: "We help you migrate during onboarding. Bring your client list and we'll get you set up.",
+  },
+  {
+    q: "How does onboarding work?",
+    a: "For $499 (one-time), we migrate your client data, clean up formatting issues, and walk your team through the platform. Most agencies are up and running within a week. You keep your legacy data for reference, and we get you set up with a clean starting point in HarborIQ.",
   },
   {
     q: '"AI-powered" \u2014 what does that actually mean?',

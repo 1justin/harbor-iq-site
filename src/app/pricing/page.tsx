@@ -22,7 +22,7 @@ const coreIncludes = [
 const proIncludes = [
   "Everything in Core",
   "Team performance analytics",
-  "Marketing automation",
+  "Client engagement automation",
   "AI-assisted quoting (when Phase 2 launches)",
   "Up to 15 users",
   "Priority support & direct product team access",
@@ -60,7 +60,7 @@ export default function PricingPage() {
       {/* ─── PRICING TIERS ─── */}
       <section className="bg-paper py-10 md:py-14">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start max-w-5xl mx-auto">
 
             {/* Core */}
             <div className="bg-pure rounded-xl border border-ash p-8">
@@ -125,6 +125,40 @@ export default function PricingPage() {
               </a>
               <p className="mt-3 text-[13px] text-stone text-center">
                 Price locked for life. Cancel&nbsp;anytime.
+              </p>
+            </div>
+
+            {/* Enterprise */}
+            <div className="bg-pure rounded-xl border border-ash p-8 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-medium text-ink">Enterprise</h3>
+                <p className="mt-2 text-[15px] text-charcoal leading-relaxed">
+                  More than 15&nbsp;employees
+                </p>
+                <p className="mt-4 text-[16px] text-charcoal leading-relaxed">
+                  Let&rsquo;s build a plan that fits your&nbsp;agency.
+                </p>
+              </div>
+              <a
+                href="https://tidycal.com/cjmayer/15-minute-intro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-secondary mt-8 block text-center text-harbor border border-harbor rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
+              >
+                Contact us
+              </a>
+            </div>
+          </div>
+
+          {/* Onboarding fee callout */}
+          <div className="max-w-5xl mx-auto mt-8">
+            <div className="bg-linen border border-ash rounded-xl px-6 py-5">
+              <h3 className="text-[15px] font-medium text-ink">Data migration &amp; onboarding</h3>
+              <p className="mt-2 text-[15px] text-charcoal leading-relaxed">
+                Switching from spreadsheets, EasyAgent, or another platform? We&rsquo;ll handle the migration. <strong className="font-medium text-ink">$499 one-time setup fee</strong> includes data cleanup, import, and a hands-on walkthrough to get your team&nbsp;running.
+              </p>
+              <p className="mt-2 text-[13px] text-stone">
+                Your existing data stays yours. We import what we can and get you set up for the&nbsp;future.
               </p>
             </div>
           </div>

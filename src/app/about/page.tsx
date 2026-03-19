@@ -42,7 +42,7 @@ const nameChapters = [
   {
     icon: "/images/story-icon-iq.svg",
     title: 'Why "IQ"',
-    text: "Every product in the WRKSTREAM portfolio carries the IQ suffix. It\u2019s a signal, not a slogan. Intelligence is built into the foundation, not bolted on as a feature. HarborIQ doesn\u2019t \u201Cuse AI.\u201D It thinks. It knows that Progressive calls it \u201Crental reimbursement\u201D and Travelers calls it \u201Closs of use.\u201D It knows which prospects are going stale and which quotes are about to expire. That\u2019s the IQ: real intelligence woven into every workflow so your team is always one step ahead.",
+    text: "Every product in the WRKSTREAM portfolio carries the IQ suffix. It\u2019s a signal, not a slogan. Intelligence is built into the foundation, not bolted on as a feature. HarborIQ doesn\u2019t \u201Cuse AI.\u201D It thinks. It knows which fields map to each other across carriers, even when the terminology doesn\u2019t match. It knows which prospects are going stale and which quotes are about to expire. That\u2019s the IQ: real intelligence woven into every workflow so your team is always one step ahead.",
   },
 ];
 
@@ -52,7 +52,7 @@ const beliefs = [
   "AI should make agents smarter and faster, not replace them.",
   "Software should be built around how people actually work, not how process diagrams say they should.",
   "The best product is the one that disappears into the workflow.",
-  'Domain expertise isn\u2019t optional. You can\u2019t build insurance software without understanding that "rental reimbursement" and "transportation expense" are the same thing.',
+  "Domain expertise isn\u2019t optional. You can\u2019t build insurance software without knowing how carriers actually structure their forms and what agents deal with every day.",
 ];
 
 export default function AboutPage() {
@@ -180,11 +180,11 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-4 flex gap-3">
                   <a
-                    href="https://www.linkedin.com/company/harboriqsoftware"
+                    href="https://www.linkedin.com/in/cabornjustinmayer/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-stone hover:text-harbor transition-colors"
-                    aria-label="LinkedIn"
+                    aria-label="Justin Mayer on LinkedIn"
                   >
                     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />

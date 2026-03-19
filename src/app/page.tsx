@@ -8,37 +8,37 @@ const features = [
     title: "Command Center",
     description:
       "Your daily directive. Open HarborIQ each morning and know exactly what to do first: follow-ups that are due, quotes expiring this week, carrier rate changes you can act on. One screen, no guessing.",
-    image: "/images/harboriq-screen-example-command-center.png",
+    image: "/images/harboriq-command-center-screen.png",
   },
   {
     title: "Pipeline CRM",
     description:
-      "Track every prospect from first call to bound policy. See where every lead stands, what the next action is, and who's been waiting too long. The prospects who used to fall through the cracks now have a home.",
-    image: "/images/harboriq-screen-example-new-business-pipeline-cropped.png",
+      "Track every prospect from first call to bound policy. See where every lead stands, what the next action is, and who\u2019s been waiting too long. The prospects who used to fall through the cracks now have a home.",
+    image: "/images/harboriq-pipeline-screen.png",
   },
   {
     title: "Client Renewals",
     description:
       "Stay ahead of every renewal cycle. HarborIQ surfaces upcoming renewals with enough lead time to re-shop, re-quote, and retain. Never lose a client to a missed deadline.",
-    image: "/images/harboriq-screen-example-client-renewals-cropped.png",
+    image: "/images/harboriq-renewals-screen-focused.png",
   },
   {
     title: "AI-Assisted Quoting",
     description:
-      "Enter client data once. HarborIQ knows that Progressive calls it \u2018rental reimbursement\u2019 and Travelers calls it \u2018loss of use.\u2019 It maps carrier differences automatically so your agents stop re-typing and start closing.",
-    image: "/images/harboriq-quote-results-screen-carrier-recommendations-cropped.png",
+      "Enter client data once. HarborIQ understands carrier-specific form differences and maps your answers across portals, no manual translation required.",
+    image: "/images/harboriq-ai-tools-features.png",
   },
   {
     title: "Team Performance",
     description:
       "See who\u2019s quoting, who\u2019s closing, and where the bottlenecks are. For the first time, agency owners get real visibility into their team\u2019s engine without asking for a report.",
-    image: "/images/harboriq-team-member-performance-cropped.png",
+    image: "/images/harboriq-team-performance-management-screens.png",
   },
   {
-    title: "Marketing Automation",
+    title: "Client Engagement",
     description:
-      "AI-generated social media posts, carrier rate change alerts, and client re-engagement campaigns. Work that used to take 10 hours a month now takes minutes. Your agency stays visible without anyone staying late.",
-    image: "/images/harboriq-screen-example-marketing-automations-cropped.png",
+      "Automated renewal reminders, policy update notifications, birthday and holiday messages, and re-engagement campaigns. Keep your clients close without your team doing the work manually. Connect to your existing email tools or use built-in templates.",
+    image: "/images/harboriq-marketing-automations-tab.png",
   },
 ];
 
@@ -46,7 +46,7 @@ const differentiators = [
   {
     title: "Speaks your language.",
     description:
-      'HarborIQ knows that Progressive calls it "rental reimbursement" and Travelers calls it "loss of use." It understands carrier form differences so your team doesn\'t have to.',
+      "Every carrier has its own vocabulary for the same coverages. HarborIQ translates between them automatically, so your agents never have to wonder if two fields are asking the same question.",
   },
   {
     title: "Tracks prospects, not just clients.",
@@ -64,12 +64,12 @@ export default function Home() {
   return (
     <>
       {/* ─── HERO: Full-width bg with gradient overlay ─── */}
-      <section className="relative w-full min-h-[520px] md:min-h-[560px] overflow-hidden flex items-center">
+      <section className="relative w-full min-h-[520px] md:min-h-[580px] overflow-hidden flex items-center">
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/harboriq-screen-example-command-center.png"
-            alt="HarborIQ Command Center dashboard"
+            src="/images/harboriq-command-center-screen-chrome-tab.png"
+            alt="HarborIQ Command Center dashboard in browser"
             fill
             className="object-cover object-center"
             priority
@@ -78,20 +78,20 @@ export default function Home() {
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to right, rgba(15,36,64,0.92) 0%, rgba(15,36,64,0.78) 40%, rgba(15,36,64,0.4) 65%, rgba(15,36,64,0.15) 100%)",
+              background: "linear-gradient(to right, #1B3A5C 0%, rgba(27,58,92,0.95) 30%, rgba(27,58,92,0.6) 60%, rgba(27,58,92,0.1) 85%, transparent 100%)",
             }}
           />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
           <div className="max-w-xl">
-            <h1 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-paper leading-[1.15] tracking-tight">
+            <h1 className="text-3xl md:text-[44px] lg:text-[48px] font-medium text-paper leading-[1.12] tracking-tight">
               One platform. Every carrier.{" "}
               <span className="text-copper">Zero&nbsp;busywork.</span>
             </h1>
             <p className="mt-5 text-[17px] md:text-lg text-mist leading-relaxed">
-              HarborIQ is the AI-powered operating system built for independent insurance agencies. Pipeline, clients, quoting, team performance, and marketing in one&nbsp;place.
+              HarborIQ is the AI-powered operating system built for independent insurance agencies. Pipeline, clients, quoting, team performance, and client engagement in one&nbsp;place.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
@@ -127,13 +127,41 @@ export default function Home() {
             </h2>
             <div className="mt-6 space-y-4 text-[16px] text-charcoal leading-relaxed">
               <p>
-                Every quote means opening Progressive in one tab, Geico in another, Travelers in a third. Same name, same address, same vehicle, typed three times. Each carrier asks the same questions with different words.
+                Every quote means opening Progressive in one tab, Geico in another, Travelers in a third. Same name, same address, same vehicle, typed three times. Each carrier asks the same questions with different words. &ldquo;Rental reimbursement&rdquo; here. &ldquo;Loss of use&rdquo; there. &ldquo;Transportation expense&rdquo; somewhere else.
               </p>
               <p>
                 Meanwhile, the prospect you quoted last month who said &ldquo;call me in six months&rdquo;? They fell through the cracks. Your agency management system only tracks current clients, not the ones who haven&rsquo;t signed&nbsp;yet.
               </p>
               <p className="text-ink font-medium text-lg">
                 Your team isn&rsquo;t slow. Your tools&nbsp;are.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── THE VILLAIN: THE PATCHWORK ─── */}
+      <section className="bg-midnight py-14 md:py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
+              The real problem
+            </p>
+            <h2 className="text-2xl md:text-[34px] font-medium text-paper leading-tight tracking-tight">
+              Independent agents deserve better than the&nbsp;patchwork.
+            </h2>
+            <div className="mt-6 space-y-4 text-[16px] text-mist leading-relaxed">
+              <p>
+                Captive agents at State Farm and Allstate get a single, purpose-built system handed to them on day one. One login. One workflow. One&nbsp;screen.
+              </p>
+              <p>
+                Independent agents? They get a 15-year-old management system that only tracks current clients, a handful of carrier portals that each speak a different language, sticky notes for follow-ups, and a prayer that nothing falls through the&nbsp;cracks.
+              </p>
+              <p>
+                This isn&rsquo;t a technology gap. It&rsquo;s an injustice. The agents who offer more choice, more advocacy, and better service are stuck with the worst tools in the&nbsp;industry.
+              </p>
+              <p className="text-paper font-medium text-lg">
+                HarborIQ exists to end the patchwork. One platform that does what independent agencies have been duct-taping together for&nbsp;decades.
               </p>
             </div>
           </div>
@@ -150,7 +178,7 @@ export default function Home() {
             One system instead of a dozen&nbsp;tabs.
           </h2>
           <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-2xl">
-            HarborIQ brings your pipeline, clients, quoting workflow, team performance, and marketing into a single platform designed for how independent agencies actually&nbsp;work.
+            HarborIQ brings your pipeline, clients, quoting workflow, team performance, and client engagement into a single platform designed for how independent agencies actually&nbsp;work.
           </p>
 
           <div className="mt-12 space-y-4">
@@ -205,7 +233,7 @@ export default function Home() {
               muted
               loop
               playsInline
-              className="w-full h-auto"
+              className="w-full object-cover"
             >
               <source src="/videos/ai-demo.mp4" type="video/mp4" />
             </video>
