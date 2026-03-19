@@ -223,7 +223,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="cta-primary bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Reserve your spot &mdash; $100
+              Reserve Your Founding Spot
             </a>
             <a
               href="https://tidycal.com/cjmayer/harboriq-demo"

@@ -88,6 +88,9 @@ export default function PricingPage() {
               >
                 Get started
               </a>
+              <p className="mt-3 text-[13px] text-stone text-center">
+                Available at launch
+              </p>
             </div>
 
             {/* Pro (Founding Offer) — visual anchor, sits highest */}
@@ -123,17 +126,17 @@ export default function PricingPage() {
                 rel="noopener noreferrer"
                 className="cta-primary mt-8 block text-center bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
               >
-                Reserve your spot &mdash; $100
+                Reserve Your Founding Spot
               </a>
               <p className="mt-3 text-[13px] text-stone text-center">
-                Fully refundable. Locks in $299/mo for&nbsp;life.
+                Fully refundable. Only 10 spots&nbsp;available.
               </p>
               </div>
             </div>
 
-            {/* Enterprise — pushed down to match Core */}
-            <div className="bg-pure rounded-xl border border-ash p-8 flex flex-col justify-between md:mt-24">
-              <div>
+            {/* Enterprise — pushed down to match Core, same height */}
+            <div className="bg-pure rounded-xl border border-ash p-8 flex flex-col md:mt-24">
+              <div className="flex-1">
                 <h3 className="text-lg font-medium text-ink">Enterprise</h3>
                 <p className="mt-2 text-[15px] text-charcoal leading-relaxed">
                   More than 15&nbsp;employees
@@ -141,6 +144,32 @@ export default function PricingPage() {
                 <p className="mt-4 text-[16px] text-charcoal leading-relaxed">
                   Let&rsquo;s build a plan that fits your&nbsp;agency.
                 </p>
+                <div className="mt-6 space-y-3">
+                  <div className="flex gap-3 text-[15px] text-charcoal">
+                    <svg width="18" height="18" fill="none" stroke="#3B6FA0" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    Everything in Pro
+                  </div>
+                  <div className="flex gap-3 text-[15px] text-charcoal">
+                    <svg width="18" height="18" fill="none" stroke="#3B6FA0" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    Unlimited users
+                  </div>
+                  <div className="flex gap-3 text-[15px] text-charcoal">
+                    <svg width="18" height="18" fill="none" stroke="#3B6FA0" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    Custom integrations
+                  </div>
+                  <div className="flex gap-3 text-[15px] text-charcoal">
+                    <svg width="18" height="18" fill="none" stroke="#3B6FA0" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    Dedicated account manager
+                  </div>
+                </div>
               </div>
               <a
                 href="https://tidycal.com/cjmayer/harboriq-demo"
@@ -150,6 +179,9 @@ export default function PricingPage() {
               >
                 Contact us
               </a>
+              <p className="mt-3 text-[13px] text-stone text-center">
+                Available at launch
+              </p>
             </div>
           </div>
 

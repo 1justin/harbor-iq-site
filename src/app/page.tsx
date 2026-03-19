@@ -121,7 +121,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="cta-primary bg-copper text-white rounded-lg px-5 py-2.5 text-[14px] md:text-[15px] font-medium hover:bg-bronze transition-colors text-center"
               >
-                Reserve your spot &mdash; $100
+                Reserve Your Founding Spot
               </a>
               <a
                 href="https://tidycal.com/cjmayer/harboriq-demo"
@@ -323,7 +323,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="cta-primary bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Reserve your spot &mdash; $100
+              Reserve Your Founding Spot
             </a>
             <a
               href="https://tidycal.com/cjmayer/harboriq-demo"
@@ -335,7 +335,7 @@ export default function Home() {
             </a>
           </div>
           <p className="mt-5 text-slate text-[13px]">
-            $100 reserves your spot. Fully refundable before&nbsp;launch.
+            Fully refundable. Only 10 spots&nbsp;available.
           </p>
         </div>
       </section>
