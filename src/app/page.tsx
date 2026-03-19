@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CREEM_PRO = "https://www.creem.io/test/payment/prod_1zF9yBXpb0b3E7UT9aFfIU";
+const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
 
 const features = [
   {
@@ -115,12 +116,12 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-row gap-3">
               <a
-                href={CREEM_PRO}
+                href={CREEM_RESERVE}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-primary bg-copper text-white rounded-lg px-5 py-2.5 text-[14px] md:text-[15px] font-medium hover:bg-bronze transition-colors text-center"
               >
-                Claim your founding spot
+                Reserve your spot &mdash; $100
               </a>
               <a
                 href="https://tidycal.com/cjmayer/harboriq-demo"
@@ -310,19 +311,19 @@ export default function Home() {
       <section className="bg-anchor py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <h2 className="text-2xl md:text-3xl font-medium text-paper leading-tight tracking-tight">
-            Founding agencies: $299/month for your whole team, locked for&nbsp;life.
+            Reserve your founding spot for&nbsp;$100.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed">
-            Standard pricing will be $499/month. Shape the product. Get priority support. Never pay&nbsp;more.
+            Lock in $299/month (instead of $499) for your whole team, for life. Fully refundable if you change your mind before&nbsp;launch.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={CREEM_PRO}
+              href={CREEM_RESERVE}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-primary bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Claim your founding spot
+              Reserve your spot &mdash; $100
             </a>
             <a
               href="https://tidycal.com/cjmayer/harboriq-demo"
@@ -330,11 +331,11 @@ export default function Home() {
               rel="noopener noreferrer"
               className="cta-secondary border border-slate text-mist rounded-lg px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors"
             >
-              Book a 15-min demo
+              Book a demo first
             </a>
           </div>
           <p className="mt-5 text-slate text-[13px]">
-            Monthly billing. Cancel&nbsp;anytime.
+            $100 reserves your spot. Fully refundable before&nbsp;launch.
           </p>
         </div>
       </section>

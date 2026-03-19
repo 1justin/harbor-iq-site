@@ -8,8 +8,8 @@ const faqs = [
     a: "Core gives you the essentials: pipeline CRM, client profiles, renewals, and the Command Center for up to 5 users. Pro adds team performance analytics, client engagement automation, AI-assisted quoting, dedicated onboarding, priority support, and covers up to 15 users.",
   },
   {
-    q: "How does the founding agency discount work?",
-    a: "Use the code FOUNDER at checkout on the Pro plan to get $200/month off, bringing it from $499 to $299/month. That's $2,400 in savings per year. This rate is locked for life. Founding agencies also get direct input on the product roadmap and priority access to new features.",
+    q: "How does the founding agency reservation work?",
+    a: "Pay $100 to reserve your founding spot. This locks in the Pro plan at $299/month (instead of $499) for life, saving you $2,400/year. The $100 is fully refundable if you change your mind before launch. Monthly billing starts when your agency is onboarded and live on the platform. Founding agencies also get direct input on the product roadmap and priority access to new features.",
   },
   {
     q: "Wait, those prices are for my whole team? Not per user?",

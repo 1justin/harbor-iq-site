@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 const CREEM_PRO = "https://www.creem.io/test/payment/prod_1zF9yBXpb0b3E7UT9aFfIU";
 const CREEM_CORE = "https://www.creem.io/test/payment/prod_5tuYAqFQn50nJwa7NuxlGz";
+const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
 
 const coreIncludes = [
   "Pipeline CRM",
@@ -62,8 +63,8 @@ export default function PricingPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start max-w-5xl mx-auto">
 
-            {/* Core */}
-            <div className="bg-pure rounded-xl border border-ash p-8">
+            {/* Core — pushed down on desktop to sit at ~3/4 height of Pro */}
+            <div className="bg-pure rounded-xl border border-ash p-8 md:mt-24">
               <h3 className="text-lg font-medium text-ink">Core</h3>
               <p className="mt-2 text-3xl font-medium text-ink tracking-tight">
                 $299<span className="text-lg text-stone font-normal">/month</span>
@@ -89,8 +90,8 @@ export default function PricingPage() {
               </a>
             </div>
 
-            {/* Pro (Founding Offer) */}
-            <div className="relative bg-pure rounded-xl border-2 border-anchor p-8 overflow-hidden">
+            {/* Pro (Founding Offer) — visual anchor, sits highest */}
+            <div className="relative bg-pure rounded-xl border-2 border-anchor p-8 overflow-hidden shadow-lg shadow-anchor/10">
               {/* Badge: Blue background to draw the eye */}
               <div className="absolute top-0 left-0 right-0 bg-anchor px-4 py-2">
                 <p className="text-[12px] font-medium text-ice text-center tracking-wide">Founding agency &middot; limited spots</p>
@@ -115,23 +116,23 @@ export default function PricingPage() {
                   </div>
                 ))}
               </div>
-              {/* CTA: Only copper element on the card */}
+              {/* CTA: $100 reservation to lock in founding spot */}
               <a
-                href={CREEM_PRO}
+                href={CREEM_RESERVE}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-primary mt-8 block text-center bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
               >
-                Claim your founding spot
+                Reserve your spot &mdash; $100
               </a>
               <p className="mt-3 text-[13px] text-stone text-center">
-                Price locked for life. Cancel&nbsp;anytime.
+                Fully refundable. Locks in $299/mo for&nbsp;life.
               </p>
               </div>
             </div>
 
-            {/* Enterprise */}
-            <div className="bg-pure rounded-xl border border-ash p-8 flex flex-col justify-between">
+            {/* Enterprise — pushed down to match Core */}
+            <div className="bg-pure rounded-xl border border-ash p-8 flex flex-col justify-between md:mt-24">
               <div>
                 <h3 className="text-lg font-medium text-ink">Enterprise</h3>
                 <p className="mt-2 text-[15px] text-charcoal leading-relaxed">
