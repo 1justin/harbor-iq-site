@@ -9,7 +9,7 @@ const features = [
     title: "Command Center",
     description:
       "Know exactly what to do when you open the app each morning. Follow-ups due, quotes expiring, carrier changes you can act on. No more guessing what's most important.",
-    image: "/images/harboriq-command-center-screen.png",
+    image: "/videos/harboriq-scanning-command-center.webm",
   },
   {
     title: "Pipeline CRM",
@@ -120,7 +120,7 @@ export default function Home() {
             {/* Product image (right side) */}
             <div className="flex-1 md:max-w-[640px]">
               <Image
-                src="/images/harboriq-command-center-screen-tablet.png"
+                src="/images/harboriq-command-center-hero-no-shadow.png"
                 alt="HarborIQ Command Center on tablet"
                 width={640}
                 height={920}
@@ -223,16 +223,28 @@ export default function Home() {
                     <h3 className="text-xl md:text-2xl font-medium text-ink mb-3">{f.title}</h3>
                     <p className="text-[16px] text-charcoal leading-relaxed">{f.description}</p>
                   </div>
-                  {/* Image */}
+                  {/* Image or Video */}
                   <div className="flex-[1.3] min-w-0">
                     <div className="feature-image rounded-xl overflow-hidden shadow-md shadow-ink/5">
-                      <Image
-                        src={f.image}
-                        alt={`HarborIQ ${f.title}`}
-                        width={700}
-                        height={450}
-                        className="w-full h-auto"
-                      />
+                      {f.image.endsWith('.webm') || f.image.endsWith('.mp4') ? (
+                        <video
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="w-full h-auto"
+                        >
+                          <source src={f.image} type={f.image.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+                        </video>
+                      ) : (
+                        <Image
+                          src={f.image}
+                          alt={`HarborIQ ${f.title}`}
+                          width={700}
+                          height={450}
+                          className="w-full h-auto"
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
