@@ -13,7 +13,7 @@ export function Nav() {
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
-            src="/images/harboriq-logo-primary.svg"
+            src="/images/harboriq-logo-white.svg"
             alt="HarborIQ"
             width={140}
             height={32}

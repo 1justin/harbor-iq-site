@@ -90,7 +90,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
             {/* Content (left side) */}
             <div className="flex-1 md:max-w-[520px] text-center md:text-left">
-              <h1 className="text-[36px] md:text-[52px] font-medium text-paper leading-[1.1] tracking-tight">
+              <h1 className="text-[38px] md:text-[58px] font-medium text-paper leading-[1.08] tracking-[-0.02em]">
                 Your agents are great.<br />
                 <span className="text-copper">Their tools&nbsp;aren't.</span>
               </h1>
@@ -124,11 +124,7 @@ export default function Home() {
                 alt="HarborIQ Command Center on tablet"
                 width={640}
                 height={920}
-                className="w-full h-auto"
-                style={{
-                  borderRadius: '12px',
-                  boxShadow: '0 32px 64px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.15)'
-                }}
+                className="w-full h-auto max-w-[640px]"
                 priority
               />
             </div>
