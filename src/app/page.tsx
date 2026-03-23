@@ -9,7 +9,7 @@ const features = [
     title: "Command Center",
     description:
       "Know exactly what to do when you open the app each morning. Follow-ups due, quotes expiring, carrier changes you can act on. No more guessing what's most important.",
-    image: "/videos/harboriq-scanning-command-center.webm",
+    image: "/videos/harboriq-command-center-hero-no-shadow-linen-background.mp4",
   },
   {
     title: "Pipeline CRM",
