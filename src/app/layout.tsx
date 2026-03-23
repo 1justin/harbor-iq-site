@@ -4,9 +4,9 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "HarborIQ — The AI-Powered Operating System for Independent Insurance Agencies",
+  title: "HarborIQ — Close More Business. Keep More Clients. Zero Busywork.",
   description:
-    "Replace fragmented legacy tools with one platform. Pipeline CRM, AI-assisted quoting, team performance, and marketing automation built for independent agencies.",
+    "Your agents shouldn't spend two hours quoting what a captive agent quotes in twenty minutes. HarborIQ gives independent agencies the tools they deserve.",
   icons: {
     icon: [
       { url: "/images/harboriq-favicon-32.png", sizes: "32x32", type: "image/png" },
@@ -17,17 +17,17 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "HarborIQ — The AI-Powered Operating System for Independent Insurance Agencies",
+    title: "HarborIQ — Close More Business. Keep More Clients. Zero Busywork.",
     description:
-      "Replace fragmented legacy tools with one platform. Pipeline CRM, AI-assisted quoting, team performance, and marketing automation built for independent agencies.",
+      "Your agents shouldn't spend two hours quoting what a captive agent quotes in twenty minutes. HarborIQ gives independent agencies the tools they deserve.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HarborIQ — AI-Powered Agency OS",
+    title: "HarborIQ — Your Agents Deserve Better Tools",
     description:
-      "One platform. Every carrier. Zero busywork. Built for independent insurance agencies.",
+      "Close more business. Keep more clients. Zero busywork. Built for independent insurance agencies.",
   },
 };
 

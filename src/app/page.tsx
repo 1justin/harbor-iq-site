@@ -8,46 +8,46 @@ const features = [
   {
     title: "Command Center",
     description:
-      "Your daily directive. Open HarborIQ each morning and know exactly what to do first: follow-ups that are due, quotes expiring this week, carrier rate changes you can act on. One screen, no guessing.",
+      "Know exactly what to do when you open the app each morning. Follow-ups due, quotes expiring, carrier changes you can act on. No more guessing what's most important.",
     image: "/images/harboriq-command-center-screen.png",
   },
   {
     title: "Pipeline CRM",
     description:
-      "Track every prospect from first call to bound policy. See where every lead stands, what the next action is, and who\u2019s been waiting too long. The prospects who used to fall through the cracks now have a home.",
+      "Every prospect tracked from first call to bound policy. The people who said \"call me in six months\" never fall through the cracks again.",
     image: "/images/harboriq-pipeline-screen.png",
   },
   {
     title: "Client Renewals",
     description:
-      "Stay ahead of every renewal cycle. HarborIQ surfaces upcoming renewals with enough lead time to re-shop, re-quote, and retain. Never lose a client to a missed deadline.",
+      "Stay ahead of every renewal. Clients get re-quoted before the deadline, not after. Fewer lapses, more retention, more revenue.",
     image: "/images/harboriq-renewals-screen-focused.png",
   },
   {
     title: "AI-Assisted Quoting",
     description:
-      "Enter client data once. HarborIQ understands carrier-specific form differences and maps your answers across portals, no manual translation required.",
+      "Enter client data once. The platform handles carrier-specific differences across portals so your agents stop re-typing and start closing.",
     image: "/images/harboriq-ai-tools-features.png",
   },
   {
     title: "Team Performance",
     description:
-      "See who\u2019s quoting, who\u2019s closing, and where the bottlenecks are. For the first time, agency owners get real visibility into their team\u2019s engine without asking for a report.",
+      "See who\u2019s quoting, who\u2019s closing, and where the bottlenecks are. Real numbers, not gut feel. Coach your team with data for the first time.",
     image: "/images/harboriq-team-performance-management-screens.png",
   },
   {
     title: "Client Engagement",
     description:
-      "Automated renewal reminders, policy update notifications, birthday and holiday messages, and re-engagement campaigns. Keep your clients close without your team doing the work manually. Connect to your existing email tools or use built-in templates.",
+      "Automated renewal reminders, policy update notifications, birthday and holiday touches. Keep your clients close without your team doing the work manually.",
     image: "/images/harboriq-marketing-automations-tab.png",
   },
 ];
 
 const differentiators = [
   {
-    title: "Speaks your language.",
+    title: "No more translating between carriers.",
     description:
-      "Every carrier has its own vocabulary for the same coverages. HarborIQ translates between them automatically, so your agents never have to wonder if two fields are asking the same question.",
+      "Every carrier has its own vocabulary for the same coverages. HarborIQ translates automatically so your team quotes faster and makes fewer errors.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -56,9 +56,9 @@ const differentiators = [
     ),
   },
   {
-    title: "Tracks prospects, not just clients.",
+    title: "No more lost prospects.",
     description:
-      "Most agency management systems only manage your current book. HarborIQ tracks the full pipeline, from first inquiry to bound policy, with follow-up reminders that actually work.",
+      "Most agency software only tracks your current book. HarborIQ tracks every prospect from first inquiry to bound policy, with reminders that actually work.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -68,9 +68,9 @@ const differentiators = [
     ),
   },
   {
-    title: "Designed for generalists.",
+    title: "Built for the way your team actually works.",
     description:
-      "Your agents sell, quote, service, and follow up. HarborIQ is built for people who wear every hat, not specialists who only do one thing.",
+      "Your agents sell, quote, service, and follow up. HarborIQ is designed for generalists who wear every hat, not specialists who only do one thing.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -108,11 +108,11 @@ export default function Home() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 w-full py-16 md:py-24">
           <div className="max-w-lg">
             <h1 className="text-4xl md:text-[56px] lg:text-[64px] font-medium text-paper leading-[1.08] tracking-tight">
-              One platform.<br />Every carrier.<br />
-              <span className="text-copper">Zero&nbsp;busywork.</span>
+              Your agents are great.<br />
+              <span className="text-copper">Their tools&nbsp;aren't.</span>
             </h1>
-            <p className="mt-6 text-[16px] md:text-[17px] text-mist leading-relaxed">
-              The AI-powered operating system built for independent insurance agencies. Pipeline, clients, quoting, team performance, and client engagement in one&nbsp;place.
+            <p className="mt-6 text-[17px] md:text-[18px] text-mist leading-relaxed">
+              HarborIQ gives independent agencies the edge to close more business, keep more clients, and stop drowning in busywork. One platform for your whole team.&nbsp;<span className="text-paper font-medium">$299/month.</span>
             </p>
             <div className="mt-8 flex flex-row gap-3">
               <a
@@ -144,17 +144,17 @@ export default function Home() {
               The reality
             </p>
             <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight">
-              Your agents spend more time re-typing than&nbsp;selling.
+              Two hours to quote one customer.<br />That&rsquo;s not a people&nbsp;problem.
             </h2>
             <div className="mt-6 space-y-4 text-[16px] text-charcoal leading-relaxed">
               <p>
-                Every quote means opening Progressive in one tab, Geico in another, Travelers in a third. Same name, same address, same vehicle, typed three times. Each carrier asks the same questions with different words. &ldquo;Rental reimbursement&rdquo; here. &ldquo;Loss of use&rdquo; there. &ldquo;Transportation expense&rdquo; somewhere else.
+                Your agents open Progressive in one tab, Geico in another, Travelers in a third. Same client. Same address. Same vehicle. Typed three times. Each carrier uses different words for the same&nbsp;coverages.
               </p>
               <p>
-                Meanwhile, the prospect you quoted last month who said &ldquo;call me in six months&rdquo;? They fell through the cracks. Your agency management system only tracks current clients, not the ones who haven&rsquo;t signed&nbsp;yet.
+                Then the prospect from last month who said &ldquo;call me in six months&rdquo;? Gone. Your management system tracks current clients, not the ones who haven&rsquo;t signed&nbsp;yet.
               </p>
               <p className="text-ink font-medium text-lg">
-                Your team isn&rsquo;t slow. Your tools&nbsp;are.
+                Your team works hard. They deserve tools that work just as&nbsp;hard.
               </p>
             </div>
           </div>
@@ -173,16 +173,16 @@ export default function Home() {
             </h2>
             <div className="mt-6 space-y-4 text-[16px] text-mist leading-relaxed">
               <p>
-                Captive agents at State Farm and Allstate get a single, purpose-built system handed to them on day one. One login. One workflow. One&nbsp;screen.
+                Captive agents at State Farm and Allstate get a single, purpose-built system on day one. One login. One workflow. One&nbsp;screen.
               </p>
               <p>
-                Independent agents? They get a 15-year-old management system that only tracks current clients, a handful of carrier portals that each speak a different language, sticky notes for follow-ups, and a prayer that nothing falls through the&nbsp;cracks.
+                Independent agents? A 15-year-old management system for current clients. A handful of carrier portals that each speak a different language. Sticky notes for follow-ups. A prayer that nothing falls through the&nbsp;cracks.
               </p>
               <p>
-                This isn&rsquo;t a technology gap. It&rsquo;s an injustice. The agents who offer more choice, more advocacy, and better service are stuck with the worst tools in the&nbsp;industry.
+                The agents who offer more choice, more advocacy, and better service are stuck with the worst tools in the&nbsp;industry.
               </p>
               <p className="text-paper font-medium text-lg">
-                HarborIQ exists to end the patchwork. One platform that does what independent agencies have been duct-taping together for&nbsp;decades.
+                That ends&nbsp;now.
               </p>
             </div>
           </div>
@@ -196,10 +196,10 @@ export default function Home() {
             What HarborIQ replaces
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight max-w-2xl">
-            One system instead of a dozen&nbsp;tabs.
+            Everything your team needs. Nothing they&nbsp;don't.
           </h2>
           <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-2xl">
-            HarborIQ brings your pipeline, clients, quoting workflow, team performance, and client engagement into a single platform designed for how independent agencies actually&nbsp;work.
+            HarborIQ replaces the patchwork with one platform that handles your pipeline, clients, quoting, team performance, and client engagement. Built for how agencies actually work, not how software companies think they&nbsp;should.
           </p>
 
           <div className="mt-12 space-y-4">
@@ -269,11 +269,8 @@ export default function Home() {
             Not another generic CRM
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight max-w-3xl">
-            We built this by sitting next to agents while they&nbsp;worked.
+            Built by watching agents work. Not by reading about insurance on the&nbsp;internet.
           </h2>
-          <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-2xl">
-            HarborIQ isn&rsquo;t a CRM with an insurance skin. It&rsquo;s built from the ground up around the way independent agencies actually&nbsp;operate.
-          </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {differentiators.map((d) => (
@@ -311,10 +308,10 @@ export default function Home() {
       <section className="bg-anchor py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <h2 className="text-2xl md:text-3xl font-medium text-paper leading-tight tracking-tight">
-            Reserve your founding spot for&nbsp;$100.
+            $299/month for your whole team. Not per seat. Locked for&nbsp;life.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed">
-            Lock in $299/month (instead of $499) for your whole team, for life. Fully refundable if you change your mind before&nbsp;launch.
+            Founding agencies get first access, priority support, and a price that never goes up. Standard pricing will be&nbsp;$499/month.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
