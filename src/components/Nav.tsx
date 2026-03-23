@@ -8,7 +8,7 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-ash/60">
+    <header className="sticky top-0 z-50 bg-anchor backdrop-blur-sm">
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="shrink-0">
@@ -24,20 +24,20 @@ export function Nav() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/#features" className="text-charcoal hover:text-harbor text-[15px] transition-colors">
+          <Link href="/#features" className="text-paper hover:text-mist text-[15px] transition-colors">
             Features
           </Link>
-          <Link href="/pricing" className="text-charcoal hover:text-harbor text-[15px] transition-colors">
+          <Link href="/pricing" className="text-paper hover:text-mist text-[15px] transition-colors">
             Pricing
           </Link>
-          <Link href="/about" className="text-charcoal hover:text-harbor text-[15px] transition-colors">
+          <Link href="/about" className="text-paper hover:text-mist text-[15px] transition-colors">
             About
           </Link>
           <a
             href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-secondary text-harbor border border-harbor rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
+            className="cta-secondary bg-harbor text-white rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-deep transition-colors"
           >
             Book a demo
           </a>
@@ -54,7 +54,7 @@ export function Nav() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-charcoal"
+          className="md:hidden p-2 text-paper"
           aria-label="Toggle menu"
         >
           <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -69,21 +69,21 @@ export function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-ash bg-paper px-6 py-4 space-y-4">
-          <Link href="/#features" onClick={() => setMobileOpen(false)} className="block text-charcoal text-[15px]">
+        <div className="md:hidden border-t border-midnight bg-anchor px-6 py-4 space-y-4">
+          <Link href="/#features" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             Features
           </Link>
-          <Link href="/pricing" onClick={() => setMobileOpen(false)} className="block text-charcoal text-[15px]">
+          <Link href="/pricing" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             Pricing
           </Link>
-          <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-charcoal text-[15px]">
+          <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             About
           </Link>
           <a
             href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-harbor text-[15px] font-medium"
+            className="block bg-harbor text-white rounded-lg px-4 py-2 text-[15px] font-medium text-center"
           >
             Book a demo
           </a>

@@ -84,53 +84,53 @@ const differentiators = [
 export default function Home() {
   return (
     <>
-      {/* ─── HERO: Full-width bg with gradient overlay ─── */}
-      <section className="relative w-full min-h-[520px] md:min-h-[600px] overflow-hidden flex items-center">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/harboriq-command-center-screen-chrome-tab.png"
-            alt="HarborIQ Command Center dashboard in browser"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          {/* Gradient overlay: solid left, transparent right */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(to right, #0F2440 0%, rgba(15,36,64,0.97) 25%, rgba(15,36,64,0.88) 42%, rgba(15,36,64,0.5) 65%, rgba(15,36,64,0.15) 85%, transparent 100%)",
-            }}
-          />
-        </div>
+      {/* ─── HERO: Dark background with elegant product placement ─── */}
+      <section className="bg-anchor py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+            {/* Content (left side) */}
+            <div className="flex-1 md:max-w-[520px] text-center md:text-left">
+              <h1 className="text-[36px] md:text-[52px] font-medium text-paper leading-[1.1] tracking-tight">
+                Your agents are great.<br />
+                <span className="text-copper">Their tools&nbsp;aren't.</span>
+              </h1>
+              <p className="mt-5 text-[17px] md:text-[18px] text-mist leading-relaxed">
+                HarborIQ gives independent insurance agencies the edge to close more business, keep more clients, and stop drowning in busywork. One platform for your whole team.&nbsp;<span className="text-paper font-medium">$299/month.</span>
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                <a
+                  href={CREEM_RESERVE}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-primary bg-copper text-white rounded-lg px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors text-center"
+                >
+                  Reserve Your Founding Spot
+                </a>
+                <a
+                  href="https://tidycal.com/cjmayer/harboriq-demo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-secondary bg-harbor text-white rounded-lg px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors text-center"
+                >
+                  Book a demo
+                </a>
+              </div>
+            </div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full py-16 md:py-24">
-          <div className="max-w-lg">
-            <h1 className="text-4xl md:text-[56px] lg:text-[64px] font-medium text-paper leading-[1.08] tracking-tight">
-              Your agents are great.<br />
-              <span className="text-copper">Their tools&nbsp;aren't.</span>
-            </h1>
-            <p className="mt-6 text-[17px] md:text-[18px] text-mist leading-relaxed">
-              HarborIQ gives independent agencies the edge to close more business, keep more clients, and stop drowning in busywork. One platform for your whole team.&nbsp;<span className="text-paper font-medium">$299/month.</span>
-            </p>
-            <div className="mt-8 flex flex-row gap-3">
-              <a
-                href={CREEM_RESERVE}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-primary bg-copper text-white rounded-lg px-5 py-2.5 text-[14px] md:text-[15px] font-medium hover:bg-bronze transition-colors text-center"
-              >
-                Reserve Your Founding Spot
-              </a>
-              <a
-                href="https://tidycal.com/cjmayer/harboriq-demo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-secondary border border-slate text-mist rounded-lg px-5 py-2.5 text-[14px] md:text-[15px] font-medium hover:border-paper hover:text-paper transition-colors text-center"
-              >
-                Book a demo
-              </a>
+            {/* Product image (right side) */}
+            <div className="flex-1 md:max-w-[640px]">
+              <Image
+                src="/images/harboriq-command-center-screen-tablet.png"
+                alt="HarborIQ Command Center on tablet"
+                width={640}
+                height={920}
+                className="w-full h-auto"
+                style={{
+                  borderRadius: '12px',
+                  boxShadow: '0 32px 64px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.15)'
+                }}
+                priority
+              />
             </div>
           </div>
         </div>
@@ -185,6 +185,16 @@ export default function Home() {
                 That ends&nbsp;now.
               </p>
             </div>
+          </div>
+          {/* Patchwork visual */}
+          <div className="mt-10 flex justify-center">
+            <Image
+              src="/images/harboriq-before-patchwork.png"
+              alt="The patchwork of disconnected tools"
+              width={600}
+              height={400}
+              className="w-full max-w-[600px] h-auto opacity-90"
+            />
           </div>
         </div>
       </section>
@@ -256,7 +266,8 @@ export default function Home() {
               playsInline
               className="w-full object-cover"
             >
-              <source src="/videos/ai-demo.mp4" type="video/mp4" />
+              <source src="/videos/harboriq-ai-assistant-chat-demo.webm" type="video/webm" />
+              <source src="/videos/harboriq-ai-assistant-chat-demo.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -326,7 +337,7 @@ export default function Home() {
               href="https://tidycal.com/cjmayer/harboriq-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-secondary border border-slate text-mist rounded-lg px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors"
+              className="cta-secondary bg-harbor text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
             >
               Book a demo first
             </a>
