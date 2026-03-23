@@ -90,7 +90,17 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-anchor/40 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-slate">
           <span>Built by WRKSTREAM</span>
-          <span>&copy; {new Date().getFullYear()} WRKSTREAM LLC. All rights reserved.</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <Link href="/terms" className="hover:text-paper transition-colors">
+              Terms
+            </Link>
+            <span>&middot;</span>
+            <Link href="/privacy" className="hover:text-paper transition-colors">
+              Privacy
+            </Link>
+            <span className="hidden md:inline">&middot;</span>
+            <span className="w-full md:w-auto text-center">&copy; {new Date().getFullYear()} WRKSTREAM LLC. All rights reserved.</span>
+          </div>
         </div>
       </div>
     </footer>
