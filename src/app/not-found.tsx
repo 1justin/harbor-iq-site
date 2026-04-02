@@ -36,7 +36,7 @@ export default function NotFound() {
       <div className="flex flex-col sm:flex-row gap-4">
         <Link
           href="/"
-          className="bg-copper text-white rounded-lg px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors"
+          className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors"
         >
           Back to homepage
         </Link>
@@ -44,7 +44,7 @@ export default function NotFound() {
           href="https://tidycal.com/cjmayer/harboriq-demo"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-harbor text-white rounded-lg px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors"
+          className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors"
         >
           Book a demo
         </a>

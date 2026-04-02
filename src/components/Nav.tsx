@@ -37,7 +37,7 @@ export function Nav() {
             href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-secondary bg-harbor text-white rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-deep transition-colors"
+            className="cta-secondary bg-interactive text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-deep transition-colors"
           >
             Book a demo
           </a>
@@ -45,7 +45,7 @@ export function Nav() {
             href="https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-primary bg-copper text-white rounded-lg px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
+            className="cta-primary bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
           >
             Get started
           </a>
@@ -83,7 +83,7 @@ export function Nav() {
             href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-harbor text-white rounded-lg px-4 py-2 text-[15px] font-medium text-center"
+            className="block bg-interactive text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
           >
             Book a demo
           </a>
@@ -92,7 +92,7 @@ export function Nav() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            className="block bg-copper text-white rounded-lg px-4 py-2 text-[15px] font-medium text-center"
+            className="block bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
           >
             Get started
           </a>

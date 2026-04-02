@@ -10,18 +10,17 @@
   --color-anchor: #1B3A5C;
   --color-midnight: #0F2440;
 
-  /* Paper Whites */
-  --color-paper: #FAFAF7;
+  /* Interactive Blue (v2.0) */
+  --color-interactive: #2E75B6;
+
+  /* Surfaces (v2.0: white page bg, linen for cards/sections) */
+  --color-paper: #FFFFFF;
   --color-linen: #F5F3EF;
-  --color-parchment: #EDEAE4;
   --color-pure: #FFFFFF;
 
-  /* Warm Accent */
-  --color-glow: #FAF0E4;
-  --color-amber: #E8C896;
+  /* Warm Accent (v2.0: copper reserved for primary CTA only) */
   --color-copper: #C4935A;
   --color-bronze: #9A6E3A;
-  --color-walnut: #7A5A2E;
 
   /* Neutrals */
   --color-ink: #1A1A18;
@@ -30,19 +29,25 @@
   --color-fog: #C4C0B6;
   --color-ash: #E0DDD6;
 
-  /* Semantic */
-  --color-success: #1B7A4A;
-  --color-warning: #C47A1A;
-  --color-danger: #C43A3A;
+  /* Semantic (v2.0: aligned to Figma Make) */
+  --color-success: #2E8B57;
+  --color-warning: #E8912D;
+  --color-danger: #D64545;
+  --color-info: #2E75B6;
 
   /* Font */
   --font-sans: "DM Sans", "Inter", system-ui, sans-serif;
 }
 
 body {
-  background-color: #FAFAF7;
+  background-color: #FFFFFF;
   color: #4A4A46;
   font-family: var(--font-sans);
+}
+
+/* ─── v2.0 Button radius (6px per Figma Make) ─── */
+.btn-radius {
+  border-radius: 6px;
 }
 
 html {
@@ -68,7 +73,7 @@ p {
 }
 .cta-primary:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 16px rgba(196, 147, 90, 0.3);
+  box-shadow: 0 4px 16px rgba(196, 147, 90, 0.2);
 }
 .cta-primary:active {
   transform: scale(0.98);

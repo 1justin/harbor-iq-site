@@ -49,7 +49,7 @@ const differentiators = [
     description:
       "Every carrier has its own vocabulary for the same coverages. HarborIQ translates automatically so your team quotes faster and makes fewer errors.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         <path d="M8 9h2m-1-1v6m4-5c.6 0 1 .4 1 1v0c0 .6-.4 1-1 1h-1m1 0c.6 0 1 .4 1 1v0c0 .6-.4 1-1 1h-1" />
       </svg>
@@ -60,7 +60,7 @@ const differentiators = [
     description:
       "Most agency software only tracks your current book. HarborIQ tracks every prospect from first inquiry to bound policy, with reminders that actually work.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
         <circle cx="12" cy="12" r="6" />
         <circle cx="12" cy="12" r="2" />
@@ -72,7 +72,7 @@ const differentiators = [
     description:
       "Your agents sell, quote, service, and follow up. HarborIQ is designed for generalists who wear every hat, not specialists who only do one thing.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
         <path d="M2 17l10 5 10-5" />
         <path d="M2 12l10 5 10-5" />
@@ -92,7 +92,7 @@ export default function Home() {
             <div className="flex-1 md:max-w-[520px] text-center md:text-left">
               <h1 className="text-[38px] md:text-[58px] font-medium text-paper leading-[1.08] tracking-[-0.02em]">
                 Your agents are great.<br />
-                <span className="text-copper">Their tools&nbsp;aren't.</span>
+                <span className="text-interactive">Their tools&nbsp;aren't.</span>
               </h1>
               <p className="mt-5 text-[17px] md:text-[18px] text-mist leading-relaxed">
                 HarborIQ gives independent insurance agencies the edge to close more business, keep more clients, and stop drowning in busywork. One platform for your whole team.&nbsp;<span className="text-paper font-medium">$299/month.</span>
@@ -102,7 +102,7 @@ export default function Home() {
                   href={CREEM_RESERVE}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-primary bg-copper text-white rounded-lg px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors text-center"
+                  className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors text-center"
                 >
                   Reserve Your Founding Spot
                 </a>
@@ -110,7 +110,7 @@ export default function Home() {
                   href="https://tidycal.com/cjmayer/harboriq-demo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-secondary bg-harbor text-white rounded-lg px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors text-center"
+                  className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors text-center"
                 >
                   Book a demo
                 </a>
@@ -136,7 +136,7 @@ export default function Home() {
       <section className="bg-paper py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
-            <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
+            <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
               The reality
             </p>
             <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight">
@@ -161,7 +161,7 @@ export default function Home() {
       <section className="bg-midnight py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
-            <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
+            <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
               The real problem
             </p>
             <h2 className="text-2xl md:text-[34px] font-medium text-paper leading-tight tracking-tight">
@@ -198,7 +198,7 @@ export default function Home() {
       {/* ─── FEATURES: Alternating rows ─── */}
       <section id="features" className="bg-paper py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
             What HarborIQ replaces
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight max-w-2xl">
@@ -257,7 +257,7 @@ export default function Home() {
       {/* ─── SEE THE IQ IN ACTION ─── */}
       <section className="bg-linen py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
             See the IQ in action
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight">
@@ -284,7 +284,7 @@ export default function Home() {
       {/* ─── DIFFERENTIATION ─── */}
       <section className="bg-paper py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
             Not another generic CRM
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight max-w-3xl">
@@ -294,7 +294,7 @@ export default function Home() {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {differentiators.map((d) => (
               <div key={d.title}>
-                <div className="w-12 h-12 rounded-lg bg-glow flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-ice flex items-center justify-center mb-4">
                   {d.icon}
                 </div>
                 <h3 className="text-lg font-medium text-ink mb-2">{d.title}</h3>
@@ -308,10 +308,10 @@ export default function Home() {
       {/* ─── SOCIAL PROOF ─── */}
       <section className="bg-linen py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
-          <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-8 text-center">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-8 text-center">
             From the people who helped build it
           </p>
-          <div className="pl-6 border-l-[3px] border-copper">
+          <div className="pl-6 border-l-[3px] border-interactive">
             <blockquote className="text-xl md:text-2xl font-medium text-ink leading-snug tracking-tight">
               We&rsquo;ve tried other tools. They all do one thing. This is the first platform that actually works the way our agency&nbsp;works.
             </blockquote>
@@ -337,7 +337,7 @@ export default function Home() {
               href={CREEM_RESERVE}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-primary bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
+              className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
               Reserve Your Founding Spot
             </a>
@@ -345,7 +345,7 @@ export default function Home() {
               href="https://tidycal.com/cjmayer/harboriq-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-secondary bg-harbor text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
+              className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
             >
               Book a demo first
             </a>

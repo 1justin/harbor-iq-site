@@ -50,8 +50,8 @@ export default function PricingPage() {
       {/* ─── PER-SEAT CALLOUT ─── */}
       <section className="bg-paper pb-6">
         <div className="max-w-2xl mx-auto px-6 md:px-10">
-          <div className="bg-glow border border-amber/40 rounded-xl px-6 py-4 text-center">
-            <p className="text-[15px] text-walnut leading-relaxed">
+          <div className="bg-ice border border-interactive/20 rounded-xl px-6 py-4 text-center">
+            <p className="text-[15px] text-deep leading-relaxed">
               Not per seat. Not per user. Not per agent. <strong className="font-medium text-ink">One flat price for your whole&nbsp;team.</strong>
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function PricingPage() {
                 href="https://tidycal.com/cjmayer/harboriq-demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-secondary mt-8 block text-center text-harbor border border-harbor rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
+                className="cta-secondary mt-8 block text-center text-interactive border border-interactive btn-radius px-6 py-3 text-[15px] font-medium hover:bg-interactive hover:text-white transition-colors"
               >
                 Book a Demo
               </a>
@@ -112,7 +112,7 @@ export default function PricingPage() {
               <div className="mt-6 space-y-3">
                 {proIncludes.map((item) => (
                   <div key={item} className="flex gap-3 text-[15px] text-mist">
-                    <svg width="18" height="18" fill="none" stroke="#C4935A" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
+                    <svg width="18" height="18" fill="none" stroke="#7BA3CC" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     {item}
@@ -124,7 +124,7 @@ export default function PricingPage() {
                 href={CREEM_RESERVE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-primary mt-8 block text-center bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
+                className="cta-primary mt-8 block text-center bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
               >
                 Reserve Your Founding Spot
               </a>
@@ -175,7 +175,7 @@ export default function PricingPage() {
                 href="https://tidycal.com/cjmayer/harboriq-demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-secondary mt-8 block text-center text-harbor border border-harbor rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-harbor hover:text-white transition-colors"
+                className="cta-secondary mt-8 block text-center text-interactive border border-interactive btn-radius px-6 py-3 text-[15px] font-medium hover:bg-interactive hover:text-white transition-colors"
               >
                 Book a Demo
               </a>
@@ -225,7 +225,7 @@ export default function PricingPage() {
             href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-primary inline-block mt-8 bg-harbor text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
+            className="cta-secondary inline-block mt-8 bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
           >
             Book a 15-min demo
           </a>

@@ -89,7 +89,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-[13px] font-medium text-copper uppercase tracking-wider mb-2">
+                  <h3 className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-2">
                     {chapter.title}
                   </h3>
                   <p className="text-[17px] text-charcoal leading-[1.65]">{chapter.text}</p>
@@ -103,7 +103,7 @@ export default function AboutPage() {
       {/* ─── WHY "HARBORIQ" ─── */}
       <section className="bg-linen py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-8">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-8">
             The name
           </p>
 
@@ -141,7 +141,7 @@ export default function AboutPage() {
             {beliefs.map((belief, i) => (
               <div key={i} className="relative pl-24">
                 <span
-                  className="absolute top-[-6px] left-0 text-[72px] font-medium text-copper/50 leading-none select-none"
+                  className="absolute top-[-6px] left-0 text-[72px] font-medium text-interactive/50 leading-none select-none"
                   aria-hidden="true"
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -196,7 +196,7 @@ export default function AboutPage() {
 
             {/* Design partner */}
             <div className="pt-8 border-t border-ash">
-              <p className="text-[13px] text-copper font-medium uppercase tracking-wider mb-3">Design Partner</p>
+              <p className="text-[13px] text-interactive font-medium uppercase tracking-wider mb-3">Design Partner</p>
               <h3 className="text-lg font-medium text-ink">Sertler &amp; Associates</h3>
               <p className="text-[13px] text-stone mt-1">Chicagoland, IL</p>
               <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-xl">
@@ -221,7 +221,7 @@ export default function AboutPage() {
               href={CREEM_RESERVE}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-primary bg-copper text-white rounded-lg px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
+              className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
               Reserve Your Founding Spot
             </a>
@@ -229,7 +229,7 @@ export default function AboutPage() {
               href="https://tidycal.com/cjmayer/harboriq-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-secondary border border-slate text-mist rounded-lg px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors"
+              className="cta-secondary border border-slate text-mist btn-radius px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors"
             >
               Book a demo first
             </a>
