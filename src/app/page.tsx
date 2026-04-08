@@ -1,44 +1,82 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaqAccordion } from "@/components/FaqAccordion";
 
 const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
+
+const homeFaqs = [
+  {
+    q: "What is HarborIQ?",
+    a: "HarborIQ is an AI-powered agency management system (AMS) built for independent insurance agencies with 1-15 employees. It combines pipeline CRM, client and policy management, renewal tracking, team performance analytics, carrier management, and AI-assisted quoting in one platform. Think of it as the operating system your agency runs on.",
+  },
+  {
+    q: "How much does HarborIQ cost?",
+    a: "Flat monthly pricing with no per-user fees. Core is $149/month (up to 5 users), Pro is $499/month (up to 15 users). Founding agencies lock in Pro at $299/month for life — a savings of $2,400/year. No long-term contracts. Cancel anytime.",
+  },
+  {
+    q: "Does HarborIQ replace my current AMS?",
+    a: "Yes. HarborIQ is designed to replace tools like EZLynx, HawkSoft, Applied Epic, NowCerts, or EasyAgent. It handles everything from prospect pipeline to client management, renewals, quoting, and team performance — so you don't need separate tools bolted together.",
+  },
+  {
+    q: "Does HarborIQ include comparative rating?",
+    a: "HarborIQ takes a different approach than traditional comparative raters. Instead of rigid API integrations, our AI-assisted quoting uses semantic mapping to translate between carrier-specific terminology and pre-fill quoting forms. Enter client data once, and HarborIQ handles the carrier differences automatically.",
+  },
+  {
+    q: "Is HarborIQ IVANS compatible?",
+    a: "IVANS automated carrier downloads are on our roadmap. In the initial release, HarborIQ includes a comprehensive carrier directory with appetite tracking, underwriting guidelines, and portal credentials. We're transparent about what's available now and what's coming next.",
+  },
+  {
+    q: "How do I switch from my current AMS to HarborIQ?",
+    a: "Export a CSV from your current system, and HarborIQ's onboarding team handles the migration — including data cleanup and formatting. Most agencies are live within a week. The onboarding fee is $499 one-time, and your legacy system stays accessible during the transition.",
+  },
+];
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 const features = [
   {
     title: "Command Center",
     description:
       "Know exactly what to do when you open the app each morning. Follow-ups due, quotes expiring, carrier changes you can act on. No more guessing what's most important.",
-    image: "/images/harboriq-command-center-hero-no-shadow.png",
+    image: "/images/harboriq-command-center-hero-no-shadow.webp",
   },
   {
     title: "Pipeline CRM",
     description:
       "Every prospect tracked from first call to bound policy. The people who said \"call me in six months\" never fall through the cracks again.",
-    image: "/images/harboriq-pipeline-screen.png",
+    image: "/images/harboriq-pipeline-screen.webp",
   },
   {
     title: "Client Renewals",
     description:
       "Stay ahead of every renewal. Clients get re-quoted before the deadline, not after. Fewer lapses, more retention, more revenue.",
-    image: "/images/harboriq-renewals-screen-focused.png",
+    image: "/images/harboriq-renewals-screen-focused.webp",
   },
   {
     title: "AI-Assisted Quoting",
     description:
       "Enter client data once. The platform handles carrier-specific differences across portals so your agents stop re-typing and start closing.",
-    image: "/images/harboriq-ai-tools-features.png",
+    image: "/images/harboriq-ai-tools-features.webp",
   },
   {
     title: "Team Performance",
     description:
       "See who\u2019s quoting, who\u2019s closing, and where the bottlenecks are. Real numbers, not gut feel. Coach your team with data for the first time.",
-    image: "/images/harboriq-team-performance-management-screens.png",
+    image: "/images/harboriq-team-performance-management-screens.webp",
   },
   {
     title: "Client Engagement",
     description:
       "Automated renewal reminders, policy update notifications, birthday and holiday touches. Keep your clients close without your team doing the work manually.",
-    image: "/images/harboriq-marketing-automations-tab.png",
+    image: "/images/harboriq-marketing-automations-tab.webp",
   },
 ];
 
@@ -141,7 +179,7 @@ export default function Home() {
                   loop
                   playsInline
                   className="w-full h-auto"
-                  poster="/images/harboriq-command-center-hero-no-shadow.png"
+                  poster="/images/harboriq-command-center-hero-no-shadow.webp"
                 >
                   <source src="/videos/harboriq-command-center-hero-no-shadow-blue-background.mp4" type="video/mp4" />
                 </video>
@@ -204,7 +242,7 @@ export default function Home() {
           {/* Patchwork visual */}
           <div className="mt-10 flex justify-center">
             <Image
-              src="/images/harboriq-before-patchwork.png"
+              src="/images/harboriq-before-patchwork.webp"
               alt="The patchwork of disconnected tools"
               width={600}
               height={400}
@@ -488,6 +526,20 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ─── FAQ ─── */}
+      <section className="bg-linen py-14 md:py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center mb-10">
+            Frequently asked questions
+          </h2>
+          <FaqAccordion items={homeFaqs} />
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
+        />
       </section>
 
       {/* ─── BOTTOM CTA ─── */}

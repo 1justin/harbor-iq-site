@@ -2,9 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog — HarborIQ",
+  title: "Insurance Agency Technology Blog — HarborIQ",
   description:
-    "Insights for independent insurance agencies on technology, operations, and growth. From the team building the AI-native agency operating system.",
+    "Insights for independent insurance agencies on technology, operations, and growth. From the team building the AI-native agency management system.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Insurance Agency Technology Blog — HarborIQ",
+    description:
+      "Insights for independent insurance agencies on technology, operations, and growth.",
+    url: "/blog",
+  },
 };
 
 const posts = [

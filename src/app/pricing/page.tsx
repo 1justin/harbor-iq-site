@@ -3,9 +3,16 @@ import Link from "next/link";
 import { FAQ } from "./FAQ";
 
 export const metadata: Metadata = {
-  title: "Pricing — HarborIQ",
+  title: "Insurance Agency Software Pricing | No Per-User Fees — HarborIQ",
   description:
-    "Simple, flat monthly pricing for independent insurance agencies. Founding agency spots available at $299/month for Pro, locked for life.",
+    "Flat monthly pricing for independent insurance agencies. No per-user fees. Core at $149/mo, Pro at $499/mo. Founding agencies lock in $299/mo for life. Cancel anytime.",
+  alternates: { canonical: "/pricing" },
+  openGraph: {
+    title: "Insurance Agency Software Pricing | No Per-User Fees — HarborIQ",
+    description:
+      "Flat monthly AMS pricing for independent agencies. No per-user fees. Founding agencies lock in $299/mo for life.",
+    url: "/pricing",
+  },
 };
 
 const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
@@ -29,9 +36,76 @@ const proIncludes = [
   "Your feedback directly shapes the roadmap",
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What's the difference between Core and Pro?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Core gives you the essentials: pipeline CRM, client profiles, renewals, and the Command Center for up to 5 users. Pro adds team performance analytics, client engagement automation, AI-assisted quoting, dedicated onboarding, priority support, and covers up to 15 users.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does the founding agency reservation work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pay $100 to reserve your founding spot. This locks in the Pro plan at $299/month (instead of $499) for life, saving you $2,400/year. The $100 is fully refundable if you change your mind before launch.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are prices per user or for the whole team?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not per user. Not per seat. Not per agent. Core covers your agency up to 5 people. Pro covers up to 15. We priced it this way because per-seat pricing punishes you for growing your team.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I cancel anytime?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. No long-term contracts. Monthly billing, cancel anytime.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What about my existing data?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We help you migrate during onboarding. Bring your client list and we'll get you set up.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does AI-powered actually mean?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Intelligence is built into the platform, not sprinkled on top. AI in HarborIQ understands carrier differences, tells your team what to do next each morning by analyzing your pipeline, and generates your marketing content. This isn't a chatbot bolted on — the intelligence is in the foundation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is AI going to replace my agents?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. HarborIQ makes your agents faster and smarter, not obsolete. AI handles the repetitive work so your team can do what actually requires a human: building relationships, advising clients, and closing business.",
+      },
+    },
+  ],
+};
+
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* ─── HEADER ─── */}
       <section className="bg-paper pt-16 pb-8 md:pt-24 md:pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">

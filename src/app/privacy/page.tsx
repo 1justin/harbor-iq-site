@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy — HarborIQ",
+  description: "HarborIQ privacy policy. How we collect, use, and protect your data.",
+  alternates: { canonical: "/privacy" },
+  robots: { index: false, follow: true },
+};
+
 export default function PrivacyPage() {
   return (
     <div className="bg-paper min-h-screen">

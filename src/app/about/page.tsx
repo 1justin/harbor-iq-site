@@ -5,9 +5,16 @@ import Link from "next/link";
 const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
 
 export const metadata: Metadata = {
-  title: "About — HarborIQ",
+  title: "About HarborIQ | Built for Independent Insurance Agencies",
   description:
     "HarborIQ was built by sitting next to agents while they worked. Learn our story and what we believe about the future of independent insurance agencies.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About HarborIQ | Built for Independent Insurance Agencies",
+    description:
+      "HarborIQ was built by sitting next to agents while they worked. Learn our story and what we believe about the future of independent insurance agencies.",
+    url: "/about",
+  },
 };
 
 const originChapters = [

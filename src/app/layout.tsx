@@ -5,9 +5,12 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://harboriq.com"),
-  title: "HarborIQ — Close More Business. Keep More Clients. Zero Busywork.",
+  title: "HarborIQ | Agency Management System for Independent Insurance Agencies",
   description:
-    "Your agents shouldn't spend two hours quoting what a captive agent quotes in twenty minutes. HarborIQ gives independent agencies the tools they deserve.",
+    "AI-powered agency management system (AMS) for independent insurance agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting. Flat monthly pricing, no per-user fees.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/images/harboriq-favicon-32.png", sizes: "32x32", type: "image/png" },
@@ -18,9 +21,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "HarborIQ — Close More Business. Keep More Clients. Zero Busywork.",
+    title: "HarborIQ | Agency Management System for Independent Insurance Agencies",
     description:
-      "Your agents shouldn't spend two hours quoting what a captive agent quotes in twenty minutes. HarborIQ gives independent agencies the tools they deserve.",
+      "AI-powered AMS for independent agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting. Flat monthly pricing, no per-user fees.",
     type: "website",
     locale: "en_US",
     images: [
@@ -58,6 +61,40 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "HarborIQ",
+              url: "https://harboriq.com",
+              logo: "https://harboriq.com/images/harboriq-favicon-512.png",
+              description:
+                "AI-powered agency management system for independent insurance agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting.",
+              sameAs: [
+                "https://www.linkedin.com/company/harboriq",
+                "https://x.com/haraboriq",
+              ],
+              foundingDate: "2026",
+              founder: {
+                "@type": "Person",
+                name: "Justin Mayer",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "HarborIQ",
+              url: "https://harboriq.com",
+            }),
+          }}
+        />
         <Nav />
         <main>{children}</main>
         <Footer />

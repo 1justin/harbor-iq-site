@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-midnight text-mist">
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block">
@@ -22,15 +22,43 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Links */}
+          {/* Product */}
           <div>
             <h4 className="text-paper text-[13px] font-medium uppercase tracking-wider mb-4">Product</h4>
             <div className="space-y-3">
-              <Link href="/#features" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Features
+              <Link href="/features/pipeline" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Pipeline CRM
+              </Link>
+              <Link href="/features/renewals" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Renewals
+              </Link>
+              <Link href="/features/carriers" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Carrier Management
+              </Link>
+              <Link href="/features/team" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Team Performance
+              </Link>
+              <Link href="/features/ai-quoting" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                AI-Assisted Quoting
               </Link>
               <Link href="/pricing" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Pricing
+              </Link>
+            </div>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-paper text-[13px] font-medium uppercase tracking-wider mb-4">Resources</h4>
+            <div className="space-y-3">
+              <Link href="/compare/ezlynx" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                HarborIQ vs EZLynx
+              </Link>
+              <Link href="/compare/hawksoft" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                HarborIQ vs HawkSoft
+              </Link>
+              <Link href="/compare/applied-epic" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                HarborIQ vs Applied Epic
               </Link>
               <Link href="/about" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 About

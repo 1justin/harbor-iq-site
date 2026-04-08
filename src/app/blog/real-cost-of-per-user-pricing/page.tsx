@@ -5,11 +5,51 @@ export const metadata: Metadata = {
   title: "The Real Cost of Per-User Pricing for Insurance Agencies — HarborIQ",
   description:
     "A 5-person agency paying $94/user/month spends $720/month on their AMS alone. Here's how per-seat pricing quietly becomes your biggest software expense.",
+  alternates: { canonical: "/blog/real-cost-of-per-user-pricing" },
+  openGraph: {
+    title: "The Real Cost of Per-User Pricing for Insurance Agencies",
+    description:
+      "A 5-person agency paying $94/user/month spends $720/month on their AMS alone. Here's how per-seat pricing quietly becomes your biggest software expense.",
+    type: "article",
+    url: "/blog/real-cost-of-per-user-pricing",
+    publishedTime: "2026-04-01T00:00:00Z",
+    authors: ["Justin Mayer"],
+  },
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "The Real Cost of Per-User Pricing for Insurance Agencies",
+  description:
+    "A 5-person agency paying $94/user/month spends $720/month on their AMS alone. Here's how per-seat pricing quietly becomes your biggest software expense.",
+  datePublished: "2026-04-01",
+  dateModified: "2026-04-01",
+  author: {
+    "@type": "Person",
+    name: "Justin Mayer",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "HarborIQ",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://harboriq.com/images/harboriq-favicon-512.png",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://harboriq.com/blog/real-cost-of-per-user-pricing",
+  },
 };
 
 export default function PostPage() {
   return (
     <article className="bg-paper py-16 md:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="max-w-2xl mx-auto px-6">
         <Link
           href="/blog"

@@ -6,11 +6,52 @@ export const metadata: Metadata = {
     "Why Your AMS Can't Track Prospects (and Why That's Costing You) — HarborIQ",
   description:
     "Every agency management system manages current clients. None of them manage the prospect who said 'call me in 6 months.' That gap is where revenue disappears.",
+  alternates: { canonical: "/blog/why-your-ams-cant-track-prospects" },
+  openGraph: {
+    title: "Why Your AMS Can't Track Prospects (and Why That's Costing You)",
+    description:
+      "Every agency management system manages current clients. None of them manage the prospect who said 'call me in 6 months.' That gap is where revenue disappears.",
+    type: "article",
+    url: "/blog/why-your-ams-cant-track-prospects",
+    publishedTime: "2026-04-01T00:00:00Z",
+    authors: ["Justin Mayer"],
+  },
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline:
+    "Why Your AMS Can't Track Prospects (and Why That's Costing You)",
+  description:
+    "Every agency management system manages current clients. None of them manage the prospect who said 'call me in 6 months.' That gap is where revenue disappears.",
+  datePublished: "2026-04-01",
+  dateModified: "2026-04-01",
+  author: {
+    "@type": "Person",
+    name: "Justin Mayer",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "HarborIQ",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://harboriq.com/images/harboriq-favicon-512.png",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://harboriq.com/blog/why-your-ams-cant-track-prospects",
+  },
 };
 
 export default function PostPage() {
   return (
     <article className="bg-paper py-16 md:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="max-w-2xl mx-auto px-6">
         <Link
           href="/blog"
