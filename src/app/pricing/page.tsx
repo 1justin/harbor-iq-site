@@ -8,8 +8,6 @@ export const metadata: Metadata = {
     "Simple, flat monthly pricing for independent insurance agencies. Founding agency spots available at $299/month for Pro, locked for life.",
 };
 
-const CREEM_PRO = "https://www.creem.io/test/payment/prod_1zF9yBXpb0b3E7UT9aFfIU";
-const CREEM_CORE = "https://www.creem.io/test/payment/prod_5tuYAqFQn50nJwa7NuxlGz";
 const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
 
 const coreIncludes = [
@@ -197,6 +195,67 @@ export default function PricingPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── WHAT YOU'RE REALLY PAYING ─── */}
+      <section className="bg-paper py-10 md:py-14">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-2xl font-medium text-ink tracking-tight text-center mb-3">
+            What your current stack really&nbsp;costs
+          </h2>
+          <p className="text-[16px] text-charcoal leading-relaxed text-center max-w-2xl mx-auto mb-10">
+            Per-seat pricing adds up fast. Add a rater, a CRM, and the hours lost to manual data entry, and the &ldquo;affordable&rdquo; option isn&rsquo;t.
+          </p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[600px] text-left">
+              <thead>
+                <tr className="border-b border-ash">
+                  <th className="py-3 pr-4 text-[13px] font-medium text-stone uppercase tracking-wider">Scenario</th>
+                  <th className="py-3 px-4 text-[14px] font-medium text-interactive">HarborIQ</th>
+                  <th className="py-3 px-4 text-[14px] font-medium text-charcoal">Typical Per-Seat AMS</th>
+                  <th className="py-3 px-4 text-[14px] font-medium text-charcoal">AMS + CRM + Rater</th>
+                </tr>
+              </thead>
+              <tbody className="text-[15px]">
+                <tr className="border-b border-ash/60">
+                  <td className="py-3 pr-4 text-charcoal">5-person agency</td>
+                  <td className="py-3 px-4 text-interactive font-medium">$299/mo</td>
+                  <td className="py-3 px-4 text-charcoal">$720/mo</td>
+                  <td className="py-3 px-4 text-charcoal">$800+/mo</td>
+                </tr>
+                <tr className="border-b border-ash/60">
+                  <td className="py-3 pr-4 text-charcoal">10-person agency</td>
+                  <td className="py-3 px-4 text-interactive font-medium">$499/mo</td>
+                  <td className="py-3 px-4 text-charcoal">$1,190/mo</td>
+                  <td className="py-3 px-4 text-charcoal">$1,340+/mo</td>
+                </tr>
+                <tr className="border-b border-ash/60">
+                  <td className="py-3 pr-4 text-charcoal">AI quoting</td>
+                  <td className="py-3 px-4 text-success font-medium">Included</td>
+                  <td className="py-3 px-4 text-charcoal">Add $300+/mo</td>
+                  <td className="py-3 px-4 text-charcoal">Add $300+/mo</td>
+                </tr>
+                <tr className="border-b border-ash/60">
+                  <td className="py-3 pr-4 text-charcoal">Prospect pipeline</td>
+                  <td className="py-3 px-4 text-success font-medium">Included</td>
+                  <td className="py-3 px-4 text-danger">Not available</td>
+                  <td className="py-3 px-4 text-charcoal">Add $79+/mo</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 text-charcoal">Logins to manage</td>
+                  <td className="py-3 px-4 text-interactive font-medium">1</td>
+                  <td className="py-3 px-4 text-charcoal">1</td>
+                  <td className="py-3 px-4 text-charcoal">3+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-6 text-[13px] text-stone text-center">
+            Based on published pricing from leading AMS platforms. Per-seat costs compound every time you&nbsp;hire.
+          </p>
         </div>
       </section>
 

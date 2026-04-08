@@ -4,6 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://harboriq.com"),
   title: "HarborIQ — Close More Business. Keep More Clients. Zero Busywork.",
   description:
     "Your agents shouldn't spend two hours quoting what a captive agent quotes in twenty minutes. HarborIQ gives independent agencies the tools they deserve.",
@@ -22,12 +23,21 @@ export const metadata: Metadata = {
       "Your agents shouldn't spend two hours quoting what a captive agent quotes in twenty minutes. HarborIQ gives independent agencies the tools they deserve.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/images/harboriq-command-center-hero-no-shadow.png",
+        width: 1200,
+        height: 630,
+        alt: "HarborIQ Command Center — the AI-native operating system for independent insurance agencies",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "HarborIQ — Your Agents Deserve Better Tools",
     description:
       "Close more business. Keep more clients. Zero busywork. Built for independent insurance agencies.",
+    images: ["/images/harboriq-command-center-hero-no-shadow.png"],
   },
 };
 

@@ -35,6 +35,9 @@ export function Footer() {
               <Link href="/about" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 About
               </Link>
+              <Link href="/blog" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Blog
+              </Link>
               <a
                 href="https://tidycal.com/cjmayer/harboriq-demo"
                 target="_blank"

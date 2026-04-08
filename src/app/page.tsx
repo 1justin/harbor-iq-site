@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CREEM_PRO = "https://www.creem.io/test/payment/prod_1zF9yBXpb0b3E7UT9aFfIU";
 const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
 
 const features = [
@@ -95,7 +94,7 @@ export default function Home() {
                 <span className="text-interactive">Their tools&nbsp;aren't.</span>
               </h1>
               <p className="mt-5 text-[17px] md:text-[18px] text-mist leading-relaxed">
-                HarborIQ gives independent insurance agencies the edge to close more business, keep more clients, and stop drowning in busywork. One platform for your whole team.&nbsp;<span className="text-paper font-medium">$299/month.</span>
+                Your agents spend two hours quoting what a captive agent quotes in twenty minutes. HarborIQ replaces the patchwork with one AI-powered platform for your whole team.&nbsp;<span className="text-paper font-medium">$299/month.</span>
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                 <a
@@ -305,20 +304,168 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── HOW HARBORIQ COMPARES ─── */}
+      <section className="bg-midnight py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4 text-center">
+            The real math
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium text-paper leading-tight tracking-tight text-center max-w-3xl mx-auto">
+            Stop paying more for&nbsp;less.
+          </h2>
+          <p className="mt-3 text-[16px] text-mist leading-relaxed text-center max-w-2xl mx-auto">
+            Most agencies piece together 3&ndash;4 tools and still have gaps. Here&rsquo;s what that actually costs for a 5-person&nbsp;team.
+          </p>
+
+          {/* Comparison table */}
+          <div className="mt-10 overflow-x-auto">
+            <table className="w-full min-w-[640px] text-left">
+              <thead>
+                <tr className="border-b border-anchor">
+                  <th className="py-4 pr-4 text-[13px] font-medium text-slate uppercase tracking-wider w-[200px]">&nbsp;</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-copper">HarborIQ</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-slate">Per-Seat AMS</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-slate">AMS + CRM Bolt-On</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-slate">AI Quoting Tool</th>
+                </tr>
+              </thead>
+              <tbody className="text-[15px]">
+                <tr className="border-b border-anchor/40">
+                  <td className="py-4 pr-4 text-mist font-medium">Monthly cost (5 users)</td>
+                  <td className="py-4 px-4 text-copper font-medium">$299</td>
+                  <td className="py-4 px-4 text-slate">$720+</td>
+                  <td className="py-4 px-4 text-slate">$800+</td>
+                  <td className="py-4 px-4 text-slate">~$300</td>
+                </tr>
+                <tr className="border-b border-anchor/40">
+                  <td className="py-4 pr-4 text-mist font-medium">Per-user fees</td>
+                  <td className="py-4 px-4 text-copper font-medium">None</td>
+                  <td className="py-4 px-4 text-slate">$94+/user</td>
+                  <td className="py-4 px-4 text-slate">$94+/user</td>
+                  <td className="py-4 px-4 text-slate">Varies</td>
+                </tr>
+                <tr className="border-b border-anchor/40">
+                  <td className="py-4 pr-4 text-mist font-medium">Prospect pipeline</td>
+                  <td className="py-4 px-4"><span className="text-success">Included</span></td>
+                  <td className="py-4 px-4"><span className="text-danger">Not included</span></td>
+                  <td className="py-4 px-4"><span className="text-slate">Separate tool</span></td>
+                  <td className="py-4 px-4"><span className="text-danger">Not included</span></td>
+                </tr>
+                <tr className="border-b border-anchor/40">
+                  <td className="py-4 pr-4 text-mist font-medium">AI-assisted quoting</td>
+                  <td className="py-4 px-4"><span className="text-success">Built in</span></td>
+                  <td className="py-4 px-4"><span className="text-danger">Not available</span></td>
+                  <td className="py-4 px-4"><span className="text-danger">Not available</span></td>
+                  <td className="py-4 px-4"><span className="text-success">Yes (only)</span></td>
+                </tr>
+                <tr className="border-b border-anchor/40">
+                  <td className="py-4 pr-4 text-mist font-medium">Client management</td>
+                  <td className="py-4 px-4"><span className="text-success">Included</span></td>
+                  <td className="py-4 px-4"><span className="text-success">Included</span></td>
+                  <td className="py-4 px-4"><span className="text-slate">AMS only</span></td>
+                  <td className="py-4 px-4"><span className="text-danger">Not included</span></td>
+                </tr>
+                <tr>
+                  <td className="py-4 pr-4 text-mist font-medium">Number of logins</td>
+                  <td className="py-4 px-4 text-copper font-medium">1</td>
+                  <td className="py-4 px-4 text-slate">1</td>
+                  <td className="py-4 px-4 text-slate">2&ndash;3</td>
+                  <td className="py-4 px-4 text-slate">2+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* ─── SOCIAL PROOF ─── */}
       <section className="bg-linen py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
           <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-8 text-center">
             From the people who helped build it
           </p>
-          <div className="pl-6 border-l-[3px] border-interactive">
-            <blockquote className="text-xl md:text-2xl font-medium text-ink leading-snug tracking-tight">
-              We&rsquo;ve tried other tools. They all do one thing. This is the first platform that actually works the way our agency&nbsp;works.
-            </blockquote>
-            <p className="mt-5 text-[15px]">
-              <span className="font-medium text-ink">Andy Sertler</span>
-              <span className="text-stone">, Principal, Sertler &amp;&nbsp;Associates</span>
-            </p>
+
+          <div className="space-y-10">
+            <div className="pl-6 border-l-[3px] border-interactive">
+              <blockquote className="text-xl md:text-2xl font-medium text-ink leading-snug tracking-tight">
+                We&rsquo;ve tried other tools. They all do one thing. This is the first platform that actually works the way our agency&nbsp;works.
+              </blockquote>
+              <p className="mt-5 text-[15px]">
+                <span className="font-medium text-ink">Andy Sertler</span>
+                <span className="text-stone">, Principal, Sertler &amp;&nbsp;Associates</span>
+              </p>
+            </div>
+
+            <div className="pl-6 border-l-[3px] border-copper">
+              <blockquote className="text-lg md:text-xl font-medium text-ink leading-snug tracking-tight">
+                I spend more time re-typing the same client info into carrier portals than actually talking to customers. Anything that fixes that changes&nbsp;everything.
+              </blockquote>
+              <p className="mt-5 text-[15px]">
+                <span className="font-medium text-ink">Alex</span>
+                <span className="text-stone">, Office Manager, Sertler &amp;&nbsp;Associates</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Trust bar */}
+          <div className="mt-12 flex flex-wrap justify-center gap-8 md:gap-12 text-center">
+            <div>
+              <p className="text-2xl font-medium text-ink">100+</p>
+              <p className="text-[13px] text-stone mt-1">Hours embedded in agencies</p>
+            </div>
+            <div>
+              <p className="text-2xl font-medium text-ink">3</p>
+              <p className="text-[13px] text-stone mt-1">Discovery sessions</p>
+            </div>
+            <div>
+              <p className="text-2xl font-medium text-ink">0</p>
+              <p className="text-[13px] text-stone mt-1">Features guessed at</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SWITCH IN DAYS ─── */}
+      <section className="bg-paper py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4 text-center">
+            No 6-week migration
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center">
+            Switch in days, not&nbsp;months.
+          </h2>
+          <p className="mt-3 text-[16px] text-charcoal leading-relaxed text-center max-w-2xl mx-auto">
+            We know switching AMS feels risky. We designed onboarding so it&nbsp;isn&rsquo;t.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-full bg-ice flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-medium text-interactive">1</span>
+              </div>
+              <h3 className="text-lg font-medium text-ink mb-2">Export your data</h3>
+              <p className="text-[15px] text-charcoal leading-relaxed">
+                CSV from your current system. We&rsquo;ll tell you exactly what to&nbsp;pull.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-full bg-ice flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-medium text-interactive">2</span>
+              </div>
+              <h3 className="text-lg font-medium text-ink mb-2">We import &amp; clean</h3>
+              <p className="text-[15px] text-charcoal leading-relaxed">
+                Our team handles the data migration, deduplication, and&nbsp;setup.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-full bg-ice flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-medium text-interactive">3</span>
+              </div>
+              <h3 className="text-lg font-medium text-ink mb-2">Your team is running</h3>
+              <p className="text-[15px] text-charcoal leading-relaxed">
+                Hands-on walkthrough. Your agents are productive from day&nbsp;one.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -350,9 +497,36 @@ export default function Home() {
               Book a demo first
             </a>
           </div>
-          <p className="mt-5 text-slate text-[13px]">
+          <p className="mt-5 text-mist text-[13px]">
             Fully refundable. Only 10 spots&nbsp;available.
           </p>
+
+          {/* Email capture for not-ready visitors */}
+          <div className="mt-10 pt-8 border-t border-deep/40">
+            <p className="text-[15px] text-mist mb-4">
+              Not ready to reserve? Get updates as we&nbsp;launch.
+            </p>
+            <form
+              action="https://buttondown.com/api/emails/embed-subscribe/harboriq"
+              method="post"
+              target="_blank"
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="you@youragency.com"
+                required
+                className="flex-1 px-4 py-3 btn-radius bg-deep/60 border border-deep text-paper placeholder:text-slate text-[15px] focus:outline-none focus:border-interactive"
+              />
+              <button
+                type="submit"
+                className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-harbor transition-colors whitespace-nowrap"
+              >
+                Keep me posted
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     </>

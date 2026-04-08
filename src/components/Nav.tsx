@@ -33,6 +33,9 @@ export function Nav() {
           <Link href="/about" className="text-paper hover:text-mist text-[15px] transition-colors">
             About
           </Link>
+          <Link href="/blog" className="text-paper hover:text-mist text-[15px] transition-colors">
+            Blog
+          </Link>
           <a
             href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
@@ -47,7 +50,7 @@ export function Nav() {
             rel="noopener noreferrer"
             className="cta-primary bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
           >
-            Get started
+            Reserve Your Spot
           </a>
         </div>
 
@@ -79,23 +82,28 @@ export function Nav() {
           <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             About
           </Link>
-          <a
-            href="https://tidycal.com/cjmayer/harboriq-demo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block bg-interactive text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
-          >
-            Book a demo
-          </a>
-          <a
-            href="https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMobileOpen(false)}
-            className="block bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
-          >
-            Get started
-          </a>
+          <Link href="/blog" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
+            Blog
+          </Link>
+          <div className="pt-2 mt-2 border-t border-midnight space-y-3">
+            <a
+              href="https://tidycal.com/cjmayer/harboriq-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-interactive text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
+            >
+              Book a demo
+            </a>
+            <a
+              href="https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="block bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
+            >
+              Reserve Your Spot
+            </a>
+          </div>
         </div>
       )}
     </header>
