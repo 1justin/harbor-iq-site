@@ -85,63 +85,67 @@ export default function Home() {
     <>
       {/* ─── HERO ─── */}
       <section className="bg-anchor py-16 md:py-24 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          {/* Stat punch */}
-          <div className="hero-stat inline-flex items-center gap-3 md:gap-4 mb-8">
-            <span className="text-[42px] md:text-[64px] font-medium text-slate/60 leading-none tracking-tight line-through decoration-danger/60 decoration-2">2&nbsp;hrs</span>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-              <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
-            </svg>
-            <span className="text-[42px] md:text-[64px] font-medium text-copper leading-none tracking-tight">20&nbsp;min</span>
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Stat punch — centered */}
+          <div className="hero-stat text-center mb-10 md:mb-12">
+            <div className="inline-flex items-center gap-3 md:gap-4">
+              <span className="text-[42px] md:text-[64px] font-medium text-slate/60 leading-none tracking-tight line-through decoration-danger/60 decoration-2">2&nbsp;hrs</span>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
+              </svg>
+              <span className="text-[42px] md:text-[64px] font-medium text-copper leading-none tracking-tight">20&nbsp;min</span>
+            </div>
+            <p className="mt-2 text-[13px] text-slate tracking-wide uppercase">Average quoting time per&nbsp;customer</p>
           </div>
 
-          {/* Headline */}
-          <h1 className="hero-h1 text-[36px] md:text-[56px] font-medium text-paper leading-[1.08] tracking-[-0.02em] max-w-3xl mx-auto">
-            Your agents are great.<br />
-            <span className="text-interactive">Their tools&nbsp;aren&rsquo;t.</span>
-          </h1>
+          {/* Split: copy left, video right */}
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
+            {/* Copy */}
+            <div className="flex-1 md:max-w-[480px] text-center md:text-left">
+              <h1 className="hero-h1 text-[36px] md:text-[56px] font-medium text-paper leading-[1.08] tracking-[-0.02em]">
+                Your agents are great.<br />
+                <span className="text-interactive">Their tools&nbsp;aren&rsquo;t.</span>
+              </h1>
+              <p className="hero-sub mt-5 text-[17px] md:text-[19px] text-mist leading-relaxed">
+                One AI-powered platform for pipeline, clients, quoting, and team performance. Built for independent agencies. Not a patchwork of tools from&nbsp;2008.
+              </p>
+              <div className="hero-ctas mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                <a
+                  href={CREEM_RESERVE}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors text-center"
+                >
+                  Reserve Your Founding Spot
+                </a>
+                <a
+                  href="https://tidycal.com/cjmayer/harboriq-demo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors text-center"
+                >
+                  Book a demo
+                </a>
+              </div>
+              <p className="hero-ctas mt-3 text-[13px] text-mist text-center md:text-left">
+                $100 refundable deposit &middot; Founding price: $299/mo locked for&nbsp;life
+              </p>
+            </div>
 
-          {/* Subhead */}
-          <p className="hero-sub mt-5 text-[17px] md:text-[19px] text-mist leading-relaxed max-w-2xl mx-auto">
-            Independent agencies deserve one platform for pipeline, clients, quoting, and team performance &mdash; not a patchwork of tools from&nbsp;2008.
-          </p>
-
-          {/* CTAs */}
-          <div className="hero-ctas mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={CREEM_RESERVE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors text-center"
-            >
-              Reserve Your Founding Spot
-            </a>
-            <a
-              href="https://tidycal.com/cjmayer/harboriq-demo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors text-center"
-            >
-              Book a demo
-            </a>
-          </div>
-          <p className="mt-3 text-[13px] text-slate">
-            $100 refundable deposit &middot; Founding price: $299/mo locked for&nbsp;life
-          </p>
-
-          {/* Product video */}
-          <div className="hero-video mt-12 md:mt-16 max-w-4xl mx-auto">
-            <div className="rounded-xl overflow-hidden shadow-2xl shadow-midnight/50 ring-1 ring-white/10">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-auto"
-                poster="/images/harboriq-command-center-hero-no-shadow.png"
-              >
-                <source src="/videos/harboriq-command-center-hero-no-shadow-linen-background.mp4" type="video/mp4" />
-              </video>
+            {/* Video */}
+            <div className="hero-video flex-1 md:max-w-[580px]">
+              <div className="rounded-xl overflow-hidden shadow-2xl shadow-midnight/50 ring-1 ring-white/10 bg-anchor">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto"
+                  poster="/images/harboriq-command-center-hero-no-shadow.png"
+                >
+                  <source src="/videos/harboriq-command-center-hero-no-shadow-linen-background.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
           </div>
         </div>
