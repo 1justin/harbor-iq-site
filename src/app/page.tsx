@@ -343,54 +343,54 @@ export default function Home() {
               <thead>
                 <tr className="border-b border-anchor">
                   <th className="py-4 pr-4 text-[13px] font-medium text-slate uppercase tracking-wider w-[200px]">&nbsp;</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-copper">HarborIQ</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-slate">Per-Seat AMS</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-slate">AMS + CRM Bolt-On</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-slate">AI Quoting Tool</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-success">HarborIQ</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-copper">Per-Seat AMS</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-copper">AMS + CRM Bolt-On</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-copper">AI Quoting Tool</th>
                 </tr>
               </thead>
               <tbody className="text-[15px]">
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Monthly cost (5 users)</td>
-                  <td className="py-4 px-4 text-copper font-medium">$499</td>
-                  <td className="py-4 px-4 text-slate">$720+</td>
-                  <td className="py-4 px-4 text-slate">$800+</td>
-                  <td className="py-4 px-4 text-slate">~$300</td>
+                  <td className="py-4 px-4 text-success font-medium">$499</td>
+                  <td className="py-4 px-4 text-copper">$720+</td>
+                  <td className="py-4 px-4 text-copper">$800+</td>
+                  <td className="py-4 px-4 text-copper">~$300</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Per-user fees</td>
-                  <td className="py-4 px-4 text-copper font-medium">None</td>
-                  <td className="py-4 px-4 text-slate">$94+/user</td>
-                  <td className="py-4 px-4 text-slate">$94+/user</td>
-                  <td className="py-4 px-4 text-slate">Varies</td>
+                  <td className="py-4 px-4 text-success font-medium">None</td>
+                  <td className="py-4 px-4 text-copper">$94+/user</td>
+                  <td className="py-4 px-4 text-copper">$94+/user</td>
+                  <td className="py-4 px-4 text-copper">Varies</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Prospect pipeline</td>
-                  <td className="py-4 px-4"><span className="text-success">Included</span></td>
-                  <td className="py-4 px-4"><span className="text-danger">Not included</span></td>
-                  <td className="py-4 px-4"><span className="text-slate">Separate tool</span></td>
-                  <td className="py-4 px-4"><span className="text-danger">Not included</span></td>
+                  <td className="py-4 px-4 text-success font-medium">Included</td>
+                  <td className="py-4 px-4 text-danger">Not included</td>
+                  <td className="py-4 px-4 text-copper">Separate tool</td>
+                  <td className="py-4 px-4 text-danger">Not included</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">AI-assisted quoting</td>
-                  <td className="py-4 px-4"><span className="text-success">Built in</span></td>
-                  <td className="py-4 px-4"><span className="text-danger">Not available</span></td>
-                  <td className="py-4 px-4"><span className="text-danger">Not available</span></td>
-                  <td className="py-4 px-4"><span className="text-success">Yes (only)</span></td>
+                  <td className="py-4 px-4 text-success font-medium">Built in</td>
+                  <td className="py-4 px-4 text-danger">Not available</td>
+                  <td className="py-4 px-4 text-danger">Not available</td>
+                  <td className="py-4 px-4 text-copper">Yes (only)</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Client management</td>
-                  <td className="py-4 px-4"><span className="text-success">Included</span></td>
-                  <td className="py-4 px-4"><span className="text-success">Included</span></td>
-                  <td className="py-4 px-4"><span className="text-slate">AMS only</span></td>
-                  <td className="py-4 px-4"><span className="text-danger">Not included</span></td>
+                  <td className="py-4 px-4 text-success font-medium">Included</td>
+                  <td className="py-4 px-4 text-copper">Included</td>
+                  <td className="py-4 px-4 text-copper">AMS only</td>
+                  <td className="py-4 px-4 text-danger">Not included</td>
                 </tr>
                 <tr>
                   <td className="py-4 pr-4 text-mist font-medium">Number of logins</td>
-                  <td className="py-4 px-4 text-copper font-medium">1</td>
-                  <td className="py-4 px-4 text-slate">1</td>
-                  <td className="py-4 px-4 text-slate">2&ndash;3</td>
-                  <td className="py-4 px-4 text-slate">2+</td>
+                  <td className="py-4 px-4 text-success font-medium">1</td>
+                  <td className="py-4 px-4 text-copper">1</td>
+                  <td className="py-4 px-4 text-copper">2&ndash;3</td>
+                  <td className="py-4 px-4 text-copper">2+</td>
                 </tr>
               </tbody>
             </table>

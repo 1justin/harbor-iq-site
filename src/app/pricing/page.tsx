@@ -213,41 +213,41 @@ export default function PricingPage() {
               <thead>
                 <tr className="border-b border-ash">
                   <th className="py-3 pr-4 text-[13px] font-medium text-stone uppercase tracking-wider">Scenario</th>
-                  <th className="py-3 px-4 text-[14px] font-medium text-interactive">HarborIQ</th>
-                  <th className="py-3 px-4 text-[14px] font-medium text-charcoal">Typical Per-Seat AMS</th>
-                  <th className="py-3 px-4 text-[14px] font-medium text-charcoal">AMS + CRM + Rater</th>
+                  <th className="py-3 px-4 text-[14px] font-medium text-success">HarborIQ</th>
+                  <th className="py-3 px-4 text-[14px] font-medium text-copper">Typical Per-Seat AMS</th>
+                  <th className="py-3 px-4 text-[14px] font-medium text-copper">AMS + CRM + Rater</th>
                 </tr>
               </thead>
               <tbody className="text-[15px]">
                 <tr className="border-b border-ash/60">
                   <td className="py-3 pr-4 text-charcoal">5-person agency</td>
-                  <td className="py-3 px-4 text-interactive font-medium">$299/mo</td>
-                  <td className="py-3 px-4 text-charcoal">$720/mo</td>
-                  <td className="py-3 px-4 text-charcoal">$800+/mo</td>
+                  <td className="py-3 px-4 text-success font-medium">$299/mo</td>
+                  <td className="py-3 px-4 text-copper">$720/mo</td>
+                  <td className="py-3 px-4 text-copper">$800+/mo</td>
                 </tr>
                 <tr className="border-b border-ash/60">
                   <td className="py-3 pr-4 text-charcoal">10-person agency</td>
-                  <td className="py-3 px-4 text-interactive font-medium">$499/mo</td>
-                  <td className="py-3 px-4 text-charcoal">$1,190/mo</td>
-                  <td className="py-3 px-4 text-charcoal">$1,340+/mo</td>
+                  <td className="py-3 px-4 text-success font-medium">$499/mo</td>
+                  <td className="py-3 px-4 text-copper">$1,190/mo</td>
+                  <td className="py-3 px-4 text-copper">$1,340+/mo</td>
                 </tr>
                 <tr className="border-b border-ash/60">
                   <td className="py-3 pr-4 text-charcoal">AI quoting</td>
                   <td className="py-3 px-4 text-success font-medium">Included</td>
-                  <td className="py-3 px-4 text-charcoal">Add $300+/mo</td>
-                  <td className="py-3 px-4 text-charcoal">Add $300+/mo</td>
+                  <td className="py-3 px-4 text-copper">Add $300+/mo</td>
+                  <td className="py-3 px-4 text-copper">Add $300+/mo</td>
                 </tr>
                 <tr className="border-b border-ash/60">
                   <td className="py-3 pr-4 text-charcoal">Prospect pipeline</td>
                   <td className="py-3 px-4 text-success font-medium">Included</td>
                   <td className="py-3 px-4 text-danger">Not available</td>
-                  <td className="py-3 px-4 text-charcoal">Add $79+/mo</td>
+                  <td className="py-3 px-4 text-copper">Add $79+/mo</td>
                 </tr>
                 <tr>
                   <td className="py-3 pr-4 text-charcoal">Logins to manage</td>
-                  <td className="py-3 px-4 text-interactive font-medium">1</td>
-                  <td className="py-3 px-4 text-charcoal">1</td>
-                  <td className="py-3 px-4 text-charcoal">3+</td>
+                  <td className="py-3 px-4 text-success font-medium">1</td>
+                  <td className="py-3 px-4 text-copper">1</td>
+                  <td className="py-3 px-4 text-copper">3+</td>
                 </tr>
               </tbody>
             </table>
