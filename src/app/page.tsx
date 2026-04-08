@@ -143,7 +143,7 @@ export default function Home() {
                   className="w-full h-auto"
                   poster="/images/harboriq-command-center-hero-no-shadow.png"
                 >
-                  <source src="/videos/harboriq-command-center-hero-no-shadow-linen-background.mp4" type="video/mp4" />
+                  <source src="/videos/harboriq-command-center-hero-no-shadow-blue-background.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
