@@ -8,7 +8,7 @@ const features = [
     title: "Command Center",
     description:
       "Know exactly what to do when you open the app each morning. Follow-ups due, quotes expiring, carrier changes you can act on. No more guessing what's most important.",
-    image: "/videos/harboriq-command-center-hero-no-shadow-linen-background.mp4",
+    image: "/images/harboriq-command-center-hero-no-shadow.png",
   },
   {
     title: "Pipeline CRM",
@@ -83,49 +83,65 @@ const differentiators = [
 export default function Home() {
   return (
     <>
-      {/* ─── HERO: Dark background with elegant product placement ─── */}
-      <section className="bg-anchor py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-            {/* Content (left side) */}
-            <div className="flex-1 md:max-w-[520px] text-center md:text-left">
-              <h1 className="text-[38px] md:text-[58px] font-medium text-paper leading-[1.08] tracking-[-0.02em]">
-                Your agents are great.<br />
-                <span className="text-interactive">Their tools&nbsp;aren't.</span>
-              </h1>
-              <p className="mt-5 text-[17px] md:text-[18px] text-mist leading-relaxed">
-                Your agents spend two hours quoting what a captive agent quotes in twenty minutes. HarborIQ replaces the patchwork with one AI-powered platform for your whole team.&nbsp;<span className="text-paper font-medium">$299/month.</span>
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <a
-                  href={CREEM_RESERVE}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors text-center"
-                >
-                  Reserve Your Founding Spot
-                </a>
-                <a
-                  href="https://tidycal.com/cjmayer/harboriq-demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors text-center"
-                >
-                  Book a demo
-                </a>
-              </div>
-            </div>
+      {/* ─── HERO ─── */}
+      <section className="bg-anchor py-16 md:py-24 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          {/* Stat punch */}
+          <div className="hero-stat inline-flex items-center gap-3 md:gap-4 mb-8">
+            <span className="text-[42px] md:text-[64px] font-medium text-slate/60 leading-none tracking-tight line-through decoration-danger/60 decoration-2">2&nbsp;hrs</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+              <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
+            </svg>
+            <span className="text-[42px] md:text-[64px] font-medium text-copper leading-none tracking-tight">20&nbsp;min</span>
+          </div>
 
-            {/* Product image (right side) */}
-            <div className="flex-1 md:max-w-[640px]">
-              <Image
-                src="/images/harboriq-command-center-hero-no-shadow.png"
-                alt="HarborIQ Command Center on tablet"
-                width={640}
-                height={920}
-                className="w-full h-auto max-w-[640px]"
-                priority
-              />
+          {/* Headline */}
+          <h1 className="hero-h1 text-[36px] md:text-[56px] font-medium text-paper leading-[1.08] tracking-[-0.02em] max-w-3xl mx-auto">
+            Your agents are great.<br />
+            <span className="text-interactive">Their tools&nbsp;aren&rsquo;t.</span>
+          </h1>
+
+          {/* Subhead */}
+          <p className="hero-sub mt-5 text-[17px] md:text-[19px] text-mist leading-relaxed max-w-2xl mx-auto">
+            Independent agencies deserve one platform for pipeline, clients, quoting, and team performance &mdash; not a patchwork of tools from&nbsp;2008.
+          </p>
+
+          {/* CTAs */}
+          <div className="hero-ctas mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={CREEM_RESERVE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors text-center"
+            >
+              Reserve Your Founding Spot
+            </a>
+            <a
+              href="https://tidycal.com/cjmayer/harboriq-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors text-center"
+            >
+              Book a demo
+            </a>
+          </div>
+          <p className="mt-3 text-[13px] text-slate">
+            $100 refundable deposit &middot; Founding price: $299/mo locked for&nbsp;life
+          </p>
+
+          {/* Product video */}
+          <div className="hero-video mt-12 md:mt-16 max-w-4xl mx-auto">
+            <div className="rounded-xl overflow-hidden shadow-2xl shadow-midnight/50 ring-1 ring-white/10">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto"
+                poster="/images/harboriq-command-center-hero-no-shadow.png"
+              >
+                <source src="/videos/harboriq-command-center-hero-no-shadow-linen-background.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -332,7 +348,7 @@ export default function Home() {
               <tbody className="text-[15px]">
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Monthly cost (5 users)</td>
-                  <td className="py-4 px-4 text-copper font-medium">$299</td>
+                  <td className="py-4 px-4 text-copper font-medium">$499</td>
                   <td className="py-4 px-4 text-slate">$720+</td>
                   <td className="py-4 px-4 text-slate">$800+</td>
                   <td className="py-4 px-4 text-slate">~$300</td>
