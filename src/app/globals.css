@@ -68,6 +68,8 @@ p {
 }
 
 /* ─── Micro-interactions: CTA buttons ─── */
+/* Note: hero CTAs are additionally animated by GSAP (Hero.tsx); inline transforms from
+   GSAP take precedence over these :hover rules, so the two coexist without conflict. */
 .cta-primary {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -88,17 +90,6 @@ p {
 .cta-secondary:active {
   transform: scale(0.98);
 }
-
-/* ─── Hero stat entrance ─── */
-@keyframes hero-fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero-stat   { animation: hero-fade-up 0.6s ease-out both; }
-.hero-h1     { animation: hero-fade-up 0.6s ease-out 0.15s both; }
-.hero-sub    { animation: hero-fade-up 0.6s ease-out 0.3s both; }
-.hero-ctas   { animation: hero-fade-up 0.6s ease-out 0.4s both; }
-.hero-video  { animation: hero-fade-up 0.8s ease-out 0.5s both; }
 
 /* ─── Feature row image hover ─── */
 .feature-image {

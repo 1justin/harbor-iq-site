@@ -1,6 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { Hero } from "@/components/Hero";
+import { PatchworkCollapse } from "@/components/PatchworkCollapse";
+import { NewCore } from "@/components/NewCore";
+import { DayInLife } from "@/components/DayInLife";
 
 const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
 
@@ -40,45 +43,6 @@ const homeFaqSchema = {
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
 };
-
-const features = [
-  {
-    title: "Command Center",
-    description:
-      "Know exactly what to do when you open the app each morning. Follow-ups due, quotes expiring, carrier changes you can act on. No more guessing what's most important.",
-    image: "/images/harboriq-command-center-hero-no-shadow.webp",
-  },
-  {
-    title: "Pipeline CRM",
-    description:
-      "Every prospect tracked from first call to bound policy. The people who said \"call me in six months\" never fall through the cracks again.",
-    image: "/images/harboriq-pipeline-screen.webp",
-  },
-  {
-    title: "Client Renewals",
-    description:
-      "Stay ahead of every renewal. Clients get re-quoted before the deadline, not after. Fewer lapses, more retention, more revenue.",
-    image: "/images/harboriq-renewals-screen-focused.webp",
-  },
-  {
-    title: "AI-Assisted Quoting",
-    description:
-      "Enter client data once. The platform handles carrier-specific differences across portals so your agents stop re-typing and start closing.",
-    image: "/images/harboriq-ai-tools-features.webp",
-  },
-  {
-    title: "Team Performance",
-    description:
-      "See who\u2019s quoting, who\u2019s closing, and where the bottlenecks are. Real numbers, not gut feel. Coach your team with data for the first time.",
-    image: "/images/harboriq-team-performance-management-screens.webp",
-  },
-  {
-    title: "Client Engagement",
-    description:
-      "Automated renewal reminders, policy update notifications, birthday and holiday touches. Keep your clients close without your team doing the work manually.",
-    image: "/images/harboriq-marketing-automations-tab.webp",
-  },
-];
 
 const differentiators = [
   {
@@ -122,72 +86,7 @@ export default function Home() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="bg-anchor py-16 md:py-24 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
-          {/* Stat punch — centered */}
-          <div className="hero-stat text-center mb-10 md:mb-12">
-            <div className="inline-flex items-center gap-3 md:gap-4">
-              <span className="text-[42px] md:text-[64px] font-medium text-slate/60 leading-none tracking-tight line-through decoration-danger/60 decoration-2">2&nbsp;hrs</span>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4935A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-                <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
-              </svg>
-              <span className="text-[42px] md:text-[64px] font-medium text-copper leading-none tracking-tight">20&nbsp;min</span>
-            </div>
-            <p className="mt-2 text-[13px] text-slate tracking-wide uppercase">Average quoting time per&nbsp;customer</p>
-          </div>
-
-          {/* Split: copy left, video right */}
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
-            {/* Copy */}
-            <div className="flex-1 md:max-w-[480px] text-center md:text-left">
-              <h1 className="hero-h1 text-[36px] md:text-[56px] font-medium text-paper leading-[1.08] tracking-[-0.02em]">
-                Your agents are great.<br />
-                <span className="text-interactive">Their tools&nbsp;aren&rsquo;t.</span>
-              </h1>
-              <p className="hero-sub mt-5 text-[17px] md:text-[19px] text-mist leading-relaxed">
-                One AI-powered platform for pipeline, clients, quoting, and team performance. Built for independent agencies. Not a patchwork of tools from&nbsp;2008.
-              </p>
-              <div className="hero-ctas mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <a
-                  href={CREEM_RESERVE}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors text-center"
-                >
-                  Reserve Your Founding Spot
-                </a>
-                <a
-                  href="https://tidycal.com/cjmayer/harboriq-demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors text-center"
-                >
-                  Book a demo
-                </a>
-              </div>
-              <p className="hero-ctas mt-3 text-[13px] text-mist text-center md:text-left">
-                $100 refundable deposit &middot; Founding price: $299/mo locked for&nbsp;life
-              </p>
-            </div>
-
-            {/* Video */}
-            <div className="hero-video flex-1 md:max-w-[580px]">
-              <div className="rounded-xl overflow-hidden shadow-2xl shadow-midnight/50 ring-1 ring-white/10 bg-anchor">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto"
-                  poster="/images/harboriq-command-center-hero-no-shadow.webp"
-                >
-                  <source src="/videos/harboriq-command-center-hero-no-shadow-blue-background.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* ─── THE PROBLEM ─── */}
       <section className="bg-paper py-14 md:py-20">
@@ -214,12 +113,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── THE VILLAIN: THE PATCHWORK ─── */}
+      {/* ─── THE OLD CORE ─── */}
       <section className="bg-midnight py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
             <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
-              The real problem
+              The old core
             </p>
             <h2 className="text-2xl md:text-[34px] font-medium text-paper leading-tight tracking-tight">
               Independent agents deserve better than the&nbsp;patchwork.
@@ -239,77 +138,38 @@ export default function Home() {
               </p>
             </div>
           </div>
-          {/* Patchwork visual */}
-          <div className="mt-10 flex justify-center">
-            <Image
-              src="/images/harboriq-before-patchwork.webp"
-              alt="The patchwork of disconnected tools"
-              width={600}
-              height={400}
-              className="w-full max-w-[600px] h-auto opacity-90"
-            />
-          </div>
+
+          {/* Pull-quote bridging old core → new core */}
+          <p className="mt-12 text-center text-[20px] md:text-[24px] font-medium italic text-paper/90 tracking-tight">
+            &ldquo;What got you here won&rsquo;t get you&nbsp;there.&rdquo;
+          </p>
+
+          {/* Animated patchwork-collapse visual */}
+          <PatchworkCollapse />
         </div>
       </section>
 
-      {/* ─── FEATURES: Alternating rows ─── */}
-      <section id="features" className="bg-paper py-14 md:py-20">
+      {/* ─── THE NEW CORE ─── */}
+      <section className="bg-anchor py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
-            What HarborIQ replaces
-          </p>
-          <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight max-w-2xl">
-            Everything your team needs. Nothing they&nbsp;don't.
-          </h2>
-          <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-2xl">
-            HarborIQ replaces the patchwork with one platform that handles your pipeline, clients, quoting, team performance, and client engagement. Built for how agencies actually work, not how software companies think they&nbsp;should.
-          </p>
-
-          <div className="mt-12 space-y-4">
-            {features.map((f, i) => {
-              const isEven = i % 2 === 1;
-              return (
-                <div
-                  key={f.title}
-                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 py-10 md:py-12 px-6 md:px-10 rounded-2xl ${
-                    isEven ? "md:flex-row-reverse bg-linen" : ""
-                  }`}
-                >
-                  {/* Text */}
-                  <div className="flex-1 min-w-[280px]">
-                    <h3 className="text-xl md:text-2xl font-medium text-ink mb-3">{f.title}</h3>
-                    <p className="text-[16px] text-charcoal leading-relaxed">{f.description}</p>
-                  </div>
-                  {/* Image or Video */}
-                  <div className="flex-[1.3] min-w-0">
-                    <div className="feature-image rounded-xl overflow-hidden shadow-md shadow-ink/5">
-                      {f.image.endsWith('.webm') || f.image.endsWith('.mp4') ? (
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          className="w-full h-auto"
-                        >
-                          <source src={f.image} type={f.image.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
-                        </video>
-                      ) : (
-                        <Image
-                          src={f.image}
-                          alt={`HarborIQ ${f.title}`}
-                          width={700}
-                          height={450}
-                          className="w-full h-auto"
-                        />
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="max-w-3xl">
+            <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
+              The new core
+            </p>
+            <h2 className="text-2xl md:text-[34px] font-medium text-paper leading-tight tracking-tight">
+              A command center, not a collection of&nbsp;tools.
+            </h2>
+            <p className="mt-6 text-[16px] text-mist leading-relaxed">
+              HarborIQ replaces the patchwork with one AI-native platform designed around how agencies actually run. Your pipeline, clients, quoting, renewals, carrier knowledge, and team performance all speak the same&nbsp;language &mdash; inside a single&nbsp;login.
+            </p>
           </div>
+
+          <NewCore />
         </div>
       </section>
+
+      {/* ─── A DAY IN THE LIFE (replaces Features) ─── */}
+      <DayInLife />
 
       {/* ─── SEE THE IQ IN ACTION ─── */}
       <section className="bg-linen py-14 md:py-20">
