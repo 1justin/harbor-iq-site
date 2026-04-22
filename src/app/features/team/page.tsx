@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { FeaturePageLayout } from "@/components/FeaturePageLayout";
 
 export const metadata: Metadata = {
-  title: "Insurance Agency Team Performance Tracking — HarborIQ",
+  title: "Insurance Agency Team Performance Tracking | HarborIQ",
   description:
     "See who's quoting, who's closing, and where the bottlenecks are. HarborIQ gives agency principals real-time production visibility and coaching tools.",
   alternates: { canonical: "/features/team" },
   openGraph: {
-    title: "Insurance Agency Team Performance Tracking — HarborIQ",
+    title: "Insurance Agency Team Performance Tracking | HarborIQ",
     description:
       "Real-time production visibility for agency principals. See who's quoting, closing, and where bottlenecks are.",
     url: "/features/team",
@@ -61,7 +61,7 @@ export default function TeamPage() {
           step: 3,
           title: "You coach with data",
           description:
-            "Weekly 1:1s go from 'how are things going?' to 'your close rate dropped 10% this month — let's look at where deals are stalling.'",
+            "Weekly 1:1s go from 'how are things going?' to 'your close rate dropped 10% this month. Let's look at where deals are stalling.'",
         },
       ]}
       comparisonIntro="Traditional AMS platforms don't track agent production beyond basic policy counts. HarborIQ was built for principals who want to grow their team."
@@ -92,6 +92,17 @@ export default function TeamPage() {
           competitors: "Anecdotal / manual review",
         },
       ]}
-    />
+    >
+      <section className="bg-paper py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-[13px] font-medium text-stone uppercase tracking-wider mb-3">
+            Availability
+          </p>
+          <p className="text-[16px] text-charcoal leading-relaxed">
+            Team management and shared dashboards are included on Team and Operating System. Full performance analytics and coaching tools are on Operating System. Not available on Solo.
+          </p>
+        </div>
+      </section>
+    </FeaturePageLayout>
   );
 }

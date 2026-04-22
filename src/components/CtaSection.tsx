@@ -1,8 +1,8 @@
-import { CREEM_RESERVE, DEMO_URL } from "@/lib/constants";
+import { CREEM_RESERVE, DEMO_URL, FOUNDING_CLOSE_DATE, FOUNDING_SPOTS_TOTAL } from "@/lib/constants";
 
 export function CtaSection({
-  headline = "$299/month for your whole team. Not per seat. Locked for\u00a0life.",
-  description = "Founding agencies get first access, priority support, and a price that never goes up. Standard pricing will be\u00a0$499/month.",
+  headline = "Founding partners get 33% off. For life.",
+  description = "Solo $119/mo. Team $229/mo. Operating System $399/mo. One flat price per agency. No per-user fees. Priority support and direct product team access included.",
 }: {
   headline?: string;
   description?: string;
@@ -35,7 +35,7 @@ export function CtaSection({
           </a>
         </div>
         <p className="mt-5 text-mist text-[13px]">
-          Fully refundable. Only 10 spots&nbsp;available.
+          $100 fully refundable deposit. Offer closes {FOUNDING_CLOSE_DATE}. Limited to {FOUNDING_SPOTS_TOTAL}&nbsp;agencies.
         </p>
       </div>
     </section>

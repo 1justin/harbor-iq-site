@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { FeaturePageLayout } from "@/components/FeaturePageLayout";
 
 export const metadata: Metadata = {
-  title: "AI-Assisted Insurance Quoting Software — HarborIQ",
+  title: "AI-Assisted Insurance Quoting Software | HarborIQ",
   description:
     "Enter client data once. HarborIQ translates between carrier-specific terminology and pre-fills quoting forms so your agents stop re-typing and start closing.",
   alternates: { canonical: "/features/ai-quoting" },
   openGraph: {
-    title: "AI-Assisted Insurance Quoting Software — HarborIQ",
+    title: "AI-Assisted Insurance Quoting Software | HarborIQ",
     description:
       "Enter client data once. AI translates carrier-specific terminology and pre-fills quoting forms automatically.",
     url: "/features/ai-quoting",
@@ -19,7 +19,7 @@ export default function AiQuotingPage() {
     <FeaturePageLayout
       eyebrow="AI-Assisted Quoting"
       headline='Enter data once. Quote across&nbsp;carriers.'
-      description='Your agents spend two hours quoting what a captive agent quotes in twenty minutes. Not because they&rsquo;re slow — because every carrier portal speaks a different language. HarborIQ translates.'
+      description='Your agents spend two hours quoting what a captive agent quotes in twenty minutes. Not because they&rsquo;re slow. Because every carrier portal speaks a different language. HarborIQ translates.'
       heroImage="/images/harboriq-quote-results-screen-carrier-recommendations-cropped.webp"
       heroImageAlt="HarborIQ AI quoting showing carrier recommendations and coverage comparison"
       benefits={[
@@ -61,7 +61,7 @@ export default function AiQuotingPage() {
           step: 3,
           title: "Review, compare, and bind",
           description:
-            "Compare quotes side by side with coverage details. Select the best option and move to binding — all from one screen.",
+            "Compare quotes side by side with coverage details. Select the best option and move to binding, all from one screen.",
         },
       ]}
       comparisonIntro="Traditional comparative raters use rigid API integrations. HarborIQ uses AI to understand carrier differences at a semantic level."
@@ -92,6 +92,17 @@ export default function AiQuotingPage() {
           competitors: "Separate rater product ($200+/mo)",
         },
       ]}
-    />
+    >
+      <section className="bg-paper py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-[13px] font-medium text-stone uppercase tracking-wider mb-3">
+            Availability
+          </p>
+          <p className="text-[16px] text-charcoal leading-relaxed">
+            AI Quoting is included on Team and Operating System when Phase 2 ships. Solo agencies can add it for $79/mo. Founding partners get it free at every tier.
+          </p>
+        </div>
+      </section>
+    </FeaturePageLayout>
   );
 }

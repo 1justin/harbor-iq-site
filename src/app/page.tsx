@@ -1,24 +1,28 @@
-import Link from "next/link";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Hero } from "@/components/Hero";
 import { PatchworkCollapse } from "@/components/PatchworkCollapse";
 import { NewCore } from "@/components/NewCore";
 import { DayInLife } from "@/components/DayInLife";
-
-const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
+import {
+  CREEM_RESERVE,
+  DEMO_URL,
+  FOUNDING_CLOSE_DATE,
+  FOUNDING_SPOTS_TOTAL,
+  PRICING,
+} from "@/lib/constants";
 
 const homeFaqs = [
   {
     q: "What is HarborIQ?",
-    a: "HarborIQ is an AI-powered agency management system (AMS) built for independent insurance agencies with 1-15 employees. It combines pipeline CRM, client and policy management, renewal tracking, team performance analytics, carrier management, and AI-assisted quoting in one platform. Think of it as the operating system your agency runs on.",
+    a: "HarborIQ is an AI-powered agency management system (AMS) built for independent insurance agencies with 1 to 15 employees. It combines pipeline CRM, client and policy management, renewal tracking, team performance analytics, carrier management, and AI-assisted quoting in one platform. Think of it as the operating system your agency runs on.",
   },
   {
     q: "How much does HarborIQ cost?",
-    a: "Flat monthly pricing with no per-user fees. Core is $149/month (up to 5 users), Pro is $499/month (up to 15 users). Founding agencies lock in Pro at $299/month for life — a savings of $2,400/year. No long-term contracts. Cancel anytime.",
+    a: "Flat monthly pricing per agency. No per-user fees. Solo is $179/month for 1-person shops, Team is $349/month for 2 to 5 people, Operating System is $599/month for 6 to 15 people. Founding partners lock in 33% off for life. Solo at $119, Team at $229, Operating System at $399. No long-term contracts. Cancel anytime.",
   },
   {
     q: "Does HarborIQ replace my current AMS?",
-    a: "Yes. HarborIQ is designed to replace tools like EZLynx, HawkSoft, Applied Epic, NowCerts, or EasyAgent. It handles everything from prospect pipeline to client management, renewals, quoting, and team performance — so you don't need separate tools bolted together.",
+    a: "Yes. HarborIQ is designed to replace tools like EZLynx, HawkSoft, Applied Epic, NowCerts, or EasyAgent. It handles everything from prospect pipeline to client management, renewals, quoting, and team performance, so you do not need separate tools bolted together.",
   },
   {
     q: "Does HarborIQ include comparative rating?",
@@ -26,11 +30,11 @@ const homeFaqs = [
   },
   {
     q: "Is HarborIQ IVANS compatible?",
-    a: "IVANS automated carrier downloads are on our roadmap. In the initial release, HarborIQ includes a comprehensive carrier directory with appetite tracking, underwriting guidelines, and portal credentials. We're transparent about what's available now and what's coming next.",
+    a: "IVANS automated carrier downloads are on our roadmap. In the initial release, HarborIQ includes a comprehensive carrier directory with appetite tracking, underwriting guidelines, and portal credentials. We are transparent about what is available now and what is coming next.",
   },
   {
     q: "How do I switch from my current AMS to HarborIQ?",
-    a: "Export a CSV from your current system, and HarborIQ's onboarding team handles the migration — including data cleanup and formatting. Most agencies are live within a week. The onboarding fee is $499 one-time, and your legacy system stays accessible during the transition.",
+    a: "Export a CSV from your current system. If you want our team to handle the migration, the setup fee equals one month of your plan (Solo $179, Team $349, Operating System $599) and includes data cleanup, import, and a hands-on walkthrough. If you prefer to import the data yourself with our CSV tool, there is no setup fee. Most agencies are live within a week.",
   },
 ];
 
@@ -140,7 +144,7 @@ export default function Home() {
           </div>
 
           {/* Pull-quote bridging old core → new core */}
-          <p className="mt-12 text-center text-[20px] md:text-[24px] font-medium italic text-paper/90 tracking-tight">
+          <p className="mt-14 md:mt-20 mb-4 md:mb-8 text-center text-[22px] md:text-[28px] font-medium italic text-paper/90 tracking-tight max-w-3xl mx-auto leading-snug">
             &ldquo;What got you here won&rsquo;t get you&nbsp;there.&rdquo;
           </p>
 
@@ -153,14 +157,14 @@ export default function Home() {
       <section className="bg-anchor py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
-            <p className="text-[13px] font-medium text-copper uppercase tracking-wider mb-4">
+            <p className="text-[13px] font-medium text-ice uppercase tracking-wider mb-4">
               The new core
             </p>
             <h2 className="text-2xl md:text-[34px] font-medium text-paper leading-tight tracking-tight">
               A command center, not a collection of&nbsp;tools.
             </h2>
             <p className="mt-6 text-[16px] text-mist leading-relaxed">
-              HarborIQ replaces the patchwork with one AI-native platform designed around how agencies actually run. Your pipeline, clients, quoting, renewals, carrier knowledge, and team performance all speak the same&nbsp;language &mdash; inside a single&nbsp;login.
+              HarborIQ replaces the patchwork with one AI-native platform designed around how agencies actually run. Your pipeline, clients, quoting, renewals, carrier knowledge, and team performance all speak the same&nbsp;language. Inside a single&nbsp;login.
             </p>
           </div>
 
@@ -183,7 +187,7 @@ export default function Home() {
           <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-2xl mx-auto">
             HarborIQ&rsquo;s built-in intelligence lets your team search across clients, carriers, policies, and tasks in natural language. No digging through tabs. Just&nbsp;ask.
           </p>
-          <div className="mt-10 max-w-xl mx-auto rounded-xl overflow-hidden border border-ash shadow-lg">
+          <div className="mt-10 max-w-3xl mx-auto rounded-xl overflow-hidden border border-ash shadow-lg">
             <video
               autoPlay
               muted
@@ -232,41 +236,41 @@ export default function Home() {
             Stop paying more for&nbsp;less.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed text-center max-w-2xl mx-auto">
-            Most agencies piece together 3&ndash;4 tools and still have gaps. Here&rsquo;s what that actually costs for a 5-person&nbsp;team.
+            Most agencies piece together 3 or 4 tools and still have gaps. Here is what that actually costs for a 5-person team on the HarborIQ Team plan.
           </p>
 
-          {/* Comparison table */}
-          <div className="mt-10 overflow-x-auto">
-            <table className="w-full min-w-[640px] text-left">
+          {/* Desktop table */}
+          <div className="hidden md:block mt-10 overflow-x-auto">
+            <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-anchor">
                   <th className="py-4 pr-4 text-[13px] font-medium text-slate uppercase tracking-wider w-[200px]">&nbsp;</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-success">HarborIQ</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-copper">Per-Seat AMS</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-copper">AMS + CRM Bolt-On</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-copper">AI Quoting Tool</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-success">HarborIQ Team</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-mist">Per-Seat AMS</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-mist">AMS + CRM Bolt-On</th>
+                  <th className="py-4 px-4 text-[14px] font-medium text-mist">AI Quoting Tool</th>
                 </tr>
               </thead>
               <tbody className="text-[15px]">
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Monthly cost (5 users)</td>
-                  <td className="py-4 px-4 text-success font-medium">$499</td>
-                  <td className="py-4 px-4 text-copper">$720+</td>
-                  <td className="py-4 px-4 text-copper">$800+</td>
-                  <td className="py-4 px-4 text-copper">~$300</td>
+                  <td className="py-4 px-4 text-success font-medium">$349</td>
+                  <td className="py-4 px-4 text-mist">$720+</td>
+                  <td className="py-4 px-4 text-mist">$800+</td>
+                  <td className="py-4 px-4 text-mist">~$300</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Per-user fees</td>
                   <td className="py-4 px-4 text-success font-medium">None</td>
-                  <td className="py-4 px-4 text-copper">$94+/user</td>
-                  <td className="py-4 px-4 text-copper">$94+/user</td>
-                  <td className="py-4 px-4 text-copper">Varies</td>
+                  <td className="py-4 px-4 text-mist">$94+/user</td>
+                  <td className="py-4 px-4 text-mist">$94+/user</td>
+                  <td className="py-4 px-4 text-mist">Varies</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Prospect pipeline</td>
                   <td className="py-4 px-4 text-success font-medium">Included</td>
                   <td className="py-4 px-4 text-danger">Not included</td>
-                  <td className="py-4 px-4 text-copper">Separate tool</td>
+                  <td className="py-4 px-4 text-mist">Separate tool</td>
                   <td className="py-4 px-4 text-danger">Not included</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
@@ -274,24 +278,111 @@ export default function Home() {
                   <td className="py-4 px-4 text-success font-medium">Built in</td>
                   <td className="py-4 px-4 text-danger">Not available</td>
                   <td className="py-4 px-4 text-danger">Not available</td>
-                  <td className="py-4 px-4 text-copper">Yes (only)</td>
+                  <td className="py-4 px-4 text-mist">Yes (only)</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Client management</td>
                   <td className="py-4 px-4 text-success font-medium">Included</td>
-                  <td className="py-4 px-4 text-copper">Included</td>
-                  <td className="py-4 px-4 text-copper">AMS only</td>
+                  <td className="py-4 px-4 text-mist">Included</td>
+                  <td className="py-4 px-4 text-mist">AMS only</td>
                   <td className="py-4 px-4 text-danger">Not included</td>
                 </tr>
                 <tr>
                   <td className="py-4 pr-4 text-mist font-medium">Number of logins</td>
                   <td className="py-4 px-4 text-success font-medium">1</td>
-                  <td className="py-4 px-4 text-copper">1</td>
-                  <td className="py-4 px-4 text-copper">2&ndash;3</td>
-                  <td className="py-4 px-4 text-copper">2+</td>
+                  <td className="py-4 px-4 text-mist">1</td>
+                  <td className="py-4 px-4 text-mist">2 or 3</td>
+                  <td className="py-4 px-4 text-mist">2 or more</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile stacked cards */}
+          <div className="md:hidden mt-10 space-y-4">
+            {[
+              {
+                name: "HarborIQ Team",
+                highlight: true,
+                rows: [
+                  ["Monthly cost (5 users)", "$349"],
+                  ["Per-user fees", "None"],
+                  ["Prospect pipeline", "Included"],
+                  ["AI-assisted quoting", "Built in"],
+                  ["Client management", "Included"],
+                  ["Number of logins", "1"],
+                ],
+              },
+              {
+                name: "Per-Seat AMS",
+                rows: [
+                  ["Monthly cost (5 users)", "$720+"],
+                  ["Per-user fees", "$94+/user"],
+                  ["Prospect pipeline", "Not included"],
+                  ["AI-assisted quoting", "Not available"],
+                  ["Client management", "Included"],
+                  ["Number of logins", "1"],
+                ],
+              },
+              {
+                name: "AMS + CRM Bolt-On",
+                rows: [
+                  ["Monthly cost (5 users)", "$800+"],
+                  ["Per-user fees", "$94+/user"],
+                  ["Prospect pipeline", "Separate tool"],
+                  ["AI-assisted quoting", "Not available"],
+                  ["Client management", "AMS only"],
+                  ["Number of logins", "2 or 3"],
+                ],
+              },
+              {
+                name: "AI Quoting Tool",
+                rows: [
+                  ["Monthly cost (5 users)", "~$300"],
+                  ["Per-user fees", "Varies"],
+                  ["Prospect pipeline", "Not included"],
+                  ["AI-assisted quoting", "Yes (only)"],
+                  ["Client management", "Not included"],
+                  ["Number of logins", "2 or more"],
+                ],
+              },
+            ].map((col) => (
+              <div
+                key={col.name}
+                className={`rounded-xl border px-5 py-4 ${
+                  col.highlight
+                    ? "bg-anchor border-interactive"
+                    : "bg-midnight border-anchor/60"
+                }`}
+              >
+                <p
+                  className={`text-[14px] font-medium ${
+                    col.highlight ? "text-success" : "text-mist"
+                  }`}
+                >
+                  {col.name}
+                </p>
+                <div className="mt-3 space-y-2 text-[14px]">
+                  {col.rows.map(([label, value]) => (
+                    <div
+                      key={label}
+                      className="flex justify-between gap-4 border-b border-anchor/40 pb-2 last:border-0 last:pb-0"
+                    >
+                      <span className="text-slate">{label}</span>
+                      <span
+                        className={
+                          col.highlight
+                            ? "text-success font-medium text-right"
+                            : "text-mist text-right"
+                        }
+                      >
+                        {value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -314,7 +405,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="pl-6 border-l-[3px] border-copper">
+            <div className="pl-6 border-l-[3px] border-stone">
               <blockquote className="text-lg md:text-xl font-medium text-ink leading-snug tracking-tight">
                 I spend more time re-typing the same client info into carrier portals than actually talking to customers. Anything that fixes that changes&nbsp;everything.
               </blockquote>
@@ -326,18 +417,41 @@ export default function Home() {
           </div>
 
           {/* Trust bar */}
-          <div className="mt-12 flex flex-wrap justify-center gap-8 md:gap-12 text-center">
-            <div>
-              <p className="text-2xl font-medium text-ink">100+</p>
-              <p className="text-[13px] text-stone mt-1">Hours embedded in agencies</p>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-ice flex items-center justify-center mb-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
+              <p className="text-[14px] text-ink leading-snug max-w-[220px]">
+                Built from 100+ hours embedded with real agencies
+              </p>
             </div>
-            <div>
-              <p className="text-2xl font-medium text-ink">3</p>
-              <p className="text-[13px] text-stone mt-1">Discovery sessions</p>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-ice flex items-center justify-center mb-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <p className="text-[14px] text-ink leading-snug max-w-[220px]">
+                Designed with named founding partners, not focus groups
+              </p>
             </div>
-            <div>
-              <p className="text-2xl font-medium text-ink">0</p>
-              <p className="text-[13px] text-stone mt-1">Features guessed at</p>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-ice flex items-center justify-center mb-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
+              </div>
+              <p className="text-[14px] text-ink leading-snug max-w-[220px]">
+                Every feature shipped in response to a real agent&rsquo;s day
+              </p>
             </div>
           </div>
         </div>
@@ -406,10 +520,10 @@ export default function Home() {
       <section className="bg-anchor py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <h2 className="text-2xl md:text-3xl font-medium text-paper leading-tight tracking-tight">
-            $299/month for your whole team. Not per seat. Locked for&nbsp;life.
+            Founding partners get 33% off. For&nbsp;life.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed">
-            Founding agencies get first access, priority support, and a price that never goes up. Standard pricing will be&nbsp;$499/month.
+            Solo ${PRICING.solo.founding}/mo, Team ${PRICING.team.founding}/mo, Operating System ${PRICING.os.founding}/mo. Locked forever. Standard pricing starts at ${PRICING.solo.monthly}/mo.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -421,7 +535,7 @@ export default function Home() {
               Reserve Your Founding Spot
             </a>
             <a
-              href="https://tidycal.com/cjmayer/harboriq-demo"
+              href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
@@ -430,7 +544,7 @@ export default function Home() {
             </a>
           </div>
           <p className="mt-5 text-mist text-[13px]">
-            Fully refundable. Only 10 spots&nbsp;available.
+            $100 refundable deposit. Offer closes {FOUNDING_CLOSE_DATE}. Limited to {FOUNDING_SPOTS_TOTAL} agencies.
           </p>
 
           {/* Email capture for not-ready visitors */}

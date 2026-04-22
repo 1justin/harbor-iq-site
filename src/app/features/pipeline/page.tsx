@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { FeaturePageLayout } from "@/components/FeaturePageLayout";
 
 export const metadata: Metadata = {
-  title: "Insurance Agency CRM & Pipeline Management — HarborIQ",
+  title: "Insurance Agency CRM & Pipeline Management | HarborIQ",
   description:
     "Track every prospect from first call to bound policy. HarborIQ's built-in pipeline CRM means the people who said 'call me in six months' never fall through the cracks.",
   alternates: { canonical: "/features/pipeline" },
   openGraph: {
-    title: "Insurance Agency CRM & Pipeline Management — HarborIQ",
+    title: "Insurance Agency CRM & Pipeline Management | HarborIQ",
     description:
       "Track every prospect from first call to bound policy. Built-in pipeline CRM for independent insurance agencies.",
     url: "/features/pipeline",
@@ -92,6 +92,17 @@ export default function PipelinePage() {
           competitors: "$79+/mo bolt-on (AgencyZoom, etc.)",
         },
       ]}
-    />
+    >
+      <section className="bg-paper py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-[13px] font-medium text-stone uppercase tracking-wider mb-3">
+            Availability
+          </p>
+          <p className="text-[16px] text-charcoal leading-relaxed">
+            Pipeline CRM is included on every plan. Solo, Team, and Operating System.
+          </p>
+        </div>
+      </section>
+    </FeaturePageLayout>
   );
 }

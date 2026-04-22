@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { CREEM_RESERVE, DEMO_URL } from "@/lib/constants";
+import { CREEM_RESERVE, DEMO_URL, FOUNDING_CLOSE_DATE } from "@/lib/constants";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP, SplitText);
@@ -250,7 +250,7 @@ export function Hero() {
               </a>
             </div>
             <p className="hero-disclaimer mt-3 text-center text-[13px] text-mist md:text-left">
-              $100 refundable deposit &middot; Founding price: $299/mo locked for&nbsp;life
+              Founding Partner pricing. 33% off locked for life. Offer closes {FOUNDING_CLOSE_DATE}.
             </p>
           </div>
 
@@ -262,7 +262,7 @@ export function Hero() {
             <div className="overflow-hidden rounded-xl bg-anchor shadow-2xl shadow-midnight/50 ring-1 ring-white/10">
               <img
                 src="/images/harboriq-command-center-hero-no-shadow.webp"
-                alt="HarborIQ command center — an AI-native AMS and CRM for independent insurance agencies"
+                alt="HarborIQ command center, an AI-native AMS and CRM for independent insurance agencies"
                 className="h-auto w-full"
                 width={1280}
                 height={800}

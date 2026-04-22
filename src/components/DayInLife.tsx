@@ -109,7 +109,7 @@ const DAY: DayMoment[] = [
     eyebrow: "Guides your day",
     headline: "Start every day knowing what matters",
     lead: "Linda opens her laptop. HarborIQ has her day laid out.",
-    body: "The three things that actually move the business today — surfaced, in order, with one tap to act.",
+    body: "The three things that actually move the business today. Surfaced, in order, with one tap to act.",
     mock: <TaskListMock />,
   },
   {
@@ -118,7 +118,7 @@ const DAY: DayMoment[] = [
     icon: IconMegaphone,
     eyebrow: "Tracks carrier moves",
     headline: "Know what every carrier did overnight",
-    lead: "Appetite updates, new products, and guideline changes — summarized before coffee.",
+    lead: "Appetite updates, new products, and guideline changes. Summarized before coffee.",
     body: "No more inbox archaeology. HarborIQ reads carrier bulletins so your team doesn't have to.",
     mock: <CarrierNewsMock />,
   },
@@ -168,7 +168,7 @@ const DAY: DayMoment[] = [
     icon: IconMoon,
     eyebrow: "Keeps the business tight",
     headline: "Compliance, team snapshot, tomorrow ready",
-    lead: "Before the laptop shuts: CEU hours, license renewals, who's winning, who's stuck — all in one glance.",
+    lead: "Before the laptop shuts: CEU hours, license renewals, who's winning, who's stuck. All in one glance.",
     body: "No spreadsheets. No surprises. Tomorrow's top three are already drafted.",
     mock: <EndOfDayMock />,
   },
@@ -292,7 +292,7 @@ export function DayInLife() {
         {/* Header */}
         <div className="dl-header max-w-3xl">
           <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-interactive">
-            &mdash; A day in the life
+            A day in the life
           </p>
           <h2 className="mt-4 font-serif text-[34px] leading-[1.08] tracking-tight text-ink md:text-[52px]">
             Tuesday, 8:15 AM.{" "}
@@ -302,7 +302,7 @@ export function DayInLife() {
             before lunch.
           </h2>
           <p className="mt-5 text-[16px] leading-relaxed text-charcoal md:text-[17px]">
-            Seven moments, one real day. Meet Linda &mdash; owner of a 4-person
+            Seven moments, one real day. Meet Linda, owner of a 4-person
             agency in Jacksonville. This is what her first 8 hours look like.
           </p>
         </div>

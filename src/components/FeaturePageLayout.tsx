@@ -147,7 +147,7 @@ export function FeaturePageLayout({
                   <tr key={i} className="border-b border-anchor/30">
                     <td className="py-3 pr-4 text-mist">{r.feature}</td>
                     <td className="py-3 px-4 text-success">{r.harboriq}</td>
-                    <td className="py-3 pl-4 text-copper">{r.competitors}</td>
+                    <td className="py-3 pl-4 text-mist">{r.competitors}</td>
                   </tr>
                 ))}
               </tbody>

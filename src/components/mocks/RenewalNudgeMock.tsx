@@ -21,7 +21,7 @@ export function RenewalNudgeMock() {
             Draft · to Jim Whitfield · SMS
           </p>
           <p className="mt-1 text-[12px] leading-snug text-ink">
-            &ldquo;Hi Jim &mdash; just making sure we&rsquo;ve got time to line up your renewal before the 15th. Want to hop on a quick call Thursday?&rdquo;
+            &ldquo;Hi Jim, just making sure we&rsquo;ve got time to line up your renewal before the 15th. Want to hop on a quick call Thursday?&rdquo;
           </p>
         </div>
         <div className="flex items-center gap-1.5 text-[10px] text-success">

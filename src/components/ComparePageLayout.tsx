@@ -154,7 +154,7 @@ export function ComparePageLayout({
       {/* ─── CTA ─── */}
       <CtaSection
         headline="Ready to see the difference?"
-        description="Reserve your founding spot today. $100 refundable deposit, $299/mo locked for life."
+        description="Reserve your founding spot today. $100 refundable deposit. Lock in 33% off for life at Solo $119, Team $229, or Operating System $399."
       />
     </>
   );

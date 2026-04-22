@@ -1,10 +1,10 @@
 import { MockChrome } from "./MockChrome";
 
 const QUOTES = [
-  { carrier: "Hartford", note: "Best fit — broadest coverage", price: "$4,120", best: true },
-  { carrier: "Travelers", note: "Good — excludes subcontract work", price: "$4,380" },
-  { carrier: "Liberty Mut.", note: "Cheapest — narrow definition", price: "$3,980" },
-  { carrier: "Chubb", note: "Premium — adds cyber", price: "$4,810" },
+  { carrier: "Hartford", note: "Best fit. Broadest coverage.", price: "$4,120", best: true },
+  { carrier: "Travelers", note: "Good. Excludes subcontract work.", price: "$4,380" },
+  { carrier: "Liberty Mut.", note: "Cheapest. Narrow definition.", price: "$3,980" },
+  { carrier: "Chubb", note: "Premium. Adds cyber.", price: "$4,810" },
 ];
 
 export function CarrierQuotesMock() {

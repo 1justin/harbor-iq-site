@@ -4,7 +4,7 @@ const NEWS = [
   {
     carrier: "Travelers",
     kind: "appetite update",
-    title: "FL roofing — now in appetite up to $5M",
+    title: "FL roofing now in appetite up to $5M",
     when: "7 min ago",
     tone: "copper" as const,
   },
@@ -18,7 +18,7 @@ const NEWS = [
   {
     carrier: "Chubb",
     kind: "guideline change",
-    title: "Homes pre-1950 — inspection required",
+    title: "Homes pre-1950 inspection required",
     when: "1 hr ago",
     tone: "stone" as const,
   },

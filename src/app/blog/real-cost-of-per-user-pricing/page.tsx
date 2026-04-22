@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Real Cost of Per-User Pricing for Insurance Agencies — HarborIQ",
+  title: "The Real Cost of Per-User Pricing for Insurance Agencies | HarborIQ",
   description:
     "A 5-person agency paying $94/user/month spends $720/month on their AMS alone. Here's how per-seat pricing quietly becomes your biggest software expense.",
   alternates: { canonical: "/blog/real-cost-of-per-user-pricing" },
@@ -104,10 +104,10 @@ export default function PostPage() {
             full platform from day one without anyone calculating whether the per-seat cost is&nbsp;&ldquo;worth&nbsp;it.&rdquo;
           </p>
           <p>
-            At HarborIQ, a 5-person agency pays $299/month. A 10-person agency pays $499/month.
-            No per-user fees. No add-ons for basic features. Pipeline CRM, client management,
-            AI-assisted quoting, team performance, and client engagement &mdash; all included. One login,
-            one price, one&nbsp;platform.
+            At HarborIQ, a 1-person agency pays $179/month. A 5-person agency pays $349/month.
+            A 10-person agency pays $599/month. No per-user fees. No add-ons for basic features.
+            Pipeline CRM, client management, AI-assisted quoting, team performance, and client
+            engagement. All included. One login, one price, one&nbsp;platform.
           </p>
 
           <h2 className="text-xl font-medium text-ink mt-10 mb-4">What to ask your current&nbsp;vendor</h2>
@@ -119,10 +119,10 @@ export default function PostPage() {
 
           <div className="mt-12 p-6 bg-linen rounded-xl border border-ash">
             <p className="text-[16px] text-ink font-medium">
-              Founding agencies lock in $299/month for life.
+              Founding partners lock in 33% off for life.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              10 spots. $100 refundable deposit. Your feedback shapes the&nbsp;product.
+              Solo $119, Team $229, Operating System $399. 20 spots. $100 refundable deposit. Your feedback shapes the&nbsp;product.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
               <a

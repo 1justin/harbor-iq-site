@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Honest comparison of HarborIQ and HawkSoft for independent insurance agencies. Side-by-side on pricing, AI capabilities, prospect pipeline, and team analytics.",
   alternates: { canonical: "/compare/hawksoft" },
   openGraph: {
-    title: "HarborIQ vs HawkSoft — Honest Comparison",
+    title: "HarborIQ vs HawkSoft | Honest Comparison",
     description:
       "Side-by-side comparison for independent insurance agencies. Pricing, AI, pipeline CRM, and more.",
     url: "/compare/hawksoft",
@@ -23,17 +23,17 @@ export default function CompareHawkSoftPage() {
       comparisonRows={[
         {
           category: "Pricing model",
-          harboriq: "Flat monthly: $299 or $499/mo",
+          harboriq: "Flat monthly: Solo $179, Team $349, Operating System $599",
           competitor: "$250/mo base + $94/user/month",
         },
         {
           category: "5-person agency cost",
-          harboriq: "$299/mo or $499/mo (all features)",
+          harboriq: "Team $349/mo (all features)",
           competitor: "$720/month ($250 + 5 x $94)",
         },
         {
           category: "10-person agency cost",
-          harboriq: "$499/month (unlimited users)",
+          harboriq: "Operating System $599/mo (up to 15 users)",
           competitor: "$1,190/month ($250 + 10 x $94)",
         },
         {
@@ -83,16 +83,16 @@ export default function CompareHawkSoftPage() {
         "You're a 1-15 person agency that wants enterprise features without enterprise complexity",
       ]}
       honestAdvantages={[
-        "HawkSoft has among the highest customer satisfaction scores in the AMS industry — consistently 4.5+ stars across review platforms. Agencies genuinely love using it.",
+        "HawkSoft has among the highest customer satisfaction scores in the AMS industry. Consistently 4.5+ stars across review platforms. Agencies genuinely love using it.",
         "Their support team is frequently described as responsive, helpful, and personal. This is a real competitive advantage.",
         "HawkSoft has been purpose-built for independent agents for years. The depth of their AMS functionality reflects that experience.",
         "No predatory contract terms, no data extraction fees, and no feature gating. Their business practices earn trust.",
       ]}
       switchReasons={[
-        "Per-user pricing adds up fast. At $94/user, a growing agency pays more every time they hire — the 'growth tax.'",
+        "Per-user pricing adds up fast. At $94/user, a growing agency pays more every time they hire. The 'growth tax.'",
         "No built-in prospect pipeline means agents track leads in spreadsheets, sticky notes, or their memory. Revenue falls through the cracks.",
         "No AI capabilities means agents who want quoting automation need to pay $300+/mo for a separate tool like Gaya on top of their AMS costs.",
-        "Agencies want a single platform that handles prospects, clients, quoting, and team management — not multiple tools stitched together.",
+        "Agencies want a single platform that handles prospects, clients, quoting, and team management. Not multiple tools stitched together.",
         "Modern agencies are looking for AI-native workflows, not traditional software with AI bolted on later.",
       ]}
     />

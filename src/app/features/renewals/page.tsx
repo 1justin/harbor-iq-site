@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { FeaturePageLayout } from "@/components/FeaturePageLayout";
 
 export const metadata: Metadata = {
-  title: "Insurance Renewal Management Software — HarborIQ",
+  title: "Insurance Renewal Management Software | HarborIQ",
   description:
     "Stay ahead of every renewal. HarborIQ surfaces expiring policies before the deadline so your clients get re-quoted on time, not after they've already shopped.",
   alternates: { canonical: "/features/renewals" },
   openGraph: {
-    title: "Insurance Renewal Management Software — HarborIQ",
+    title: "Insurance Renewal Management Software | HarborIQ",
     description:
       "Stay ahead of every renewal. Re-quote clients before the deadline, not after.",
     url: "/features/renewals",
@@ -92,6 +92,17 @@ export default function RenewalsPage() {
           competitors: "Calendar-based manual tracking",
         },
       ]}
-    />
+    >
+      <section className="bg-paper py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-[13px] font-medium text-stone uppercase tracking-wider mb-3">
+            Availability
+          </p>
+          <p className="text-[16px] text-charcoal leading-relaxed">
+            Renewal management is included on every plan. Solo, Team, and Operating System.
+          </p>
+        </div>
+      </section>
+    </FeaturePageLayout>
   );
 }

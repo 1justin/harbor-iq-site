@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Insurance Agency Technology Blog — HarborIQ",
+  title: "Insurance Agency Technology Blog | HarborIQ",
   description:
     "Insights for independent insurance agencies on technology, operations, and growth. From the team building the AI-native agency management system.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Insurance Agency Technology Blog — HarborIQ",
+    title: "Insurance Agency Technology Blog | HarborIQ",
     description:
       "Insights for independent insurance agencies on technology, operations, and growth.",
     url: "/blog",
@@ -19,7 +19,7 @@ const posts = [
     slug: "real-cost-of-per-user-pricing",
     title: "The Real Cost of Per-User Pricing for Insurance Agencies",
     excerpt:
-      "A 5-person agency paying $94/user/month spends $720/month on their AMS alone. Here's how per-seat pricing quietly becomes your biggest software expense — and what to do about it.",
+      "A 5-person agency paying $94/user/month spends $720/month on their AMS alone. Here's how per-seat pricing quietly becomes your biggest software expense, and what to do about it.",
     date: "April 2026",
     readTime: "5 min read",
   },

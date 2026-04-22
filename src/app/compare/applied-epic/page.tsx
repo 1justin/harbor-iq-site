@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Honest comparison of HarborIQ and Applied Epic. If you're a small independent agency paying enterprise prices for enterprise complexity, there's a better fit.",
   alternates: { canonical: "/compare/applied-epic" },
   openGraph: {
-    title: "HarborIQ vs Applied Epic — Honest Comparison",
+    title: "HarborIQ vs Applied Epic | Honest Comparison",
     description:
       "Is Applied Epic overkill for your agency? Honest comparison for small independent agencies.",
     url: "/compare/applied-epic",
@@ -28,7 +28,7 @@ export default function CompareAppliedEpicPage() {
         },
         {
           category: "Pricing",
-          harboriq: "Flat monthly: $299 or $499/mo. Published and transparent.",
+          harboriq: "Flat monthly: Solo $179, Team $349, Operating System $599. Published and transparent.",
           competitor: "Contract-based, negotiated. Not published. Per-user fees standard.",
         },
         {

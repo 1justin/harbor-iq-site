@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { FeaturePageLayout } from "@/components/FeaturePageLayout";
 
 export const metadata: Metadata = {
-  title: "Carrier Management for Independent Insurance Agents — HarborIQ",
+  title: "Carrier Management for Independent Insurance Agents | HarborIQ",
   description:
     "Manage all your carriers in one place. HarborIQ's carrier directory tracks appetites, underwriting guidelines, and portal credentials so your team stops guessing.",
   alternates: { canonical: "/features/carriers" },
   openGraph: {
-    title: "Carrier Management for Independent Agents — HarborIQ",
+    title: "Carrier Management for Independent Agents | HarborIQ",
     description:
       "Manage all your carriers in one place. Track appetites, guidelines, and portal credentials.",
     url: "/features/carriers",
@@ -92,6 +92,17 @@ export default function CarriersPage() {
           competitors: "Manual spreadsheet reconciliation",
         },
       ]}
-    />
+    >
+      <section className="bg-paper py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-[13px] font-medium text-stone uppercase tracking-wider mb-3">
+            Availability
+          </p>
+          <p className="text-[16px] text-charcoal leading-relaxed">
+            Carrier management is included on every plan. Solo, Team, and Operating System.
+          </p>
+        </div>
+      </section>
+    </FeaturePageLayout>
   );
 }

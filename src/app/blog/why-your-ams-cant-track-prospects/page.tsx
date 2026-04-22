@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Why Your AMS Can't Track Prospects (and Why That's Costing You) — HarborIQ",
+    "Why Your AMS Can't Track Prospects (and Why That's Costing You) | HarborIQ",
   description:
     "Every agency management system manages current clients. None of them manage the prospect who said 'call me in 6 months.' That gap is where revenue disappears.",
   alternates: { canonical: "/blog/why-your-ams-cant-track-prospects" },
@@ -71,7 +71,7 @@ export default function PostPage() {
           <p>
             Your agency management system tracks current clients. Policies, renewals, claims, documents.
             That&rsquo;s what it was built for. But the person who called last Tuesday and said &ldquo;I&rsquo;m
-            shopping around, can you call me back in a few months?&rdquo; &mdash; where does that person&nbsp;live?
+            shopping around, can you call me back in a few months?&rdquo; Where does that person&nbsp;live?
           </p>
 
           <h2 className="text-xl font-medium text-ink mt-10 mb-4">The sticky note&nbsp;problem</h2>
@@ -95,8 +95,8 @@ export default function PostPage() {
             walking out the&nbsp;door.
           </p>
           <p>
-            Multiply that by years of compounding &mdash; because retained clients renew, and referred clients
-            bring more clients &mdash; and the cost of a missing prospect pipeline isn&rsquo;t hundreds of dollars.
+            Multiply that by years of compounding (because retained clients renew, and referred clients
+            bring more clients) and the cost of a missing prospect pipeline isn&rsquo;t hundreds of dollars.
             It&rsquo;s tens of&nbsp;thousands.
           </p>
 
@@ -111,8 +111,8 @@ export default function PostPage() {
 
           <h2 className="text-xl font-medium text-ink mt-10 mb-4">What a real pipeline looks&nbsp;like</h2>
           <p>
-            A prospect pipeline built into your agency platform means every inquiry &mdash; phone call,
-            web form, referral &mdash; enters the same system where your clients live. The pipeline tracks
+            A prospect pipeline built into your agency platform means every inquiry (phone call,
+            web form, referral) enters the same system where your clients live. The pipeline tracks
             stage (new lead, quoted, follow-up scheduled, won, lost), the assigned agent, the next
             action, and the timeline. When a prospect converts, their data flows directly into the
             client profile. No re-entry. No&nbsp;gap.
@@ -120,7 +120,7 @@ export default function PostPage() {
           <p>
             Follow-up reminders escalate automatically. The prospect who said &ldquo;call me in 6 months&rdquo;
             gets a reminder on exactly the right day. The agency owner can see pipeline value,
-            conversion rates, and which agents are following up &mdash; and which&nbsp;aren&rsquo;t.
+            conversion rates, and which agents are following up, and which&nbsp;aren&rsquo;t.
           </p>
 
           <div className="mt-12 p-6 bg-linen rounded-xl border border-ash">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions — HarborIQ",
+  title: "Terms and Conditions | HarborIQ",
   description: "HarborIQ terms and conditions of use.",
   alternates: { canonical: "/terms" },
   robots: { index: false, follow: true },
@@ -21,7 +21,7 @@ export default function TermsPage() {
             </p>
             <p>www.harboriq.co is an E-Commerce Site.</p>
             <p>
-              HarborIQ is a software-as-a-service (SaaS) platform developed by WRKSTREAM LLC and sold under the HarborIQ brand. The platform serves as an AI-powered operating system designed for independent insurance agencies. It provides agency owners and their teams with tools for pipeline and relationship management, new business and renewal tracking, team performance monitoring, carrier knowledge management, and AI-assisted workflows. HarborIQ is offered on a subscription basis at tiered monthly pricing, currently ranging from $299 to $499 per month depending on agency size.
+              HarborIQ is a software-as-a-service (SaaS) platform developed by WRKSTREAM LLC and sold under the HarborIQ brand. The platform serves as an AI-powered operating system designed for independent insurance agencies. It provides agency owners and their teams with tools for pipeline and relationship management, new business and renewal tracking, team performance monitoring, carrier knowledge management, and AI-assisted workflows. HarborIQ is offered on a subscription basis at tiered monthly pricing, currently ranging from $179 to $599 per month depending on agency size.
             </p>
           </section>
 

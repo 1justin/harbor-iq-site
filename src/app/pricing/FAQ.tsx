@@ -4,16 +4,24 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "What's the difference between Core and Pro?",
-    a: "Core gives you the essentials: pipeline CRM, client profiles, renewals, and the Command Center for up to 5 users. Pro adds team performance analytics, client engagement automation, AI-assisted quoting, dedicated onboarding, priority support, and covers up to 15 users.",
+    q: "What is the difference between Solo, Team, and Operating System?",
+    a: "Solo is for 1-person agencies and includes the full Command Center, pipeline CRM, carrier directory, and basic AI assistance. Team is for 2 to 5 people and adds team management, engagement automation, team-level reporting, and AI Quoting when Phase 2 ships. Operating System is for 6 to 15 people and adds full performance analytics, advanced AI workflows, priority support, and dedicated onboarding.",
   },
   {
-    q: "How does the founding agency reservation work?",
-    a: "Pay $100 to reserve your founding spot. This locks in the Pro plan at $299/month (instead of $499) for life, saving you $2,400/year. The $100 is fully refundable if you change your mind before launch. Monthly billing starts when your agency is onboarded and live on the platform. Founding agencies also get direct input on the product roadmap and priority access to new features.",
+    q: "How does the founding partner reservation work?",
+    a: "Pay $100 to reserve your founding partner spot. You lock in 33% off for life at whichever tier fits your agency. Solo is $119/mo, Team is $229/mo, Operating System is $399/mo. The deposit is fully refundable before launch. The offer closes August 1, 2026 and is limited to 20 agencies across all tiers. Founding partners also get AI Quoting free at every tier when Phase 2 ships, priority support, direct product team access, and a listing as a design partner.",
   },
   {
     q: "Wait, those prices are for my whole team? Not per user?",
-    a: "Not per user. Not per seat. Not per agent. Core covers your agency up to 5 people. Pro covers up to 15. We priced it this way because per-seat pricing punishes you for growing your team, and that's backwards.",
+    a: "Not per user. Not per seat. Not per agent. Solo covers 1 person. Team covers up to 5. Operating System covers up to 15. We priced it this way because per-seat pricing punishes you for growing your team, and that is backwards.",
+  },
+  {
+    q: "What if I outgrow Solo?",
+    a: "Upgrade to Team whenever you hire your second person. No migration, no data loss, no onboarding fee. You pay the new monthly rate starting the day you upgrade.",
+  },
+  {
+    q: "What happens if I run out of AI credits?",
+    a: "You will see your usage in the app at all times and get an email warning at 80% of your monthly allowance. If you hit 100%, you can pause AI until the next reset or continue at $0.10 per credit above the allowance. A $50 per month overage cap is on by default so you never get a surprise bill. Most agencies never notice the allowance exists.",
   },
   {
     q: "Can I cancel anytime?",
@@ -25,23 +33,19 @@ const faqs = [
   },
   {
     q: "What if I have more than 15 employees?",
-    a: "Contact us. We'll work with you on a plan that fits.",
+    a: "We will build a plan that fits. Enterprise includes everything in Operating System plus unlimited users, custom integrations, and a dedicated account manager. Talk to us.",
   },
   {
     q: "Do I need to install anything?",
     a: "No. HarborIQ is a web-based platform. Works in any modern browser. No downloads, no IT department required.",
   },
   {
-    q: "What about my existing data?",
-    a: "We help you migrate during onboarding. Bring your client list and we'll get you set up.",
-  },
-  {
     q: "How does onboarding work?",
-    a: "For $499 (one-time), we migrate your client data, clean up formatting issues, and walk your team through the platform. Most agencies are up and running within a week. You keep your legacy data for reference, and we get you set up with a clean starting point in HarborIQ.",
+    a: "Free if you import your data yourself with our CSV tool. If you want our team to do it for you, the setup fee equals one month of your plan (Solo $179, Team $349, Operating System $599). Most agencies are up and running within a week. You keep your legacy data for reference.",
   },
   {
-    q: '"AI-powered" \u2014 what does that actually mean?',
-    a: 'It means intelligence is built into the platform, not sprinkled on top. AI in HarborIQ understands carrier differences (it knows Progressive\'s "rental reimbursement" is Travelers\' "loss of use"). It tells your team what to do next each morning by analyzing your pipeline. It generates your marketing content, from social posts to re-engagement emails. This isn\'t a chatbot we bolted on. The intelligence is in the foundation.',
+    q: '"AI-powered", what does that actually mean?',
+    a: "It means intelligence is built into the platform, not sprinkled on top. AI in HarborIQ understands carrier differences. It knows Progressive's \"rental reimbursement\" is Travelers' \"loss of use\". It tells your team what to do next each morning by analyzing your pipeline. It generates your marketing content, from social posts to re-engagement emails. This is not a chatbot we bolted on. The intelligence is in the foundation.",
   },
   {
     q: "Is AI going to replace my agents?",

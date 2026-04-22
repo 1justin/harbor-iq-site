@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Honest comparison of HarborIQ and EZLynx for independent insurance agencies. Side-by-side on pricing, features, AI quoting, support, and pipeline CRM.",
   alternates: { canonical: "/compare/ezlynx" },
   openGraph: {
-    title: "HarborIQ vs EZLynx — Honest Comparison",
+    title: "HarborIQ vs EZLynx | Honest Comparison",
     description:
       "Side-by-side comparison of HarborIQ and EZLynx for independent insurance agencies.",
     url: "/compare/ezlynx",
@@ -23,12 +23,12 @@ export default function CompareEZLynxPage() {
       comparisonRows={[
         {
           category: "Pricing model",
-          harboriq: "Flat monthly: $299 or $499/mo",
+          harboriq: "Flat monthly: Solo $179, Team $349, Operating System $599",
           competitor: "Starts at $350/mo + per-user fees + add-ons",
         },
         {
           category: "Per-user fees",
-          harboriq: "None. Unlimited users included.",
+          harboriq: "None. Flat price per agency within each tier.",
           competitor: "Yes. Costs scale with each user.",
         },
         {
