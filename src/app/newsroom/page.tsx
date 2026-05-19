@@ -125,10 +125,9 @@ const atGlance: Array<[string, string]> = [
   ["Founded", "2026"],
   ["Headquarters", "Glen Ellyn, IL"],
   ["Founder", "Justin Mayer"],
-  ["Funding", "Bootstrapped, early revenue"],
+  ["Funding", "Bootstrapped"],
   ["Customers", "Independent insurance agencies, 1–15 people"],
   ["Coverage", "Personal lines P&C; commercial"],
-  ["Press contact", "justin@wrkstream.com"],
 ];
 
 export default function NewsroomPage() {
@@ -174,7 +173,7 @@ export default function NewsroomPage() {
               href="mailto:justin@wrkstream.com?subject=Press%20inquiry"
               className="bg-copper hover:bg-bronze text-white btn-radius px-6 py-3 text-[15px] font-medium transition-colors text-center whitespace-nowrap"
             >
-              justin@wrkstream.com
+              Email Justin
             </a>
           </div>
         </div>
@@ -241,7 +240,7 @@ export default function NewsroomPage() {
                 Justin Mayer, Founder
               </h2>
               <p className="mt-5 text-[17px] text-charcoal leading-relaxed">
-                Justin Mayer is the founder of HarborIQ. He is a former Fortune 100 product executive whose prior AI SaaS company, Encube, was acquired by Hitch Works. At Life Fitness, a $1B durable-goods firm, he managed a $420M global category P&amp;L and is a named inventor on 9 patents from the team&rsquo;s product portfolio. Earlier roles include product and marketing leadership at Honeywell, where he grew a $50M residential life-safety category by 61% year over year through the launch of a connected-home product line.
+                Justin Mayer is the founder of HarborIQ. He is a Fortune 100 product executive turned AI transformation operator. He currently leads AI implementation and operational transformation across a six-company portfolio at a Chicago family office, where he has driven $35M+ in value creation in seven months through AI infrastructure, automated workflows, and AI-powered process optimization. His prior AI SaaS company, Encube, was acquired by Hitchworks in 2021. At Life Fitness, a $1B Brunswick durable-goods firm, he managed a $420M global category P&amp;L and is a named inventor on 9 patents.
               </p>
               <p className="mt-4 text-[17px] text-charcoal leading-relaxed">
                 Justin holds a B.S. in Mechanical Engineering from the University of Wisconsin&ndash;Milwaukee and an MBA from the Wisconsin School of Business at the University of Wisconsin&ndash;Madison, where he was a Grainger Distinguished Graduate Fellow.
@@ -313,12 +312,12 @@ export default function NewsroomPage() {
             In the news
           </p>
           <p className="text-[17px] text-charcoal leading-relaxed max-w-3xl">
-            Recent coverage will appear here. To request an interview or submit a media inquiry, please email{" "}
+            Recent coverage will appear here. To request an interview or submit a media inquiry,{" "}
             <a
               href="mailto:justin@wrkstream.com?subject=Press%20inquiry"
               className="text-interactive hover:text-deep underline-offset-4 hover:underline transition-colors"
             >
-              justin@wrkstream.com
+              get in touch with Justin
             </a>
             .
           </p>
@@ -480,7 +479,7 @@ export default function NewsroomPage() {
             href="mailto:justin@wrkstream.com?subject=Press%20inquiry"
             className="inline-block mt-8 bg-copper hover:bg-bronze text-white btn-radius px-8 py-3 text-[15px] font-medium transition-colors"
           >
-            justin@wrkstream.com
+            Email Justin
           </a>
         </div>
       </section>

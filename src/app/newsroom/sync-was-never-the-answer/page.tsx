@@ -132,12 +132,12 @@ export default function Post() {
 
         <div className="mt-14 pt-10 border-t border-ash">
           <p className="text-[14px] text-stone leading-relaxed">
-            Justin Mayer is the founder of HarborIQ, an AI-native operating system for independent insurance agencies. For interviews or contributed pieces, email{" "}
+            Justin Mayer is the founder of HarborIQ, an AI-native operating system for independent insurance agencies. For interviews or contributed pieces,{" "}
             <a
               href="mailto:justin@wrkstream.com?subject=Press%20inquiry"
               className="text-interactive hover:text-deep underline-offset-4 hover:underline transition-colors"
             >
-              justin@wrkstream.com
+              email Justin
             </a>
             .
           </p>
