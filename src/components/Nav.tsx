@@ -128,6 +128,9 @@ export function Nav() {
           <Link href="/blog" className="text-paper hover:text-mist text-[15px] transition-colors">
             Blog
           </Link>
+          <Link href="/newsroom" className="text-paper hover:text-mist text-[15px] transition-colors">
+            Newsroom
+          </Link>
           <a
             href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
@@ -218,6 +221,9 @@ export function Nav() {
           </Link>
           <Link href="/blog" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             Blog
+          </Link>
+          <Link href="/newsroom" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
+            Newsroom
           </Link>
           <div className="pt-2 mt-2 border-t border-midnight space-y-3">
             <a
