@@ -105,6 +105,14 @@ export function Nav() {
             </button>
             {openDropdown === "compare" && (
               <div className="absolute top-full left-0 mt-2 bg-paper rounded-lg shadow-xl border border-ash py-2 min-w-[200px]">
+                <Link
+                  href="/compare"
+                  onClick={() => setOpenDropdown(null)}
+                  className="block px-4 py-2 text-[15px] text-charcoal hover:bg-linen hover:text-ink transition-colors"
+                >
+                  Overview
+                </Link>
+                <div className="border-t border-ash my-1" />
                 {compareLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -204,6 +212,9 @@ export function Nav() {
             </button>
             {openDropdown === "m-compare" && (
               <div className="mt-2 ml-4 space-y-2">
+                <Link href="/compare" onClick={() => setMobileOpen(false)} className="block text-mist text-[14px]">
+                  Overview
+                </Link>
                 {compareLinks.map((link) => (
                   <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="block text-mist text-[14px]">
                     {link.label}
