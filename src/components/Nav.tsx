@@ -13,9 +13,10 @@ const featureLinks = [
 ];
 
 const compareLinks = [
+  { href: "/compare/applied-epic", label: "vs Applied Epic" },
+  { href: "/compare/agencyzoom", label: "vs AgencyZoom" },
   { href: "/compare/ezlynx", label: "vs EZLynx" },
   { href: "/compare/hawksoft", label: "vs HawkSoft" },
-  { href: "/compare/applied-epic", label: "vs Applied Epic" },
 ];
 
 export function Nav() {

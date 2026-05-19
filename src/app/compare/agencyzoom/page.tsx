@@ -3,81 +3,70 @@ import { CtaSection } from "@/components/CtaSection";
 import { DEMO_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "HarborIQ vs HawkSoft | Compare Insurance Agency Management Systems",
+  title: "HarborIQ vs AgencyZoom | One Operating System, Not an Overlay",
   description:
-    "HawkSoft is one of the most-loved AMS platforms in the industry. Here's how HarborIQ takes a different approach for agencies ready for what's next.",
-  alternates: { canonical: "/compare/hawksoft" },
+    "AgencyZoom is the leading sales-automation overlay for independent agencies. HarborIQ is the operating system that makes the overlay unnecessary.",
+  alternates: { canonical: "/compare/agencyzoom" },
   openGraph: {
-    title: "HarborIQ vs HawkSoft | The Best 2018 AMS vs the First 2026 AMS",
+    title: "HarborIQ vs AgencyZoom | One Operating System, Not an Overlay",
     description:
-      "HawkSoft is excellent. We're built for what's next: AI-native, flat-priced, pipeline included.",
-    url: "/compare/hawksoft",
+      "AgencyZoom sits on top of your AMS. HarborIQ replaces the stack.",
+    url: "/compare/agencyzoom",
   },
 };
 
 const contrastCards = [
   {
-    label: "Cost at 10 users",
-    harboriq: "$599",
-    competitor: "$1,190",
-    detail: "Every hire is a raise for HawkSoft. HarborIQ is flat within the tier.",
+    label: "Systems your team logs into",
+    harboriq: "One",
+    competitor: "Two",
+    detail: "AgencyZoom for pipeline. The AMS underneath for clients and policies.",
+  },
+  {
+    label: "Cost for a 5-person agency",
+    harboriq: "$349 flat",
+    competitor: "$720+ and rising",
+    detail: "AgencyZoom + a per-user AMS. Every hire is a raise for someone else.",
+  },
+  {
+    label: "Source of truth for one client",
+    harboriq: "One record",
+    competitor: "Two records",
+    detail: "Synced overnight. Eventually you ask which system is right.",
   },
   {
     label: "AI-assisted quoting",
     harboriq: "Built in",
     competitor: "Not included",
-    detail: "HawkSoft agents bolt on Gaya (≈ $300/mo) to get AI quoting.",
-  },
-  {
-    label: "Prospect pipeline",
-    harboriq: "Built in",
-    competitor: "Not included",
-    detail: "HawkSoft is purpose-built for current clients, not the prospect who said “call me in 6 months.”",
-  },
-  {
-    label: "Contract terms",
-    harboriq: "Month-to-month",
-    competitor: "Month-to-month",
-    detail: "HawkSoft has fair terms. We won’t beat that. We’ll match it.",
+    detail: "AgencyZoom integrates with raters as separate tools.",
   },
 ];
 
 const fullTable = [
-  ["Pricing model", "Flat monthly. $179 / $349 / $599. Published.", "$250/mo base + $94/user/month"],
-  ["5-person agency cost", "$349/mo (Team tier, all features)", "$720/month ($250 + 5 × $94)"],
-  ["10-person agency cost", "$599/mo (Operating System, up to 15 users)", "$1,190/month ($250 + 10 × $94)"],
-  ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Client management only."],
-  ["AI capabilities", "AI-native: quoting, carrier translation, daily briefings.", "No AI features. Agents bolt on Gaya or similar."],
-  ["Customer support", "Founder-direct for design partners. Hours, often minutes.", "Industry-leading reputation. Genuine competitive strength."],
-  ["Team performance", "Production dashboards, goal tracking, bottleneck identification.", "Basic reports and dashboards."],
-  ["Renewal management", "Dedicated dashboard with priority escalation.", "Renewal tracking included."],
-  ["Client engagement", "Automated reminders, notifications, and outreach.", "Batch email marketing included."],
-  ["Architecture", "Cloud-native, modern web app.", "Cloud-based with desktop and web interfaces."],
+  ["Category", "Operating system: AMS + CRM + AI in one platform", "Overlay: sales-automation CRM on top of your existing AMS"],
+  ["Pricing model", "Flat monthly. $179 / $349 / $599. Published.", "From ~$79/mo plus the AMS underneath. Higher tiers gate 2-way email and SMS."],
+  ["Client and policy management", "Included. One record across pipeline, policy, renewals, claims.", "Not included. AgencyZoom is pipeline and engagement only."],
+  ["AI-assisted quoting", "Built in. Carrier-term translation, semantic mapping, pre-fill.", "Not included. Separate raters required (PL Rating, Tarmika, Bridge)."],
+  ["Sales pipeline", "Native Kanban, multiple stages, AI-assisted next-best-action.", "Native and well-developed. Their strongest feature."],
+  ["Google Reviews and referrals", "Built in on the Operating System tier.", "Built in. Requires sync with the underlying AMS for client context."],
+  ["Renewals dashboard", "Dedicated view with priority escalation and price-change tracking.", "Renewal reminders as automations. No dedicated renewals view."],
+  ["Data architecture", "One data model. No sync.", "Two-way sync with AMS. Lag, conflicts, and a source-of-truth question."],
+  ["Ownership", "Independent. One product, every cycle.", "Owned by Vertafore (2022). Integration priority favors Vertafore products."],
+  ["Onboarding timeline", "Days. CSV import, guided wizard.", "Weeks. Two systems to onboard, two data models to reconcile."],
 ];
 
-// Bar chart geometry: 3 headcount groups (5, 10, 15 users), 2 bars per group.
-const COSTS = [
-  { label: "5 people", harboriq: 349, competitor: 720 },
-  { label: "10 people", harboriq: 599, competitor: 1190 },
-  { label: "15 people", harboriq: 599, competitor: 1660 },
-];
-const CHART_MAX = 1750; // $ max for bar scaling
-const CHART_BASE_Y = 250; // baseline for bars
-const CHART_BAR_H = 200; // max bar height
-const costToBarH = (cost: number) => (cost / CHART_MAX) * CHART_BAR_H;
-
-export default function CompareHawkSoftPage() {
+export default function CompareAgencyZoomPage() {
   return (
     <>
       {/* ─── HERO ─── */}
       <section className="bg-anchor py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-5xl font-medium text-paper leading-tight tracking-tight">
-            HarborIQ vs HawkSoft
+            HarborIQ vs AgencyZoom
           </h1>
           <p className="mt-5 text-[17px] md:text-[19px] text-mist leading-relaxed max-w-2xl mx-auto">
-            HawkSoft is the best-loved AMS in the independent-agency category.<br className="hidden md:inline" />
-            {" "}We&rsquo;re building the first AMS designed around the next decade, not the last one.
+            AgencyZoom is the best overlay on the market.<br className="hidden md:inline" />
+            {" "}HarborIQ is the operating system that makes the overlay unnecessary.
           </p>
         </div>
       </section>
@@ -104,11 +93,11 @@ export default function CompareHawkSoftPage() {
                 <p className="mt-5 text-[12px] font-medium text-interactive uppercase tracking-[0.1em]">
                   HarborIQ
                 </p>
-                <p className="mt-1 text-[26px] md:text-[30px] font-medium text-copper leading-[1.05] tracking-tight">
+                <p className="mt-1 text-[32px] md:text-[36px] font-medium text-copper leading-[1.05] tracking-tight">
                   {c.harboriq}
                 </p>
                 <p className="mt-4 text-[14px] text-stone leading-snug">
-                  <span className="font-medium text-charcoal">HawkSoft:</span> {c.competitor}
+                  <span className="font-medium text-charcoal">AgencyZoom:</span> {c.competitor}
                 </p>
                 <p className="text-[13px] text-charcoal leading-relaxed mt-auto pt-5 border-t border-ash">
                   {c.detail}
@@ -119,8 +108,9 @@ export default function CompareHawkSoftPage() {
         </div>
       </section>
 
-      {/* ─── ARCHITECTURAL VISUAL: COST-BY-HEADCOUNT BAR CHART ─── */}
+      {/* ─── ARCHITECTURAL DIAGRAM ─── */}
       <section className="bg-anchor py-16 md:py-24 relative overflow-hidden">
+        {/* Subtle grain texture — matches homepage hero */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-30 mix-blend-overlay"
@@ -129,59 +119,98 @@ export default function CompareHawkSoftPage() {
               "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.2 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.45'/></svg>\")",
           }}
         />
+
         <div className="relative max-w-5xl mx-auto px-6">
           <p className="text-[13px] font-medium text-copper uppercase tracking-[0.12em] mb-4 text-center">
-            The math gets ugly fast
+            The architectural call
           </p>
-          <h2 className="text-2xl md:text-[34px] font-medium text-paper leading-tight tracking-tight text-center max-w-3xl mx-auto mb-10 md:mb-14">
-            Monthly cost as your agency grows.
+          <h2 className="text-2xl md:text-[34px] font-medium text-paper leading-tight tracking-tight text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            AgencyZoom connects tools.<br className="hidden md:inline" /> HarborIQ reduces the number of places your team has to live in.
           </h2>
 
-          <div className="bg-midnight/60 border border-white/10 rounded-2xl p-6 md:p-10 backdrop-blur-sm">
-            <svg viewBox="0 0 700 320" className="w-full h-auto" role="img" aria-label="Bar chart of monthly cost: HarborIQ stays flat as the team grows. HawkSoft rises with every hire.">
-              {/* Baseline */}
-              <line x1="60" y1={CHART_BASE_Y} x2="660" y2={CHART_BASE_Y} stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-stretch">
+            {/* AgencyZoom + AMS — overlay diagram (smaller, muted) */}
+            <div className="flex flex-col order-2 md:order-1">
+              <p className="text-[12px] font-medium text-mist/70 uppercase tracking-[0.1em] text-center mb-6">
+                AgencyZoom + AMS
+              </p>
 
-              {/* Legend */}
-              <rect x="60" y="20" width="14" height="14" rx="2" fill="#C4935A" />
-              <text x="82" y="32" fontSize="12" fill="#F1E9D8">HarborIQ</text>
-              <rect x="170" y="20" width="14" height="14" rx="2" fill="rgba(241,233,216,0.5)" />
-              <text x="192" y="32" fontSize="12" fill="rgba(241,233,216,0.85)">HawkSoft</text>
+              <div className="relative bg-midnight/60 border border-white/10 rounded-xl p-5 md:p-6 backdrop-blur-sm">
+                {/* AgencyZoom pill (top) */}
+                <div className="relative z-10 bg-white/[0.05] border border-white/15 rounded-full px-4 py-2.5 text-center">
+                  <p className="text-[10px] uppercase tracking-[0.1em] text-mist/60 mb-0.5">Overlay</p>
+                  <p className="text-[14px] font-medium text-paper/90">AgencyZoom</p>
+                </div>
 
-              {COSTS.map((c, i) => {
-                const groupX = 110 + i * 200;
-                const barW = 52;
-                const gap = 16;
-                const hX = groupX;
-                const cX = groupX + barW + gap;
-                const hBarH = costToBarH(c.harboriq);
-                const cBarH = costToBarH(c.competitor);
-                return (
-                  <g key={c.label}>
-                    {/* HarborIQ bar */}
-                    <rect x={hX} y={CHART_BASE_Y - hBarH} width={barW} height={hBarH} rx="3" fill="#C4935A" />
-                    <text x={hX + barW / 2} y={CHART_BASE_Y - hBarH - 10} fontSize="12" fill="#C4935A" fontWeight="600" textAnchor="middle">${c.harboriq}</text>
+                {/* Sync arrows with centered label */}
+                <div className="my-3 flex items-center justify-center gap-2">
+                  <svg width="14" height="26" viewBox="0 0 14 26" aria-hidden="true">
+                    <path d="M 7 1 L 7 22" stroke="#C4935A" strokeWidth="1.25" strokeDasharray="2.5 2.5" opacity="0.7" />
+                    <path d="M 7 22 L 4 17 M 7 22 L 10 17" stroke="#C4935A" strokeWidth="1.25" fill="none" strokeLinecap="round" opacity="0.85" />
+                  </svg>
+                  <div className="bg-anchor/90 border border-copper/30 rounded-full px-2.5 py-0.5">
+                    <p className="text-[9px] uppercase tracking-[0.15em] text-copper italic whitespace-nowrap">overnight sync</p>
+                  </div>
+                  <svg width="14" height="26" viewBox="0 0 14 26" aria-hidden="true">
+                    <path d="M 7 25 L 7 4" stroke="#C4935A" strokeWidth="1.25" strokeDasharray="2.5 2.5" opacity="0.7" />
+                    <path d="M 7 4 L 4 9 M 7 4 L 10 9" stroke="#C4935A" strokeWidth="1.25" fill="none" strokeLinecap="round" opacity="0.85" />
+                  </svg>
+                </div>
 
-                    {/* HawkSoft bar */}
-                    <rect x={cX} y={CHART_BASE_Y - cBarH} width={barW} height={cBarH} rx="3" fill="rgba(241,233,216,0.5)" />
-                    <text x={cX + barW / 2} y={CHART_BASE_Y - cBarH - 10} fontSize="12" fill="rgba(241,233,216,0.9)" fontWeight="600" textAnchor="middle">${c.competitor.toLocaleString()}</text>
+                {/* AMS pill (bottom) */}
+                <div className="relative z-10 bg-white/[0.05] border border-white/15 rounded-full px-4 py-2.5 text-center">
+                  <p className="text-[10px] uppercase tracking-[0.1em] text-mist/60 mb-0.5">AMS underneath</p>
+                  <p className="text-[14px] font-medium text-paper/90">HawkSoft / AMS360 / …</p>
+                </div>
+              </div>
 
-                    {/* Group label */}
-                    <text x={hX + barW + gap / 2} y={CHART_BASE_Y + 24} fontSize="13" fill="#F1E9D8" textAnchor="middle">{c.label}</text>
-                  </g>
-                );
-              })}
+              <p className="text-[14px] text-mist leading-relaxed mt-5 text-center md:px-2">
+                Two systems.<br />
+                Two logins.<br />
+                The handoff between them is where work falls.
+              </p>
+            </div>
 
-              {/* Caption inside the chart */}
-              <text x="350" y="305" fontSize="11" fill="rgba(241,233,216,0.6)" textAnchor="middle" fontStyle="italic">Per-month, all-in. HawkSoft = $250 base + $94 / user.</text>
-            </svg>
+            {/* HarborIQ — unified diagram (larger, dominant) */}
+            <div className="flex flex-col order-1 md:order-2">
+              <p className="text-[12px] font-medium text-copper uppercase tracking-[0.1em] text-center mb-6">
+                HarborIQ
+              </p>
+
+              <div className="relative bg-midnight/60 border-2 border-copper/50 rounded-2xl p-7 md:p-10 backdrop-blur-sm shadow-[0_0_60px_rgba(196,147,90,0.2)]">
+                {/* Outer copper glow ring */}
+                <div aria-hidden="true" className="pointer-events-none absolute -inset-1 rounded-2xl border border-copper/20" />
+
+                {/* Central HarborIQ pill — larger, more presence */}
+                <div className="flex justify-center mb-7">
+                  <div className="bg-copper text-white rounded-full px-7 py-3 text-[17px] font-semibold tracking-tight shadow-[0_0_35px_rgba(196,147,90,0.55)]">
+                    HarborIQ
+                  </div>
+                </div>
+
+                {/* Capability pills, 3x2 — 6 capabilities */}
+                <div className="grid grid-cols-2 gap-3 md:gap-3.5">
+                  {["Pipeline", "Clients", "Renewals", "AI Quoting", "Reviews", "Carriers"].map((cap) => (
+                    <div
+                      key={cap}
+                      className="bg-anchor/90 border border-copper/40 rounded-full px-3.5 py-2.5 text-center text-[13px] md:text-[14px] font-medium text-paper backdrop-blur-sm"
+                    >
+                      {cap}
+                    </div>
+                  ))}
+                </div>
+
+                <p className="text-center text-[11px] uppercase tracking-[0.15em] text-copper italic mt-7">
+                  Same record. No sync.
+                </p>
+              </div>
+
+              <p className="text-[14px] text-mist leading-relaxed mt-5 text-center md:px-2">
+                One client record across the lifecycle.<br />
+                The handoff doesn&rsquo;t exist because there&rsquo;s no second system.
+              </p>
+            </div>
           </div>
-
-          <p className="text-[14px] md:text-[15px] text-mist leading-relaxed mt-8 text-center max-w-2xl mx-auto">
-            HarborIQ stays flat as you grow.<br className="hidden md:inline" />
-            {" "}HawkSoft rises with every hire.<br className="hidden md:inline" />
-            {" "}At 15 people, the gap is over a thousand a month.
-          </p>
         </div>
       </section>
 
@@ -194,12 +223,12 @@ export default function CompareHawkSoftPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="bg-linen border border-ash rounded-lg p-6 md:p-8">
               <h3 className="text-[17px] font-medium text-ink mb-5">
-                HawkSoft is right when&hellip;
+                AgencyZoom is right when&hellip;
               </h3>
               <ul className="space-y-3 text-[15px] text-charcoal leading-relaxed">
-                <li className="flex gap-3"><span className="text-stone mt-0.5 shrink-0">&bull;</span>Customer-support quality is your single most important criterion (HawkSoft is industry-leading here).</li>
-                <li className="flex gap-3"><span className="text-stone mt-0.5 shrink-0">&bull;</span>You don&rsquo;t expect to need AI-assisted workflows in the next twelve months.</li>
-                <li className="flex gap-3"><span className="text-stone mt-0.5 shrink-0">&bull;</span>Your team has used HawkSoft for years and the switching cost outweighs the savings.</li>
+                <li className="flex gap-3"><span className="text-stone mt-0.5 shrink-0">&bull;</span>You&rsquo;re stuck on your current AMS and just need to close the prospect-pipeline gap.</li>
+                <li className="flex gap-3"><span className="text-stone mt-0.5 shrink-0">&bull;</span>You&rsquo;re already deep in the Vertafore ecosystem and want the path of least resistance.</li>
+                <li className="flex gap-3"><span className="text-stone mt-0.5 shrink-0">&bull;</span>Your team is trained on AgencyZoom today and switching feels heavier than the win.</li>
               </ul>
             </div>
             <div className="bg-pure border-2 border-interactive rounded-lg p-6 md:p-8">
@@ -209,15 +238,15 @@ export default function CompareHawkSoftPage() {
               <ul className="space-y-3 text-[15px] text-charcoal leading-relaxed">
                 <li className="flex gap-3">
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                  Your team is growing and per-user pricing is starting to compound.
+                  <span>You&rsquo;re paying for an AMS <em>and</em> AgencyZoom today and would rather pay for one system.</span>
                 </li>
                 <li className="flex gap-3">
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                  You want AI-assisted quoting without bolting on Gaya for another $300/mo.
+                  Your team toggles between two windows to get the full picture on one client.
                 </li>
                 <li className="flex gap-3">
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                  You want prospect pipeline and client management sharing one record.
+                  You want AI-assisted quoting and pipeline to share one client record, not sync overnight.
                 </li>
               </ul>
             </div>
@@ -225,17 +254,17 @@ export default function CompareHawkSoftPage() {
         </div>
       </section>
 
-      {/* ─── ALREADY ON HAWKSOFT? — ANNUAL COST FRAMING ─── */}
+      {/* ─── ALREADY RUNNING BOTH? — ANNUAL COST FRAMING ─── */}
       <section className="bg-linen py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4 text-center">
-            Already on HawkSoft?
+            Already running AgencyZoom on your AMS?
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center max-w-3xl mx-auto mb-3">
-            Here&rsquo;s what staying costs you every year.
+            Here&rsquo;s what the stack costs you every year.
           </h2>
           <p className="text-[16px] text-charcoal leading-relaxed text-center max-w-2xl mx-auto mb-10">
-            HawkSoft is $250 base + $94 per user, per month. Annualize your headcount. We did the math.
+            AgencyZoom plus an AMS underneath. Two contracts, two renewals, two support queues. We did the math.
           </p>
 
           <div className="overflow-x-auto">
@@ -243,7 +272,7 @@ export default function CompareHawkSoftPage() {
               <thead>
                 <tr className="border-b-2 border-ash">
                   <th className="py-3 pr-4 text-[12px] font-medium text-stone uppercase tracking-wider">Headcount</th>
-                  <th className="py-3 px-4 text-[12px] font-medium text-stone uppercase tracking-wider">HawkSoft / year</th>
+                  <th className="py-3 px-4 text-[12px] font-medium text-stone uppercase tracking-wider">AgencyZoom + AMS / year</th>
                   <th className="py-3 px-4 text-[12px] font-medium text-stone uppercase tracking-wider">HarborIQ / year</th>
                   <th className="py-3 pl-4 text-[12px] font-medium text-copper uppercase tracking-wider">You keep</th>
                 </tr>
@@ -251,28 +280,28 @@ export default function CompareHawkSoftPage() {
               <tbody className="text-[15px]">
                 <tr className="border-b border-ash/60">
                   <td className="py-4 pr-4 font-medium text-ink">5 people</td>
-                  <td className="py-4 px-4 text-charcoal">$8,640</td>
+                  <td className="py-4 px-4 text-charcoal">≈ $9,588</td>
                   <td className="py-4 px-4 text-charcoal">$4,188 <span className="text-stone text-[13px]">(Team)</span></td>
-                  <td className="py-4 pl-4 font-medium text-copper">$4,452</td>
+                  <td className="py-4 pl-4 font-medium text-copper">$5,400</td>
                 </tr>
                 <tr className="border-b border-ash/60">
                   <td className="py-4 pr-4 font-medium text-ink">10 people</td>
-                  <td className="py-4 px-4 text-charcoal">$14,280</td>
+                  <td className="py-4 px-4 text-charcoal">≈ $16,068</td>
                   <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(OS)</span></td>
-                  <td className="py-4 pl-4 font-medium text-copper">$7,092</td>
+                  <td className="py-4 pl-4 font-medium text-copper">$8,880</td>
                 </tr>
                 <tr>
                   <td className="py-4 pr-4 font-medium text-ink">15 people</td>
-                  <td className="py-4 px-4 text-charcoal">$19,920</td>
+                  <td className="py-4 px-4 text-charcoal">≈ $22,668</td>
                   <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(OS)</span></td>
-                  <td className="py-4 pl-4 font-medium text-copper">$12,732</td>
+                  <td className="py-4 pl-4 font-medium text-copper">$15,480</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <p className="text-[13px] text-stone leading-relaxed text-center max-w-2xl mx-auto mt-8">
-            Source: HawkSoft public pricing ($250 base + $94/user/month). Reported by HarborIQ customers and by agencies pitched by HawkSoft in 2026.
+            Source: AgencyZoom paired with HawkSoft pricing. Other AMS pairings (AMS360, NowCerts) vary in the same range. Reported by HarborIQ customers and by agencies pitched by AgencyZoom in 2026.
           </p>
         </div>
       </section>
@@ -284,8 +313,7 @@ export default function CompareHawkSoftPage() {
             Talk to the founder
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight mb-4">
-            HawkSoft is excellent.<br />
-            We&rsquo;re building what comes next.
+            Not a discovery call. A live demo.
           </h2>
           <p className="text-[17px] text-charcoal leading-relaxed max-w-2xl mx-auto mb-8">
             We&rsquo;ll show you what one operating system looks like in practice, in under thirty minutes. You can even bring your data.
@@ -317,7 +345,7 @@ export default function CompareHawkSoftPage() {
                   <tr className="border-b-2 border-ash">
                     <th className="text-left py-3 pr-4 text-stone font-medium w-1/4">&nbsp;</th>
                     <th className="text-left py-3 px-4 text-ink font-medium">HarborIQ</th>
-                    <th className="text-left py-3 pl-4 text-ink font-medium">HawkSoft</th>
+                    <th className="text-left py-3 pl-4 text-ink font-medium">AgencyZoom</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -343,9 +371,9 @@ export default function CompareHawkSoftPage() {
           </h2>
           <div className="space-y-5">
             {[
-              ["Per-user pricing compounds.", "At $94 per user, every hire is a permanent raise for HawkSoft. HarborIQ is flat within the tier."],
-              ["The AI bolt-on stack adds up.", "HawkSoft + Gaya is two logins, two contracts, and prospects still aren’t in the same place as your clients."],
-              ["The next decade is AI-native, not AI-adjacent.", "HawkSoft is a great 2018 AMS. We’re building for 2026 forward."],
+              ["Two systems, one client.", "The source-of-truth question never goes away. We remove it."],
+              ["Compounding cost.", "AgencyZoom + a per-user AMS rises with every hire. HarborIQ is flat."],
+              ["Vertafore owns the roadmap.", "AgencyZoom’s direction will increasingly serve the Vertafore suite, not your agency."],
             ].map(([title, body], i) => (
               <div key={i} className="flex gap-4 items-start">
                 <div className="w-8 h-8 rounded-full bg-anchor flex items-center justify-center shrink-0 text-paper text-[13px] font-medium mt-0.5">
