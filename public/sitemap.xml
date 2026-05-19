@@ -36,6 +36,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://harboriq.com/compare</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://harboriq.com/compare/ezlynx</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -67,6 +72,26 @@
   </url>
   <url>
     <loc>https://harboriq.com/blog/why-your-ams-cant-track-prospects</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://harboriq.com/newsroom</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://harboriq.com/newsroom/the-coming-compression-of-independent-agency-software</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://harboriq.com/newsroom/sync-was-never-the-answer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://harboriq.com/newsroom/the-most-underestimated-number-isnt-the-price</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -51,20 +51,17 @@ export function Footer() {
           <div>
             <h4 className="text-paper text-[13px] font-medium uppercase tracking-wider mb-4">Resources</h4>
             <div className="space-y-3">
-              <Link href="/compare/ezlynx" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                HarborIQ vs EZLynx
-              </Link>
-              <Link href="/compare/hawksoft" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                HarborIQ vs HawkSoft
-              </Link>
-              <Link href="/compare/applied-epic" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                HarborIQ vs Applied Epic
+              <Link href="/compare" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Compare
               </Link>
               <Link href="/about" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 About
               </Link>
               <Link href="/blog" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Blog
+              </Link>
+              <Link href="/newsroom" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Newsroom
               </Link>
               <a
                 href="https://tidycal.com/cjmayer/harboriq-demo"
