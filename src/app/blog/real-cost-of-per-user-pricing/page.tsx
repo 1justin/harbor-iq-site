@@ -34,12 +34,12 @@ const articleSchema = {
     name: "HarborIQ",
     logo: {
       "@type": "ImageObject",
-      url: "https://harboriq.com/images/harboriq-favicon-512.png",
+      url: "https://harboriq.co/images/harboriq-favicon-512.png",
     },
   },
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://harboriq.com/blog/real-cost-of-per-user-pricing",
+    "@id": "https://harboriq.co/blog/real-cost-of-per-user-pricing",
   },
 };
 

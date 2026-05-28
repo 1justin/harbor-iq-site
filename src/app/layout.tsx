@@ -4,7 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://harboriq.com"),
+  metadataBase: new URL("https://harboriq.co"),
   title: "HarborIQ | Agency Management System for Independent Insurance Agencies",
   description:
     "AI-powered agency management system (AMS) for independent insurance agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting. Flat monthly pricing, no per-user fees.",
@@ -68,8 +68,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "HarborIQ",
-              url: "https://harboriq.com",
-              logo: "https://harboriq.com/images/harboriq-favicon-512.png",
+              url: "https://harboriq.co",
+              logo: "https://harboriq.co/images/harboriq-favicon-512.png",
               description:
                 "AI-powered agency management system for independent insurance agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting.",
               sameAs: [
@@ -91,7 +91,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "HarborIQ",
-              url: "https://harboriq.com",
+              url: "https://harboriq.co",
             }),
           }}
         />

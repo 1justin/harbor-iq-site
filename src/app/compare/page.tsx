@@ -20,13 +20,13 @@ const compareSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Compare HarborIQ",
-  url: "https://harboriq.com/compare",
+  url: "https://harboriq.co/compare",
   description:
     "Side-by-side comparison of HarborIQ against the major independent-agency software platforms.",
   isPartOf: {
     "@type": "WebSite",
     name: "HarborIQ",
-    url: "https://harboriq.com",
+    url: "https://harboriq.co",
   },
 };
 
