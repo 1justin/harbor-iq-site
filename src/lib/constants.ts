@@ -3,7 +3,7 @@ export const CREEM_RESERVE =
 
 export const DEMO_URL = "https://tidycal.com/cjmayer/harboriq-demo";
 
-export const SITE_URL = "https://harboriq.com";
+export const SITE_URL = "https://harboriq.co";
 
 export const FOUNDING_CLOSE_DATE = "August 1, 2026";
 export const FOUNDING_SPOTS_TOTAL = 20;

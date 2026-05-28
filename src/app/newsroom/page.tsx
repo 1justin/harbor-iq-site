@@ -20,13 +20,13 @@ const newsroomSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "HarborIQ Newsroom",
-  url: "https://harboriq.com/newsroom",
+  url: "https://harboriq.co/newsroom",
   description:
     "Press, contributed pieces, and on-record commentary from HarborIQ.",
   isPartOf: {
     "@type": "WebSite",
     name: "HarborIQ",
-    url: "https://harboriq.com",
+    url: "https://harboriq.co",
   },
 };
 
@@ -38,10 +38,10 @@ const founderSchema = {
   worksFor: {
     "@type": "Organization",
     name: "HarborIQ",
-    url: "https://harboriq.com",
+    url: "https://harboriq.co",
   },
-  url: "https://harboriq.com/newsroom",
-  image: "https://harboriq.com/newsroom/justin-mayer-headshot.jpg",
+  url: "https://harboriq.co/newsroom",
+  image: "https://harboriq.co/newsroom/justin-mayer-headshot.jpg",
   alumniOf: [
     {
       "@type": "CollegeOrUniversity",
@@ -291,7 +291,7 @@ export default function NewsroomPage() {
                   {q.topic}
                 </p>
                 <blockquote
-                  cite="https://harboriq.com/newsroom"
+                  cite="https://harboriq.co/newsroom"
                   className="text-[17px] text-ink leading-[1.7] italic"
                 >
                   &ldquo;{q.body}&rdquo;

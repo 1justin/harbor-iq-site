@@ -41,13 +41,13 @@ const articleSchema = {
     name: "HarborIQ",
     logo: {
       "@type": "ImageObject",
-      url: "https://harboriq.com/images/harboriq-favicon-512.png",
+      url: "https://harboriq.co/images/harboriq-favicon-512.png",
     },
   },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id":
-      "https://harboriq.com/newsroom/the-most-underestimated-number-isnt-the-price",
+      "https://harboriq.co/newsroom/the-most-underestimated-number-isnt-the-price",
   },
 };
 
