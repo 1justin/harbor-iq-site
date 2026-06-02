@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const CREEM_RESERVE = "https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV";
+const DEMO_URL = "https://tidycal.com/cjmayer/harboriq-demo";
 
 export const metadata: Metadata = {
   title: "About HarborIQ | Built for Independent Insurance Agencies",
@@ -221,25 +221,23 @@ export default function AboutPage() {
             Ready to stop drowning in&nbsp;tabs?
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed">
-            Reserve your founding spot for $100. Fully refundable before&nbsp;launch.
+            Pick a time. 15 minutes. No deck. We will show you the&nbsp;product.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={CREEM_RESERVE}
+              href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Reserve Your Founding Spot
+              Book a 15 minute demo
             </a>
-            <a
-              href="https://tidycal.com/cjmayer/harboriq-demo"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/pricing"
               className="cta-secondary border border-slate text-mist btn-radius px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors"
             >
-              Book a demo first
-            </a>
+              See pricing
+            </Link>
           </div>
         </div>
       </section>

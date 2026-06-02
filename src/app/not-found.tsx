@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const CREEM_RESERVE = "https://creem.io/pay/wrkstream/clxhpw58l003a4q2s0bj7z2e4";
-
 export default function NotFound() {
   return (
     <div className="bg-anchor min-h-screen flex flex-col items-center justify-center text-center px-6 py-20">
@@ -46,7 +44,7 @@ export default function NotFound() {
           rel="noopener noreferrer"
           className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors"
         >
-          Book a demo
+          Book a 15 minute demo
         </a>
       </div>
     </div>
