@@ -16,6 +16,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "how-to-choose-insurance-agency-software",
+    title: "How to Choose Insurance Agency Management Software: A 2026 Buyer's Guide",
+    excerpt:
+      "Most buyer's guides list features. This one gives you the questions that actually separate a tool you'll outgrow in a year from the system your whole agency runs on. Seven things to weigh before you sign.",
+    date: "June 2026",
+    readTime: "7 min read",
+  },
+  {
     slug: "real-cost-of-per-user-pricing",
     title: "The Real Cost of Per-User Pricing for Insurance Agencies",
     excerpt:
