@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CtaSection } from "./CtaSection";
-import { CREEM_RESERVE, DEMO_URL } from "@/lib/constants";
+import Link from "next/link";
+import { DEMO_URL } from "@/lib/constants";
 
 type Benefit = { title: string; description: string };
 type Step = { step: number; title: string; description: string };
@@ -45,21 +46,19 @@ export function FeaturePageLayout({
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={CREEM_RESERVE}
+              href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors"
             >
-              Reserve Your Founding Spot
+              Book a 15 minute demo
             </a>
-            <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/pricing"
               className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors"
             >
-              Book a demo
-            </a>
+              See pricing
+            </Link>
           </div>
         </div>
       </section>

@@ -122,24 +122,22 @@ export default function PostPage() {
               Founding partners lock in 33% off for life.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              Solo $119, Team $229, Operating System $399. 20 spots. $100 refundable deposit. Your feedback shapes the&nbsp;product.
+              Solo $119, Team $229, Operating System $399. 20 spots. Your feedback shapes the&nbsp;product.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors text-center"
-              >
-                Reserve Your Founding Spot
-              </a>
               <a
                 href="https://tidycal.com/cjmayer/harboriq-demo"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors text-center"
+              >
+                Book a 15 minute demo
+              </a>
+              <a
+                href="/pricing"
                 className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors text-center"
               >
-                Book a demo
+                See pricing
               </a>
             </div>
           </div>

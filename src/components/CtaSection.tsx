@@ -1,4 +1,5 @@
-import { CREEM_RESERVE, DEMO_URL, FOUNDING_CLOSE_DATE, FOUNDING_SPOTS_TOTAL } from "@/lib/constants";
+import Link from "next/link";
+import { DEMO_URL, FOUNDING_CLOSE_DATE, FOUNDING_SPOTS_TOTAL } from "@/lib/constants";
 
 export function CtaSection({
   headline = "Founding partners get 33% off. For life.",
@@ -18,24 +19,22 @@ export function CtaSection({
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={CREEM_RESERVE}
+            href={DEMO_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
           >
-            Reserve Your Founding Spot
+            Book a 15 minute demo
           </a>
-          <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/pricing"
             className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
           >
-            Book a demo first
-          </a>
+            See pricing
+          </Link>
         </div>
         <p className="mt-5 text-mist text-[13px]">
-          $100 fully refundable deposit. Offer closes {FOUNDING_CLOSE_DATE}. Limited to {FOUNDING_SPOTS_TOTAL}&nbsp;agencies.
+          Founding partner pricing locks 33% off for life. Offer closes {FOUNDING_CLOSE_DATE}. Limited to {FOUNDING_SPOTS_TOTAL}&nbsp;agencies.
         </p>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { CREEM_RESERVE, DEMO_URL, FOUNDING_CLOSE_DATE } from "@/lib/constants";
+import { DEMO_URL, FOUNDING_CLOSE_DATE } from "@/lib/constants";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP, SplitText);
@@ -13,7 +13,6 @@ if (typeof window !== "undefined") {
 export function Hero() {
   const rootRef = useRef<HTMLElement>(null);
   const primaryBtnRef = useRef<HTMLAnchorElement>(null);
-  const secondaryBtnRef = useRef<HTMLAnchorElement>(null);
   const videoWrapRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -24,12 +23,12 @@ export function Hero() {
         gsap.set(
           [
             ".hero-bg-grain",
-            ".hero-watch-demo",
             ".hero-eyebrow",
             ".hero-h1",
             ".hero-sub",
             ".hero-ctas",
             ".hero-disclaimer",
+            ".hero-stats",
             ".hero-video",
           ],
           { opacity: 1, clearProps: "transform,filter,clipPath" },
@@ -56,12 +55,12 @@ export function Hero() {
             : null;
 
           gsap.set(".hero-bg-grain", { opacity: 0 });
-          gsap.set(".hero-watch-demo", { opacity: 0, y: 6 });
           gsap.set(".hero-eyebrow", { opacity: 0, y: 8 });
           gsap.set(".hero-h1-word", { yPercent: 110, opacity: 0 });
           gsap.set(".hero-sub", { opacity: 0, filter: "blur(6px)" });
           gsap.set(".hero-ctas > *", { scale: 0.9, opacity: 0, y: 8 });
           gsap.set(".hero-disclaimer", { opacity: 0 });
+          gsap.set(".hero-stats > *", { opacity: 0, y: 8 });
           gsap.set(".hero-video", {
             opacity: 0,
             scale: 1.04,
@@ -72,7 +71,6 @@ export function Hero() {
           const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
           tl.to(".hero-bg-grain", { opacity: 1, duration: 0.5 }, 0)
-            .to(".hero-watch-demo", { opacity: 1, y: 0, duration: 0.45 }, 0.05)
             .to(".hero-eyebrow", { opacity: 1, y: 0, duration: 0.5 }, 0.2)
             .to(
               ".hero-h1-word",
@@ -93,6 +91,11 @@ export function Hero() {
               1.05,
             )
             .to(".hero-disclaimer", { opacity: 1, duration: 0.35 }, 1.25)
+            .to(
+              ".hero-stats > *",
+              { opacity: 1, y: 0, duration: 0.45, stagger: 0.08 },
+              1.4,
+            )
             .to(
               ".hero-video",
               {
@@ -192,7 +195,7 @@ export function Hero() {
   return (
     <section
       ref={rootRef}
-      className="relative overflow-hidden bg-anchor py-16 md:py-24"
+      className="relative overflow-hidden bg-anchor"
     >
       <div
         className="hero-bg-grain pointer-events-none absolute inset-0 opacity-0 mix-blend-overlay"
@@ -203,72 +206,79 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6" style={{ perspective: 1200 }}>
-        <div className="flex flex-col items-center gap-10 md:flex-row md:gap-14">
-          <div className="flex-1 text-center md:max-w-[520px] md:text-left">
+      <div
+        className="relative grid items-center gap-10 md:grid-cols-2 md:gap-0"
+        style={{ perspective: 1200 }}
+      >
+        <div className="px-6 pt-16 md:py-24 md:pl-[max(1.5rem,calc((100vw-1200px)/2+1.5rem))] md:pr-12 text-center md:text-left">
+          <p className="hero-eyebrow text-[13px] font-medium uppercase tracking-[0.12em] text-interactive">
+            The AI-native AMS + CRM for independent insurance agencies
+          </p>
+          <h1 className="hero-h1 mt-4 text-[36px] font-medium leading-[1.06] tracking-[-0.02em] text-paper md:text-[56px]">
+            Run your agency from{" "}
+            <span className="text-interactive">one smarter command center.</span>
+          </h1>
+          <p className="hero-sub mt-5 text-[17px] leading-relaxed text-mist md:text-[19px]">
+            Pipeline, clients, quoting, and follow-ups in one platform. One login.
+            Zero per-user&nbsp;fees.
+          </p>
+          <div className="hero-ctas mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
             <a
-              ref={secondaryBtnRef}
+              ref={primaryBtnRef}
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-watch-demo group inline-flex items-center gap-2 text-[14px] font-medium text-mist transition-colors hover:text-paper"
+              className="cta-primary btn-radius bg-copper px-7 py-3.5 text-center text-[16px] font-medium text-white hover:bg-bronze"
             >
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 transition-colors group-hover:bg-white/20">
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="translate-x-[1px] text-paper"
-                >
-                  <path d="M2 1.5v7l6-3.5-6-3.5z" />
-                </svg>
-              </span>
-              Watch a demo
+              Book a 15 minute demo
             </a>
-            <p className="hero-eyebrow mt-6 text-[13px] font-medium uppercase tracking-[0.12em] text-interactive">
-              The AI-native AMS + CRM for independent insurance agencies
+          </div>
+          <p className="hero-disclaimer mt-3 text-center text-[13px] text-mist md:text-left">
+            Founding partner pricing locks 33% off for life. Ask about it on your demo. Offer closes {FOUNDING_CLOSE_DATE}.
+          </p>
+        </div>
+
+        <div
+          ref={videoWrapRef}
+          className="hero-video relative flex items-center justify-center px-6 pb-16 md:px-0 md:py-12"
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          <img
+            src="/images/harboriq-command-center-hero-no-shadow.webp"
+            alt="HarborIQ command center, an AI-native AMS and CRM for independent insurance agencies"
+            className="block h-auto w-full max-w-[720px] md:max-w-none md:w-[112%] md:-translate-x-[2%]"
+            width={1280}
+            height={800}
+            decoding="async"
+          />
+        </div>
+      </div>
+
+      <div className="relative border-t border-white/10 mt-2 md:mt-0">
+        <div className="hero-stats mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-10 md:grid-cols-3 md:gap-12 md:py-12">
+          <div>
+            <p className="text-[18px] md:text-[20px] font-medium text-paper leading-snug tracking-tight">
+              Every renewal surfaced 60 days early.
             </p>
-            <h1 className="hero-h1 mt-4 text-[36px] font-medium leading-[1.06] tracking-[-0.02em] text-paper md:text-[56px]">
-              Run your agency from{" "}
-              <span className="text-interactive">one smarter command center.</span>
-            </h1>
-            <p className="hero-sub mt-5 text-[17px] leading-relaxed text-mist md:text-[19px]">
-              Pipeline, clients, quoting, and follow-ups in one platform. One login.
-              Zero per-user&nbsp;fees.
-            </p>
-            <div className="hero-ctas mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
-              <a
-                ref={primaryBtnRef}
-                href={CREEM_RESERVE}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-primary btn-radius bg-copper px-7 py-3.5 text-center text-[16px] font-medium text-white hover:bg-bronze"
-              >
-                Reserve Your Founding Spot
-              </a>
-            </div>
-            <p className="hero-disclaimer mt-3 text-center text-[13px] text-mist md:text-left">
-              Founding Partner pricing. 33% off locked for life. Offer closes {FOUNDING_CLOSE_DATE}.
+            <p className="mt-2 text-[14px] text-mist leading-relaxed">
+              Proactive instead of reactive.
             </p>
           </div>
-
-          <div
-            ref={videoWrapRef}
-            className="hero-video flex-1 md:max-w-[580px]"
-            style={{ transformStyle: "preserve-3d" }}
-          >
-            <div className="overflow-hidden rounded-xl bg-anchor shadow-2xl shadow-midnight/50 ring-1 ring-white/10">
-              <img
-                src="/images/harboriq-command-center-hero-no-shadow.webp"
-                alt="HarborIQ command center, an AI-native AMS and CRM for independent insurance agencies"
-                className="h-auto w-full"
-                width={1280}
-                height={800}
-                decoding="async"
-              />
-            </div>
+          <div>
+            <p className="text-[18px] md:text-[20px] font-medium text-paper leading-snug tracking-tight">
+              One search box for every carrier appetite question.
+            </p>
+            <p className="mt-2 text-[14px] text-mist leading-relaxed">
+              Knowledge that is findable, not memorized.
+            </p>
+          </div>
+          <div>
+            <p className="text-[18px] md:text-[20px] font-medium text-paper leading-snug tracking-tight">
+              Zero per user fees, ever.
+            </p>
+            <p className="mt-2 text-[14px] text-mist leading-relaxed">
+              Flat pricing that does not punish you for growing.
+            </p>
           </div>
         </div>
       </div>

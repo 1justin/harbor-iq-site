@@ -3,8 +3,9 @@ import { Hero } from "@/components/Hero";
 import { PatchworkCollapse } from "@/components/PatchworkCollapse";
 import { NewCore } from "@/components/NewCore";
 import { DayInLife } from "@/components/DayInLife";
+import { TestimonialCards } from "@/components/TestimonialCards";
+import { RoiCalculator } from "@/components/RoiCalculator";
 import {
-  CREEM_RESERVE,
   DEMO_URL,
   FOUNDING_CLOSE_DATE,
   FOUNDING_SPOTS_TOTAL,
@@ -387,37 +388,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── SOCIAL PROOF ─── */}
-      <section className="bg-linen py-14 md:py-20">
-        <div className="max-w-3xl mx-auto px-6 md:px-10">
-          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-8 text-center">
-            From the people who helped build it
+      {/* ─── ROI CALCULATOR ─── */}
+      <section className="bg-paper py-14 md:py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4 text-center">
+            Your numbers, not ours
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center max-w-3xl mx-auto">
+            What HarborIQ would recover in your first year.
+          </h2>
+          <p className="mt-3 text-[16px] text-charcoal leading-relaxed text-center max-w-2xl mx-auto">
+            Pick what you use today. Edit anything that does not match your situation. Sources are listed under the calculator.
           </p>
 
-          <div className="space-y-10">
-            <div className="pl-6 border-l-[3px] border-interactive">
-              <blockquote className="text-xl md:text-2xl font-medium text-ink leading-snug tracking-tight">
-                We&rsquo;ve tried other tools. They all do one thing. This is the first platform that actually works the way our agency&nbsp;works.
-              </blockquote>
-              <p className="mt-5 text-[15px]">
-                <span className="font-medium text-ink">Andy Sertler</span>
-                <span className="text-stone">, Principal, Sertler &amp;&nbsp;Associates</span>
-              </p>
-            </div>
-
-            <div className="pl-6 border-l-[3px] border-stone">
-              <blockquote className="text-lg md:text-xl font-medium text-ink leading-snug tracking-tight">
-                I spend more time re-typing the same client info into carrier portals than actually talking to customers. Anything that fixes that changes&nbsp;everything.
-              </blockquote>
-              <p className="mt-5 text-[15px]">
-                <span className="font-medium text-ink">Alex</span>
-                <span className="text-stone">, Office Manager, Sertler &amp;&nbsp;Associates</span>
-              </p>
-            </div>
+          <div className="mt-10">
+            <RoiCalculator />
           </div>
+        </div>
+      </section>
+
+      {/* ─── SOCIAL PROOF ─── */}
+      <section className="bg-linen py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-8 text-center">
+            What people are saying after seeing HarborIQ
+          </p>
+
+          <TestimonialCards />
 
           {/* Trust bar */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center max-w-3xl mx-auto">
             <div className="flex flex-col items-center">
               <div className="w-10 h-10 rounded-full bg-ice flex items-center justify-center mb-3">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -527,30 +527,28 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={CREEM_RESERVE}
+              href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Reserve Your Founding Spot
+              Book a 15 minute demo
             </a>
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/pricing"
               className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
             >
-              Book a demo first
+              See pricing
             </a>
           </div>
           <p className="mt-5 text-mist text-[13px]">
-            $100 refundable deposit. Offer closes {FOUNDING_CLOSE_DATE}. Limited to {FOUNDING_SPOTS_TOTAL} agencies.
+            Founding partner pricing locks 33% off for life. Offer closes {FOUNDING_CLOSE_DATE}. Limited to {FOUNDING_SPOTS_TOTAL} agencies.
           </p>
 
           {/* Email capture for not-ready visitors */}
           <div className="mt-10 pt-8 border-t border-deep/40">
             <p className="text-[15px] text-mist mb-4">
-              Not ready to reserve? Get updates as we&nbsp;launch.
+              Not ready for a demo? Get updates as we&nbsp;launch.
             </p>
             <form
               action="https://buttondown.com/api/emails/embed-subscribe/harboriq"

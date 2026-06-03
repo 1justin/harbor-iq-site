@@ -144,17 +144,9 @@ export function Nav() {
             href="https://tidycal.com/cjmayer/harboriq-demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-secondary bg-interactive text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-deep transition-colors"
-          >
-            Book a demo
-          </a>
-          <a
-            href="https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV"
-            target="_blank"
-            rel="noopener noreferrer"
             className="cta-primary bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
           >
-            Reserve Your Spot
+            Book a demo
           </a>
         </div>
 
@@ -237,23 +229,15 @@ export function Nav() {
           <Link href="/newsroom" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             Newsroom
           </Link>
-          <div className="pt-2 mt-2 border-t border-midnight space-y-3">
+          <div className="pt-2 mt-2 border-t border-midnight">
             <a
               href="https://tidycal.com/cjmayer/harboriq-demo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-interactive text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
-            >
-              Book a demo
-            </a>
-            <a
-              href="https://www.creem.io/payment/prod_1SDGs4JxhPJ0yQonbNfIHV"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="block bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
             >
-              Reserve Your Spot
+              Book a demo
             </a>
           </div>
         </div>
