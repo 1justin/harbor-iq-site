@@ -1,0 +1,39 @@
+# Rebuilds and redeploys the site on a daily schedule so that date-gated blog
+# posts publish themselves on their scheduled dates. See src/app/blog/posts.ts.
+#
+# ONE-TIME SETUP (required for this to do anything):
+#   1. In Vercel: Project -> Settings -> Git -> Deploy Hooks. Create a hook
+#      (e.g. name "daily-rebuild", branch "main") and copy its URL.
+#   2. In GitHub: repo -> Settings -> Secrets and variables -> Actions ->
+#      New repository secret. Name it VERCEL_DEPLOY_HOOK_URL and paste the URL.
+#
+# NOTES:
+#   - Scheduled workflows only run from the default branch (main), so this
+#     starts firing once it is merged to main.
+#   - The cron time is UTC. Posts are gated at UTC midnight of their publishAt
+#     date, so the 08:00 UTC run publishes a post early on its date across US
+#     time zones. Adjust the cron below to taste.
+#   - You can also trigger a rebuild manually from the Actions tab
+#     ("Run workflow") thanks to workflow_dispatch.
+
+name: Scheduled rebuild
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "VERCEL_DEPLOY_HOOK_URL secret is not set. See the setup steps at the top of this workflow file." >&2
+            exit 1
+          fi
+          curl -fsS -X POST "$HOOK_URL"
+          echo "Triggered Vercel rebuild."
