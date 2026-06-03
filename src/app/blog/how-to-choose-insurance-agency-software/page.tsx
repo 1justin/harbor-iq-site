@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { isPublished } from "../posts";
 
 export const metadata: Metadata = {
   title: "How to Choose Insurance Agency Software | HarborIQ",
@@ -47,6 +49,8 @@ const articleSchema = {
 };
 
 export default function PostPage() {
+  if (!isPublished("how-to-choose-insurance-agency-software")) notFound();
+
   return (
     <article className="bg-paper py-16 md:py-24">
       <script
