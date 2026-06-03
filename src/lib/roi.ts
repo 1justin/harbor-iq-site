@@ -31,7 +31,7 @@ export const ROI_PRESETS: RoiPreset[] = [
     timeToValueDays: 105,
     hoursPerAgentPerWeek: 8,
     source:
-      "Quoted to HarborIQ in 2026. $24,000 onboarding, $1,800 per month for 5 users, 90 to 120 days to execute.",
+      "From a 2026 quote a 5-person agency received before choosing HarborIQ. $24,000 onboarding, $1,800 per month for 5 users, 90 to 120 days to execute.",
   },
   {
     id: "ezlynx",

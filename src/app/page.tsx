@@ -5,6 +5,8 @@ import { NewCore } from "@/components/NewCore";
 import { DayInLife } from "@/components/DayInLife";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { RoiCalculator } from "@/components/RoiCalculator";
+import { FounderBlock } from "@/components/FounderBlock";
+import { ResourcesGrid } from "@/components/ResourcesGrid";
 import {
   DEMO_URL,
   FOUNDING_CLOSE_DATE,
@@ -524,8 +526,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── FAQ ─── */}
+      {/* ─── RESOURCES ─── */}
       <section className="bg-linen py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4 text-center">
+            Worth your time
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center max-w-3xl mx-auto">
+            Read the thinking behind the&nbsp;product.
+          </h2>
+          <div className="mt-10">
+            <ResourcesGrid />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ ─── */}
+      <section className="bg-paper py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center mb-10">
             Frequently asked questions
@@ -537,6 +554,9 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
         />
       </section>
+
+      {/* ─── FOUNDER BLOCK ─── */}
+      <FounderBlock />
 
       {/* ─── BOTTOM CTA ─── */}
       <section className="bg-anchor py-14 md:py-20">
