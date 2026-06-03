@@ -39,8 +39,7 @@ export const testimonials: Testimonial[] = [
     role: "Carrier perspective",
     agency: "Pekin Insurance",
     headshot: "/testimonials/Amanda_Hausman_Pekin.jpeg",
-    logo: "/testimonials/pekin_insurance_logo_horizontal_white.svg",
-    logoOnDark: true,
+    logo: "/testimonials/pekin-insurance-logo-color.png",
     quote:
       "I have looked at a lot of tools for independent insurance agencies. This is the most beautiful UI and most thoughtful usage of AI in the category I've seen. I am impressed.",
     // No callouts. Card power is third-party validation from the carrier side.
@@ -68,6 +67,6 @@ export const testimonials: Testimonial[] = [
     logo: "/testimonials/sertler-associates-logo-AnuAVpdRp4WqNxvY.avif",
     quote:
       "We've tried other tools. They all do one thing. This is the first platform that actually works the way our agency works.",
-    callouts: ["Founding partner", "Embedded design partner"],
+    callouts: ["Team performance, visible", "Happier employees"],
   },
 ];

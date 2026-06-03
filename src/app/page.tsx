@@ -5,6 +5,8 @@ import { NewCore } from "@/components/NewCore";
 import { DayInLife } from "@/components/DayInLife";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { RoiCalculator } from "@/components/RoiCalculator";
+import { FounderBlock } from "@/components/FounderBlock";
+import { ResourcesGrid } from "@/components/ResourcesGrid";
 import {
   DEMO_URL,
   FOUNDING_CLOSE_DATE,
@@ -237,7 +239,7 @@ export default function Home() {
             Stop paying more for&nbsp;less.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed text-center max-w-2xl mx-auto">
-            Most agencies piece together 3 or 4 tools and still have gaps. Here is what that actually costs for a 5-person team on the HarborIQ Team plan.
+            Five real systems. Five agents on each. Same job. Different price, different speed, different amount of work left for your&nbsp;team.
           </p>
 
           {/* Desktop table */}
@@ -245,55 +247,62 @@ export default function Home() {
             <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-anchor">
-                  <th className="py-4 pr-4 text-[13px] font-medium text-slate uppercase tracking-wider w-[200px]">&nbsp;</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-success">HarborIQ Team</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-mist">Per-Seat AMS</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-mist">AMS + CRM Bolt-On</th>
-                  <th className="py-4 px-4 text-[14px] font-medium text-mist">AI Quoting Tool</th>
+                  <th className="py-4 pr-4 text-[13px] font-medium text-slate uppercase tracking-wider w-[220px]">&nbsp;</th>
+                  <th className="py-4 px-3 text-[14px] font-medium text-mist">Applied Epic</th>
+                  <th className="py-4 px-3 text-[14px] font-medium text-mist">EZLynx</th>
+                  <th className="py-4 px-3 text-[14px] font-medium text-mist">HawkSoft</th>
+                  <th className="py-4 px-3 text-[14px] font-medium text-mist">AgencyZoom</th>
+                  <th className="py-4 px-3 text-[14px] font-medium text-success">HarborIQ Team</th>
                 </tr>
               </thead>
               <tbody className="text-[15px]">
                 <tr className="border-b border-anchor/40">
-                  <td className="py-4 pr-4 text-mist font-medium">Monthly cost (5 users)</td>
-                  <td className="py-4 px-4 text-success font-medium">$349</td>
-                  <td className="py-4 px-4 text-mist">$720+</td>
-                  <td className="py-4 px-4 text-mist">$800+</td>
-                  <td className="py-4 px-4 text-mist">~$300</td>
+                  <td className="py-4 pr-4 text-mist font-medium">What 5 agents pay annually</td>
+                  <td className="py-4 px-3 text-mist">$21,600</td>
+                  <td className="py-4 px-3 text-mist">$6,900</td>
+                  <td className="py-4 px-3 text-mist">$7,500</td>
+                  <td className="py-4 px-3 text-mist">$9,900</td>
+                  <td className="py-4 px-3 text-success font-medium">$4,188</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
-                  <td className="py-4 pr-4 text-mist font-medium">Per-user fees</td>
-                  <td className="py-4 px-4 text-success font-medium">None</td>
-                  <td className="py-4 px-4 text-mist">$94+/user</td>
-                  <td className="py-4 px-4 text-mist">$94+/user</td>
-                  <td className="py-4 px-4 text-mist">Varies</td>
+                  <td className="py-4 pr-4 text-mist font-medium">What you pay to start</td>
+                  <td className="py-4 px-3 text-mist">$24,000</td>
+                  <td className="py-4 px-3 text-mist">$1,500</td>
+                  <td className="py-4 px-3 text-mist">$3,500</td>
+                  <td className="py-4 px-3 text-mist">$0</td>
+                  <td className="py-4 px-3 text-success font-medium">$349</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
-                  <td className="py-4 pr-4 text-mist font-medium">Prospect pipeline</td>
-                  <td className="py-4 px-4 text-success font-medium">Included</td>
-                  <td className="py-4 px-4 text-danger">Not included</td>
-                  <td className="py-4 px-4 text-mist">Separate tool</td>
-                  <td className="py-4 px-4 text-danger">Not included</td>
+                  <td className="py-4 pr-4 text-mist font-medium">Days to first quote</td>
+                  <td className="py-4 px-3 text-mist">90 to 120</td>
+                  <td className="py-4 px-3 text-mist">30 to 60</td>
+                  <td className="py-4 px-3 text-mist">45 to 90</td>
+                  <td className="py-4 px-3 text-mist">14 to 30</td>
+                  <td className="py-4 px-3 text-success font-medium">Within a week</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
-                  <td className="py-4 pr-4 text-mist font-medium">AI-assisted quoting</td>
-                  <td className="py-4 px-4 text-success font-medium">Built in</td>
-                  <td className="py-4 px-4 text-danger">Not available</td>
-                  <td className="py-4 px-4 text-danger">Not available</td>
-                  <td className="py-4 px-4 text-mist">Yes (only)</td>
+                  <td className="py-4 pr-4 text-mist font-medium">Tools your team logs into</td>
+                  <td className="py-4 px-3 text-mist">2 or more</td>
+                  <td className="py-4 px-3 text-mist">2 or more</td>
+                  <td className="py-4 px-3 text-mist">2 or more</td>
+                  <td className="py-4 px-3 text-mist">2 or more</td>
+                  <td className="py-4 px-3 text-success font-medium">One</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
-                  <td className="py-4 pr-4 text-mist font-medium">Client management</td>
-                  <td className="py-4 px-4 text-success font-medium">Included</td>
-                  <td className="py-4 px-4 text-mist">Included</td>
-                  <td className="py-4 px-4 text-mist">AMS only</td>
-                  <td className="py-4 px-4 text-danger">Not included</td>
+                  <td className="py-4 pr-4 text-mist font-medium">Renewals surfaced before they slip</td>
+                  <td className="py-4 px-3 text-mist">Manual reminders</td>
+                  <td className="py-4 px-3 text-mist">Manual reminders</td>
+                  <td className="py-4 px-3 text-mist">Manual reminders</td>
+                  <td className="py-4 px-3 text-mist">Workflow rules</td>
+                  <td className="py-4 px-3 text-success font-medium">Automatic, 60 days early</td>
                 </tr>
                 <tr>
-                  <td className="py-4 pr-4 text-mist font-medium">Number of logins</td>
-                  <td className="py-4 px-4 text-success font-medium">1</td>
-                  <td className="py-4 px-4 text-mist">1</td>
-                  <td className="py-4 px-4 text-mist">2 or 3</td>
-                  <td className="py-4 px-4 text-mist">2 or more</td>
+                  <td className="py-4 pr-4 text-mist font-medium">Carrier appetite, answered in seconds</td>
+                  <td className="py-4 px-3 text-mist">Not built in</td>
+                  <td className="py-4 px-3 text-mist">Not built in</td>
+                  <td className="py-4 px-3 text-mist">Not built in</td>
+                  <td className="py-4 px-3 text-mist">Not built in</td>
+                  <td className="py-4 px-3 text-success font-medium">Built in</td>
                 </tr>
               </tbody>
             </table>
@@ -306,45 +315,56 @@ export default function Home() {
                 name: "HarborIQ Team",
                 highlight: true,
                 rows: [
-                  ["Monthly cost (5 users)", "$349"],
-                  ["Per-user fees", "None"],
-                  ["Prospect pipeline", "Included"],
-                  ["AI-assisted quoting", "Built in"],
-                  ["Client management", "Included"],
-                  ["Number of logins", "1"],
+                  ["What 5 agents pay annually", "$4,188"],
+                  ["What you pay to start", "$349"],
+                  ["Days to first quote", "Within a week"],
+                  ["Tools your team logs into", "One"],
+                  ["Renewals surfaced before they slip", "Automatic, 60 days early"],
+                  ["Carrier appetite, answered in seconds", "Built in"],
                 ],
               },
               {
-                name: "Per-Seat AMS",
+                name: "Applied Epic",
                 rows: [
-                  ["Monthly cost (5 users)", "$720+"],
-                  ["Per-user fees", "$94+/user"],
-                  ["Prospect pipeline", "Not included"],
-                  ["AI-assisted quoting", "Not available"],
-                  ["Client management", "Included"],
-                  ["Number of logins", "1"],
+                  ["What 5 agents pay annually", "$21,600"],
+                  ["What you pay to start", "$24,000"],
+                  ["Days to first quote", "90 to 120"],
+                  ["Tools your team logs into", "2 or more"],
+                  ["Renewals surfaced before they slip", "Manual reminders"],
+                  ["Carrier appetite, answered in seconds", "Not built in"],
                 ],
               },
               {
-                name: "AMS + CRM Bolt-On",
+                name: "EZLynx",
                 rows: [
-                  ["Monthly cost (5 users)", "$800+"],
-                  ["Per-user fees", "$94+/user"],
-                  ["Prospect pipeline", "Separate tool"],
-                  ["AI-assisted quoting", "Not available"],
-                  ["Client management", "AMS only"],
-                  ["Number of logins", "2 or 3"],
+                  ["What 5 agents pay annually", "$6,900"],
+                  ["What you pay to start", "$1,500"],
+                  ["Days to first quote", "30 to 60"],
+                  ["Tools your team logs into", "2 or more"],
+                  ["Renewals surfaced before they slip", "Manual reminders"],
+                  ["Carrier appetite, answered in seconds", "Not built in"],
                 ],
               },
               {
-                name: "AI Quoting Tool",
+                name: "HawkSoft",
                 rows: [
-                  ["Monthly cost (5 users)", "~$300"],
-                  ["Per-user fees", "Varies"],
-                  ["Prospect pipeline", "Not included"],
-                  ["AI-assisted quoting", "Yes (only)"],
-                  ["Client management", "Not included"],
-                  ["Number of logins", "2 or more"],
+                  ["What 5 agents pay annually", "$7,500"],
+                  ["What you pay to start", "$3,500"],
+                  ["Days to first quote", "45 to 90"],
+                  ["Tools your team logs into", "2 or more"],
+                  ["Renewals surfaced before they slip", "Manual reminders"],
+                  ["Carrier appetite, answered in seconds", "Not built in"],
+                ],
+              },
+              {
+                name: "AgencyZoom",
+                rows: [
+                  ["What 5 agents pay annually", "$9,900"],
+                  ["What you pay to start", "$0"],
+                  ["Days to first quote", "14 to 30"],
+                  ["Tools your team logs into", "2 or more"],
+                  ["Renewals surfaced before they slip", "Workflow rules"],
+                  ["Carrier appetite, answered in seconds", "Not built in"],
                 ],
               },
             ].map((col) => (
@@ -385,6 +405,10 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <p className="mt-8 text-[13px] text-slate leading-relaxed text-center max-w-3xl mx-auto">
+            Sources: documented public pricing and quotes shared with us by agencies that evaluated these systems before choosing HarborIQ. The Applied Epic figures come from a 2026 quote a 5-person agency received. Edit any row in the ROI calculator just&nbsp;below to match your&nbsp;numbers.
+          </p>
         </div>
       </section>
 
@@ -502,8 +526,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── FAQ ─── */}
+      {/* ─── RESOURCES ─── */}
       <section className="bg-linen py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4 text-center">
+            Worth your time
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center max-w-3xl mx-auto">
+            Read the thinking behind the&nbsp;product.
+          </h2>
+          <div className="mt-10">
+            <ResourcesGrid />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ ─── */}
+      <section className="bg-paper py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center mb-10">
             Frequently asked questions
@@ -515,6 +554,9 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
         />
       </section>
+
+      {/* ─── FOUNDER BLOCK ─── */}
+      <FounderBlock />
 
       {/* ─── BOTTOM CTA ─── */}
       <section className="bg-anchor py-14 md:py-20">
