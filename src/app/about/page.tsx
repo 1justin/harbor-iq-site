@@ -172,7 +172,7 @@ export default function AboutPage() {
             <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-[120px] h-[120px] rounded-full overflow-hidden border border-ash shrink-0">
                 <Image
-                  src="/images/justin-mayer-chicago-product-leader.jpeg"
+                  src="/images/justin-mayer-casual-portrait.jpg"
                   alt="Justin Mayer"
                   width={120}
                   height={120}
