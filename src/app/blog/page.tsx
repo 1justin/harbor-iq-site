@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { publishedPosts } from "./posts";
 
 export const metadata: Metadata = {
   title: "Insurance Agency Technology Blog | HarborIQ",
@@ -14,26 +15,9 @@ export const metadata: Metadata = {
   },
 };
 
-const posts = [
-  {
-    slug: "real-cost-of-per-user-pricing",
-    title: "The Real Cost of Per-User Pricing for Insurance Agencies",
-    excerpt:
-      "A 5-person agency paying $94/user/month spends $720/month on their AMS alone. Here's how per-seat pricing quietly becomes your biggest software expense, and what to do about it.",
-    date: "April 2026",
-    readTime: "5 min read",
-  },
-  {
-    slug: "why-your-ams-cant-track-prospects",
-    title: "Why Your AMS Can't Track Prospects (and Why That's Costing You)",
-    excerpt:
-      "Every agency management system manages current clients. None of them manage the prospect who said \"call me in 6 months.\" That gap is where revenue disappears.",
-    date: "April 2026",
-    readTime: "4 min read",
-  },
-];
-
 export default function BlogPage() {
+  const posts = publishedPosts();
+
   return (
     <>
       <section className="bg-paper pt-16 pb-8 md:pt-24 md:pb-12">
