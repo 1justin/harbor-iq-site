@@ -9,12 +9,12 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Pricing | Solo $179, Team $349, Operating System $599 | HarborIQ",
+  title: "Pricing | Solo $199, Team $379, Operating System $599 | HarborIQ",
   description:
-    "Flat monthly pricing per agency for independent insurance agencies. No per-user fees. Solo $179, Team $349, Operating System $599. Founding partners lock in 33% off for life.",
+    "Flat monthly pricing per agency for independent insurance agencies. No per-user fees. Solo $199, Team $379, Operating System $599. Founding partners lock in 33% off for life.",
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: "Pricing | Solo $179, Team $349, Operating System $599 | HarborIQ",
+    title: "Pricing | Solo $199, Team $379, Operating System $599 | HarborIQ",
     description:
       "Flat monthly pricing per agency. No per-user fees. Founding partners lock in 33% off for life. Offer closes August 1, 2026.",
     url: "/pricing",
@@ -347,7 +347,7 @@ export default function PricingPage() {
               <p className="mt-2 text-[15px] text-charcoal leading-relaxed">
                 Free if you import your data yourself with our CSV tool. If you
                 want our team to do it for you, the setup fee equals one month
-                of your plan (Solo $179, Team $349, Operating System $599). We
+                of your plan (Solo $199, Team $379, Operating System $599). We
                 clean your data, import it, and give your team a hands-on
                 walkthrough.
               </p>
@@ -472,7 +472,7 @@ export default function PricingPage() {
                 <tr className="border-b border-ash/60">
                   <td className="py-3 pr-4 text-charcoal">1-person agency</td>
                   <td className="py-3 px-4 text-success font-medium">
-                    Solo $179/mo
+                    Solo $199/mo
                   </td>
                   <td className="py-3 px-4 text-charcoal">~$230/mo</td>
                   <td className="py-3 px-4 text-charcoal">~$530/mo</td>
@@ -481,7 +481,7 @@ export default function PricingPage() {
                 <tr className="border-b border-ash/60">
                   <td className="py-3 pr-4 text-charcoal">5-person agency</td>
                   <td className="py-3 px-4 text-success font-medium">
-                    Team $349/mo
+                    Team $379/mo
                   </td>
                   <td className="py-3 px-4 text-charcoal">~$680/mo</td>
                   <td className="py-3 px-4 text-charcoal">~$980/mo</td>
@@ -512,7 +512,7 @@ export default function PricingPage() {
             {[
               {
                 size: "1-person agency",
-                harbor: "Solo $179/mo",
+                harbor: "Solo $199/mo",
                 save: "Saves about $612/year vs EasyAgent",
                 competitors: [
                   ["EasyAgent", "~$230/mo"],
@@ -522,7 +522,7 @@ export default function PricingPage() {
               },
               {
                 size: "5-person agency",
-                harbor: "Team $349/mo",
+                harbor: "Team $379/mo",
                 save: "Saves about $7,572/year vs EasyAgent + Gaya",
                 competitors: [
                   ["EasyAgent", "~$680/mo"],

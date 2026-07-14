@@ -21,7 +21,7 @@ const homeFaqs = [
   },
   {
     q: "How much does HarborIQ cost?",
-    a: "Flat monthly pricing per agency. No per-user fees. Solo is $179/month for 1-person shops, Team is $349/month for 2 to 5 people, Operating System is $599/month for 6 to 15 people. Founding partners lock in 33% off for life. Solo at $119, Team at $229, Operating System at $399. No long-term contracts. Cancel anytime.",
+    a: "Flat monthly pricing per agency. No per-user fees. Solo is $199/month for 1-person shops, Team is $379/month for 2 to 5 people, Operating System is $599/month for 6 to 15 people. Founding partners lock in 33% off for life. Solo at $119, Team at $229, Operating System at $399. No long-term contracts. Cancel anytime.",
   },
   {
     q: "Does HarborIQ replace my current AMS?",
@@ -37,7 +37,7 @@ const homeFaqs = [
   },
   {
     q: "How do I switch from my current AMS to HarborIQ?",
-    a: "Export a CSV from your current system. If you want our team to handle the migration, the setup fee equals one month of your plan (Solo $179, Team $349, Operating System $599) and includes data cleanup, import, and a hands-on walkthrough. If you prefer to import the data yourself with our CSV tool, there is no setup fee. Most agencies are live within a week.",
+    a: "Export a CSV from your current system. If you want our team to handle the migration, the setup fee equals one month of your plan (Solo $199, Team $379, Operating System $599) and includes data cleanup, import, and a hands-on walkthrough. If you prefer to import the data yourself with our CSV tool, there is no setup fee. Most agencies are live within a week.",
   },
 ];
 
@@ -262,7 +262,7 @@ export default function Home() {
                   <td className="py-4 px-3 text-mist">$6,900</td>
                   <td className="py-4 px-3 text-mist">$7,500</td>
                   <td className="py-4 px-3 text-mist">$9,900</td>
-                  <td className="py-4 px-3 text-success font-medium">$4,188</td>
+                  <td className="py-4 px-3 text-success font-medium">$4,548</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">What you pay to start</td>
@@ -270,7 +270,7 @@ export default function Home() {
                   <td className="py-4 px-3 text-mist">$1,500</td>
                   <td className="py-4 px-3 text-mist">$3,500</td>
                   <td className="py-4 px-3 text-mist">$0</td>
-                  <td className="py-4 px-3 text-success font-medium">$349</td>
+                  <td className="py-4 px-3 text-success font-medium">$379</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Days to first quote</td>
@@ -315,8 +315,8 @@ export default function Home() {
                 name: "HarborIQ Team",
                 highlight: true,
                 rows: [
-                  ["What 5 agents pay annually", "$4,188"],
-                  ["What you pay to start", "$349"],
+                  ["What 5 agents pay annually", "$4,548"],
+                  ["What you pay to start", "$379"],
                   ["Days to first quote", "Within a week"],
                   ["Tools your team logs into", "One"],
                   ["Renewals surfaced before they slip", "Automatic, 60 days early"],

@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "How does onboarding work?",
-    a: "Free if you import your data yourself with our CSV tool. If you want our team to do it for you, the setup fee equals one month of your plan (Solo $179, Team $349, Operating System $599). Most agencies are up and running within a week. You keep your legacy data for reference.",
+    a: "Free if you import your data yourself with our CSV tool. If you want our team to do it for you, the setup fee equals one month of your plan (Solo $199, Team $379, Operating System $599). Most agencies are up and running within a week. You keep your legacy data for reference.",
   },
   {
     q: '"AI-powered", what does that actually mean?',

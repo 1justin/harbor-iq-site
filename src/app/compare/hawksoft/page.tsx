@@ -43,8 +43,8 @@ const contrastCards = [
 ];
 
 const fullTable = [
-  ["Pricing model", "Flat monthly. $179 / $349 / $599. Published.", "$250/mo base + $94/user/month"],
-  ["5-person agency cost", "$349/mo (Team tier, all features)", "$720/month ($250 + 5 × $94)"],
+  ["Pricing model", "Flat monthly. $199 / $379 / $599. Published.", "$250/mo base + $94/user/month"],
+  ["5-person agency cost", "$379/mo (Team tier, all features)", "$720/month ($250 + 5 × $94)"],
   ["10-person agency cost", "$599/mo (Operating System, up to 15 users)", "$1,190/month ($250 + 10 × $94)"],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Client management only."],
   ["AI capabilities", "AI-native: quoting, carrier translation, daily briefings.", "No AI features. Agents bolt on Gaya or similar."],
@@ -57,7 +57,7 @@ const fullTable = [
 
 // Bar chart geometry: 3 headcount groups (5, 10, 15 users), 2 bars per group.
 const COSTS = [
-  { label: "5 people", harboriq: 349, competitor: 720 },
+  { label: "5 people", harboriq: 379, competitor: 720 },
   { label: "10 people", harboriq: 599, competitor: 1190 },
   { label: "15 people", harboriq: 599, competitor: 1660 },
 ];
