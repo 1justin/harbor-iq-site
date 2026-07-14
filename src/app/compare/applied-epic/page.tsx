@@ -44,7 +44,7 @@ const contrastCards = [
 
 const fullTable = [
   ["Built for", "1-15 person independent agencies", "Mid-to-large agencies and brokerages (50+ employees)"],
-  ["Pricing", "Flat monthly. $179 / $349 / $599. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
+  ["Pricing", "Flat monthly. $199 / $379 / $599. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
   ["Complexity", "20 features done well. Clean, modern interface.", "Hundreds of features. Steep learning curve. Extensive customization."],
   ["Onboarding", "Days. CSV import, guided wizard.", "Weeks to months. Enterprise implementation process."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Focused on existing client and policy management."],
@@ -146,7 +146,7 @@ export default function CompareAppliedEpicPage() {
               <text x={dayToX(5) + 18} y="92" fontSize="11" fill="#F1E9D8" textAnchor="start">On your schedule</text>
 
               {/* Financial annotation under HarborIQ */}
-              <text x={TIMELINE_LEFT} y="116" fontSize="11" fill="rgba(196,147,90,0.85)" fontWeight="600">$349 flat · you choose when to go live</text>
+              <text x={TIMELINE_LEFT} y="116" fontSize="11" fill="rgba(196,147,90,0.85)" fontWeight="600">$379 flat · you choose when to go live</text>
 
               {/* Divider */}
               <line x1={TIMELINE_LEFT} y1="140" x2={TIMELINE_RIGHT} y2="140" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="2 4" />

@@ -104,7 +104,7 @@ export default function PostPage() {
             full platform from day one without anyone calculating whether the per-seat cost is&nbsp;&ldquo;worth&nbsp;it.&rdquo;
           </p>
           <p>
-            At HarborIQ, a 1-person agency pays $179/month. A 5-person agency pays $349/month.
+            At HarborIQ, a 1-person agency pays $199/month. A 5-person agency pays $379/month.
             A 10-person agency pays $599/month. No per-user fees. No add-ons for basic features.
             Pipeline CRM, client management, AI-assisted quoting, team performance, and client
             engagement. All included. One login, one price, one&nbsp;platform.

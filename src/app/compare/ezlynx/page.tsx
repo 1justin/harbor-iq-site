@@ -43,7 +43,7 @@ const contrastCards = [
 ];
 
 const fullTable = [
-  ["Pricing model", "Flat monthly. $179 / $349 / $599. Published.", "Starts at $350/mo + per-user fees + add-ons"],
+  ["Pricing model", "Flat monthly. $199 / $379 / $599. Published.", "Starts at $350/mo + per-user fees + add-ons"],
   ["Per-user fees", "None. Flat price per agency within each tier.", "Yes. Costs scale with each user."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Requires separate CRM."],
   ["Comparative rating", "AI-assisted quoting with semantic carrier mapping.", "Traditional API-based comparative rater (their original product)."],
@@ -190,7 +190,7 @@ export default function CompareEZLynxPage() {
                 <p className="mt-2 text-[13px] text-mist leading-snug">for support. EZLynx tickets enter a queue. Yours come straight to me.</p>
               </div>
               <div className="text-center">
-                <p className="text-[28px] md:text-[34px] font-medium text-copper leading-none">$349 flat vs the stack</p>
+                <p className="text-[28px] md:text-[34px] font-medium text-copper leading-none">$379 flat vs the stack</p>
                 <p className="mt-2 text-[13px] text-mist leading-snug">EZLynx is base + per-user + add-ons + implementation. Our price is published. There&rsquo;s nothing else to add.</p>
               </div>
             </div>

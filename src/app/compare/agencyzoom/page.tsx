@@ -24,7 +24,7 @@ const contrastCards = [
   },
   {
     label: "Cost for a 5-person agency",
-    harboriq: "$349 flat",
+    harboriq: "$379 flat",
     competitor: "$720+ and rising",
     detail: "AgencyZoom + a per-user AMS. Every hire is a raise for someone else.",
   },
@@ -44,7 +44,7 @@ const contrastCards = [
 
 const fullTable = [
   ["Category", "Operating system: AMS + CRM + AI in one platform", "Overlay: sales-automation CRM on top of your existing AMS"],
-  ["Pricing model", "Flat monthly. $179 / $349 / $599. Published.", "From ~$79/mo plus the AMS underneath. Higher tiers gate 2-way email and SMS."],
+  ["Pricing model", "Flat monthly. $199 / $379 / $599. Published.", "From ~$79/mo plus the AMS underneath. Higher tiers gate 2-way email and SMS."],
   ["Client and policy management", "Included. One record across pipeline, policy, renewals, claims.", "Not included. AgencyZoom is pipeline and engagement only."],
   ["AI-assisted quoting", "Built in. Carrier-term translation, semantic mapping, pre-fill.", "Not included. Separate raters required (PL Rating, Tarmika, Bridge)."],
   ["Sales pipeline", "Native Kanban, multiple stages, AI-assisted next-best-action.", "Native and well-developed. Their strongest feature."],
