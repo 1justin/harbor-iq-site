@@ -33,13 +33,13 @@ export function Footer() {
                 Renewals
               </Link>
               <Link href="/features/carriers" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Carrier Management
+                Markets (Carrier Intelligence)
               </Link>
               <Link href="/features/team" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Team Performance
               </Link>
               <Link href="/features/ai-quoting" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                AI-Assisted Quoting
+                Smarter Quoting
               </Link>
               <Link href="/pricing" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Pricing

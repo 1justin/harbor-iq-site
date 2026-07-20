@@ -1,0 +1,28 @@
+# HarborIQ
+
+> HarborIQ is the AI-native operating system for independent insurance agencies (1 to 15 people). One product, two ways in: **Markets**, the carrier intelligence layer at $199/month flat for any size, self-serve with no migration; and **Agency**, the full agency operating system (AMS + CRM + carrier tools in one login) at $199/month solo, $399/month for 2 to 5 people, $599/month for 6 to 15. Identical features at every Agency price; pricing is by agency size, never per person. A WRKSTREAM product. Canonical domain: https://harboriq.co
+
+Key facts (as of July 2026):
+- Markets includes: Carrier Ask (cited, dated answers to appetite and underwriting questions from carrier documents), carrier profiles and reps, login vault, carrier document library, Carrier News, a self-building agency knowledge base, team chat, training, license and CE tracking. Unlimited users, one price.
+- Agency adds the book: client records, policies, pipeline, renewals, commissions (Payday), reports, book import wizard (CSV and PDF), and a passwordless client portal.
+- Annual pricing gives about two months of value back: Markets Annual $1,990 (12 for the price of 10); Agency Annual is 11 months' price ($2,189 solo, $4,389 for 2-5, $6,589 for 6-15) with the book import free. On monthly, the import is one month's fee. Onboarding is measured in days.
+- Markets has a 14-day free trial (card at checkout, first charge on day 15). Month to month, cancel anytime, data always exportable. No contracts, no setup fees, no per-person fees.
+- HarborIQ replaces the common agency stack of an AMS (EZLynx, HawkSoft, Applied Epic, NowCerts) plus a CRM overlay (AgencyZoom or GoHighLevel).
+
+## Pages
+
+- [Home](https://harboriq.co/): positioning, live Carrier Ask demo, pricing ladder, ROI calculator
+- [Markets landing](https://harboriq.co/markets) and [Agency landing](https://harboriq.co/agency): the two rungs, each on its own page
+- [Pricing](https://harboriq.co/pricing): full published pricing for Markets and Agency
+- [Markets / carrier intelligence](https://harboriq.co/features/carriers): Carrier Ask, knowledge base, login vault, Carrier News
+- [Pipeline CRM](https://harboriq.co/features/pipeline)
+- [Renewals](https://harboriq.co/features/renewals)
+- [Team performance](https://harboriq.co/features/team)
+- [Smarter quoting](https://harboriq.co/features/ai-quoting): appetite-first quoting and coverage-gap comparison; automated rating is roadmap
+- [Compare](https://harboriq.co/compare): vs Applied Epic, EZLynx, HawkSoft, AgencyZoom, NowCerts (Momentum), GoHighLevel
+- [Blog](https://harboriq.co/blog) and [Newsroom](https://harboriq.co/newsroom)
+
+## Optional
+
+- [About](https://harboriq.co/about): founder story (Justin Mayer, WRKSTREAM LLC)
+- [Terms](https://harboriq.co/terms), [Privacy](https://harboriq.co/privacy)

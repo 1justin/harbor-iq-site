@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
+import { MarketsWedge } from "@/components/MarketsWedge";
 import { DEMO_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -35,23 +36,23 @@ const contrastCards = [
     detail: "EZLynx base price hides per-user fees, implementation fees, and module upsells.",
   },
   {
-    label: "Architectural origin",
-    harboriq: "AMS-first, AI-native",
-    competitor: "Rater first, AMS bolted on",
-    detail: "EZLynx started as a comparative rater and grew an AMS around it.",
+    label: "Carrier appetite answers",
+    harboriq: "Cited, in seconds",
+    competitor: "Not built in",
+    detail: "A rater quotes carriers. It cannot tell you which ones actually want the risk. Carrier Ask can, with the source and its date.",
   },
 ];
 
 const fullTable = [
-  ["Pricing model", "Flat monthly. $179 / $349 / $599. Published.", "Starts at $350/mo + per-user fees + add-ons"],
-  ["Per-user fees", "None. Flat price per agency within each tier.", "Yes. Costs scale with each user."],
+  ["Pricing model", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "Starts at $350/mo + per-user fees + add-ons"],
+  ["Per-user fees", "None. Flat price per agency within each size band.", "Yes. Costs scale with each user."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Requires separate CRM."],
-  ["Comparative rating", "AI-assisted quoting with semantic carrier mapping.", "Traditional API-based comparative rater (their original product)."],
+  ["Comparative rating", "Roadmap, stated plainly. Today: appetite-first quoting and coverage-gap comparison.", "Traditional API-based comparative rater (their original product, and a good one)."],
   ["Renewal management", "Dedicated dashboard with priority escalation.", "Basic renewal tracking."],
   ["Team performance", "Agent dashboards with production metrics and goal tracking.", "Limited reporting capabilities."],
   ["Onboarding timeline", "Days. CSV import + guided setup.", "6-8 weeks minimum per user reviews."],
   ["Support", "Founder-direct for design partners. Hours, often minutes.", "Tiered queue. Long response times cited in reviews."],
-  ["AI capabilities", "AI-native: quoting, carrier translation, daily briefings.", "No AI-native features."],
+  ["AI capabilities", "In the core: cited carrier answers, overnight bulletin summaries, daily priorities.", "No AI-native features."],
   ["Ownership", "Independent. One product, every cycle.", "Owned by Applied Systems since 2018."],
 ];
 
@@ -190,7 +191,7 @@ export default function CompareEZLynxPage() {
                 <p className="mt-2 text-[13px] text-mist leading-snug">for support. EZLynx tickets enter a queue. Yours come straight to me.</p>
               </div>
               <div className="text-center">
-                <p className="text-[28px] md:text-[34px] font-medium text-copper leading-none">$349 flat vs the stack</p>
+                <p className="text-[28px] md:text-[34px] font-medium text-copper leading-none">$399 flat vs the stack</p>
                 <p className="mt-2 text-[13px] text-mist leading-snug">EZLynx is base + per-user + add-ons + implementation. Our price is published. There&rsquo;s nothing else to add.</p>
               </div>
             </div>
@@ -326,6 +327,8 @@ export default function CompareEZLynxPage() {
           </div>
         </div>
       </section>
+
+      <MarketsWedge competitor="EZLynx" />
 
       <CtaSection />
     </>

@@ -104,7 +104,7 @@ export default function PostPage() {
             full platform from day one without anyone calculating whether the per-seat cost is&nbsp;&ldquo;worth&nbsp;it.&rdquo;
           </p>
           <p>
-            At HarborIQ, a 1-person agency pays $179/month. A 5-person agency pays $349/month.
+            At HarborIQ, a 1-person agency pays $199/month. A 5-person agency pays $399/month.
             A 10-person agency pays $599/month. No per-user fees. No add-ons for basic features.
             Pipeline CRM, client management, AI-assisted quoting, team performance, and client
             engagement. All included. One login, one price, one&nbsp;platform.
@@ -119,10 +119,10 @@ export default function PostPage() {
 
           <div className="mt-12 p-6 bg-linen rounded-xl border border-ash">
             <p className="text-[16px] text-ink font-medium">
-              Founding partners lock in 33% off for life.
+              Priced by agency size, never per person.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              Solo $119, Team $229, Operating System $399. 20 spots. Your feedback shapes the&nbsp;product.
+              Markets is $199/mo at any size. Agency is $199 solo, $399 for 2 to 5, and $599 for 6 to 15. Free book import with annual&nbsp;prepay.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
               <a

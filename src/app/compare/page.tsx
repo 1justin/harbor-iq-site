@@ -80,7 +80,7 @@ const rulesBroken = [
   },
   {
     title: "Month-to-month default.",
-    body: "Refundable founding-partner deposit. Cancel any month. If the product earns retention on merit, the contract structure becomes a marketing asset.",
+    body: "Published prices, month to month, cancel anytime, data always exportable. If the product earns retention on merit, the contract structure becomes a marketing asset.",
   },
 ];
 
@@ -123,6 +123,16 @@ const startingPoints = [
     href: "/compare/hawksoft",
     label: "Currently on HawkSoft?",
     summary: "HawkSoft is the best-loved AMS in the category. We don’t trash that. We’re building what comes next.",
+  },
+  {
+    href: "/compare/nowcerts",
+    label: "Currently on NowCerts (Momentum)?",
+    summary: "The cheapest established AMS, and a good one. This is not a price war. It is a generation gap.",
+  },
+  {
+    href: "/compare/gohighlevel",
+    label: "Running GoHighLevel for your CRM?",
+    summary: "GHL wins the lead. HarborIQ runs the agency. Only one of those jobs knows what a renewal is.",
   },
 ];
 

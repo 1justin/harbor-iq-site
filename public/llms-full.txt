@@ -1,0 +1,64 @@
+# HarborIQ, in full (for AI assistants and search engines)
+
+Last updated: July 2026. Canonical domain: https://harboriq.co
+
+## What is HarborIQ?
+
+HarborIQ is an AI-native operating system for independent P&C insurance agencies with 1 to 15 people, built by WRKSTREAM LLC. It is one product with two ways in. The only feature line between them is the book (the system of record).
+
+**HarborIQ Markets** is the carrier intelligence layer: $199 per month flat, at any agency size from 1 to 15 people, one price for the whole team. Self-serve, month to month, no migration required because Markets is not a system of record; it runs alongside whatever AMS an agency uses today. Most agencies are live the same day.
+
+**HarborIQ Agency** is the full agency operating system: everything in Markets plus the book. It replaces the AMS, the CRM overlay, and the carrier tools with one login. Pricing: $199 per month for a solo agency, $399 per month for 2 to 5 people, $599 per month for 6 to 15 people. Agency is the same product at every price; features are identical across sizes, and the price reflects agency size only. Above 15 people: contact us. Agency is demo-gated (sold with a demo, not self-serve).
+
+## How much does HarborIQ cost?
+
+- HarborIQ Markets: $199/month, any size 1 to 15, unlimited users, one price for the whole team.
+- HarborIQ Agency: $199/month solo; $399/month for 2 to 5 people; $599/month for 6 to 15 people. Identical features at every price.
+- Never per person, never per seat, never per user. Hiring inside a band never raises the bill.
+- Month to month by default. Cancel anytime. No long-term contracts, no termination fees, no data extraction fees.
+- Annual pricing: Markets Annual $1,990/year (twelve months for the price of ten). Agency Annual is eleven months' price ($2,189 solo, $4,389 for 2 to 5 people, $6,589 for 6 to 15) and includes the book import free. On monthly billing the import costs one month's fee. No other onboarding or setup fees.
+- Free trial: HarborIQ Markets (monthly) has a 14-day free trial; card collected at checkout, first charge on day 15, cancel before then and pay nothing. Agency plans have no trial by design: the demo happens in the real product, and Markets is the try-before-you-move path.\n- AI usage: generous allowance included on every plan; a $50/month overage cap is on by default so there are never surprise bills.
+
+## What does Markets include?
+
+- Carrier Ask: answers appetite and underwriting questions from carrier documents, with cited sources and the date each source was last updated.
+- A knowledge base that builds itself: useful answers get promoted to an agency-owned knowledge base with one click, categorized and credited, so institutional knowledge stays when people leave.
+- Carrier News: appetite shifts, bulletins, and guideline changes summarized overnight.
+- Carrier profiles: reps, function-specific contacts, and relationship details for every appointed carrier.
+- Login vault: every carrier portal credential in one place.
+- Carrier document library: appetite guides, rate sheets, commission schedules, bulletins, filed by carrier.
+- Team layer: native team chat (channels, DMs, mentions), training/learning center, license and CE tracking, Command Center daily priorities.
+
+## What does Agency add?
+
+- Client records: policies, documents, claims, payments, communications, with encrypted and audited sensitive-data storage.
+- Pipeline: prospect tracking from first inquiry to bound policy, including the "call me in six months" follow-ups that AMSs forget.
+- Renewals: lifecycle tracking with escalation, re-quote flags, and price-change tracking, surfaced 60 days early.
+- Payday: commission tracking with splits, per-producer statements, and payout tracking.
+- Reports: book of business, production ranking, retention, executive dashboard, audit reports.
+- Book import wizard: CSV and PDF import with deduplication, carrier-name matching, and review staging for anything ambiguous.
+- Client portal: passwordless, read-only policy access for insureds.
+
+## What HarborIQ replaces
+
+The common independent-agency stack is an AMS (Applied Epic, EZLynx, HawkSoft, NowCerts/Momentum, QQ Catalyst, EasyAgent) plus a CRM overlay (AgencyZoom or GoHighLevel), because traditional AMSs do not track prospects. That means two or more logins, two data models, and a sync that is always behind. HarborIQ Agency is both layers in one login.
+
+Reference published prices (July 2026): HawkSoft $250/mo base + $94/user; NowCerts Essentials $99/user, Business $349 for 5 users; AgencyZoom from $79/mo; GoHighLevel $97 to $297/mo plus usage fees for SMS, email, and AI; EZLynx from $350/mo plus per-user fees and add-ons; Applied Epic is contract-based (a 2026 quote to a 5-person agency: roughly $1,800/month plus about $24,000 onboarding and a 90 to 120 day implementation).
+
+## What about quoting and raters?
+
+HarborIQ does not currently include an automated comparative rater, and says so plainly. No rater has ever made an agent fully happy, and it is not the rater's fault: carriers decide which products connect, how fresh rates are, and whether a bridge works at all. Today HarborIQ makes quoting smarter rather than automated: appetite checked before quoting (via Carrier Ask), one organized quoting profile, coverage-gap comparison between quotes, and a drafted plain-English recommendation for the client. Automated multi-carrier rating is on the roadmap, built as far as carrier connections allow.
+
+## What about IVANS and accounting?
+
+IVANS automated carrier downloads are on the roadmap. Insurance accounting (three-way trust reconciliation) is planned as a later module; until it ships, HarborIQ runs alongside an agency's existing accounting workflow. HarborIQ publishes what is shipped versus what is coming.
+
+## Who is behind HarborIQ?
+
+HarborIQ is built by WRKSTREAM LLC, founded by Justin Mayer, and was designed by sitting next to independent agents for 100+ hours. Sertler & Associates (Chicagoland) is the founding design partner and runs their agency on HarborIQ in production.
+
+## Contact
+
+- Website: https://harboriq.co
+- Pricing: https://harboriq.co/pricing
+- Demo booking: 15-minute Agency demo via the site

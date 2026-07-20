@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
+import { MarketsWedge } from "@/components/MarketsWedge";
 import { DEMO_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -44,14 +45,14 @@ const contrastCards = [
 
 const fullTable = [
   ["Built for", "1-15 person independent agencies", "Mid-to-large agencies and brokerages (50+ employees)"],
-  ["Pricing", "Flat monthly. $179 / $349 / $599. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
+  ["Pricing", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
   ["Complexity", "20 features done well. Clean, modern interface.", "Hundreds of features. Steep learning curve. Extensive customization."],
   ["Onboarding", "Days. CSV import, guided wizard.", "Weeks to months. Enterprise implementation process."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Focused on existing client and policy management."],
-  ["AI capabilities", "AI-native: quoting, carrier translation, daily briefings.", "Investing in 'agentic AI' for underwriting and claims."],
-  ["Carrier integrations", "Carrier directory + AI quoting. IVANS on roadmap.", "Deep IVANS integration (industry leader)."],
+  ["AI capabilities", "In the core today: cited carrier answers, overnight bulletin summaries, daily priorities.", "Investing in 'agentic AI'. Their sales team struggles to demo a single concrete use case."],
+  ["Carrier integrations", "Carrier intelligence layer (Ask, News, vault). IVANS on roadmap, stated plainly.", "Deep IVANS integration (industry leader)."],
   ["Data portability", "Your data is always exportable. No lock-in.", "Data migration out is notoriously difficult per user reports."],
-  ["Support", "Direct product team access for founding agencies.", "Tiered support. Small agencies have less leverage."],
+  ["Support", "Direct product team access. The people who build it answer the tickets.", "Tiered support. Small agencies have less leverage."],
 ];
 
 // Timeline geometry — single axis 0→90 days mapped across the viewBox.
@@ -146,7 +147,7 @@ export default function CompareAppliedEpicPage() {
               <text x={dayToX(5) + 18} y="92" fontSize="11" fill="#F1E9D8" textAnchor="start">On your schedule</text>
 
               {/* Financial annotation under HarborIQ */}
-              <text x={TIMELINE_LEFT} y="116" fontSize="11" fill="rgba(196,147,90,0.85)" fontWeight="600">$349 flat · you choose when to go live</text>
+              <text x={TIMELINE_LEFT} y="116" fontSize="11" fill="rgba(196,147,90,0.85)" fontWeight="600">$399 flat · you choose when to go live</text>
 
               {/* Divider */}
               <line x1={TIMELINE_LEFT} y1="140" x2={TIMELINE_RIGHT} y2="140" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="2 4" />
@@ -235,19 +236,19 @@ export default function CompareAppliedEpicPage() {
                 <tr className="border-b border-ash/60">
                   <td className="py-4 pr-4 font-medium text-ink">5 people</td>
                   <td className="py-4 px-4 text-charcoal">$21,300</td>
-                  <td className="py-4 px-4 text-charcoal">$4,188 <span className="text-stone text-[13px]">(Team)</span></td>
+                  <td className="py-4 px-4 text-charcoal">$4,788 <span className="text-stone text-[13px]">(Agency)</span></td>
                   <td className="py-4 pl-4 font-medium text-copper">$17,112</td>
                 </tr>
                 <tr className="border-b border-ash/60">
                   <td className="py-4 pr-4 font-medium text-ink">10 people</td>
                   <td className="py-4 px-4 text-charcoal">$42,600</td>
-                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(OS)</span></td>
+                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(Agency)</span></td>
                   <td className="py-4 pl-4 font-medium text-copper">$35,412</td>
                 </tr>
                 <tr>
                   <td className="py-4 pr-4 font-medium text-ink">15 people</td>
                   <td className="py-4 px-4 text-charcoal">$63,900</td>
-                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(OS)</span></td>
+                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(Agency)</span></td>
                   <td className="py-4 pl-4 font-medium text-copper">$56,712</td>
                 </tr>
               </tbody>
@@ -405,6 +406,8 @@ export default function CompareAppliedEpicPage() {
           </div>
         </div>
       </section>
+
+      <MarketsWedge competitor="Applied Epic" />
 
       <CtaSection />
     </>

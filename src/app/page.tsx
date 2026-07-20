@@ -1,43 +1,45 @@
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Hero } from "@/components/Hero";
+import { AskDemo } from "@/components/AskDemo";
+import { QuestionsSection } from "@/components/QuestionsSection";
+import { LadderSection } from "@/components/LadderSection";
 import { PatchworkCollapse } from "@/components/PatchworkCollapse";
-import { NewCore } from "@/components/NewCore";
+import { ThenVsNow } from "@/components/ThenVsNow";
 import { DayInLife } from "@/components/DayInLife";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { RoiCalculator } from "@/components/RoiCalculator";
 import { FounderBlock } from "@/components/FounderBlock";
 import { ResourcesGrid } from "@/components/ResourcesGrid";
-import {
-  DEMO_URL,
-  FOUNDING_CLOSE_DATE,
-  FOUNDING_SPOTS_TOTAL,
-  PRICING,
-} from "@/lib/constants";
+import { DEMO_URL, MARKETS_START_URL, PRICING } from "@/lib/constants";
 
 const homeFaqs = [
   {
     q: "What is HarborIQ?",
-    a: "HarborIQ is an AI-powered agency management system (AMS) built for independent insurance agencies with 1 to 15 employees. It combines pipeline CRM, client and policy management, renewal tracking, team performance analytics, carrier management, and AI-assisted quoting in one platform. Think of it as the operating system your agency runs on.",
+    a: "HarborIQ is one platform with two ways in, built for independent insurance agencies with 1 to 15 people. Markets is the carrier intelligence layer: cited answers to appetite and guideline questions, carrier contacts, a login vault, documents, and carrier news, at $199/month for any size with no migration. Agency adds the book: clients, policies, pipeline, renewals, commissions, and reports, so one login runs the whole operation.",
   },
   {
     q: "How much does HarborIQ cost?",
-    a: "Flat monthly pricing per agency. No per-user fees. Solo is $179/month for 1-person shops, Team is $349/month for 2 to 5 people, Operating System is $599/month for 6 to 15 people. Founding partners lock in 33% off for life. Solo at $119, Team at $229, Operating System at $399. No long-term contracts. Cancel anytime.",
+    a: "Published, flat, and never per person. Markets is $199/month at any size from 1 to 15 people. Agency is $199/month solo, $399/month for 2 to 5 people, and $599/month for 6 to 15. Agency is the same product at every price; you pay for your size, and nothing is withheld. Month to month, cancel anytime. Above 15 people, contact us.",
+  },
+  {
+    q: "What is HarborIQ Markets?",
+    a: "Markets is carrier management for the whole agency: every carrier relationship, contact, and login in one place, plus Carrier Ask, which answers appetite and underwriting questions from carrier documents with cited, dated sources. It replaces nothing, so there is no migration. Most agencies are live the same day they sign up.",
   },
   {
     q: "Does HarborIQ replace my current AMS?",
-    a: "Yes. HarborIQ is designed to replace tools like EZLynx, HawkSoft, Applied Epic, NowCerts, or EasyAgent. It handles everything from prospect pipeline to client management, renewals, quoting, and team performance, so you do not need separate tools bolted together.",
+    a: "The Agency rung does. It replaces tools like EZLynx, HawkSoft, Applied Epic, NowCerts, or EasyAgent, and the CRM overlay (AgencyZoom or GoHighLevel) you bolted on top. Markets does not replace your AMS; it runs alongside whatever you use today, which is why it needs no migration.",
   },
   {
     q: "Does HarborIQ include comparative rating?",
-    a: "HarborIQ takes a different approach than traditional comparative raters. Instead of rigid API integrations, our AI-assisted quoting uses semantic mapping to translate between carrier-specific terminology and pre-fill quoting forms. Enter client data once, and HarborIQ handles the carrier differences automatically.",
+    a: "Not yet. And a hard truth: every rater is limited by which connections carriers allow, which is why no rater has ever made an agent fully happy. Today HarborIQ answers appetite and guideline questions before you quote, then helps you compare what the quotes actually cover and explain the recommendation to your client. Automated rating is on the roadmap, and we publish what is shipped versus what is coming.",
   },
   {
     q: "Is HarborIQ IVANS compatible?",
-    a: "IVANS automated carrier downloads are on our roadmap. In the initial release, HarborIQ includes a comprehensive carrier directory with appetite tracking, underwriting guidelines, and portal credentials. We are transparent about what is available now and what is coming next.",
+    a: "IVANS automated carrier downloads are on our roadmap. Today HarborIQ includes a full carrier directory with appetite tracking, underwriting guidelines, and portal credentials. We are transparent about what is available now and what is coming next.",
   },
   {
     q: "How do I switch from my current AMS to HarborIQ?",
-    a: "Export a CSV from your current system. If you want our team to handle the migration, the setup fee equals one month of your plan (Solo $179, Team $349, Operating System $599) and includes data cleanup, import, and a hands-on walkthrough. If you prefer to import the data yourself with our CSV tool, there is no setup fee. Most agencies are live within a week.",
+    a: "Start with Markets and nothing has to move. When you upgrade to Agency, export a CSV from your current system and our import wizard handles deduplication, carrier-name matching, and cleanup, with our team hands-on. The book import is free with annual prepay, or one month's fee on monthly. Onboarding is measured in days; one incumbent quoted an agency 3 to 4 months.",
   },
 ];
 
@@ -95,6 +97,9 @@ export default function Home() {
       {/* ─── HERO ─── */}
       <Hero />
 
+      {/* ─── ASK IT YOURSELF (live Carrier Ask demo) ─── */}
+      <AskDemo />
+
       {/* ─── THE PROBLEM ─── */}
       <section className="bg-paper py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
@@ -103,14 +108,17 @@ export default function Home() {
               The reality
             </p>
             <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight">
-              Two hours to quote one customer.<br />That&rsquo;s not a people&nbsp;problem.
+              Typed three times. Asked every season. Lost in a&nbsp;tab.<br />That&rsquo;s not a people&nbsp;problem.
             </h2>
             <div className="mt-6 space-y-4 text-[16px] text-charcoal leading-relaxed">
               <p>
                 Your agents open Progressive in one tab, Geico in another, Travelers in a third. Same client. Same address. Same vehicle. Typed three times. Each carrier uses different words for the same&nbsp;coverages.
               </p>
               <p>
-                Then the prospect from last month who said &ldquo;call me in six months&rdquo;? Gone. Your management system tracks current clients, not the ones who haven&rsquo;t signed&nbsp;yet.
+                Meanwhile the answer to &ldquo;will this carrier even write it?&rdquo; lives in a PDF, a portal, or the one veteran who happens to be at lunch. So the question gets asked again. Every&nbsp;season.
+              </p>
+              <p>
+                And the prospect from last month who said &ldquo;call me in six months&rdquo;? Gone. Your management system tracks current clients, not the ones who haven&rsquo;t signed&nbsp;yet.
               </p>
               <p className="text-ink font-medium text-lg">
                 Your team works hard. They deserve tools that work just as&nbsp;hard.
@@ -156,54 +164,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── THE NEW CORE ─── */}
+      {/* ─── THEN VS NOW (composite legacy AMS vs HarborIQ) ─── */}
+      <section className="bg-midnight py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4 text-center">
+            Seeing is believing
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium text-paper leading-tight tracking-tight text-center max-w-3xl mx-auto">
+            You have seen this screen before.
+          </h2>
+          <p className="mt-3 text-[16px] text-mist leading-relaxed text-center max-w-2xl mx-auto">
+            Busy screens look like value in a sales demo. Then your team lives
+            in them. A good screen decides what matters before you sit down. A
+            gray grid makes you hunt for it.
+          </p>
+          <ThenVsNow />
+        </div>
+      </section>
+
+      {/* ─── THE QUESTIONS NOBODY IS ASKING ─── */}
+      <QuestionsSection />
+
+      {/* ─── THE LADDER (the new core, concretely) ─── */}
       <section className="bg-anchor py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
             <p className="text-[13px] font-medium text-ice uppercase tracking-wider mb-4">
-              The new core
+              One product, two ways in
             </p>
             <h2 className="text-2xl md:text-[34px] font-medium text-paper leading-tight tracking-tight">
-              A command center, not a collection of&nbsp;tools.
+              Manage your markets. Then run your&nbsp;agency.
             </h2>
             <p className="mt-6 text-[16px] text-mist leading-relaxed">
-              HarborIQ replaces the patchwork with one AI-native platform designed around how agencies actually run. Your pipeline, clients, quoting, renewals, carrier knowledge, and team performance all speak the same&nbsp;language. Inside a single&nbsp;login.
+              Every HarborIQ agency starts with the same platform. The only
+              feature line in the product is the book. Start where nothing has
+              to move, and when the two-system tax gets old, the upgrade is one
+              import, not another&nbsp;migration.
             </p>
           </div>
 
-          <NewCore />
+          <LadderSection />
         </div>
       </section>
 
       {/* ─── A DAY IN THE LIFE (replaces Features) ─── */}
       <DayInLife />
-
-      {/* ─── SEE THE IQ IN ACTION ─── */}
-      <section className="bg-linen py-14 md:py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
-            See the IQ in action
-          </p>
-          <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight">
-            Ask anything. Get answers&nbsp;instantly.
-          </h2>
-          <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-2xl mx-auto">
-            HarborIQ&rsquo;s built-in intelligence lets your team search across clients, carriers, policies, and tasks in natural language. No digging through tabs. Just&nbsp;ask.
-          </p>
-          <div className="mt-10 max-w-3xl mx-auto rounded-xl overflow-hidden border border-ash shadow-lg">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full object-cover"
-            >
-              <source src="/videos/harboriq-ai-assistant-chat-demo.webm" type="video/webm" />
-              <source src="/videos/harboriq-ai-assistant-chat-demo.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </section>
 
       {/* ─── DIFFERENTIATION ─── */}
       <section className="bg-paper py-14 md:py-20">
@@ -239,7 +244,10 @@ export default function Home() {
             Stop paying more for&nbsp;less.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed text-center max-w-2xl mx-auto">
-            Five real systems. Five agents on each. Same job. Different price, different speed, different amount of work left for your&nbsp;team.
+            Five agents, same job, real published prices. Most agencies also pay
+            for a CRM overlay (AgencyZoom or GoHighLevel) on top of the AMS,
+            because the AMS cannot track a prospect. That is the stack HarborIQ
+            Agency&nbsp;replaces.
           </p>
 
           {/* Desktop table */}
@@ -251,8 +259,8 @@ export default function Home() {
                   <th className="py-4 px-3 text-[14px] font-medium text-mist">Applied Epic</th>
                   <th className="py-4 px-3 text-[14px] font-medium text-mist">EZLynx</th>
                   <th className="py-4 px-3 text-[14px] font-medium text-mist">HawkSoft</th>
-                  <th className="py-4 px-3 text-[14px] font-medium text-mist">AgencyZoom</th>
-                  <th className="py-4 px-3 text-[14px] font-medium text-success">HarborIQ Team</th>
+                  <th className="py-4 px-3 text-[14px] font-medium text-mist">AMS + AgencyZoom</th>
+                  <th className="py-4 px-3 text-[14px] font-medium text-success">HarborIQ Agency</th>
                 </tr>
               </thead>
               <tbody className="text-[15px]">
@@ -262,7 +270,7 @@ export default function Home() {
                   <td className="py-4 px-3 text-mist">$6,900</td>
                   <td className="py-4 px-3 text-mist">$7,500</td>
                   <td className="py-4 px-3 text-mist">$9,900</td>
-                  <td className="py-4 px-3 text-success font-medium">$4,188</td>
+                  <td className="py-4 px-3 text-success font-medium">$4,788</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">What you pay to start</td>
@@ -270,7 +278,7 @@ export default function Home() {
                   <td className="py-4 px-3 text-mist">$1,500</td>
                   <td className="py-4 px-3 text-mist">$3,500</td>
                   <td className="py-4 px-3 text-mist">$0</td>
-                  <td className="py-4 px-3 text-success font-medium">$349</td>
+                  <td className="py-4 px-3 text-success font-medium">$0 with annual prepay</td>
                 </tr>
                 <tr className="border-b border-anchor/40">
                   <td className="py-4 pr-4 text-mist font-medium">Days to first quote</td>
@@ -312,11 +320,11 @@ export default function Home() {
           <div className="md:hidden mt-10 space-y-4">
             {[
               {
-                name: "HarborIQ Team",
+                name: "HarborIQ Agency",
                 highlight: true,
                 rows: [
-                  ["What 5 agents pay annually", "$4,188"],
-                  ["What you pay to start", "$349"],
+                  ["What 5 agents pay annually", "$4,788"],
+                  ["What you pay to start", "$0 with annual prepay"],
                   ["Days to first quote", "Within a week"],
                   ["Tools your team logs into", "One"],
                   ["Renewals surfaced before they slip", "Automatic, 60 days early"],
@@ -357,7 +365,7 @@ export default function Home() {
                 ],
               },
               {
-                name: "AgencyZoom",
+                name: "AMS + AgencyZoom",
                 rows: [
                   ["What 5 agents pay annually", "$9,900"],
                   ["What you pay to start", "$0"],
@@ -407,7 +415,14 @@ export default function Home() {
           </div>
 
           <p className="mt-8 text-[13px] text-slate leading-relaxed text-center max-w-3xl mx-auto">
-            Sources: documented public pricing and quotes shared with us by agencies that evaluated these systems before choosing HarborIQ. The Applied Epic figures come from a 2026 quote a 5-person agency received. Edit any row in the ROI calculator just&nbsp;below to match your&nbsp;numbers.
+            Sources: documented public pricing and quotes shared with us by
+            agencies that evaluated these systems before choosing HarborIQ. The
+            Applied Epic figures come from a 2026 quote a 5-person agency
+            received. The AMS + AgencyZoom column pairs a mid-market AMS with
+            AgencyZoom&rsquo;s published starting price; swap in GoHighLevel
+            ($97 to $297/mo plus usage fees) if that is your stack. HarborIQ
+            Agency shown at its 2 to 5 person price, $399/mo flat. Edit any row
+            in the ROI calculator just&nbsp;below to match your&nbsp;numbers.
           </p>
         </div>
       </section>
@@ -562,29 +577,34 @@ export default function Home() {
       <section className="bg-anchor py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <h2 className="text-2xl md:text-3xl font-medium text-paper leading-tight tracking-tight">
-            Founding partners get 33% off. For&nbsp;life.
+            Start today. Move the book when you&rsquo;re&nbsp;ready.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed">
-            Solo ${PRICING.solo.founding}/mo, Team ${PRICING.team.founding}/mo, Operating System ${PRICING.os.founding}/mo. Locked forever. Standard pricing starts at ${PRICING.solo.monthly}/mo.
+            Markets is ${PRICING.markets.monthly}/mo at any size, live the same
+            day. Agency runs the whole operation at ${PRICING.agency.solo.monthly}{" "}
+            solo, ${PRICING.agency.team.monthly} for 2 to 5, and{" "}
+            ${PRICING.agency.os.monthly} for 6 to 15. Published, month to month,
+            never per&nbsp;seat.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={MARKETS_START_URL}
+              className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
+            >
+              Start with Markets
+            </a>
             <a
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
-            >
-              Book a 15 minute demo
-            </a>
-            <a
-              href="/pricing"
               className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
             >
-              See pricing
+              Book an Agency demo
             </a>
           </div>
           <p className="mt-5 text-mist text-[13px]">
-            Founding partner pricing locks 33% off for life. Offer closes {FOUNDING_CLOSE_DATE}. Limited to {FOUNDING_SPOTS_TOTAL} agencies.
+            Free book import with annual prepay. One month&rsquo;s fee on
+            monthly. Cancel anytime.
           </p>
 
           {/* Email capture for not-ready visitors */}

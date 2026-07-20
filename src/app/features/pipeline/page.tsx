@@ -99,7 +99,7 @@ export default function PipelinePage() {
             Availability
           </p>
           <p className="text-[16px] text-charcoal leading-relaxed">
-            Pipeline CRM is included on every plan. Solo, Team, and Operating System.
+            Pipeline lives in the Agency plan, where your book is: $199/mo solo, $399/mo for 2 to 5 people, $599/mo for 6 to 15. Same product at every price, never per person.
           </p>
         </div>
       </section>

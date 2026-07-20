@@ -3,11 +3,11 @@
 import { useMemo, useState } from "react";
 import {
   ROI_PRESETS,
+  ROI_OVERLAYS,
   computeRoi,
   defaultInputsFor,
   formatHours,
   formatUsd,
-  HARBORIQ_TEAM_MONTHLY,
 } from "@/lib/roi";
 
 const inputBase =
@@ -21,9 +21,21 @@ export function RoiCalculator() {
   const outputs = useMemo(() => computeRoi(inputs), [inputs]);
   const activePreset =
     ROI_PRESETS.find((p) => p.id === inputs.presetId) ?? ROI_PRESETS[0];
+  const activeOverlay =
+    ROI_OVERLAYS.find((o) => o.id === inputs.overlayId) ?? ROI_OVERLAYS[0];
 
   function setPreset(presetId: string) {
-    setInputs(defaultInputsFor(presetId));
+    setInputs((prev) => defaultInputsFor(presetId, prev.overlayId));
+  }
+
+  function setOverlay(overlayId: (typeof ROI_OVERLAYS)[number]["id"]) {
+    const overlay =
+      ROI_OVERLAYS.find((o) => o.id === overlayId) ?? ROI_OVERLAYS[0];
+    setInputs((prev) => ({
+      ...prev,
+      overlayId: overlay.id,
+      overlayMonthly: overlay.monthly,
+    }));
   }
 
   function setField<K extends keyof typeof inputs>(
@@ -61,6 +73,28 @@ export function RoiCalculator() {
                 {ROI_PRESETS.map((p) => (
                   <option key={p.id} value={p.id}>
                     {p.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="roi-overlay" className={labelBase}>
+                CRM overlay on top of it
+              </label>
+              <select
+                id="roi-overlay"
+                className={inputBase}
+                value={inputs.overlayId}
+                onChange={(e) =>
+                  setOverlay(
+                    e.target.value as (typeof ROI_OVERLAYS)[number]["id"],
+                  )
+                }
+              >
+                {ROI_OVERLAYS.map((o) => (
+                  <option key={o.id} value={o.id}>
+                    {o.label}
                   </option>
                 ))}
               </select>
@@ -180,14 +214,15 @@ export function RoiCalculator() {
 
           <div className="rounded-xl bg-anchor p-6 text-paper">
             <p className="text-[13px] font-medium uppercase tracking-wider text-ice">
-              First year, switching to HarborIQ Team
+              First year, switching to HarborIQ Agency
             </p>
             <p className="mt-2 text-[40px] md:text-[48px] font-medium leading-none tracking-tight">
               {formatUsd(outputs.firstYearRecovery)}
             </p>
             <p className="mt-3 text-[13px] text-mist leading-relaxed">
-              HarborIQ Team is {formatUsd(HARBORIQ_TEAM_MONTHLY)} per month,
-              flat. No per user fees.
+              At your size, HarborIQ Agency is {formatUsd(outputs.harborMonthly)}{" "}
+              per month, flat. Never per person. Your current stack:{" "}
+              {formatUsd(outputs.currentMonthly)} per month.
             </p>
           </div>
 
@@ -229,9 +264,9 @@ export function RoiCalculator() {
       </div>
 
       <p className="mt-8 text-[13px] text-stone leading-relaxed">
-        {activePreset.source} Defaults come from published pricing and what
-        agencies have told us they are paying. Edit any input above to model
-        your own numbers.
+        {activePreset.source} {activeOverlay.source} Defaults come from
+        published pricing and what agencies have told us they are paying. Edit
+        any input above to model your own numbers.
       </p>
     </div>
   );

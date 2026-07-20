@@ -99,7 +99,7 @@ export default function TeamPage() {
             Availability
           </p>
           <p className="text-[16px] text-charcoal leading-relaxed">
-            Team management and shared dashboards are included on Team and Operating System. Full performance analytics and coaching tools are on Operating System. Not available on Solo.
+            The team layer (chat, training, license and CE tracking, roster) is included in every plan, Markets and Agency alike. Producer performance reporting lives in the Agency plan, because it reads the book.
           </p>
         </div>
       </section>

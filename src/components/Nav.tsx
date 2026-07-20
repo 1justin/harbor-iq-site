@@ -7,9 +7,9 @@ import { useState, useEffect, useRef } from "react";
 const featureLinks = [
   { href: "/features/pipeline", label: "Pipeline CRM" },
   { href: "/features/renewals", label: "Renewals" },
-  { href: "/features/carriers", label: "Carrier Management" },
+  { href: "/features/carriers", label: "Markets (Carrier Intelligence)" },
   { href: "/features/team", label: "Team Performance" },
-  { href: "/features/ai-quoting", label: "AI-Assisted Quoting" },
+  { href: "/features/ai-quoting", label: "Smarter Quoting" },
 ];
 
 const compareLinks = [
@@ -17,6 +17,8 @@ const compareLinks = [
   { href: "/compare/agencyzoom", label: "vs AgencyZoom" },
   { href: "/compare/ezlynx", label: "vs EZLynx" },
   { href: "/compare/hawksoft", label: "vs HawkSoft" },
+  { href: "/compare/nowcerts", label: "vs NowCerts" },
+  { href: "/compare/gohighlevel", label: "vs GoHighLevel" },
 ];
 
 export function Nav() {

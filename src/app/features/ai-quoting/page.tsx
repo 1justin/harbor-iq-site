@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { FeaturePageLayout } from "@/components/FeaturePageLayout";
 
 export const metadata: Metadata = {
-  title: "AI-Assisted Insurance Quoting Software | HarborIQ",
+  title: "Smarter Insurance Quoting for Independent Agents | HarborIQ",
   description:
-    "Enter client data once. HarborIQ translates between carrier-specific terminology and pre-fills quoting forms so your agents stop re-typing and start closing.",
+    "HarborIQ makes every quote smarter: appetite checked before you quote, one organized quoting profile, and comparisons that flag what the cheapest quote leaves out, with a plain-English explanation for your client.",
   alternates: { canonical: "/features/ai-quoting" },
   openGraph: {
-    title: "AI-Assisted Insurance Quoting Software | HarborIQ",
+    title: "Smarter Insurance Quoting | HarborIQ",
     description:
-      "Enter client data once. AI translates carrier-specific terminology and pre-fills quoting forms automatically.",
+      "The best quote is not always the cheapest. HarborIQ helps your agents prove it, and deliver quotes like advisors.",
     url: "/features/ai-quoting",
   },
 };
@@ -17,89 +17,114 @@ export const metadata: Metadata = {
 export default function AiQuotingPage() {
   return (
     <FeaturePageLayout
-      eyebrow="AI-Assisted Quoting"
-      headline='Enter data once. Quote across&nbsp;carriers.'
-      description='Your agents spend two hours quoting what a captive agent quotes in twenty minutes. Not because they&rsquo;re slow. Because every carrier portal speaks a different language. HarborIQ translates.'
-      heroImage="/images/harboriq-quote-results-screen-carrier-recommendations-cropped.webp"
-      heroImageAlt="HarborIQ AI quoting showing carrier recommendations and coverage comparison"
+      eyebrow="Smarter quoting"
+      headline="The best quote is not always the cheapest. Now you can prove&nbsp;it."
+      description="Your clients will not remember who quoted fastest. They remember who caught the gap in the cheap quote and explained it straight. HarborIQ hands you the proof."
+      heroImage="/images/harboriq-quote-results-ai-recommendation.jpg"
+      heroImageAlt="HarborIQ quote comparison: the AI recommendation explains why the best-value quote beats the cheapest one"
       benefits={[
         {
-          title: "Enter client data once",
+          title: "Quote the right carriers first",
           description:
-            "No more re-typing the same information into five different carrier portals. Enter it once in HarborIQ and let AI handle the rest.",
+            "Carrier Ask answers the appetite question before anyone opens a portal. No more quoting a carrier that was never going to write the risk.",
         },
         {
-          title: "Carrier-specific translation",
+          title: "One quoting profile, built once",
           description:
-            "Progressive calls it 'rental reimbursement.' Travelers calls it 'loss of use.' HarborIQ knows the difference and maps data correctly across carriers.",
+            "Property, vehicle, and business details organized in one place, with a record of where each answer came from. When a carrier asks, your agent is not re-assembling the file from memory.",
         },
         {
-          title: "Faster quotes, fewer errors",
+          title: "Compare what quotes actually cover",
           description:
-            "Reduce quote time from 20+ minutes per carrier to under 5. And because AI handles the mapping, data entry errors drop dramatically.",
+            "The assistant reads the quotes side by side and flags the differences that matter: the dropped coverage, the higher deductible, the sublimit nobody mentioned. Cheapest is not always best, and now you can show why.",
         },
         {
-          title: "Carrier recommendations",
+          title: "Deliver quotes like an advisor",
           description:
-            "Based on the risk profile, HarborIQ suggests which carriers are most likely to offer competitive rates. Stop wasting time quoting carriers that won't bind.",
+            "HarborIQ drafts the plain-English explanation of the recommendation, so every producer presents options the way your best producer does. Clients buy the advice, not the spreadsheet.",
         },
       ]}
       howItWorks={[
         {
           step: 1,
-          title: "Enter the client's information",
+          title: "Build the quoting profile",
           description:
-            "Add the client profile with their property, vehicle, or business details. Standard fields, entered once.",
+            "Enter the client's details once. The profile keeps everything a carrier will ask for, organized and ready.",
         },
         {
           step: 2,
-          title: "AI maps to carrier-specific formats",
+          title: "Check appetite before you quote",
           description:
-            "HarborIQ's semantic mapping engine translates your data into each carrier's specific terminology and form structure.",
+            "Ask Carrier Ask which of your markets actually want this risk. Kill the dead-end quotes before they cost an hour each.",
         },
         {
           step: 3,
-          title: "Review, compare, and bind",
+          title: "Compare, explain, and win",
           description:
-            "Compare quotes side by side with coverage details. Select the best option and move to binding, all from one screen.",
+            "Bring the quotes back, see the coverage differences flagged, and send your client a recommendation they can understand and trust.",
         },
       ]}
-      comparisonIntro="Traditional comparative raters use rigid API integrations. HarborIQ uses AI to understand carrier differences at a semantic level."
+      comparisonIntro="A comparative rater sorts by price. HarborIQ is built on a different belief: the agent who explains coverage best wins the client, and keeps them."
       comparisonRows={[
         {
-          feature: "Data entry",
-          harboriq: "Enter once, AI maps to all carriers",
-          competitors: "Re-enter per carrier portal",
-        },
-        {
-          feature: "Carrier language translation",
-          harboriq: "AI-powered semantic mapping",
-          competitors: "Manual knowledge of each carrier",
+          feature: "Which carriers to quote",
+          harboriq: "Appetite checked first, with cited answers",
+          competitors: "Guess, or quote everyone and waste the hours",
         },
         {
           feature: "Quote comparison",
-          harboriq: "Side-by-side with coverage details",
-          competitors: "Tab-switching between portals",
+          harboriq: "Coverage-level differences flagged automatically",
+          competitors: "Sorted by price, gaps invisible",
         },
         {
-          feature: "Architecture",
-          harboriq: "AI-native, adapts to carrier changes",
-          competitors: "API-based, breaks when carriers update",
+          feature: "Client explanation",
+          harboriq: "Plain-English recommendation drafted for you",
+          competitors: "Every producer starts from a blank page",
         },
         {
-          feature: "Integrated with AMS",
-          harboriq: "Built into the platform",
-          competitors: "Separate rater product ($200+/mo)",
+          feature: "Multi-carrier rating",
+          harboriq: "On our roadmap, built as far as carrier connections allow, and we say so plainly",
+          competitors: "Limited by the same carrier connections, sold as if they were not",
         },
       ]}
     >
+      <section className="bg-linen py-14 md:py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
+            The truth about raters
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight">
+            You will never be fully happy with a rater. It is not the
+            rater&rsquo;s&nbsp;fault.
+          </h2>
+          <div className="mt-6 space-y-4 text-[16px] text-charcoal leading-relaxed">
+            <p>
+              Carriers decide which products connect, how fresh the rates are,
+              and whether a bridge works at all. Until the industry agrees on
+              real standards, that ceiling holds for every rater on the market,
+              including any we build.
+            </p>
+            <p>
+              So we started where the ceiling is not: the advice. The right
+              carriers approached first, one organized quoting profile, and a
+              comparison that shows what the cheap quote quietly leaves out.
+              When the standards mature, we intend to build the best rater in
+              the business. Until then, we will not sell you one.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="bg-paper py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-[13px] font-medium text-stone uppercase tracking-wider mb-3">
             Availability
           </p>
           <p className="text-[16px] text-charcoal leading-relaxed">
-            AI Quoting is included on Team and Operating System when Phase 2 ships. Solo agencies can add it for $79/mo. Founding partners get it free at every tier.
+            Quoting profiles and quote comparison live in the Agency plan, where
+            your book and pipeline are. Carrier Ask, which powers the appetite
+            check, is included in every plan. Automated multi-carrier rating is
+            on the roadmap, and we publish what is shipped versus what is
+            coming; you will never find out the difference in a demo.
           </p>
         </div>
       </section>

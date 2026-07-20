@@ -33,23 +33,14 @@ export type Testimonial = {
 };
 
 export const testimonials: Testimonial[] = [
-  {
-    slug: "amanda-hausman",
-    name: "Amanda Hausman",
-    role: "Carrier perspective",
-    agency: "Pekin Insurance",
-    headshot: "/testimonials/Amanda_Hausman_Pekin.jpeg",
-    logo: "/testimonials/pekin-insurance-logo-color.png",
-    quote:
-      "I have looked at a lot of tools for independent insurance agencies. This is the most beautiful UI and most thoughtful usage of AI in the category I've seen. I am impressed.",
-    // No callouts. Card power is third-party validation from the carrier side.
-  },
+  // Amanda Hausman (Pekin) card removed 2026-07-18 pending permission to
+  // publish; quote preserved in git history. Restore only with written OK.
   {
     slug: "alex-ricketts",
     name: "Alex Ricketts",
     role: "Office Manager",
     agency: "Sertler and Associates",
-    headshot: "/testimonials/Alex%20Ricketts%20headshot.avif",
+    headshot: "/testimonials/alex-ricketts.jpg",
     logo: "/testimonials/sertler-associates-logo-AnuAVpdRp4WqNxvY.avif",
     quote:
       "I have been doing this for years and nothing has come close to how HarborIQ thinks about my day. The screens are clean, the summary catches what I would miss, and the carrier work that used to eat my afternoons is finally somebody else's problem.",
@@ -63,7 +54,7 @@ export const testimonials: Testimonial[] = [
     name: "Andy Sertler",
     role: "Principal",
     agency: "Sertler and Associates",
-    headshot: "/testimonials/andy%20sertler%20headshot.avif",
+    headshot: "/testimonials/andy-sertler.jpg",
     logo: "/testimonials/sertler-associates-logo-AnuAVpdRp4WqNxvY.avif",
     quote:
       "We've tried other tools. They all do one thing. This is the first platform that actually works the way our agency works.",
