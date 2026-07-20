@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HarborIQ | Agency Management System for Independent Insurance Agencies",
     description:
-      "AI-powered AMS for independent agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting. Flat monthly pricing, no per-user fees.",
+      "One product, two ways in. Markets: carrier intelligence at $199/mo for any size. Agency: the whole operation in one login, from $199/mo. Never per person.",
     type: "website",
     locale: "en_US",
     images: [
       {
-        url: "/images/harboriq-command-center-hero-no-shadow.png",
+        url: "/og/default.png",
         width: 1200,
         height: 630,
         alt: "HarborIQ Command Center, the AI-native operating system for independent insurance agencies",

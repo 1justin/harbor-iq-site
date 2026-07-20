@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       "GHL is a great top-of-funnel machine wearing an insurance costume. Here is what happens after the lead says yes.",
     url: "/compare/gohighlevel",
+    images: [{ url: "/og/gohighlevel.png", width: 1200, height: 630 }],
   },
 };
 

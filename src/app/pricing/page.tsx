@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description:
       "Published pricing, never per person. Markets $199/month at any size. Agency $199 solo, $399 for 2 to 5, $599 for 6 to 15. Same product at every price.",
     url: "/pricing",
+    images: [{ url: "/og/pricing.png", width: 1200, height: 630 }],
   },
 };
 

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       "One login replaces the stack. Priced by agency size, never per person. Free book import with annual prepay.",
     url: "/agency",
+    images: [{ url: "/og/agency.png", width: 1200, height: 630 }],
   },
 };
 
