@@ -4,19 +4,17 @@ import { useState } from "react";
 import { testimonials, type Testimonial } from "@/lib/testimonials";
 
 /**
- * Three-card testimonial grid. Strategically composed per card so each
- * answers a different buyer objection (carrier-side credibility, user
- * voice, principal voice). When more than three quotes accrue, swap to
- * a carousel by mapping over testimonials in a slider component.
+ * Two wide editorial testimonial cards. On large screens the cards share
+ * row tracks via CSS subgrid, so the bands align when you glance left to
+ * right: quote row with quote row, tag row with tag row, attribution row
+ * with attribution row. Below lg they stack as photo-top cards.
  *
- * Headshot and logo paths gracefully degrade to an initials placeholder
- * and a hidden block respectively when the underlying file is missing,
- * so this component is safe to render in dev before assets are dropped
- * into public/testimonials/.
+ * Headshot and logo paths gracefully degrade (initials placeholder /
+ * hidden block) when a file is missing.
  */
 export function TestimonialCards() {
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-6">
+    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 lg:grid-cols-2 lg:grid-rows-[auto_auto_1fr] lg:gap-y-0">
       {testimonials.map((t) => (
         <TestimonialCard key={t.slug} testimonial={t} />
       ))}
@@ -36,74 +34,72 @@ function TestimonialCard({ testimonial: t }: { testimonial: Testimonial }) {
     .join("");
 
   return (
-    <article className="flex flex-col rounded-2xl border border-ash bg-paper p-6 md:p-7">
-      <div className="flex items-center gap-4">
-        <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-full bg-linen ring-1 ring-ash">
-          {showHeadshot ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={t.headshot}
-              alt={`${t.name}, ${t.role} at ${t.agency}`}
-              className="h-full w-full object-cover"
-              onError={() => setHeadshotFailed(true)}
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-[20px] font-medium text-stone">
-              {initials}
-            </div>
-          )}
-        </div>
-        <div className="min-w-0">
-          <p className="text-[15px] font-medium text-ink leading-tight">
-            {t.name}
-          </p>
-          <p className="mt-1 text-[13px] text-stone leading-tight">
-            {t.role}, {t.agency}
-          </p>
-        </div>
+    <article className="overflow-hidden rounded-2xl border border-ash bg-paper lg:row-span-3 lg:grid lg:grid-cols-[200px_1fr] lg:grid-rows-subgrid xl:grid-cols-[230px_1fr]">
+      {/* Photo panel: spans all three rows on large screens */}
+      <div className="relative aspect-[16/10] bg-linen lg:row-span-3 lg:aspect-auto">
+        {showHeadshot ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={t.headshot}
+            alt={`${t.name}, ${t.role} at ${t.agency}`}
+            className="absolute inset-0 h-full w-full object-cover object-[center_22%]"
+            onError={() => setHeadshotFailed(true)}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-[28px] font-medium text-stone">
+            {initials}
+          </div>
+        )}
       </div>
 
-      <blockquote className="mt-5 text-[15px] leading-relaxed text-charcoal md:text-[16px]">
+      {/* Row 1: quote */}
+      <blockquote className="p-6 pb-0 font-serif text-[17px] italic leading-relaxed text-ink md:p-7 md:pb-0 md:text-[18px] lg:col-start-2">
         &ldquo;{t.quote}&rdquo;
       </blockquote>
 
-      {t.callouts && t.callouts.length > 0 && (
-        <ul className="mt-5 flex flex-wrap gap-2">
-          {t.callouts.map((c) => (
-            <li
-              key={c}
-              className="rounded-full bg-ice px-3 py-1 text-[12px] font-medium text-interactive"
-            >
-              {c}
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* Row 2: callout tags (rendered even when empty so rows stay aligned) */}
+      <ul className="flex flex-wrap gap-2 px-6 pt-4 md:px-7 lg:col-start-2">
+        {(t.callouts ?? []).map((c) => (
+          <li
+            key={c}
+            className="rounded-full bg-ice px-3 py-1 text-[12px] font-medium text-interactive"
+          >
+            {c}
+          </li>
+        ))}
+      </ul>
 
-      {showLogo &&
-        (t.logoOnDark ? (
-          <div className="mt-auto pt-6">
-            <div className="inline-flex items-center rounded-md bg-anchor px-3 py-2">
+      {/* Row 3: attribution + logo, pinned to the card foot */}
+      <div className="mx-6 mb-6 mt-4 flex items-end justify-between gap-4 border-t border-ash pt-4 md:mx-7 md:mb-7 lg:col-start-2 lg:self-end">
+        <div className="min-w-0">
+          <p className="text-[15px] font-medium leading-tight text-ink">
+            {t.name}
+          </p>
+          <p className="mt-1 text-[13px] leading-tight text-stone">
+            {t.role}, {t.agency}
+          </p>
+        </div>
+        {showLogo &&
+          (t.logoOnDark ? (
+            <div className="inline-flex shrink-0 items-center rounded-md bg-anchor px-3 py-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={t.logo}
                 alt={`${t.agency} logo`}
-                className="h-5 w-auto max-w-[120px] object-contain object-left"
+                className="h-5 w-auto max-w-[110px] object-contain object-right"
                 onError={() => setLogoFailed(true)}
               />
             </div>
-          </div>
-        ) : (
-          <div className="mt-auto pt-6">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+          ) : (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={t.logo}
               alt={`${t.agency} logo`}
-              className="h-10 w-auto max-w-[140px] object-contain object-left"
+              className="h-9 w-auto max-w-[120px] shrink-0 object-contain object-right"
               onError={() => setLogoFailed(true)}
             />
-          </div>
-        ))}
+          ))}
+      </div>
     </article>
   );
 }

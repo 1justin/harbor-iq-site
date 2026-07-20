@@ -150,7 +150,7 @@ export default function PostPage() {
             We built HarborIQ for exactly this agency. It is an AI-native operating system for independent
             agencies of one to fifteen people, which means the pipeline, client management, multi-carrier
             quoting, team performance, and client engagement live in one platform with one login. There
-            are no per-seat fees, so a 1-person agency pays $199 a month, a 5-person agency pays $379, and
+            are no per-person fees, so a 1-person agency pays $199 a month, a 5-person agency pays $399, and
             a 10-person agency pays $599. The same full platform, whether you are one person or&nbsp;ten.
           </p>
           <p>

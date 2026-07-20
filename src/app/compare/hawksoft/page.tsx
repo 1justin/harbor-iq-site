@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
+import { MarketsWedge } from "@/components/MarketsWedge";
 import { DEMO_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -20,13 +21,13 @@ const contrastCards = [
     label: "Cost at 10 users",
     harboriq: "$599",
     competitor: "$1,190",
-    detail: "Every hire is a raise for HawkSoft. HarborIQ is flat within the tier.",
+    detail: "Every hire is a raise for HawkSoft. HarborIQ is flat within your size band.",
   },
   {
-    label: "AI-assisted quoting",
+    label: "Carrier intelligence",
     harboriq: "Built in",
     competitor: "Not included",
-    detail: "HawkSoft agents bolt on Gaya (≈ $300/mo) to get AI quoting.",
+    detail: "Cited appetite answers on every quote. HawkSoft agents bolt on other tools for AI help.",
   },
   {
     label: "Prospect pipeline",
@@ -43,11 +44,11 @@ const contrastCards = [
 ];
 
 const fullTable = [
-  ["Pricing model", "Flat monthly. $199 / $379 / $599. Published.", "$250/mo base + $94/user/month"],
-  ["5-person agency cost", "$379/mo (Team tier, all features)", "$720/month ($250 + 5 × $94)"],
-  ["10-person agency cost", "$599/mo (Operating System, up to 15 users)", "$1,190/month ($250 + 10 × $94)"],
+  ["Pricing model", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "$250/mo base + $94/user/month"],
+  ["5-person agency cost", "$399/mo (Agency, identical features at every size)", "$720/month ($250 + 5 × $94)"],
+  ["10-person agency cost", "$599/mo (Agency, 6 to 15 people)", "$1,190/month ($250 + 10 × $94)"],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Client management only."],
-  ["AI capabilities", "AI-native: quoting, carrier translation, daily briefings.", "No AI features. Agents bolt on Gaya or similar."],
+  ["AI capabilities", "In the core: cited carrier answers, overnight bulletin summaries, daily priorities.", "No AI features. Agents bolt on Gaya or similar."],
   ["Customer support", "Founder-direct for design partners. Hours, often minutes.", "Industry-leading reputation. Genuine competitive strength."],
   ["Team performance", "Production dashboards, goal tracking, bottleneck identification.", "Basic reports and dashboards."],
   ["Renewal management", "Dedicated dashboard with priority escalation.", "Renewal tracking included."],
@@ -57,7 +58,7 @@ const fullTable = [
 
 // Bar chart geometry: 3 headcount groups (5, 10, 15 users), 2 bars per group.
 const COSTS = [
-  { label: "5 people", harboriq: 379, competitor: 720 },
+  { label: "5 people", harboriq: 399, competitor: 720 },
   { label: "10 people", harboriq: 599, competitor: 1190 },
   { label: "15 people", harboriq: 599, competitor: 1660 },
 ];
@@ -213,7 +214,7 @@ export default function CompareHawkSoftPage() {
                 </li>
                 <li className="flex gap-3">
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                  You want AI-assisted quoting without bolting on Gaya for another $300/mo.
+                  You want cited carrier answers on every quote without bolting on another tool.
                 </li>
                 <li className="flex gap-3">
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
@@ -252,19 +253,19 @@ export default function CompareHawkSoftPage() {
                 <tr className="border-b border-ash/60">
                   <td className="py-4 pr-4 font-medium text-ink">5 people</td>
                   <td className="py-4 px-4 text-charcoal">$8,640</td>
-                  <td className="py-4 px-4 text-charcoal">$4,188 <span className="text-stone text-[13px]">(Team)</span></td>
+                  <td className="py-4 px-4 text-charcoal">$4,788 <span className="text-stone text-[13px]">(Agency)</span></td>
                   <td className="py-4 pl-4 font-medium text-copper">$4,452</td>
                 </tr>
                 <tr className="border-b border-ash/60">
                   <td className="py-4 pr-4 font-medium text-ink">10 people</td>
                   <td className="py-4 px-4 text-charcoal">$14,280</td>
-                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(OS)</span></td>
+                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(Agency)</span></td>
                   <td className="py-4 pl-4 font-medium text-copper">$7,092</td>
                 </tr>
                 <tr>
                   <td className="py-4 pr-4 font-medium text-ink">15 people</td>
                   <td className="py-4 px-4 text-charcoal">$19,920</td>
-                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(OS)</span></td>
+                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(Agency)</span></td>
                   <td className="py-4 pl-4 font-medium text-copper">$12,732</td>
                 </tr>
               </tbody>
@@ -359,6 +360,8 @@ export default function CompareHawkSoftPage() {
           </div>
         </div>
       </section>
+
+      <MarketsWedge competitor="HawkSoft" />
 
       <CtaSection />
     </>

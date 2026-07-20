@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
+import { MarketsWedge } from "@/components/MarketsWedge";
 import { DEMO_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ const contrastCards = [
   },
   {
     label: "Cost for a 5-person agency",
-    harboriq: "$379 flat",
+    harboriq: "$399 flat",
     competitor: "$720+ and rising",
     detail: "AgencyZoom + a per-user AMS. Every hire is a raise for someone else.",
   },
@@ -35,7 +36,7 @@ const contrastCards = [
     detail: "Synced overnight. Eventually you ask which system is right.",
   },
   {
-    label: "AI-assisted quoting",
+    label: "Carrier intelligence",
     harboriq: "Built in",
     competitor: "Not included",
     detail: "AgencyZoom integrates with raters as separate tools.",
@@ -44,11 +45,11 @@ const contrastCards = [
 
 const fullTable = [
   ["Category", "Operating system: AMS + CRM + AI in one platform", "Overlay: sales-automation CRM on top of your existing AMS"],
-  ["Pricing model", "Flat monthly. $199 / $379 / $599. Published.", "From ~$79/mo plus the AMS underneath. Higher tiers gate 2-way email and SMS."],
+  ["Pricing model", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "From ~$79/mo plus the AMS underneath. Higher tiers gate 2-way email and SMS."],
   ["Client and policy management", "Included. One record across pipeline, policy, renewals, claims.", "Not included. AgencyZoom is pipeline and engagement only."],
-  ["AI-assisted quoting", "Built in. Carrier-term translation, semantic mapping, pre-fill.", "Not included. Separate raters required (PL Rating, Tarmika, Bridge)."],
+  ["Carrier intelligence", "Built in. Cited appetite answers, carrier news, login vault, self-building knowledge base.", "Not included. AgencyZoom has no carrier layer."],
   ["Sales pipeline", "Native Kanban, multiple stages, AI-assisted next-best-action.", "Native and well-developed. Their strongest feature."],
-  ["Google Reviews and referrals", "Built in on the Operating System tier.", "Built in. Requires sync with the underlying AMS for client context."],
+  ["Google Reviews and referrals", "On our public roadmap. We publish what is shipped versus what is coming.", "Built in. A genuine strength."],
   ["Renewals dashboard", "Dedicated view with priority escalation and price-change tracking.", "Renewal reminders as automations. No dedicated renewals view."],
   ["Data architecture", "One data model. No sync.", "Two-way sync with AMS. Lag, conflicts, and a source-of-truth question."],
   ["Ownership", "Independent. One product, every cycle.", "Owned by Vertafore (2022). Integration priority favors Vertafore products."],
@@ -190,7 +191,7 @@ export default function CompareAgencyZoomPage() {
 
                 {/* Capability pills, 3x2 — 6 capabilities */}
                 <div className="grid grid-cols-2 gap-3 md:gap-3.5">
-                  {["Pipeline", "Clients", "Renewals", "AI Quoting", "Reviews", "Carriers"].map((cap) => (
+                  {["Pipeline", "Clients", "Renewals", "Payday", "Reports", "Carriers"].map((cap) => (
                     <div
                       key={cap}
                       className="bg-anchor/90 border border-copper/40 rounded-full px-3.5 py-2.5 text-center text-[13px] md:text-[14px] font-medium text-paper backdrop-blur-sm"
@@ -246,7 +247,7 @@ export default function CompareAgencyZoomPage() {
                 </li>
                 <li className="flex gap-3">
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                  You want AI-assisted quoting and pipeline to share one client record, not sync overnight.
+                  You want carrier intelligence and pipeline to share one client record, not sync overnight.
                 </li>
               </ul>
             </div>
@@ -281,19 +282,19 @@ export default function CompareAgencyZoomPage() {
                 <tr className="border-b border-ash/60">
                   <td className="py-4 pr-4 font-medium text-ink">5 people</td>
                   <td className="py-4 px-4 text-charcoal">≈ $9,588</td>
-                  <td className="py-4 px-4 text-charcoal">$4,188 <span className="text-stone text-[13px]">(Team)</span></td>
-                  <td className="py-4 pl-4 font-medium text-copper">$5,400</td>
+                  <td className="py-4 px-4 text-charcoal">$4,788 <span className="text-stone text-[13px]">(Agency)</span></td>
+                  <td className="py-4 pl-4 font-medium text-copper">$4,800</td>
                 </tr>
                 <tr className="border-b border-ash/60">
                   <td className="py-4 pr-4 font-medium text-ink">10 people</td>
                   <td className="py-4 px-4 text-charcoal">≈ $16,068</td>
-                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(OS)</span></td>
+                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(Agency)</span></td>
                   <td className="py-4 pl-4 font-medium text-copper">$8,880</td>
                 </tr>
                 <tr>
                   <td className="py-4 pr-4 font-medium text-ink">15 people</td>
                   <td className="py-4 px-4 text-charcoal">≈ $22,668</td>
-                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(OS)</span></td>
+                  <td className="py-4 px-4 text-charcoal">$7,188 <span className="text-stone text-[13px]">(Agency)</span></td>
                   <td className="py-4 pl-4 font-medium text-copper">$15,480</td>
                 </tr>
               </tbody>
@@ -387,6 +388,8 @@ export default function CompareAgencyZoomPage() {
           </div>
         </div>
       </section>
+
+      <MarketsWedge competitor="AgencyZoom" />
 
       <CtaSection />
     </>

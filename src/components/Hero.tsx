@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { DEMO_URL, FOUNDING_CLOSE_DATE } from "@/lib/constants";
+import { DEMO_URL, MARKETS_START_URL, PRICING } from "@/lib/constants";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP, SplitText);
@@ -211,30 +211,39 @@ export function Hero() {
         style={{ perspective: 1200 }}
       >
         <div className="px-6 pt-16 md:py-24 md:pl-[max(1.5rem,calc((100vw-1200px)/2+1.5rem))] md:pr-12 text-center md:text-left">
-          <p className="hero-eyebrow text-[13px] font-medium uppercase tracking-[0.12em] text-interactive">
-            The AI-native AMS + CRM for independent insurance agencies
+          <p className="hero-eyebrow text-[13px] font-medium uppercase tracking-[0.12em] text-paper">
+            Built for independent insurance agencies
           </p>
           <h1 className="hero-h1 mt-4 text-[36px] font-medium leading-[1.06] tracking-[-0.02em] text-paper md:text-[56px]">
-            Run your agency from{" "}
-            <span className="text-interactive">one smarter command center.</span>
+            Manage your markets.{" "}
+            <span className="text-interactive">Then run your agency.</span>
           </h1>
           <p className="hero-sub mt-5 text-[17px] leading-relaxed text-mist md:text-[19px]">
-            Pipeline, clients, quoting, and follow-ups in one platform. One login.
-            Zero per-user&nbsp;fees.
+            HarborIQ starts as the carrier intelligence your whole team uses every
+            day: cited appetite answers, logins, documents, and news for every
+            carrier you work with. ${PRICING.markets.monthly} a month, any size,
+            live the same day, no migration. When you are ready to move the book,
+            the same login runs the whole&nbsp;agency.
           </p>
           <div className="hero-ctas mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
             <a
               ref={primaryBtnRef}
+              href={MARKETS_START_URL}
+              className="cta-primary btn-radius bg-copper px-7 py-3.5 text-center text-[16px] font-medium text-white hover:bg-bronze"
+            >
+              Start with Markets
+            </a>
+            <a
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-primary btn-radius bg-copper px-7 py-3.5 text-center text-[16px] font-medium text-white hover:bg-bronze"
+              className="cta-secondary btn-radius border border-mist/40 px-7 py-3.5 text-center text-[16px] font-medium text-paper hover:border-paper"
             >
-              Book a 15 minute demo
+              Book an Agency demo
             </a>
           </div>
           <p className="hero-disclaimer mt-3 text-center text-[13px] text-mist md:text-left">
-            Founding partner pricing locks 33% off for life. Ask about it on your demo. Offer closes {FOUNDING_CLOSE_DATE}.
+            14-day free trial on Markets. Published pricing. Month to month.
           </p>
         </div>
 
@@ -258,26 +267,26 @@ export function Hero() {
         <div className="hero-stats mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-10 md:grid-cols-3 md:gap-12 md:py-12">
           <div>
             <p className="text-[18px] md:text-[20px] font-medium text-paper leading-snug tracking-tight">
-              Every renewal surfaced 60 days early.
+              Cited answers across 75 carriers.
             </p>
             <p className="mt-2 text-[14px] text-mist leading-relaxed">
-              Proactive instead of reactive.
+              Ask any appetite question. Get the source, with a date on it.
             </p>
           </div>
           <div>
             <p className="text-[18px] md:text-[20px] font-medium text-paper leading-snug tracking-tight">
-              One search box for every carrier appetite question.
+              One price for the whole team.
             </p>
             <p className="mt-2 text-[14px] text-mist leading-relaxed">
-              Knowledge that is findable, not memorized.
+              Never a fee per person. Hiring never raises your bill.
             </p>
           </div>
           <div>
             <p className="text-[18px] md:text-[20px] font-medium text-paper leading-snug tracking-tight">
-              Zero per user fees, ever.
+              Live the same day.
             </p>
             <p className="mt-2 text-[14px] text-mist leading-relaxed">
-              Flat pricing that does not punish you for growing.
+              Markets needs no migration. The book moves when you are ready.
             </p>
           </div>
         </div>

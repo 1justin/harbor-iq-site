@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { FeaturePageLayout } from "@/components/FeaturePageLayout";
+import { PRICING } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Carrier Management for Independent Insurance Agents | HarborIQ",
+  title: "Carrier Intelligence for Independent Insurance Agents | HarborIQ Markets",
   description:
-    "Manage all your carriers in one place. HarborIQ's carrier directory tracks appetites, underwriting guidelines, and portal credentials so your team stops guessing.",
+    "Carrier Ask answers appetite and underwriting questions from carrier documents with cited, dated sources. Profiles, reps, login vault, Carrier News, and a knowledge base that builds itself. $199/month at any size.",
   alternates: { canonical: "/features/carriers" },
   openGraph: {
-    title: "Carrier Management for Independent Agents | HarborIQ",
+    title: "Carrier Intelligence for Independent Agents | HarborIQ Markets",
     description:
-      "Manage all your carriers in one place. Track appetites, guidelines, and portal credentials.",
+      "Ask any carrier question, get a cited answer with a date on it. Every carrier relationship in one place. $199/month, any size, no migration.",
     url: "/features/carriers",
   },
 };
@@ -17,31 +18,36 @@ export const metadata: Metadata = {
 export default function CarriersPage() {
   return (
     <FeaturePageLayout
-      eyebrow="Carrier Management"
-      headline="Every carrier. One&nbsp;place."
-      description="Independent agents work with dozens of carriers, each with different appetites, guidelines, and portals. HarborIQ puts it all in one searchable directory."
+      eyebrow="HarborIQ Markets"
+      headline="Never guess appetite&nbsp;again."
+      description="Markets runs every carrier relationship in one place. Ask any appetite or underwriting question and get a cited answer, with the source and its date attached. No system of record, no migration; your whole team is live the same day."
       heroImage="/images/harboriq-ai-tools-features.webp"
-      heroImageAlt="HarborIQ carrier management showing carrier directory and coverage guidelines"
+      heroImageAlt="HarborIQ Markets showing Carrier Ask answering an appetite question with a cited source"
       benefits={[
         {
-          title: "Carrier appetites at a glance",
+          title: "Carrier Ask: cited answers in seconds",
           description:
-            "Know which carriers write what, where, and for whom. Stop quoting carriers that won't bind the risk.",
+            "Will this carrier write a 1978 roof? Ask, and the answer comes from the carrier's own documents, with the page and the date it was last updated. Your team stops quoting carriers that will decline the risk.",
         },
         {
-          title: "Underwriting guidelines on file",
+          title: "A knowledge base that builds itself",
           description:
-            "Store each carrier's underwriting requirements, minimum premiums, and documentation needs in one place.",
+            "When an answer is worth keeping, one click promotes it to your agency's knowledge base, categorized and credited. The next person never has to ask. When a veteran retires, what they knew stays.",
         },
         {
-          title: "Portal credentials organized",
+          title: "Carrier News, summarized overnight",
           description:
-            "No more hunting for carrier portal logins. Your team has one source of truth for every carrier system.",
+            "Appetite shifts, bulletins, and guideline changes, read for you and summarized before coffee. No more inbox archaeology.",
+        },
+        {
+          title: "Login vault and carrier profiles",
+          description:
+            "Every portal login, rep, and function-specific contact in one place. The daily portal-and-password shuffle ends.",
         },
         {
           title: "Document library per carrier",
           description:
-            "Store rate sheets, commission schedules, and bulletins by carrier. Everything your agents need is where they expect it.",
+            "Rate sheets, appetite guides, commission schedules, and bulletins, filed by carrier and feeding Carrier Ask. Everything your agents need is where they expect it.",
         },
       ]}
       howItWorks={[
@@ -49,47 +55,47 @@ export default function CarriersPage() {
           step: 1,
           title: "Add your carrier appointments",
           description:
-            "Enter your appointed carriers during onboarding. Include appetites, contact info, and portal credentials.",
+            "Enter your appointed carriers and drop in the documents you have. Markets starts answering from them the same day.",
         },
         {
           step: 2,
-          title: "Your team references the directory daily",
+          title: "Your team asks instead of digging",
           description:
-            "When quoting, agents check the carrier directory to find the right markets for the risk. No more tribal knowledge.",
+            "Before every quote, agents ask Carrier Ask instead of calling a rep, digging a PDF, or guessing. Every answer is cited and dated.",
         },
         {
           step: 3,
-          title: "Keep it current as things change",
+          title: "Your agency's knowledge compounds",
           description:
-            "Carrier appetites shift. Update the directory when you get bulletins, and the whole team sees the change immediately.",
+            "Good answers get promoted to your knowledge base with one click. Month one, Carrier Ask does the work. Month twelve, your own knowledge base answers most questions instantly.",
         },
       ]}
-      comparisonIntro="Most agencies track carrier info in spreadsheets, emails, and people's heads. HarborIQ makes carrier knowledge a shared, searchable asset."
+      comparisonIntro="Most agencies track carrier knowledge in spreadsheets, inboxes, and people's heads. Nobody else sells a carrier intelligence layer flat, for the whole team, with no migration."
       comparisonRows={[
         {
-          feature: "Carrier directory",
-          harboriq: "Searchable, organized by line and appetite",
-          competitors: "Spreadsheet or tribal knowledge",
+          feature: "Appetite questions",
+          harboriq: "Cited, dated answers from carrier documents",
+          competitors: "Call the rep, dig the PDF, or guess",
         },
         {
-          feature: "Underwriting guidelines",
-          harboriq: "Stored per carrier, accessible to all agents",
-          competitors: "In individual agent email inboxes",
+          feature: "Institutional knowledge",
+          harboriq: "Promoted answers build an agency-owned knowledge base",
+          competitors: "Walks out the door with the veteran",
+        },
+        {
+          feature: "Carrier bulletins",
+          harboriq: "Read and summarized overnight",
+          competitors: "Unread in individual inboxes",
         },
         {
           feature: "Portal credentials",
-          harboriq: "Centralized and secure",
+          harboriq: "Centralized vault, whole team",
           competitors: "Sticky notes or shared spreadsheets",
         },
         {
-          feature: "ACORD form generation",
-          harboriq: "Built-in ACORD forms",
-          competitors: "Separate tool or manual process",
-        },
-        {
-          feature: "Commission tracking",
-          harboriq: "Track commissions by carrier and policy",
-          competitors: "Manual spreadsheet reconciliation",
+          feature: "Price",
+          harboriq: `$${PRICING.markets.monthly}/month flat, any size 1 to 15`,
+          competitors: "Not sold anywhere as one layer",
         },
       ]}
     >
@@ -99,7 +105,9 @@ export default function CarriersPage() {
             Availability
           </p>
           <p className="text-[16px] text-charcoal leading-relaxed">
-            Carrier management is included on every plan. Solo, Team, and Operating System.
+            Everything on this page is HarborIQ Markets: ${PRICING.markets.monthly}/month
+            at any size from 1 to 15 people, one price for the whole team,
+            self-serve, no migration. It is also included in every Agency plan.
           </p>
         </div>
       </section>

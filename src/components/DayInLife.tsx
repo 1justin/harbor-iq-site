@@ -146,10 +146,10 @@ const DAY: DayMoment[] = [
     time: "1:30 PM",
     featNum: "05",
     icon: IconBolt,
-    eyebrow: "Quotes every carrier",
-    headline: "Six carrier quotes in minutes, not hours",
-    lead: "New prospect. Six carrier quotes come back while she pours coffee.",
-    body: "Hours of re-keying become minutes. Send your client options ranked by fit, with coverage notes in plain English.",
+    eyebrow: "Better quoting, not just faster",
+    headline: "Know which quote is actually best, and say why",
+    lead: "Two quotes back on a new prospect. The cheaper one quietly drops a coverage. HarborIQ catches it.",
+    body: "The assistant compares what each quote actually covers, flags the gaps, and drafts the plain-English explanation your client deserves. Cheapest is not always best. Now you can show why.",
     mock: <CarrierQuotesMock />,
   },
   {
@@ -381,7 +381,7 @@ export function DayInLife() {
             5:00 PM &middot; Linda shuts the laptop
           </p>
           <p className="mt-4 max-w-2xl font-serif text-[30px] italic leading-[1.1] tracking-tight text-paper md:text-[42px]">
-            Four renewals saved. Six quotes sent. Zero tabs open.
+            Four renewals saved. Two coverage gaps caught. Zero tabs open.
           </p>
         </div>
       </div>

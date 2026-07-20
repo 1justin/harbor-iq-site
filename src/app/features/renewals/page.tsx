@@ -99,7 +99,7 @@ export default function RenewalsPage() {
             Availability
           </p>
           <p className="text-[16px] text-charcoal leading-relaxed">
-            Renewal management is included on every plan. Solo, Team, and Operating System.
+            Renewals live in the Agency plan, where your book is: $199/mo solo, $399/mo for 2 to 5 people, $599/mo for 6 to 15. Same product at every price, never per person.
           </p>
         </div>
       </section>
