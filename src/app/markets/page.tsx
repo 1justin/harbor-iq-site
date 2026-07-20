@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "Ask any carrier question, get a cited answer with a date on it. $199/month, whole team, nothing to migrate.",
     url: "/markets",
+    images: [{ url: "/og/markets.png", width: 1200, height: 630 }],
   },
 };
 

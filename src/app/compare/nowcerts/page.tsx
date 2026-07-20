@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       "NowCerts is the price anchor of the AMS market. Here is exactly what the difference buys.",
     url: "/compare/nowcerts",
+    images: [{ url: "/og/nowcerts.png", width: 1200, height: 630 }],
   },
 };
 

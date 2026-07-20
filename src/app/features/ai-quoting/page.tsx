@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description:
       "The best quote is not always the cheapest. HarborIQ helps your agents prove it, and deliver quotes like advisors.",
     url: "/features/ai-quoting",
+    images: [{ url: "/og/quoting.png", width: 1200, height: 630 }],
   },
 };
 
