@@ -38,7 +38,7 @@ export const pricingFaqs = [
   },
   {
     q: "What if I have more than 15 employees?",
-    a: "Talk to us. Our platform is built for 1 to 15 person agencies first, and we would rather say that plainly than stretch the truth in a sales call.",
+    a: "Those prices are published too: $899/month for 16 to 25 people, $1,199 for 26 to 35, and $1,499 for 36 to 50, with the same annual terms. Same product, nothing withheld. At this size we start with a demo rather than self-serve checkout. Above 50 people, we quote custom on the call.",
   },
   {
     q: "Do I need to install anything?",

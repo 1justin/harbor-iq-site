@@ -97,6 +97,14 @@ const productSchema = {
       description:
         "Full agency operating system for 6 to 15 person agencies. Identical features at every price.",
     },
+    ...PRICING.large.map((band) => ({
+      "@type": "Offer",
+      name: `HarborIQ Agency (${band.seats})`,
+      price: String(band.monthly),
+      priceCurrency: "USD",
+      description:
+        "Full agency operating system. Identical features at every price. Demo first at this size.",
+    })),
     {
       "@type": "Offer",
       name: "HarborIQ Markets — Annual",
@@ -252,12 +260,42 @@ export default function PricingPage() {
                       </span>
                     </div>
                   ))}
-                  <div className="flex items-baseline justify-between px-4 py-3">
-                    <span className="text-[15px] text-mist">Above 15 people</span>
-                    <span className="text-[14px] font-medium text-ice">
-                      Talk to us
-                    </span>
-                  </div>
+                  <details className="group">
+                    <summary className="flex items-baseline justify-between px-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                      <span className="text-[15px] text-mist">
+                        16 to 50 people
+                      </span>
+                      <span className="text-[14px] font-medium text-ice">
+                        <span className="group-open:hidden">
+                          From ${PRICING.large[0].monthly}/mo &darr;
+                        </span>
+                        <span className="hidden group-open:inline">
+                          Published, same product &uarr;
+                        </span>
+                      </span>
+                    </summary>
+                    {PRICING.large.map((band) => (
+                      <div
+                        key={band.seats}
+                        className="flex items-baseline justify-between px-4 py-3 border-t border-deep/40"
+                      >
+                        <span className="text-[15px] text-mist">
+                          {band.seats}
+                        </span>
+                        <span className="text-[20px] font-medium text-paper tracking-tight">
+                          ${band.monthly.toLocaleString()}
+                          <span className="text-[13px] text-slate font-normal">
+                            /mo
+                          </span>
+                        </span>
+                      </div>
+                    ))}
+                    <p className="px-4 py-3 text-[13px] text-slate border-t border-deep/40">
+                      Demo first at this size, then we set you up. Annual is
+                      eleven months&rsquo; price with the book import free.
+                      Above 50 people: custom, quoted on the call.
+                    </p>
+                  </details>
                 </div>
 
                 <p className="mt-4 text-[14px] leading-relaxed text-ice">
@@ -305,7 +343,7 @@ export default function PricingPage() {
                 {IMPORT_TERMS.monthly.toLowerCase()}. Our wizard reads CSV and
                 PDF exports, deduplicates, matches carrier names, and stages
                 anything it cannot place for your review instead of guessing.
-                One incumbent quoted an agency 3 to 4 months and $25,000 to
+                One legacy vendor quoted an agency 3 to 4 months and $25,000 to
                 onboard. We think that tells you everything about whose software
                 the migration serves.
               </p>
@@ -496,8 +534,8 @@ export default function PricingPage() {
             Want to see the whole agency run in one login?
           </h2>
           <p className="mt-3 text-[16px] text-charcoal leading-relaxed">
-            Book a 15-minute Agency demo. No pitch deck. We&rsquo;ll show you
-            the product and answer your questions.
+            Book a 20-minute Agency demo. We&rsquo;ll show you the product,
+            answer your questions, and stay longer if you want.
           </p>
           <a
             href={DEMO_URL}

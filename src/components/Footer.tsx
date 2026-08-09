@@ -57,6 +57,9 @@ export function Footer() {
               <Link href="/about" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 About
               </Link>
+              <Link href="/manifesto" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Manifesto
+              </Link>
               <Link href="/blog" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Blog
               </Link>

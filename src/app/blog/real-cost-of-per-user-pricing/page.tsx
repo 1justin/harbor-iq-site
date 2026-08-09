@@ -131,7 +131,7 @@ export default function PostPage() {
                 rel="noopener noreferrer"
                 className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors text-center"
               >
-                Book a 15 minute demo
+                Book a 20 minute demo
               </a>
               <a
                 href="/pricing"

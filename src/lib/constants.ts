@@ -34,6 +34,16 @@ export const PRICING = {
     team: { monthly: 399, annual: 4389, seats: "2 to 5 people" },
     os: { monthly: 599, annual: 6589, seats: "6 to 15 people" },
   },
+  /**
+   * 16-50 bands published 2026-08-09 (decisions.md). Demo-gated: prices are
+   * public, checkout links come after the demo (Creem products to follow).
+   * Above 50: custom, quoted live.
+   */
+  large: [
+    { monthly: 899, annual: 9889, seats: "16 to 25 people" },
+    { monthly: 1199, annual: 13189, seats: "26 to 35 people" },
+    { monthly: 1499, annual: 16489, seats: "36 to 50 people" },
+  ],
 } as const;
 
 /** Book import: the upgrade moment, not an onboarding SKU. */

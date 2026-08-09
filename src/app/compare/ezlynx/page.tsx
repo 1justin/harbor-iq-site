@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
+import { ManifestoStrip } from "@/components/ManifestoStrip";
 import { MarketsWedge } from "@/components/MarketsWedge";
 import { DEMO_URL } from "@/lib/constants";
 
@@ -249,14 +250,14 @@ export default function CompareEZLynxPage() {
       <section className="bg-linen py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-4">
-            Talk to the founder
+            Support that answers
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight mb-4">
             EZLynx assigns you a tier-1 queue.<br />
-            HarborIQ has me.
+            HarborIQ answers.
           </h2>
           <p className="text-[17px] text-charcoal leading-relaxed max-w-2xl mx-auto mb-8">
-            We&rsquo;ll show you what one operating system looks like in practice, in under thirty minutes. You can even bring your data.
+            We&rsquo;ll show you what one operating system looks like in practice, in under twenty minutes. You can even bring your data.
           </p>
           <a
             href={DEMO_URL}
@@ -330,6 +331,7 @@ export default function CompareEZLynxPage() {
 
       <MarketsWedge competitor="EZLynx" />
 
+      <ManifestoStrip />
       <CtaSection />
     </>
   );

@@ -93,7 +93,7 @@ const commentaryPosts = [
     href: "/newsroom/the-coming-compression-of-independent-agency-software",
     title: "The Coming Compression of Independent-Agency Software",
     summary:
-      "Four macro forces are collapsing a five-vendor stack into a two- or three-platform market by 2030. Most incumbents have already lost. Most operators do not yet know it.",
+      "Four macro forces are collapsing a five-vendor stack into a two- or three-platform market by 2030. Most legacy vendors have already lost. Most operators do not yet know it.",
     date: "May 2026",
   },
   {
@@ -126,7 +126,7 @@ const atGlance: Array<[string, string]> = [
   ["Headquarters", "Glen Ellyn, IL"],
   ["Founder", "Justin Mayer"],
   ["Funding", "Bootstrapped"],
-  ["Customers", "Independent insurance agencies, 1–15 people"],
+  ["Customers", "Independent insurance agencies"],
   ["Coverage", "Personal lines P&C; commercial"],
 ];
 

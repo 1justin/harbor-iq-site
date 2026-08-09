@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
+import { ManifestoStrip } from "@/components/ManifestoStrip";
 import { MarketsWedge } from "@/components/MarketsWedge";
 import { DEMO_URL } from "@/lib/constants";
 
@@ -289,7 +290,7 @@ export default function CompareHawkSoftPage() {
             We&rsquo;re building what comes next.
           </h2>
           <p className="text-[17px] text-charcoal leading-relaxed max-w-2xl mx-auto mb-8">
-            We&rsquo;ll show you what one operating system looks like in practice, in under thirty minutes. You can even bring your data.
+            We&rsquo;ll show you what one operating system looks like in practice, in under twenty minutes. You can even bring your data.
           </p>
           <a
             href={DEMO_URL}
@@ -363,6 +364,7 @@ export default function CompareHawkSoftPage() {
 
       <MarketsWedge competitor="HawkSoft" />
 
+      <ManifestoStrip />
       <CtaSection />
     </>
   );

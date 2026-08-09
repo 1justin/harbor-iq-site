@@ -340,7 +340,7 @@ export default function ComparePage() {
 
       <CtaSection
         headline="The fastest comparison is a working demo."
-        description="Bring your messiest data. We will show you what one operating system looks like in practice, in under thirty minutes."
+        description="Bring your messiest data. We will show you what one operating system looks like in practice, in under twenty minutes."
       />
     </>
   );

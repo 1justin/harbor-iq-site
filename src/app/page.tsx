@@ -19,7 +19,7 @@ const homeFaqs = [
   },
   {
     q: "How much does HarborIQ cost?",
-    a: "Published, flat, and never per person. Markets is $199/month at any size from 1 to 15 people. Agency is $199/month solo, $399/month for 2 to 5 people, and $599/month for 6 to 15. Agency is the same product at every price; you pay for your size, and nothing is withheld. Month to month, cancel anytime. Above 15 people, contact us.",
+    a: "Published, flat, and never per person. Markets is $199/month at any size from 1 to 15 people. Agency is $199/month solo, $399/month for 2 to 5 people, and $599/month for 6 to 15. Agency is the same product at every price; you pay for your size, and nothing is withheld. Month to month, cancel anytime. Larger agencies are published too: $899/month for 16 to 25 people, $1,199 for 26 to 35, $1,499 for 36 to 50, demo first. Above 50, custom.",
   },
   {
     q: "What is HarborIQ Markets?",
@@ -39,7 +39,7 @@ const homeFaqs = [
   },
   {
     q: "How do I switch from my current AMS to HarborIQ?",
-    a: "Start with Markets and nothing has to move. When you upgrade to Agency, export a CSV from your current system and our import wizard handles deduplication, carrier-name matching, and cleanup, with our team hands-on. The book import is free with annual prepay, or one month's fee on monthly. Onboarding is measured in days; one incumbent quoted an agency 3 to 4 months.",
+    a: "Start with Markets and nothing has to move. When you upgrade to Agency, export a CSV from your current system and our import wizard handles deduplication, carrier-name matching, and cleanup, with our team hands-on. The book import is free with annual prepay, or one month's fee on monthly. Onboarding is measured in days; one legacy vendor quoted an agency 3 to 4 months.",
   },
 ];
 

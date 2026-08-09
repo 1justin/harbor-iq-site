@@ -44,7 +44,7 @@ export default function NotFound() {
           rel="noopener noreferrer"
           className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors"
         >
-          Book a 15 minute demo
+          Book a 20 minute demo
         </a>
       </div>
     </div>

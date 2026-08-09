@@ -53,15 +53,6 @@ const nameChapters = [
   },
 ];
 
-const beliefs = [
-  "Small business owners are the backbone of the economy. We want to elevate them.",
-  "Independent agents deserve tools as good as what captive carriers give their agents.",
-  "AI should make agents smarter and faster, not replace them.",
-  "Software should be built around how people actually work, not how process diagrams say they should.",
-  "The best product is the one that disappears into the workflow.",
-  "Domain expertise isn\u2019t optional. You can\u2019t build insurance software without knowing how carriers actually structure their forms and what agents deal with every day.",
-];
-
 export default function AboutPage() {
   return (
     <>
@@ -138,24 +129,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── BELIEFS ─── */}
+      {/* ─── MANIFESTO TEASER ─── */}
       <section className="bg-paper py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight mb-14">
-            Our beliefs
+          <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight mb-6">
+            What we believe
           </h2>
-          <div className="max-w-3xl space-y-14">
-            {beliefs.map((belief, i) => (
-              <div key={i} className="relative pl-24">
-                <span
-                  className="absolute top-[-6px] left-0 text-[72px] font-medium text-interactive/50 leading-none select-none"
-                  aria-hidden="true"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-[18px] text-ink leading-[1.65]">{belief}</p>
-              </div>
-            ))}
+          <div className="max-w-3xl">
+            <p className="text-[18px] text-charcoal leading-[1.65]">
+              We wrote down how we build software: eighteen promises about
+              pricing, data, support, and your right to leave, published where
+              you can hold us to them. It starts with &ldquo;We publish our
+              price&rdquo; and ends with &ldquo;You can leave.&rdquo;
+            </p>
+            <Link
+              href="/manifesto"
+              className="inline-block mt-6 text-[16px] font-medium text-interactive hover:text-deep transition-colors"
+            >
+              Read the manifesto &rarr;
+            </Link>
           </div>
         </div>
       </section>
@@ -209,6 +201,14 @@ export default function AboutPage() {
               <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-xl">
                 Our founding design partner. Andy and Alex have shaped every feature in HarborIQ through real-world feedback from their agency in the Chicago&nbsp;suburbs.
               </p>
+              <a
+                href="https://sdabrokers.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-3 text-[15px] font-medium text-interactive hover:text-deep transition-colors"
+              >
+                sdabrokers.com &rarr;
+              </a>
             </div>
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function AboutPage() {
             Ready to stop drowning in&nbsp;tabs?
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed">
-            Pick a time. 15 minutes. No deck. We will show you the&nbsp;product.
+            Pick a time. 20 minutes is enough to decide. Stay longer if you&nbsp;want.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -230,7 +230,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Book a 15 minute demo
+              Book a 20 minute demo
             </a>
             <Link
               href="/pricing"
