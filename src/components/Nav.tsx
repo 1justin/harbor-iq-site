@@ -136,6 +136,9 @@ export function Nav() {
           <Link href="/about" className="text-paper hover:text-mist text-[15px] transition-colors">
             About
           </Link>
+          <Link href="/manifesto" className="text-paper hover:text-mist text-[15px] transition-colors">
+            Manifesto
+          </Link>
           <Link href="/blog" className="text-paper hover:text-mist text-[15px] transition-colors">
             Blog
           </Link>
@@ -224,6 +227,9 @@ export function Nav() {
           </Link>
           <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             About
+          </Link>
+          <Link href="/manifesto" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
+            Manifesto
           </Link>
           <Link href="/blog" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             Blog

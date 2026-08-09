@@ -2,8 +2,8 @@
  * "The questions nobody is asking."
  *
  * The ICP does not question the AMS/CRM split, per-seat pricing, or the
- * incumbent sales process. This section asks for them. Each question is a
- * rule break the incumbents cannot follow without breaking their own
+ * legacy-vendor sales process. This section asks for them. Each question is a
+ * rule break the legacy vendors cannot follow without breaking their own
  * economics (see assets/harboriq/docs/strategy/harboriq-rules-we-break.md).
  */
 

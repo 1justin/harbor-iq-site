@@ -51,7 +51,7 @@ export function FeaturePageLayout({
               rel="noopener noreferrer"
               className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors"
             >
-              Book a 15 minute demo
+              Book a 20 minute demo
             </a>
             <Link
               href="/pricing"

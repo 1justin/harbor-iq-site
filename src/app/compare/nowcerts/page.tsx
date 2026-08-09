@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
+import { ManifestoStrip } from "@/components/ManifestoStrip";
 import { DEMO_URL, MARKETS_START_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -244,6 +245,7 @@ export default function CompareNowCertsPage() {
         </div>
       </section>
 
+      <ManifestoStrip />
       <CtaSection />
     </>
   );

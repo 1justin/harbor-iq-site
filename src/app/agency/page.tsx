@@ -113,7 +113,7 @@ export default function AgencyPage() {
               Our wizard reads CSV and PDF exports from your current system,
               deduplicates, matches carrier names, and stages anything it
               cannot place for your review instead of guessing. Onboarding is
-              measured in days. One incumbent quoted an agency 3 to 4 months
+              measured in days. One legacy vendor quoted an agency 3 to 4 months
               and $25,000; we think that says everything about whose software
               the migration serves.
             </p>

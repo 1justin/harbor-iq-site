@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
+import { ManifestoStrip } from "@/components/ManifestoStrip";
 import { MarketsWedge } from "@/components/MarketsWedge";
 import { DEMO_URL } from "@/lib/constants";
 
@@ -308,11 +309,11 @@ export default function CompareAppliedEpicPage() {
             About accounting
           </p>
           <h2 className="text-2xl md:text-3xl font-medium text-ink leading-tight tracking-tight text-center mb-6">
-            Three-way reconciliation ships by end of summer.
+            Trust accounting is coming. We will not ship it half-built.
           </h2>
           <div className="bg-linen border-l-4 border-copper p-6 md:p-8 rounded-r-md">
             <p className="text-[16px] text-charcoal leading-relaxed">
-              Insurance-grade trust accounting including three-way reconciliation, GL, and commission tracking, ships summer 2026. Until then, HarborIQ runs alongside your existing accounting workflow.
+              Insurance-grade trust accounting including three-way reconciliation, GL, and commission tracking is in active development. Until it ships, HarborIQ runs alongside your existing accounting workflow.
             </p>
             <p className="text-[16px] text-charcoal leading-relaxed mt-4">
               No commingling. No compliance risk. No shortcuts. You don&rsquo;t have to choose between modernizing your agency and keeping every carrier contract you hold today.
@@ -335,7 +336,7 @@ export default function CompareAppliedEpicPage() {
             You book HarborIQ when you&rsquo;re ready.
           </h2>
           <p className="text-[17px] text-charcoal leading-relaxed max-w-2xl mx-auto mb-8">
-            We&rsquo;ll show you what one operating system looks like in practice, in under thirty minutes. You can even bring your data.
+            We&rsquo;ll show you what one operating system looks like in practice, in under twenty minutes. You can even bring your data.
           </p>
           <a
             href={DEMO_URL}
@@ -409,6 +410,7 @@ export default function CompareAppliedEpicPage() {
 
       <MarketsWedge competitor="Applied Epic" />
 
+      <ManifestoStrip />
       <CtaSection />
     </>
   );
