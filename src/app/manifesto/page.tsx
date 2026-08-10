@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       "Eighteen things we believe about the software independent agencies are made to use. Published pricing. No per-seat fees. You can leave.",
     url: "/manifesto",
     type: "article",
+    images: [{ url: "/og/manifesto.png", width: 1200, height: 630 }],
   },
 };
 
