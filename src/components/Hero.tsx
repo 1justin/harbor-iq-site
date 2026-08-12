@@ -14,6 +14,7 @@ export function Hero() {
   const rootRef = useRef<HTMLElement>(null);
   const primaryBtnRef = useRef<HTMLAnchorElement>(null);
   const videoWrapRef = useRef<HTMLDivElement>(null);
+  const bgVideoRef = useRef<HTMLVideoElement>(null);
 
   useGSAP(
     () => {
@@ -23,6 +24,7 @@ export function Hero() {
         gsap.set(
           [
             ".hero-bg-grain",
+            ".hero-bg-video",
             ".hero-eyebrow",
             ".hero-h1",
             ".hero-sub",
@@ -33,6 +35,7 @@ export function Hero() {
           ],
           { opacity: 1, clearProps: "transform,filter,clipPath" },
         );
+        bgVideoRef.current?.pause();
       });
 
       mm.add(
@@ -55,6 +58,7 @@ export function Hero() {
             : null;
 
           gsap.set(".hero-bg-grain", { opacity: 0 });
+          gsap.set(".hero-bg-video", { opacity: 0, scale: 1.08 });
           gsap.set(".hero-eyebrow", { opacity: 0, y: 8 });
           gsap.set(".hero-h1-word", { yPercent: 110, opacity: 0 });
           gsap.set(".hero-sub", { opacity: 0, filter: "blur(6px)" });
@@ -71,6 +75,11 @@ export function Hero() {
           const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
           tl.to(".hero-bg-grain", { opacity: 1, duration: 0.5 }, 0)
+            .to(
+              ".hero-bg-video",
+              { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" },
+              0,
+            )
             .to(".hero-eyebrow", { opacity: 1, y: 0, duration: 0.5 }, 0.2)
             .to(
               ".hero-h1-word",
@@ -197,6 +206,22 @@ export function Hero() {
       ref={rootRef}
       className="relative overflow-hidden bg-anchor"
     >
+      <video
+        ref={bgVideoRef}
+        className="hero-bg-video pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0"
+        style={{ objectPosition: "center 65%" }}
+        src="/videos/hero-waves-bg.mp4"
+        poster="/videos/hero-waves-bg-poster.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-anchor/55 md:bg-gradient-to-r md:from-anchor md:via-anchor/75 md:to-anchor/35"
+        aria-hidden="true"
+      />
       <div
         className="hero-bg-grain pointer-events-none absolute inset-0 opacity-0 mix-blend-overlay"
         aria-hidden="true"
@@ -210,7 +235,7 @@ export function Hero() {
         className="relative grid items-center gap-10 md:grid-cols-2 md:gap-0"
         style={{ perspective: 1200 }}
       >
-        <div className="px-6 pt-16 md:py-24 md:pl-[max(1.5rem,calc((100vw-1200px)/2+1.5rem))] md:pr-12 text-center md:text-left">
+        <div className="px-6 pt-14 md:py-16 md:pl-[max(1.5rem,calc((100vw-1200px)/2+1.5rem))] md:pr-12 text-center md:text-left">
           <p className="hero-eyebrow text-[13px] font-medium uppercase tracking-[0.12em] text-paper">
             Built for independent insurance agencies
           </p>
@@ -249,7 +274,7 @@ export function Hero() {
 
         <div
           ref={videoWrapRef}
-          className="hero-video relative flex items-center justify-center px-6 pb-16 md:px-0 md:py-12"
+          className="hero-video relative flex items-center justify-center px-6 pb-14 md:px-0 md:py-10"
           style={{ transformStyle: "preserve-3d" }}
         >
           <img
