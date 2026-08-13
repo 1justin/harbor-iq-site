@@ -100,15 +100,25 @@ export default function ManifestoPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
             <p className="text-[18px] text-charcoal leading-[1.7]">
-              You run an independent agency. You answer to your clients, not to a
-              corporate office, and the software you pay for should answer to you.
-              Most of it does not. It was designed a long time ago, by companies
-              that no longer have to try, and you have been working around it ever
-              since.
+              Independent agencies are built by entrepreneurs. You answer to your
+              clients, not to a corporate office, and the software you pay for
+              should answer to you.
             </p>
             <p className="mt-4 text-[18px] text-charcoal leading-[1.7]">
-              We wrote down exactly how we operate, in public, where you can hold
-              us to it. <span className="font-medium text-ink">Here it is. All eighteen.</span>
+              Somewhere along the way, the vendors stopped building for people
+              like you. The software got expensive, complicated, and hard to
+              leave. It was designed a long time ago, by companies that no longer
+              have to try, and you have been working around it ever since.
+            </p>
+            <p className="mt-4 text-[18px] text-charcoal leading-[1.7]">
+              We believe technology should amplify a great agency owner, not slow
+              one down. Not because software matters, but because the businesses
+              that hold their communities together deserve the same advantage as
+              the largest corporations in the country.
+            </p>
+            <p className="mt-4 text-[18px] text-charcoal leading-[1.7]">
+              So we wrote down exactly how we operate, in public, where you can
+              hold us to it. <span className="font-medium text-ink">Here it is. All eighteen.</span>
             </p>
           </div>
         </div>
