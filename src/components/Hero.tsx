@@ -240,15 +240,15 @@ export function Hero() {
             Built for independent insurance agencies
           </p>
           <h1 className="hero-h1 mt-4 text-[36px] font-medium leading-[1.06] tracking-[-0.02em] text-paper md:text-[56px]">
-            Manage your markets.{" "}
-            <span className="text-interactive">Then run your agency.</span>
+            You built this agency.{" "}
+            <span className="text-interactive">Your software should act like&nbsp;it.</span>
           </h1>
           <p className="hero-sub mt-5 text-[17px] leading-relaxed text-mist md:text-[19px]">
             HarborIQ starts as the carrier intelligence your whole team uses every
             day: cited appetite answers, logins, documents, and news for every
-            carrier you work with. ${PRICING.markets.monthly} a month, any size,
-            live the same day, no migration. When you are ready to move the book,
-            the same login runs the whole&nbsp;agency.
+            carrier you work with. ${PRICING.markets.monthly} a month, live the
+            same day, and when you are ready to move the book, the same login runs
+            the whole&nbsp;agency.
           </p>
           <div className="hero-ctas mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
             <a
@@ -264,11 +264,12 @@ export function Hero() {
               rel="noopener noreferrer"
               className="cta-secondary btn-radius border border-mist/40 px-7 py-3.5 text-center text-[16px] font-medium text-paper hover:border-paper"
             >
-              Book an Agency demo
+              Book a 20-minute demo
             </a>
           </div>
           <p className="hero-disclaimer mt-3 text-center text-[13px] text-mist md:text-left">
-            14-day free trial on Markets. Published pricing. Month to month.
+            14-day free trial on Markets. Published pricing. Month to month. You
+            can&nbsp;leave.
           </p>
         </div>
 
