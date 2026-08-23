@@ -10,7 +10,7 @@ export const pricingFaqs = [
   },
   {
     q: "Is the $599 Agency different from the $399 Agency?",
-    a: "No. Agency is the same product at every price. Nothing is withheld, no feature gates, no locked reports. You pay for your size because value scales with size, and that is the honest reason. We will never make you wonder what is hiding in a higher tier.",
+    a: "No. Agency is the same product at every price. Nothing is withheld, no feature gates, no locked reports. You pay for your size because value scales with size, and that is the honest reason. There is nothing hiding in a higher tier.",
   },
   {
     q: "What does the book import cost when I move to Agency?",
@@ -30,7 +30,7 @@ export const pricingFaqs = [
   },
   {
     q: "What happens if we use a lot of AI?",
-    a: "Every plan includes a generous allowance sized for normal agency work, and a $50 per month overage cap is on by default so you never get a surprise bill. You see usage in the app and get a warning at 80%. Most agencies never notice the allowance exists.",
+    a: "Every plan includes a generous allowance sized for normal agency work, and a $50 per month overage cap is on by default. You see usage in the app and get a warning at 80%. Most agencies never notice the allowance exists.",
   },
   {
     q: "Can I cancel anytime?",

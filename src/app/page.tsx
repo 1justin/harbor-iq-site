@@ -30,12 +30,20 @@ const homeFaqs = [
     a: "The Agency rung does. It replaces tools like EZLynx, HawkSoft, Applied Epic, NowCerts, or EasyAgent, and the CRM overlay (AgencyZoom or GoHighLevel) you bolted on top. Markets does not replace your AMS; it runs alongside whatever you use today, which is why it needs no migration.",
   },
   {
+    q: "We write life business too. Does HarborIQ handle it?",
+    a: "Yes. Life clients live in the same client record as the P&C book, so your life business stops living in a spreadsheet next to your AMS.",
+  },
+  {
     q: "Does HarborIQ include comparative rating?",
     a: "Not yet. And a hard truth: every rater is limited by which connections carriers allow, which is why no rater has ever made an agent fully happy. Today HarborIQ answers appetite and guideline questions before you quote, then helps you compare what the quotes actually cover and explain the recommendation to your client. Automated rating is on the roadmap, and we publish what is shipped versus what is coming.",
   },
   {
     q: "Is HarborIQ IVANS compatible?",
     a: "IVANS automated carrier downloads are on our roadmap. Today HarborIQ includes a full carrier directory with appetite tracking, underwriting guidelines, and portal credentials. We are transparent about what is available now and what is coming next.",
+  },
+  {
+    q: "Does HarborIQ work on my phone?",
+    a: "Yes. Leads don't wait for a desk. Manage your pipeline and ask Carrier Ask questions from wherever you are; the deep work stays on the big screen where it belongs.",
   },
   {
     q: "How do I switch from my current AMS to HarborIQ?",

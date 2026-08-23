@@ -244,11 +244,12 @@ export function Hero() {
             <span className="text-interactive">Your software should act like&nbsp;it.</span>
           </h1>
           <p className="hero-sub mt-5 text-[17px] leading-relaxed text-mist md:text-[19px]">
-            HarborIQ starts as the carrier intelligence your whole team uses every
-            day: cited appetite answers, logins, documents, and news for every
-            carrier you work with. ${PRICING.markets.monthly} a month, live the
-            same day, and when you are ready to move the book, the same login runs
-            the whole&nbsp;agency.
+            Will this carrier even write it? Today that answer lives in a PDF,
+            a portal, or whoever&rsquo;s been there the longest. HarborIQ
+            answers in seconds, cited and dated, for every carrier you work
+            with. ${PRICING.markets.monthly} a month, live the same day. And
+            when you&rsquo;re ready to move the book, the same login runs the
+            whole&nbsp;agency.
           </p>
           <div className="hero-ctas mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
             <a
@@ -304,7 +305,7 @@ export function Hero() {
               One price for the whole team.
             </p>
             <p className="mt-2 text-[14px] text-mist leading-relaxed">
-              Never a fee per person. Hiring never raises your bill.
+              Never a fee per person. One flat price for your size band.
             </p>
           </div>
           <div>

@@ -366,11 +366,11 @@ export default function PricingPage() {
               Generous AI included. No surprise bills. No meter anxiety.
             </h2>
             <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-2xl mx-auto">
-              We want your team asking Carrier Ask on every quote, so we will
-              never make you ration it. Every plan includes an allowance sized
-              for real agency work, and a $50 per month overage cap is on by
-              default. You see usage in the app, you get a warning at 80%, and
-              you will never open an invoice you did not expect.
+              We want your team asking Carrier Ask on every quote, so we
+              don&rsquo;t make you ration it. Every plan includes an allowance
+              sized for real agency work, and a $50 per month overage cap is on
+              by default. You see usage in the app and get a warning at 80%.
+              Surprise invoices are designed out.
             </p>
           </div>
 
@@ -503,7 +503,7 @@ export default function PricingPage() {
           </div>
 
           <p className="mt-6 text-[13px] text-stone text-center max-w-3xl mx-auto leading-relaxed">
-            Published pricing as of July 2026: HawkSoft $250/mo base + $94/user;
+            Published pricing as of 2026: HawkSoft $250/mo base + $94/user;
             NowCerts Essentials $99/user, Business $349 for 5 users; AgencyZoom
             from $79/mo; GoHighLevel $97 to $297/mo plus usage fees for SMS,
             email, and AI. Stack ranges pair a mid-market AMS with one overlay.

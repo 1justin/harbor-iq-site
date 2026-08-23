@@ -167,7 +167,7 @@ export default function CompareNowCertsPage() {
             </table>
           </div>
           <p className="text-[13px] text-stone leading-relaxed text-center max-w-2xl mx-auto mt-8">
-            Published pricing, July 2026: NowCerts Business $349 for 5 users;
+            Published pricing, 2026: NowCerts Business $349 for 5 users;
             AgencyZoom from $79/mo; GoHighLevel $97 to $297/mo plus usage fees.
           </p>
         </div>
