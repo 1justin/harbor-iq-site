@@ -36,7 +36,7 @@ const originChapters = [
   {
     icon: "/images/story-icon-solution.svg",
     title: "The solution",
-    text: "It needed someone who\u2019d seen enterprise-grade tools up close but knew how to build for a 5-person office where every dollar has to earn its place. Every feature in HarborIQ comes from watching agents work and listening to what they actually need. Not what a software company thinks they should need.",
+    text: "It needed someone who\u2019d seen Fortune 500 tooling up close but knew how to build for a 5-person office where every dollar has to earn its place. Every feature in HarborIQ comes from watching agents work and listening to what they actually need. Not what a software company thinks they should need.",
   },
 ];
 
@@ -175,7 +175,7 @@ export default function AboutPage() {
                 <h3 className="text-lg font-medium text-ink">Justin Mayer</h3>
                 <p className="text-[13px] text-stone font-medium uppercase tracking-wider mt-1">Founder | CEO</p>
                 <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-xl">
-                  Product builder who&rsquo;s worked inside Fortune 500 companies and built from scratch as a founder. Knows what enterprise-grade looks like and builds it without the enterprise price tag. Started HarborIQ after watching agents spend two hours doing what should take twenty&nbsp;minutes.
+                  Product builder who&rsquo;s worked inside Fortune 500 companies and built from scratch as a founder. Knows what enterprise tooling looks like and builds it without the enterprise price tag. Started HarborIQ after watching agents spend two hours doing what should take twenty&nbsp;minutes.
                 </p>
                 <div className="mt-4 flex gap-3">
                   <a

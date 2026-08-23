@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const MODULES = [
   {
     title: "Clients and policies",
-    body: "One record per client: policies, documents, claims, payments, and communications, with encrypted, audited storage for sensitive data.",
+    body: "One record per client: policies, documents, claims, payments, and communications, with encrypted, audited storage for sensitive data. Life business lives in the same record as the P&C book.",
   },
   {
     title: "Pipeline",

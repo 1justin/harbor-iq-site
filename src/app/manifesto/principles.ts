@@ -83,7 +83,7 @@ export const PRINCIPLES: Principle[] = [
 export const MANIFESTO_FAQS = [
   {
     q: "Does HarborIQ charge per user?",
-    a: "No. HarborIQ is flat monthly pricing for the whole agency. Hiring another producer never changes your software bill.",
+    a: "No. HarborIQ is one flat monthly price for your agency's size. Hiring inside your size band never changes your software bill.",
   },
   {
     q: "Is HarborIQ's pricing public?",

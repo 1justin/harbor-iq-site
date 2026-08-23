@@ -60,7 +60,7 @@ const tiers = [
 const rulesBroken = [
   {
     title: "No per-user pricing.",
-    body: "Per-seat pricing rewards the vendor every time you hire. We won’t play that game. Three flat tiers. Hire freely.",
+    body: "Per-seat pricing rewards the vendor every time you hire. We won’t play that game. You pay for your agency’s size, and the price moves only when your size band does, not when a new hire logs in.",
   },
   {
     title: "Pricing is published.",
