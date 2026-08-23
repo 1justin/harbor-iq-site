@@ -36,16 +36,14 @@ export const metadata: Metadata = {
         url: "/og/default.png",
         width: 1200,
         height: 630,
-        alt: "HarborIQ Command Center, the AI-native operating system for independent insurance agencies",
+        alt: "You built this agency. Your software should act like it. HarborIQ, for independent insurance agencies.",
       },
     ],
   },
+  // X and Slack fall back to og:* when twitter-specific tags are absent, so
+  // only the card type is declared. Keeps every surface in sync with one card.
   twitter: {
     card: "summary_large_image",
-    title: "HarborIQ | Your Agents Deserve Better Tools",
-    description:
-      "Close more business. Keep more clients. Zero busywork. Built for independent insurance agencies.",
-    images: ["/images/harboriq-command-center-hero-no-shadow.png"],
   },
 };
 
