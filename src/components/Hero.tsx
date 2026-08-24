@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { DEMO_URL, MARKETS_START_URL, PRICING } from "@/lib/constants";
+import { HeroAnimation } from "./hero-experiment/HeroAnimation";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP, SplitText);
@@ -279,14 +280,12 @@ export function Hero() {
           className="hero-video relative flex items-center justify-center px-6 pb-14 md:px-0 md:py-10"
           style={{ transformStyle: "preserve-3d" }}
         >
-          <img
-            src="/images/harboriq-command-center-hero-no-shadow.webp"
-            alt="HarborIQ command center, an AI-native AMS and CRM for independent insurance agencies"
-            className="block h-auto w-full max-w-[720px] md:max-w-none md:w-[112%] md:-translate-x-[2%]"
-            width={1280}
-            height={800}
-            decoding="async"
-          />
+          <div
+            className="block w-full max-w-[720px] overflow-hidden rounded-2xl md:max-w-none md:w-[112%] md:-translate-x-[2%]"
+            style={{ aspectRatio: "1280 / 800" }}
+          >
+            <HeroAnimation />
+          </div>
         </div>
       </div>
 
