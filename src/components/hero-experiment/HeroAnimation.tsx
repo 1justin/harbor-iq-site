@@ -5,9 +5,9 @@ import { Player } from "@remotion/player";
 import { CarrierAskLoop } from "./CarrierAskLoop";
 
 const FPS = 30;
-const DURATION_IN_FRAMES = 260;
-// Steady state: question typed, answer revealed, highlight settled.
-const REDUCED_MOTION_FRAME = 215;
+const DURATION_IN_FRAMES = 300;
+// Steady state: question, answer, and stats all settled and fully visible.
+const REDUCED_MOTION_FRAME = 180;
 
 export function HeroAnimation() {
   const [reducedMotion, setReducedMotion] = useState(
