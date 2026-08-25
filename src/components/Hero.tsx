@@ -281,8 +281,8 @@ export function Hero() {
           style={{ transformStyle: "preserve-3d" }}
         >
           <div
-            className="block w-full max-w-[380px] md:max-w-[440px]"
-            style={{ aspectRatio: "680 / 1020" }}
+            className="block w-full max-w-[440px] md:max-w-[520px]"
+            style={{ aspectRatio: "760 / 1140" }}
           >
             <HeroAnimation />
           </div>

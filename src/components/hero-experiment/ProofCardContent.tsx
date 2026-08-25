@@ -1,3 +1,4 @@
+import { CardShell } from "./CardShell";
 import { ListVisual } from "./visuals/ListVisual";
 
 // Same disclosed-fictional exchanges used in AskDemo.tsx (real answers,
@@ -11,42 +12,39 @@ const RECENTLY_ANSWERED = [
   { primary: "Granite Shore prior coverage for preferred auto?", secondary: "6 months" },
 ];
 
-export const ProofCardContent: React.FC = () => {
-  return (
-    <div className="dl-mock flex h-full w-full flex-col overflow-hidden rounded-2xl border border-ash/70 bg-paper">
-      <div className="flex items-center justify-between border-b border-ash/50 px-8 py-5">
-        <span className="text-[15px] font-medium uppercase tracking-[0.08em] text-stone">
-          Carrier Ask
+export const ProofCardContent: React.FC = () => (
+  <CardShell
+    label="Carrier Ask"
+    headline={QUESTION}
+    subhead="Answered from the carrier's own guide, cited and dated."
+  >
+    <div className="rounded-lg border border-ash/60 bg-linen/40 px-5 py-4">
+      <div className="flex items-center justify-between">
+        <span className="text-[13px] font-medium uppercase tracking-wider text-stone">
+          Answer
         </span>
-        <span className="rounded-full bg-success px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-white">
+        <span className="rounded-full bg-success px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
           High confidence
         </span>
       </div>
-
-      <div className="flex flex-1 flex-col px-8 py-7">
-        <p className="text-[24px] font-medium leading-snug text-ink">{QUESTION}</p>
-
-        <div className="mt-6 border-t border-ash/50 pt-6">
-          <p className="text-[17px] leading-relaxed text-charcoal">
-            Not without an inspection. Meridian requires roofs{" "}
-            <strong className="font-semibold text-ink">20 years or older</strong>{" "}
-            to pass inspection before binding, and asphalt shingle roofs over{" "}
-            <strong className="font-semibold text-ink">25 years</strong> are not
-            eligible for replacement-cost coverage.
-          </p>
-          <div className="mt-4 inline-flex items-center gap-2 rounded-md border border-ash bg-linen px-3.5 py-1.5 text-[13px] text-charcoal">
-            <span className="font-medium text-interactive">Source</span>
-            <span>{CITATION}</span>
-          </div>
-        </div>
-
-        <div className="mt-7">
-          <p className="mb-3 text-[13px] font-medium uppercase tracking-wider text-stone">
-            Recently answered
-          </p>
-          <ListVisual rows={RECENTLY_ANSWERED} />
-        </div>
+      <p className="mt-3 text-[18px] leading-relaxed text-charcoal">
+        Not without an inspection. Meridian requires roofs{" "}
+        <strong className="font-semibold text-ink">20 years or older</strong> to
+        pass inspection before binding, and asphalt shingle roofs over{" "}
+        <strong className="font-semibold text-ink">25 years</strong> are not
+        eligible for replacement-cost coverage.
+      </p>
+      <div className="mt-4 inline-flex items-center gap-2 rounded-md border border-ash bg-paper px-3.5 py-1.5 text-[13px] text-charcoal">
+        <span className="font-medium text-interactive">Source</span>
+        <span>{CITATION}</span>
       </div>
     </div>
-  );
-};
+
+    <div className="mt-6">
+      <p className="mb-3 text-[13px] font-medium uppercase tracking-wider text-stone">
+        Recently answered
+      </p>
+      <ListVisual rows={RECENTLY_ANSWERED} />
+    </div>
+  </CardShell>
+);
