@@ -11,7 +11,7 @@ export const AIExtra: React.FC = () => (
   <div>
     <FocusBanner />
     <div className="mt-6">
-      <p className="mb-3 text-[13px] font-medium uppercase tracking-wider text-stone">
+      <p className="mb-3 text-[15px] font-medium uppercase tracking-wider text-stone">
         Also flagged this week
       </p>
       <ListVisual rows={ALSO_FLAGGED} />

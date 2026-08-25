@@ -282,7 +282,7 @@ export function Hero() {
         >
           <div
             className="block w-full max-w-[440px] md:max-w-[520px]"
-            style={{ aspectRatio: "760 / 1260" }}
+            style={{ aspectRatio: "820 / 1400" }}
           >
             <HeroAnimation />
           </div>
