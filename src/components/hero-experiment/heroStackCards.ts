@@ -1,7 +1,7 @@
 import { createElement } from "react";
 import { ChartVisual } from "./visuals/ChartVisual";
 import { ListVisual } from "./visuals/ListVisual";
-import { AIFlagVisual } from "./visuals/AIFlagVisual";
+import { FocusBanner } from "./visuals/FocusBanner";
 
 // Copy grounded in the canonical product description
 // (assets/harboriq/brand-assets/creatify-brand-kit.md) rather than invented
@@ -11,11 +11,10 @@ import { AIFlagVisual } from "./visuals/AIFlagVisual";
 
 export const AI_CARD = {
   label: "AI at work",
-  badge: { text: "AI flagged", className: "bg-interactive" },
   headline: "The system flags what needs you",
   subhead:
     "Renewal risk and carrier changes surface on their own, before you go looking.",
-  visual: createElement(AIFlagVisual),
+  visual: createElement(FocusBanner),
 };
 
 export const STACK_VALUE_CARDS = [
@@ -25,9 +24,9 @@ export const STACK_VALUE_CARDS = [
     subhead: "Know who's expiring before it becomes a compliance problem.",
     visual: createElement(ListVisual, {
       rows: [
-        { primary: "Sarah K. · P&C", secondary: "Expires Jun 2027" },
-        { primary: "Mike T. · Life", secondary: "Renew by Sep" },
-        { primary: "Dana R. · P&C", secondary: "Current" },
+        { primary: "Sarah K. · P&C", secondary: "Expires Jun 2027", tone: "success" },
+        { primary: "Mike T. · Life", secondary: "Renew by Sep", tone: "warning" },
+        { primary: "Dana R. · P&C", secondary: "Current", tone: "success" },
       ],
     }),
   },
@@ -44,9 +43,9 @@ export const STACK_VALUE_CARDS = [
       "Policy history, notes, and the next renewal, in one place instead of three tabs.",
     visual: createElement(ListVisual, {
       rows: [
-        { primary: "Dana Whitfield", secondary: "Renews Mar 12" },
-        { primary: "Marcus Oyelaran", secondary: "Home + Auto" },
-        { primary: "The Kowalski Group", secondary: "Commercial" },
+        { primary: "Dana Whitfield", secondary: "Renews Mar 12", tone: "warning" },
+        { primary: "Marcus Oyelaran", secondary: "Home + Auto", tone: "interactive" },
+        { primary: "The Kowalski Group", secondary: "Commercial", tone: "interactive" },
       ],
     }),
   },
@@ -56,9 +55,9 @@ export const STACK_VALUE_CARDS = [
     subhead: "Reps and logins on one side. Contacts and policies on the other.",
     visual: createElement(ListVisual, {
       rows: [
-        { primary: "Meridian Mutual", secondary: "Alex Rivera, rep" },
-        { primary: "Lakeshore P&C", secondary: "Login on file" },
-        { primary: "Granite Shore", secondary: "3 open submissions" },
+        { primary: "Meridian Mutual", secondary: "Alex Rivera, rep", tone: "success" },
+        { primary: "Lakeshore P&C", secondary: "Login on file", tone: "success" },
+        { primary: "Granite Shore", secondary: "3 open submissions", tone: "warning" },
       ],
     }),
   },

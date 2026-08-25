@@ -23,18 +23,23 @@ export const depthOf = (cardIndex: number, front: number, count: number) => {
   return raw < 0 ? raw + count : raw;
 };
 
-// Continuous depth -> visual treatment. depth 0 is front and solid; each
-// step back scales down, moves up, and gets more translucent, culled
-// entirely past ~3 layers so the stack doesn't get visually noisy.
+// Continuous depth -> visual treatment. depth 0 is front and solid. Cards
+// behind recede DOWN (not up) and fan out with a slight alternating
+// rotation, like a loose pile of photos rather than a rigid vertical
+// stack -- deliberately different from the earlier top-back version.
+// Culled entirely past ~3 layers so the pile doesn't get visually noisy.
 export const stackStyle = (depth: number) => {
-  const scale = interpolate(depth, [0, 3], [1, 0.84], { extrapolateRight: "clamp" });
-  const translateY = interpolate(depth, [0, 3], [0, -150], { extrapolateRight: "clamp" });
-  const opacity = interpolate(depth, [0, 1, 2.4, 3.2], [1, 0.7, 0.32, 0], {
+  const scale = interpolate(depth, [0, 3], [1, 0.85], { extrapolateRight: "clamp" });
+  const translateY = interpolate(depth, [0, 3], [0, 110], { extrapolateRight: "clamp" });
+  const rotate = interpolate(depth, [0, 1, 2, 3], [0, -4, 3, -3], {
+    extrapolateRight: "clamp",
+  });
+  const opacity = interpolate(depth, [0, 1, 2.4, 3.2], [1, 0.75, 0.35, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
   return {
-    transform: `translateY(${translateY}px) scale(${scale})`,
+    transform: `translateY(${translateY}px) rotate(${rotate}deg) scale(${scale})`,
     opacity,
     zIndex: Math.round(1000 - depth * 10),
   };
