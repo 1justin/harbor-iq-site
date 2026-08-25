@@ -18,10 +18,10 @@ export const CardShell: React.FC<CardShellProps> = ({
       </span>
     </div>
 
-    <div className="flex flex-1 flex-col px-10 py-9">
+    <div className="flex flex-1 flex-col px-10 py-7">
       <p className="text-[44px] font-medium leading-[1.12] text-ink">{headline}</p>
       <p className="mt-3 text-[26px] leading-snug text-charcoal">{subhead}</p>
-      <div className="mt-8">{children}</div>
+      <div className="mt-6">{children}</div>
     </div>
   </div>
 );
