@@ -10,6 +10,8 @@ const CITATION = "Homeowners underwriting guide, p. 14 · updated May 2026";
 const RECENTLY_ANSWERED = [
   { primary: "Lakeshore P&C appetite for late-night restaurants?", secondary: "Limited" },
   { primary: "Granite Shore prior coverage for preferred auto?", secondary: "6 months" },
+  { primary: "Northbridge Casualty umbrella minimum underlying?", secondary: "$1M / $1M" },
+  { primary: "Cardinal Point builder's risk max project length?", secondary: "18 months" },
 ];
 
 export const ProofCardContent: React.FC = () => (

@@ -5,9 +5,9 @@ import { interpolate, spring } from "remotion";
 // Remotion's own frame bounds (Player clips to compositionWidth/Height
 // regardless of the outer DOM wrapper's overflow setting).
 export const COMPOSITION_WIDTH = 760;
-export const COMPOSITION_HEIGHT = 1140;
+export const COMPOSITION_HEIGHT = 1260;
 export const CARD_WIDTH = 620;
-export const CARD_HEIGHT = 790;
+export const CARD_HEIGHT = 910;
 
 export const CYCLE_LENGTH = 130;
 
