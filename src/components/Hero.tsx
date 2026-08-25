@@ -6,6 +6,12 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { DEMO_URL, MARKETS_START_URL, PRICING } from "@/lib/constants";
 import { HeroAnimation } from "./hero-experiment/HeroAnimation";
+import {
+  CARD_WIDTH,
+  CARD_HEIGHT,
+  COMPOSITION_WIDTH,
+  COMPOSITION_HEIGHT,
+} from "./hero-experiment/stack";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP, SplitText);
@@ -278,10 +284,28 @@ export function Hero() {
           style={{ transformStyle: "preserve-3d" }}
         >
           <div
-            className="block w-full max-w-[460px] md:max-w-[560px]"
-            style={{ aspectRatio: "940 / 1840" }}
+            className="relative block w-full max-w-[380px] md:max-w-[440px]"
+            style={{ aspectRatio: `${CARD_WIDTH} / ${CARD_HEIGHT}` }}
           >
-            <HeroAnimation />
+            {/* The composition canvas is padded well beyond the card itself
+                so the peeking stack behind it has room to render (Remotion
+                clips to compositionWidth/Height). Sizing this OUTER box to
+                match the card only, then absolutely positioning an
+                oversized inner layer at the composition's own aspect
+                ratio, keeps that padding from inflating the space this
+                reserves in the page layout -- only the card fills the box
+                other content lays out around; the peek spills outside it
+                without pushing anything. */}
+            <div
+              className="absolute left-1/2 top-1/2"
+              style={{
+                width: `${(COMPOSITION_WIDTH / CARD_WIDTH) * 100}%`,
+                height: `${(COMPOSITION_HEIGHT / CARD_HEIGHT) * 100}%`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <HeroAnimation />
+            </div>
           </div>
         </div>
       </div>
