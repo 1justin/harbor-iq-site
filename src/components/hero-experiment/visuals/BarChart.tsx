@@ -10,16 +10,16 @@ const DATA = [
 
 export const BarChart: React.FC = () => (
   <div>
-    <p className="mb-3 text-[15px] font-medium uppercase tracking-wider text-stone">
+    <p className="mb-3 text-[17px] font-medium uppercase tracking-wider text-stone">
       Premium by line of business
     </p>
-    <div className="space-y-3">
+    <div className="space-y-3.5">
       {DATA.map((d) => (
-        <div key={d.label} className="flex items-center gap-3">
-          <span className="w-[180px] shrink-0 truncate text-[16px] text-charcoal">
+        <div key={d.label} className="flex items-center gap-4">
+          <span className="w-[210px] shrink-0 truncate text-[18px] text-charcoal">
             {d.label}
           </span>
-          <div className="h-3.5 flex-1 rounded-full bg-ash/50">
+          <div className="h-4 flex-1 rounded-full bg-ash/50">
             <div
               className="h-full rounded-full bg-anchor"
               style={{ width: `${d.value}%` }}

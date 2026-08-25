@@ -9,19 +9,19 @@ const DOT_CLASS: Record<Tone, string> = {
 };
 
 export const ListVisual: React.FC<{ rows: Row[] }> = ({ rows }) => (
-  <div className="space-y-2.5">
+  <div className="space-y-3">
     {rows.map((r) => (
       <div
         key={r.primary}
-        className="flex items-center justify-between rounded-lg border border-ash/60 bg-linen/50 px-4 py-3"
+        className="flex items-center justify-between rounded-lg border border-ash/60 bg-linen/50 px-5 py-3.5"
       >
-        <span className="flex items-center gap-2.5 text-[18px] text-ink">
+        <span className="flex items-center gap-3 text-[21px] text-ink">
           {r.tone ? (
-            <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${DOT_CLASS[r.tone]}`} />
+            <span className={`h-3 w-3 shrink-0 rounded-full ${DOT_CLASS[r.tone]}`} />
           ) : null}
           {r.primary}
         </span>
-        <span className="text-[15px] text-stone">{r.secondary}</span>
+        <span className="shrink-0 pl-3 text-[17px] text-stone">{r.secondary}</span>
       </div>
     ))}
   </div>

@@ -4,10 +4,10 @@ import { interpolate, spring } from "remotion";
 // cards behind the front one have room to render without being clipped by
 // Remotion's own frame bounds (Player clips to compositionWidth/Height
 // regardless of the outer DOM wrapper's overflow setting).
-export const COMPOSITION_WIDTH = 820;
-export const COMPOSITION_HEIGHT = 1400;
-export const CARD_WIDTH = 680;
-export const CARD_HEIGHT = 1050;
+export const COMPOSITION_WIDTH = 900;
+export const COMPOSITION_HEIGHT = 1650;
+export const CARD_WIDTH = 760;
+export const CARD_HEIGHT = 1300;
 
 export const CYCLE_LENGTH = 130;
 
