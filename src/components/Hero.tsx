@@ -241,16 +241,13 @@ export function Hero() {
             Built for independent insurance agencies
           </p>
           <h1 className="hero-h1 mt-4 text-[36px] font-medium leading-[1.06] tracking-[-0.02em] text-paper md:text-[56px]">
-            You built this agency.{" "}
+            You built this agency.
+            <br />
             <span className="text-interactive">Your software should act like&nbsp;it.</span>
           </h1>
           <p className="hero-sub mt-5 text-[17px] leading-relaxed text-mist md:text-[19px]">
-            Will this carrier even write it? Today that answer lives in a PDF,
-            a portal, or whoever&rsquo;s been there the longest. HarborIQ
-            answers in seconds, cited and dated, for every carrier you work
-            with. ${PRICING.markets.monthly} a month, live the same day. And
-            when you&rsquo;re ready to move the book, the same login runs the
-            whole&nbsp;agency.
+            Will this carrier write it? Ask HarborIQ and get a cited answer
+            in seconds, across all your carriers.
           </p>
           <div className="hero-ctas mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
             <a
@@ -270,8 +267,8 @@ export function Hero() {
             </a>
           </div>
           <p className="hero-disclaimer mt-3 text-center text-[13px] text-mist md:text-left">
-            14-day free trial on Markets. Published pricing. Month to month. You
-            can&nbsp;leave.
+            14-day free trial. ${PRICING.markets.monthly}/month. No migration
+            required.
           </p>
         </div>
 
