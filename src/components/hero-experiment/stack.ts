@@ -11,17 +11,6 @@ export const CARD_HEIGHT = 700;
 
 export const CYCLE_LENGTH = 130;
 
-// Brand navy family + Interactive blue, reserved for AI-driven cards.
-// Copper is deliberately excluded: the brand kit reserves it for exactly
-// one CTA per asset, never decorative, so it doesn't belong in a rotating
-// background set. See presets.ts equivalent discussion in remotion-studio.
-export const STACK_COLORS = {
-  anchor: "#1B3A5C",
-  midnight: "#0F2440",
-  deep: "#2A5580",
-  interactive: "#2E75B6",
-} as const;
-
 export const frontIndexFloat = (frame: number, fps: number) => {
   const step = Math.floor(frame / CYCLE_LENGTH);
   const localFrame = frame - step * CYCLE_LENGTH;
