@@ -5,6 +5,13 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { DEMO_URL, MARKETS_START_URL, PRICING } from "@/lib/constants";
+import { HeroAnimation } from "./hero-experiment/HeroAnimation";
+import {
+  CARD_WIDTH,
+  CARD_HEIGHT,
+  COMPOSITION_WIDTH,
+  COMPOSITION_HEIGHT,
+} from "./hero-experiment/stack";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP, SplitText);
@@ -240,16 +247,13 @@ export function Hero() {
             Built for independent insurance agencies
           </p>
           <h1 className="hero-h1 mt-4 text-[36px] font-medium leading-[1.06] tracking-[-0.02em] text-paper md:text-[56px]">
-            You built this agency.{" "}
+            You built this agency.
+            <br />
             <span className="text-interactive">Your software should act like&nbsp;it.</span>
           </h1>
           <p className="hero-sub mt-5 text-[17px] leading-relaxed text-mist md:text-[19px]">
-            Will this carrier even write it? Today that answer lives in a PDF,
-            a portal, or whoever&rsquo;s been there the longest. HarborIQ
-            answers in seconds, cited and dated, for every carrier you work
-            with. ${PRICING.markets.monthly} a month, live the same day. And
-            when you&rsquo;re ready to move the book, the same login runs the
-            whole&nbsp;agency.
+            Will this carrier write it? Ask HarborIQ and get a cited answer
+            in seconds, across all your carriers.
           </p>
           <div className="hero-ctas mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
             <a
@@ -269,8 +273,8 @@ export function Hero() {
             </a>
           </div>
           <p className="hero-disclaimer mt-3 text-center text-[13px] text-mist md:text-left">
-            14-day free trial on Markets. Published pricing. Month to month. You
-            can&nbsp;leave.
+            14-day free trial. ${PRICING.markets.monthly}/month. No migration
+            required.
           </p>
         </div>
 
@@ -279,14 +283,30 @@ export function Hero() {
           className="hero-video relative flex items-center justify-center px-6 pb-14 md:px-0 md:py-10"
           style={{ transformStyle: "preserve-3d" }}
         >
-          <img
-            src="/images/harboriq-command-center-hero-no-shadow.webp"
-            alt="HarborIQ command center, an AI-native AMS and CRM for independent insurance agencies"
-            className="block h-auto w-full max-w-[720px] md:max-w-none md:w-[112%] md:-translate-x-[2%]"
-            width={1280}
-            height={800}
-            decoding="async"
-          />
+          <div
+            className="relative block w-full max-w-[380px] md:max-w-[440px]"
+            style={{ aspectRatio: `${CARD_WIDTH} / ${CARD_HEIGHT}` }}
+          >
+            {/* The composition canvas is padded well beyond the card itself
+                so the peeking stack behind it has room to render (Remotion
+                clips to compositionWidth/Height). Sizing this OUTER box to
+                match the card only, then absolutely positioning an
+                oversized inner layer at the composition's own aspect
+                ratio, keeps that padding from inflating the space this
+                reserves in the page layout -- only the card fills the box
+                other content lays out around; the peek spills outside it
+                without pushing anything. */}
+            <div
+              className="absolute left-1/2 top-1/2"
+              style={{
+                width: `${(COMPOSITION_WIDTH / CARD_WIDTH) * 100}%`,
+                height: `${(COMPOSITION_HEIGHT / CARD_HEIGHT) * 100}%`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <HeroAnimation />
+            </div>
+          </div>
         </div>
       </div>
 
