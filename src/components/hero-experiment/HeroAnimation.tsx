@@ -2,16 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { Player } from "@remotion/player";
-import {
-  HeroCardRotation,
-  PROOF_CARD_FRAMES,
-  TOTAL_FRAMES,
-} from "./HeroCardRotation";
+import { HeroCardStack, TOTAL_FRAMES } from "./HeroCardStack";
+import { COMPOSITION_HEIGHT, COMPOSITION_WIDTH, CYCLE_LENGTH } from "./stack";
 
 const FPS = 30;
-// Steady state within the first (proof) card: question and answer both
-// settled and fully visible.
-const REDUCED_MOTION_FRAME = Math.round(PROOF_CARD_FRAMES * 0.7);
+// Steady state: front card fully settled, mid-hold.
+const REDUCED_MOTION_FRAME = Math.round(CYCLE_LENGTH * 0.6);
 
 export function HeroAnimation() {
   const [reducedMotion, setReducedMotion] = useState(
@@ -29,11 +25,11 @@ export function HeroAnimation() {
 
   return (
     <Player
-      component={HeroCardRotation}
+      component={HeroCardStack}
       durationInFrames={TOTAL_FRAMES}
       fps={FPS}
-      compositionWidth={1280}
-      compositionHeight={800}
+      compositionWidth={COMPOSITION_WIDTH}
+      compositionHeight={COMPOSITION_HEIGHT}
       style={{ width: "100%", height: "100%" }}
       autoPlay={!reducedMotion}
       loop={!reducedMotion}
