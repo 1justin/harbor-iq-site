@@ -2,12 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { Player } from "@remotion/player";
-import { CarrierAskLoop } from "./CarrierAskLoop";
+import {
+  HeroCardRotation,
+  PROOF_CARD_FRAMES,
+  TOTAL_FRAMES,
+} from "./HeroCardRotation";
 
 const FPS = 30;
-const DURATION_IN_FRAMES = 300;
-// Steady state: question, answer, and stats all settled and fully visible.
-const REDUCED_MOTION_FRAME = 180;
+// Steady state within the first (proof) card: question and answer both
+// settled and fully visible.
+const REDUCED_MOTION_FRAME = Math.round(PROOF_CARD_FRAMES * 0.7);
 
 export function HeroAnimation() {
   const [reducedMotion, setReducedMotion] = useState(
@@ -25,8 +29,8 @@ export function HeroAnimation() {
 
   return (
     <Player
-      component={CarrierAskLoop}
-      durationInFrames={DURATION_IN_FRAMES}
+      component={HeroCardRotation}
+      durationInFrames={TOTAL_FRAMES}
       fps={FPS}
       compositionWidth={1280}
       compositionHeight={800}
