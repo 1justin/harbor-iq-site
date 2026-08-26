@@ -9,14 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.120.0",
     "@gsap/react": "^2.1.2",
     "@remotion/player": "^4.0.516",
+    "@supabase/supabase-js": "^2.112.4",
     "@vercel/analytics": "^2.0.1",
     "gsap": "^3.15.0",
     "next": "16.1.7",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "^4.0.516"
+    "remotion": "^4.0.516",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

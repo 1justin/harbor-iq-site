@@ -11,3 +11,10 @@ Marketing/landing site for HarborIQ (harboriq.co — the canonical business doma
 
 ## Context
 Product context: `../agency-os/CLAUDE.md` and `../agency-os/docs/harboriq-prd.md`. Strategy: Notion HarborIQ Hub. ICP: independent P&C agency owners, 5-15 staff, skeptical of vendors.
+
+## Demo concierge (/demo-prep, added 2026-08-26)
+- Post-booking AI qualification concierge. TidyCal's confirmation redirect points here; optional query params `name`, `email`, `time`, `tz`, `src` (channel attribution), `ref`. Everything degrades gracefully when absent, and a concierge failure never affects the booking.
+- Server side: `/api/concierge` (`src/app/api/concierge/route.ts`). Conversation runs on `claude-sonnet-5` with structured outputs; the founder briefing is generated on `claude-haiku-4-5` and emailed via Resend's HTTP API.
+- Data lands in the sales database through `concierge_*` RPC functions (service-role only; the schema itself is not exposed to PostgREST). Which Supabase project that is lives in workspace-level docs, not here.
+- Required env vars (Vercel): `ANTHROPIC_API_KEY`, `SALES_DB_URL`, `SALES_DB_SERVICE_KEY`, `BRIEFING_EMAIL_TO`. Optional: `RESEND_API_KEY` (briefing email is skipped without it), `BRIEFING_EMAIL_FROM`.
+- Static export was retired 2026-08-26 to allow this API route; marketing pages still prerender static and nothing about their output changed.
