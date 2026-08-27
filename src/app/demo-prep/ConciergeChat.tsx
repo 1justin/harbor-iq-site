@@ -10,7 +10,11 @@ type ChatMessage = {
   kind?: "ack";
 };
 
-type Props = { rescheduleUrl: string };
+type Props = {
+  rescheduleUrl: string;
+  /** Channel attribution from a clean path (/demo-prep/call). Wins over the ?src= query param. */
+  source?: string;
+};
 
 type ApiResponse = {
   sessionId?: string;
@@ -132,7 +136,7 @@ export function ConciergeChat(props: Props) {
             email: booking.email,
             scheduledAt: booking.scheduledAt,
             timezone: booking.timezone,
-            source: booking.source,
+            source: props.source ?? booking.source,
             tidycalRef: booking.tidycalRef,
           }),
         });
