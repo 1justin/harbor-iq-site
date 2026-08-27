@@ -72,10 +72,14 @@ async function handleStart(body: StartBody) {
     at: now,
   }));
 
+  const scheduledDisplay = clean(body.scheduledAt, 80);
+  const parsed = scheduledDisplay ? new Date(scheduledDisplay) : null;
   const { session_id } = await startSession({
     first_name: firstName,
     email: clean(body.email, 200),
-    scheduled_at: clean(body.scheduledAt, 60),
+    scheduled_at:
+      parsed && !isNaN(parsed.getTime()) ? parsed.toISOString() : undefined,
+    scheduled_display: scheduledDisplay,
     timezone: clean(body.timezone, 60),
     source: clean(body.source, 60) ?? "site",
     tidycal_ref: clean(body.tidycalRef, 120),
@@ -112,8 +116,10 @@ async function handleMessage(body: MessageBody) {
   const person = (record.person ?? {}) as { first_name?: string; email?: string };
   const booking = (record.booking ?? {}) as {
     scheduled_at?: string;
+    scheduled_display?: string;
     prospect_timezone?: string;
   };
+  const scheduledText = booking.scheduled_display ?? booking.scheduled_at;
 
   if (session.status === "completed" || session.status === "skipped") {
     return NextResponse.json({
@@ -148,7 +154,7 @@ async function handleMessage(body: MessageBody) {
         text: buildContextBlock({
           firstName: person.first_name,
           email: person.email,
-          scheduledAt: booking.scheduled_at,
+          scheduledAt: scheduledText,
           timezone: booking.prospect_timezone,
           source: session.source,
         }),
@@ -208,7 +214,7 @@ async function handleMessage(body: MessageBody) {
         prospectName: person.first_name,
         agencyName: answers.find((a) => a.field === "agency_name")
           ?.value_normalized,
-        scheduledAt: booking.scheduled_at,
+        scheduledAt: scheduledText,
         source: session.source,
         durationSeconds: patch.duration_seconds as number | undefined,
         counts,
