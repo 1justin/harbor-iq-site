@@ -14,7 +14,7 @@ From the concierge transcript and extracted fields below, write a brief Justin c
 HARBORIQ DEMO BRIEF
 {Prospect name, if known}
 {Scheduled time, if known}
-{Agency name, if known} · Source: {source}
+{Agency name if known} · Source: {source}   (omit the agency name entirely when unknown, never write "Unknown")
 
 FIT
 Independent/captive/other, team size, lines, fit confidence.
