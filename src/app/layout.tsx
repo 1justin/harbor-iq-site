@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { RouteChrome } from "@/components/RouteChrome";
 
 // GA4 measurement ID, set in Vercel project env vars. When unset, no GA code renders.
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -98,9 +99,13 @@ export default function RootLayout({
             }),
           }}
         />
-        <Nav />
+        <RouteChrome>
+          <Nav />
+        </RouteChrome>
         <main>{children}</main>
-        <Footer />
+        <RouteChrome>
+          <Footer />
+        </RouteChrome>
         <Analytics />
         {/* GA4 — renders nothing until NEXT_PUBLIC_GA_MEASUREMENT_ID is set (client-side only; static export). */}
         {GA_MEASUREMENT_ID && (
