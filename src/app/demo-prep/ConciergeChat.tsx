@@ -26,6 +26,34 @@ type ApiResponse = {
 
 const ABOUT_TOTAL = 6;
 
+/**
+ * Renders assistant text with "Label: value" lines (the recap, the agenda)
+ * getting a bold label so the summary scans. Everything else passes through.
+ */
+function AssistantText({ content }: { content: string }) {
+  const lines = content.split("\n");
+  return (
+    <>
+      {lines.map((line, i) => {
+        const m = line.match(/^([A-Za-z][A-Za-z' ]{2,28}):(\s.*)$/);
+        return (
+          <span key={i}>
+            {i > 0 && "\n"}
+            {m ? (
+              <>
+                <strong className="font-semibold">{m[1]}:</strong>
+                {m[2]}
+              </>
+            ) : (
+              line
+            )}
+          </span>
+        );
+      })}
+    </>
+  );
+}
+
 /** Booking details from the TidyCal redirect params, all optional. */
 function useBookingParams() {
   const params = useSearchParams();
@@ -266,7 +294,7 @@ export function ConciergeChat(props: Props) {
                 H
               </div>
               <div className="bg-pure border border-ash rounded-lg rounded-bl-sm px-4 py-3 text-ink max-w-[85%] whitespace-pre-wrap">
-                {m.content}
+                <AssistantText content={m.content} />
               </div>
             </div>
           ) : (
@@ -374,12 +402,30 @@ export function ConciergeChat(props: Props) {
         </div>
       ) : (
         <div className="px-5 pb-5">
-          <a
-            href={props.rescheduleUrl}
-            className="text-sm text-interactive underline"
-          >
-            Need to reschedule?
-          </a>
+          <div className="bg-linen border border-ash rounded-lg px-4 py-4">
+            <p className="text-ink font-semibold mb-1">
+              That&apos;s everything. You can close this page.
+            </p>
+            <p className="text-[14px] text-charcoal mb-3">
+              {phase === "done"
+                ? "Your recap is with Justin, and your demo is on the calendar."
+                : "Your demo is on the calendar, and Justin will cover everything live."}
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="/"
+                className="bg-anchor text-white text-sm font-medium rounded-md px-4 py-2"
+              >
+                Return to HarborIQ
+              </a>
+              <a
+                href={props.rescheduleUrl}
+                className="text-sm text-interactive underline"
+              >
+                Need to reschedule?
+              </a>
+            </div>
+          </div>
         </div>
       )}
 
