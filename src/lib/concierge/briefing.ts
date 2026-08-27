@@ -74,5 +74,10 @@ export async function sendBriefingEmail(
       text: briefing,
     }),
   });
+  if (!res.ok) {
+    console.error(
+      `briefing email failed: ${res.status} ${await res.text().catch(() => "")}`,
+    );
+  }
   return res.ok;
 }
