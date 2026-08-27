@@ -139,32 +139,63 @@ async function handleMessage(body: MessageBody) {
   ];
 
   const client = new Anthropic();
-  const response = await client.messages.parse({
-    model: CHAT_MODEL,
-    max_tokens: 1500,
-    thinking: { type: "disabled" },
-    system: [
-      {
-        type: "text",
-        text: buildSystemPrompt(),
-        cache_control: { type: "ephemeral" },
+  const systemBlocks = [
+    {
+      type: "text" as const,
+      text: buildSystemPrompt(),
+      cache_control: { type: "ephemeral" as const },
+    },
+    {
+      type: "text" as const,
+      text: buildContextBlock({
+        firstName: person.first_name,
+        email: person.email,
+        scheduledAt: scheduledText,
+        timezone: booking.prospect_timezone,
+        source: session.source,
+      }),
+    },
+  ];
+  const apiMessages = transcript.map((m) => ({
+    role: m.role,
+    content: m.content,
+  }));
+  const callModel = (extraSystem?: string) =>
+    client.messages.parse({
+      model: CHAT_MODEL,
+      max_tokens: 3000,
+      // Adaptive thinking at low effort: disabled thinking made the model
+      // occasionally echo its previous turn verbatim after quick-reply taps.
+      thinking: { type: "adaptive" },
+      system: extraSystem
+        ? [...systemBlocks, { type: "text" as const, text: extraSystem }]
+        : systemBlocks,
+      messages: apiMessages,
+      output_config: {
+        effort: "low",
+        format: zodOutputFormat(TurnOutputSchema),
       },
-      {
-        type: "text",
-        text: buildContextBlock({
-          firstName: person.first_name,
-          email: person.email,
-          scheduledAt: scheduledText,
-          timezone: booking.prospect_timezone,
-          source: session.source,
-        }),
-      },
-    ],
-    messages: transcript.map((m) => ({ role: m.role, content: m.content })),
-    output_config: { format: zodOutputFormat(TurnOutputSchema) },
-  });
+    });
 
-  const turn = response.parsed_output;
+  const response = await callModel();
+  let turn = response.parsed_output;
+
+  // Echo guard: if the draft repeats the previous assistant message
+  // verbatim, the prospect's answer was ignored. Retry once, corrected.
+  const prevAssistant = [...(session.transcript ?? [])]
+    .reverse()
+    .find((m) => m.role === "assistant")?.content;
+  if (
+    turn &&
+    prevAssistant &&
+    [turn.ack, turn.reply].filter(Boolean).join("\n\n") === prevAssistant
+  ) {
+    console.error("echo guard tripped; retrying turn");
+    const retry = await callModel(
+      "CORRECTION: your draft repeated your previous message word for word, which is invalid. The prospect's latest message answered the question you asked. Register that answer, acknowledge it specifically, and ask the NEXT question in the sequence.",
+    );
+    turn = retry.parsed_output ?? turn;
+  }
   if (!turn) {
     return NextResponse.json({
       reply: "Sorry, I lost the thread for a second. Could you say that again?",
