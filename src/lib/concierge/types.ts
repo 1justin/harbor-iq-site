@@ -24,6 +24,7 @@ export const FIELD_KEYS = [
   "impact",
   "desired_outcome",
   "priority_question",
+  "adoption_concern",
 ] as const;
 
 export const ExtractedAnswerSchema = z.object({

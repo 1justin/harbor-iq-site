@@ -290,6 +290,10 @@ export function ConciergeChat(props: Props) {
               &#8593;
             </button>
           </div>
+          <p className="text-[11px] text-stone mt-2">
+            No client names, policy numbers, or credentials needed. High-level
+            is perfect.
+          </p>
         </form>
       ) : (
         <div className="px-5 pb-5">
