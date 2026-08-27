@@ -63,6 +63,10 @@ export function ConciergeChat(props: Props) {
   const [phase, setPhase] = useState<"intake" | "recap" | "done" | "skipped" | "failed">("intake");
   const scrollRef = useRef<HTMLDivElement>(null);
   const startedRef = useRef(false);
+  // Synchronous re-entry guard: the `busy` state updates async, so a rapid
+  // double-submit (Enter + click, or a double-tap) could race past it and
+  // render the user's message twice.
+  const sendingRef = useRef(false);
 
   const scrollDown = useCallback(() => {
     requestAnimationFrame(() => {
@@ -107,7 +111,8 @@ export function ConciergeChat(props: Props) {
   const send = useCallback(
     async (text: string) => {
       const message = text.trim();
-      if (!message || !sessionId || busy) return;
+      if (!message || !sessionId || busy || sendingRef.current) return;
+      sendingRef.current = true;
       setBusy(true);
       setInput("");
       setQuickReplies([]);
@@ -138,6 +143,7 @@ export function ConciergeChat(props: Props) {
           },
         ]);
       } finally {
+        sendingRef.current = false;
         setBusy(false);
         scrollDown();
       }
