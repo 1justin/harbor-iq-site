@@ -43,8 +43,12 @@ export const ExtractedAnswerSchema = z.object({
 export type ExtractedAnswer = z.infer<typeof ExtractedAnswerSchema>;
 
 export const TurnOutputSchema = z.object({
-  /** The concierge's next message to the prospect. */
+  /** Brief acknowledgment of what the prospect just said, shown as a quiet strip above the next question. Null when nothing needs acknowledging. */
+  ack: z.string().nullable(),
+  /** The concierge's next message to the prospect (the question, recap, or close). Never restates the ack. */
   reply: z.string(),
+  /** Which substantive question this is, 1-based, for the "Question N of about 6" indicator. Stays at the last number during recap and close. */
+  question_number: z.number().int().min(1).max(12),
   /** Optional tappable answers for the question just asked. Empty when free text fits better. */
   quick_replies: z.array(z.string()).max(4),
   /** Every fact extractable from the prospect's latest message, including ones answering earlier questions. */

@@ -87,6 +87,7 @@ async function handleStart(body: StartBody) {
     sessionId: session_id,
     messages: opening,
     quickReplies: OPENING_QUICK_REPLIES,
+    questionNumber: 1,
     progress: 0.05,
   });
 }
@@ -169,7 +170,7 @@ async function handleMessage(body: MessageBody) {
 
   transcript.push({
     role: "assistant",
-    content: turn.reply,
+    content: [turn.ack, turn.reply].filter(Boolean).join("\n\n"),
     at: new Date().toISOString(),
   });
 
@@ -189,12 +190,31 @@ async function handleMessage(body: MessageBody) {
   if (done) {
     try {
       const finalRecord = await getSession(body.sessionId);
-      const briefing = await generateBriefing(transcript, finalRecord?.answers ?? []);
-      const sent = await sendBriefingEmail(briefing, {
+      const answers = (finalRecord?.answers ?? []) as Array<{
+        field?: string;
+        value_normalized?: string;
+        status?: string;
+      }>;
+      const counts = {
+        answered: answers.filter(
+          (a) => a.status === "answered" || a.status === "needs_confirmation",
+        ).length,
+        inferred: answers.filter((a) => a.status === "inferred").length,
+        deferred: answers.filter(
+          (a) => a.status === "declined" || a.status === "unknown",
+        ).length,
+      };
+      const meta = {
         prospectName: person.first_name,
+        agencyName: answers.find((a) => a.field === "agency_name")
+          ?.value_normalized,
         scheduledAt: booking.scheduled_at,
         source: session.source,
-      });
+        durationSeconds: patch.duration_seconds as number | undefined,
+        counts,
+      };
+      const briefing = await generateBriefing(transcript, answers, meta);
+      const sent = await sendBriefingEmail(briefing, meta);
       await saveTurn(body.sessionId, transcript, [], {
         briefing,
         ...(sent ? { briefing_sent_at: new Date().toISOString() } : {}),
@@ -206,9 +226,11 @@ async function handleMessage(body: MessageBody) {
   }
 
   return NextResponse.json({
+    ack: turn.ack,
     reply: turn.reply,
     quickReplies: turn.quick_replies,
     phase: turn.phase,
+    questionNumber: turn.question_number,
     progress: done ? 1 : Math.min(turn.progress, 0.98),
   });
 }
