@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { EngagementTracker } from "@/components/EngagementTracker";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -107,6 +108,7 @@ export default function RootLayout({
           <Footer />
         </RouteChrome>
         <Analytics />
+        <EngagementTracker />
         {/* GA4 — renders nothing until NEXT_PUBLIC_GA_MEASUREMENT_ID is set (client-side only; static export). */}
         {GA_MEASUREMENT_ID && (
           <>
