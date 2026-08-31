@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import {
   bucketSeconds,
+  captureAttribution,
   trackCtaClick,
   trackPageExit,
   trackScrollDepth,
@@ -144,6 +145,11 @@ export function EngagementTracker() {
         page: page.current,
       });
     }
+
+    // First touch wins, so this must run before any event can fire. Reading
+    // location directly rather than useSearchParams keeps the tree out of a
+    // Suspense boundary and the marketing pages fully static.
+    captureAttribution(window.location.search);
 
     maxDepth.current = currentDepth();
     window.addEventListener("scroll", onScroll, { passive: true });
