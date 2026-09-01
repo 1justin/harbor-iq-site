@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { DEMO_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -67,7 +68,7 @@ export function Footer() {
                 Newsroom
               </Link>
               <a
-                href="https://tidycal.com/cjmayer/harboriq-demo"
+                href={DEMO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-slate hover:text-paper text-[15px] transition-colors"

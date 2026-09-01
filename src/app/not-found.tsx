@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { DEMO_URL } from "@/lib/constants";
 
 export default function NotFound() {
   return (
@@ -39,7 +40,7 @@ export default function NotFound() {
           Back to homepage
         </Link>
         <a
-          href="https://tidycal.com/cjmayer/harboriq-demo"
+          href={DEMO_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors"
