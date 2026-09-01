@@ -210,7 +210,11 @@ export function DayInLife() {
 
         // Timeline rail draws down tied to scroll (desktop only; rail is hidden below md)
         const rail = rootRef.current?.querySelector<SVGPathElement>(".dl-rail-line");
-        if (rail) {
+        // The rail exists in the DOM at every width but its <svg> wrapper is
+        // `hidden md:block`, so below md it is a non-rendered element and
+        // getTotalLength() throws. An existence check is not enough: the throw
+        // escapes this matchMedia callback and unmounts the whole page.
+        if (rail && rail.getClientRects().length > 0) {
           const len = rail.getTotalLength();
           gsap.set(rail, { strokeDasharray: len, strokeDashoffset: len });
           gsap.to(rail, {
