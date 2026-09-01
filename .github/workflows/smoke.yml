@@ -1,0 +1,40 @@
+# Loads the built site in a real browser at phone, tablet and desktop widths and
+# fails if any page throws or unmounts itself after hydration.
+#
+# This exists because a hydration crash is invisible to `next build`, to
+# typecheck, and to fetching the HTML: the markup is correct and the page dies
+# a moment later, in the browser, sometimes at only one viewport. One reached
+# production and blanked the homepage on phones while desktop looked healthy.
+
+name: Smoke
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Only Chromium: this checks that pages survive hydration, not
+      # cross-browser rendering, so the other engines are not worth the minutes.
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        run: npm run build
+
+      - name: Smoke test
+        run: npm run smoke
