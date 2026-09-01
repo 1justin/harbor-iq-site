@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { DEMO_URL } from "@/lib/constants";
 import { useState, useEffect, useRef } from "react";
 
 const featureLinks = [
@@ -146,7 +147,7 @@ export function Nav() {
             Newsroom
           </Link>
           <a
-            href="https://tidycal.com/cjmayer/harboriq-demo"
+            href={DEMO_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="cta-primary bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
@@ -239,7 +240,7 @@ export function Nav() {
           </Link>
           <div className="pt-2 mt-2 border-t border-midnight">
             <a
-              href="https://tidycal.com/cjmayer/harboriq-demo"
+              href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}

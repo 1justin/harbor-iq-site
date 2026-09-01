@@ -3,8 +3,7 @@ import Link from "next/link";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ManifestoPrinciples } from "./ManifestoPrinciples";
 import { MANIFESTO_FAQS, MANIFESTO_SUBTITLE, PRINCIPLES } from "./principles";
-
-const DEMO_URL = "https://tidycal.com/cjmayer/harboriq-demo";
+import { DEMO_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "How we build software | The HarborIQ manifesto",

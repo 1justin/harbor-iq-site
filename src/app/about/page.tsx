@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-
-const DEMO_URL = "https://tidycal.com/cjmayer/harboriq-demo";
+import { DEMO_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About HarborIQ | Built for Independent Insurance Agencies",
