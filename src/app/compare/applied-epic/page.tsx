@@ -46,7 +46,7 @@ const contrastCards = [
 
 const fullTable = [
   ["Built for", "1-15 person independent agencies", "Mid-to-large agencies and brokerages (50+ employees)"],
-  ["Pricing", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
+  ["Pricing", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
   ["Complexity", "20 features done well. Clean, modern interface.", "Hundreds of features. Steep learning curve. Extensive customization."],
   ["Onboarding", "Days. CSV import, guided wizard.", "Weeks to months. Enterprise implementation process."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Focused on existing client and policy management."],

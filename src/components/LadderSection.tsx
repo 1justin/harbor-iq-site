@@ -6,7 +6,7 @@ import {
 } from "@/lib/constants";
 
 /**
- * The two-rung ladder (ratified 2026-07-16): Markets flat at any size,
+ * The two-rung ladder (ratified 2026-07-16): Markets flat for 1 to 15,
  * Agency priced by size with identical features. The only feature line in
  * the product is the book. This section replaces the abstract "new core"
  * diagram with the actual offer.
@@ -44,7 +44,7 @@ export function LadderSection() {
           <span className="font-medium text-paper">
             ${PRICING.markets.monthly}/mo
           </span>{" "}
-          · {PRICING.markets.seats.toLowerCase()} · whole team included
+          · {PRICING.markets.seats} · whole team included
         </p>
         <p className="mt-4 text-[15px] leading-relaxed text-mist">
           Run every carrier relationship in one place and never guess appetite

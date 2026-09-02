@@ -26,7 +26,7 @@ export const pricingFaqs = [
   },
   {
     q: "Why is Markets the same price for a solo agent and a 15-person team?",
-    a: "Because the alternative is charging per person, and we refuse to do it. A bigger team gets more value from the same carrier layer, and the price stays put. That is the deal.",
+    a: "Because the alternative is charging per person, and we refuse to do it. Inside a band, a bigger team gets more value from the same carrier layer and the price stays put. Above 15 people the band steps up, but it is still one price for the agency, never a fee per login.",
   },
   {
     q: "What happens if we use a lot of AI?",
@@ -38,7 +38,7 @@ export const pricingFaqs = [
   },
   {
     q: "What if I have more than 15 employees?",
-    a: "Those prices are published too: $899/month for 16 to 25 people, $1,199 for 26 to 35, and $1,499 for 36 to 50, with the same annual terms. Same product, nothing withheld. At this size we start with a demo rather than self-serve checkout. Above 50 people, we quote custom on the call.",
+    a: "Those prices are published too. Agency is $899/month for 16 to 25 people, $1,199 for 26 to 35, and $1,499 for 36 to 50, with the same annual terms. Markets is $399, $599, and $799 for the same bands. Same product, nothing withheld. At this size we start with a demo rather than self-serve checkout. Above 50 people, we quote custom on the call.",
   },
   {
     q: "Do I need to install anything?",

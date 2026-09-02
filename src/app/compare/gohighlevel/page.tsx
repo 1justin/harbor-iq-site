@@ -180,7 +180,7 @@ export default function CompareGoHighLevelPage() {
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                   <span>
                     You want to start without moving anything: Markets is $199
-                    at any size and touches nothing you run today.
+                    for 1 to 15 people and touches nothing you run today.
                   </span>
                 </li>
               </ul>

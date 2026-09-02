@@ -45,7 +45,7 @@ const contrastCards = [
 ];
 
 const fullTable = [
-  ["Pricing model", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "Starts at $350/mo + per-user fees + add-ons"],
+  ["Pricing model", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "Starts at $350/mo + per-user fees + add-ons"],
   ["Per-user fees", "None. Flat price per agency within each size band.", "Yes. Costs scale with each user."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Requires separate CRM."],
   ["Comparative rating", "Roadmap, stated plainly. Today: appetite-first quoting and coverage-gap comparison.", "Traditional API-based comparative rater (their original product, and a good one)."],

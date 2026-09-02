@@ -123,7 +123,7 @@ export default function PostPage() {
               Priced by agency size, never per person.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              Markets is $199/mo at any size. Agency is $199 solo, $399 for 2 to 5, and $599 for 6 to 15. Free book import with annual&nbsp;prepay.
+              Markets is $199/mo for 1 to 15 people. Agency is $199 solo, $399 for 2 to 5, and $599 for 6 to 15. Free book import with annual&nbsp;prepay.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
               <a

@@ -27,7 +27,9 @@ type Band = {
   size: number;
   agencyMonthly: number | null;
   agencyAnnual: number | null;
-  /** Markets is published flat for 1 to 15; above that, demo first. */
+  /** Markets monthly for this band; null above 50 (custom). */
+  marketsMonthly: number | null;
+  /** Markets is self-serve for 1 to 15; above that, demo first. */
   marketsSelfServe: boolean;
 };
 
@@ -38,6 +40,7 @@ const BANDS: Band[] = [
     size: 1,
     agencyMonthly: PRICING.agency.solo.monthly,
     agencyAnnual: PRICING.agency.solo.annual,
+    marketsMonthly: PRICING.markets.monthly,
     marketsSelfServe: true,
   },
   {
@@ -46,6 +49,7 @@ const BANDS: Band[] = [
     size: 5,
     agencyMonthly: PRICING.agency.team.monthly,
     agencyAnnual: PRICING.agency.team.annual,
+    marketsMonthly: PRICING.markets.monthly,
     marketsSelfServe: true,
   },
   {
@@ -54,6 +58,7 @@ const BANDS: Band[] = [
     size: 15,
     agencyMonthly: PRICING.agency.os.monthly,
     agencyAnnual: PRICING.agency.os.annual,
+    marketsMonthly: PRICING.markets.monthly,
     marketsSelfServe: true,
   },
   ...PRICING.large.map((band, i) => ({
@@ -62,6 +67,7 @@ const BANDS: Band[] = [
     size: Number(band.seats.split(" to ")[1]),
     agencyMonthly: band.monthly,
     agencyAnnual: band.annual,
+    marketsMonthly: PRICING.markets.large[i].monthly,
     marketsSelfServe: false,
   })),
   {
@@ -70,6 +76,7 @@ const BANDS: Band[] = [
     size: 51,
     agencyMonthly: null,
     agencyAnnual: null,
+    marketsMonthly: null,
     marketsSelfServe: false,
   },
 ];
@@ -209,15 +216,25 @@ export function PricingLadder() {
                   </a>
                 </p>
               </>
+            ) : band.marketsMonthly !== null ? (
+              <>
+                <p className="mt-6 text-3xl font-medium text-ink tracking-tight">
+                  {usd(band.marketsMonthly)}
+                  <span className="text-lg text-stone font-normal">/month</span>
+                </p>
+                <p className="mt-1 text-[13px] text-stone">
+                  One price for {teamWord}. Demo first at this size, then we set
+                  you up. Still per agency, never per person.
+                </p>
+              </>
             ) : (
               <>
                 <p className="mt-6 text-3xl font-medium text-ink tracking-tight">
-                  Demo first
+                  Custom
                 </p>
                 <p className="mt-1 text-[13px] text-stone">
-                  Markets is published flat at {usd(PRICING.markets.monthly)} for
-                  teams of 1 to 15. Above 15 people, we set Markets up with you
-                  after a demo, and the price stays per agency, never per person.
+                  Above 50 people we quote Markets on the call. Still per
+                  agency, never per person.
                 </p>
               </>
             )}

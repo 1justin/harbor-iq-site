@@ -26,16 +26,27 @@ export const MARKETS_ANNUAL_URL =
 
 /**
  * Canonical two-rung ladder, ratified 2026-07-16 (agency-os docs/decisions.md).
- * Markets: flat at any size, self-serve. Agency: same product at every price,
- * priced by agency size only. No per-seat fees, no feature gates between
- * Agency bands. Above 15 people: contact us.
+ * Markets: $199 flat for 1 to 15, self-serve; published bands above 15
+ * (2026-09-02). Agency: same product at every price, priced by agency size
+ * only. No per-seat fees, no feature gates between bands. Above 50: custom.
  */
 export const PRICING = {
   markets: {
     monthly: 199,
     /** 12 months for the price of 10 (ratified 2026-07-19). */
     annual: 1990,
-    seats: "Any size, 1 to 15 people",
+    seats: "1 to 15 people",
+    /**
+     * Markets above 15 people (ratified 2026-09-02, Justin's pricing
+     * analysis). Published, demo-first at this size, no self-serve checkout.
+     * Above 50: custom, quoted live. Annual terms for these bands are not
+     * yet ratified, so the site shows monthly only.
+     */
+    large: [
+      { monthly: 399, seats: "16 to 25 people" },
+      { monthly: 599, seats: "26 to 35 people" },
+      { monthly: 799, seats: "36 to 50 people" },
+    ],
   },
   agency: {
     /** Agency annual = 11 x monthly, plus the book import free. */

@@ -3,7 +3,7 @@ import { DEMO_PAGE, IMPORT_TERMS, MARKETS_START_URL, PRICING } from "@/lib/const
 
 export function CtaSection({
   headline = "Start today. Move the book when you're ready.",
-  description = `Markets is $${PRICING.markets.monthly}/mo at any size, live the same day. Agency runs the whole operation at $${PRICING.agency.solo.monthly} solo, $${PRICING.agency.team.monthly} for 2 to 5, and $${PRICING.agency.os.monthly} for 6 to 15. Published, month to month, never per person.`,
+  description = `Markets is $${PRICING.markets.monthly}/mo for 1 to 15 people, live the same day. Agency runs the whole operation at $${PRICING.agency.solo.monthly} solo, $${PRICING.agency.team.monthly} for 2 to 5, and $${PRICING.agency.os.monthly} for 6 to 15. Published, month to month, never per person.`,
 }: {
   headline?: string;
   description?: string;

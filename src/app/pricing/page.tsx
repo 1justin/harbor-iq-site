@@ -7,12 +7,12 @@ import { PricingLadder } from "@/components/PricingLadder";
 export const metadata: Metadata = {
   title: "Pricing | Markets $199 flat, Agency from $199 | HarborIQ",
   description:
-    "Published pricing for independent insurance agencies. Markets is $199/month at any size, self-serve, no migration. Agency runs the whole operation: $199 solo, $399 for 2 to 5 people, $599 for 6 to 15. Never per person.",
+    "Published pricing for independent insurance agencies. Markets is $199/month for 1 to 15 people, self-serve, no migration. Agency runs the whole operation: $199 solo, $399 for 2 to 5 people, $599 for 6 to 15. Never per person.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Pricing | Markets $199 flat, Agency from $199 | HarborIQ",
     description:
-      "Published pricing, never per person. Markets $199/month at any size. Agency $199 solo, $399 for 2 to 5, $599 for 6 to 15. Same product at every price.",
+      "Published pricing, never per person. Markets $199/month for 1 to 15 people. Agency $199 solo, $399 for 2 to 5, $599 for 6 to 15. Same product at every price.",
     url: "/pricing",
     images: [{ url: "/og/pricing.png", width: 1200, height: 630 }],
   },
@@ -45,8 +45,16 @@ const productSchema = {
       price: String(PRICING.markets.monthly),
       priceCurrency: "USD",
       description:
-        "Carrier intelligence layer for independent insurance agencies. Flat monthly price at any size from 1 to 15 people. Self-serve, no migration.",
+        "Carrier intelligence layer for independent insurance agencies. Flat monthly price for 1 to 15 people. Self-serve, no migration.",
     },
+    ...PRICING.markets.large.map((band) => ({
+      "@type": "Offer",
+      name: `HarborIQ Markets (${band.seats})`,
+      price: String(band.monthly),
+      priceCurrency: "USD",
+      description:
+        "Carrier intelligence layer for independent insurance agencies. Published price by agency size, never per person. Demo first at this size.",
+    })),
     {
       "@type": "Offer",
       name: "HarborIQ Agency (solo)",

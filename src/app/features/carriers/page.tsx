@@ -5,12 +5,12 @@ import { PRICING } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Carrier Intelligence for Independent Insurance Agents | HarborIQ Markets",
   description:
-    "Carrier Ask answers appetite and underwriting questions from carrier documents with cited, dated sources. Profiles, reps, login vault, Carrier News, and a knowledge base that builds itself. $199/month at any size.",
+    "Carrier Ask answers appetite and underwriting questions from carrier documents with cited, dated sources. Profiles, reps, login vault, Carrier News, and a knowledge base that builds itself. $199/month for 1 to 15 people.",
   alternates: { canonical: "/features/carriers" },
   openGraph: {
     title: "Carrier Intelligence for Independent Agents | HarborIQ Markets",
     description:
-      "Ask any carrier question, get a cited answer with a date on it. Every carrier relationship in one place. $199/month, any size, no migration.",
+      "Ask any carrier question, get a cited answer with a date on it. Every carrier relationship in one place. $199/month for 1 to 15 people, no migration.",
     url: "/features/carriers",
   },
 };
@@ -94,7 +94,7 @@ export default function CarriersPage() {
         },
         {
           feature: "Price",
-          harboriq: `$${PRICING.markets.monthly}/month flat, any size 1 to 15`,
+          harboriq: `$${PRICING.markets.monthly}/month flat, 1 to 15 people`,
           competitors: "Not sold anywhere as one layer",
         },
       ]}
@@ -106,7 +106,7 @@ export default function CarriersPage() {
           </p>
           <p className="text-[16px] text-charcoal leading-relaxed">
             Everything on this page is HarborIQ Markets: ${PRICING.markets.monthly}/month
-            at any size from 1 to 15 people, one price for the whole team,
+            for 1 to 15 people, one price for the whole team,
             self-serve, no migration. It is also included in every Agency plan.
           </p>
         </div>

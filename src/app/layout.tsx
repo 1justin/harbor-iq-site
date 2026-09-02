@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HarborIQ | Agency Management System for Independent Insurance Agencies",
     description:
-      "One product, two ways in. Markets: carrier intelligence at $199/mo for any size. Agency: the whole operation in one login, from $199/mo. Never per person.",
+      "One product, two ways in. Markets: carrier intelligence at $199/mo for 1 to 15 people. Agency: the whole operation in one login, from $199/mo. Never per person.",
     type: "website",
     locale: "en_US",
     images: [
