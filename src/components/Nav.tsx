@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE, MARKETS_START_URL } from "@/lib/constants";
 import { useState, useEffect, useRef } from "react";
 
 const featureLinks = [
@@ -60,7 +60,7 @@ export function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {/* Features dropdown */}
           <div className="relative">
             <button
@@ -147,12 +147,16 @@ export function Nav() {
             Newsroom
           </Link>
           <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-primary bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
+            href={DEMO_PAGE}
+            className="cta-secondary whitespace-nowrap text-paper hover:text-mist text-[15px] transition-colors"
           >
             Book a demo
+          </a>
+          <a
+            href={MARKETS_START_URL}
+            className="cta-primary whitespace-nowrap bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
+          >
+            Start free trial
           </a>
         </div>
 
@@ -238,13 +242,18 @@ export function Nav() {
           <Link href="/newsroom" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             Newsroom
           </Link>
-          <div className="pt-2 mt-2 border-t border-midnight">
+          <div className="pt-2 mt-2 border-t border-midnight space-y-3">
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={MARKETS_START_URL}
               onClick={() => setMobileOpen(false)}
-              className="block bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
+              className="cta-primary block bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
+            >
+              Start free trial
+            </a>
+            <a
+              href={DEMO_PAGE}
+              onClick={() => setMobileOpen(false)}
+              className="cta-secondary block text-center text-mist text-[15px]"
             >
               Book a demo
             </a>

@@ -10,16 +10,16 @@ import { TestimonialCards } from "@/components/TestimonialCards";
 import { RoiCalculator } from "@/components/RoiCalculator";
 import { FounderBlock } from "@/components/FounderBlock";
 import { ResourcesGrid } from "@/components/ResourcesGrid";
-import { DEMO_URL, MARKETS_START_URL, PRICING } from "@/lib/constants";
+import { DEMO_PAGE, MARKETS_START_URL, PRICING } from "@/lib/constants";
 
 const homeFaqs = [
   {
     q: "What is HarborIQ?",
-    a: "HarborIQ is one platform with two ways in, built for independent insurance agencies with 1 to 15 people. Markets is the carrier intelligence layer: cited answers to appetite and guideline questions, carrier contacts, a login vault, documents, and carrier news, at $199/month for any size with no migration. Agency adds the book: clients, policies, pipeline, renewals, commissions, and reports, so one login runs the whole operation.",
+    a: "HarborIQ is one platform with two ways in, built for independent insurance agencies with 1 to 15 people. Markets is the carrier intelligence layer: cited answers to appetite and guideline questions, carrier contacts, a login vault, documents, and carrier news, at $199/month for 1 to 15 people with no migration. Agency adds the book: clients, policies, pipeline, renewals, commissions, and reports, so one login runs the whole operation.",
   },
   {
     q: "How much does HarborIQ cost?",
-    a: "Published, flat, and never per person. Markets is $199/month at any size from 1 to 15 people. Agency is $199/month solo, $399/month for 2 to 5 people, and $599/month for 6 to 15. Agency is the same product at every price; you pay for your size, and nothing is withheld. Month to month, cancel anytime. Larger agencies are published too: $899/month for 16 to 25 people, $1,199 for 26 to 35, $1,499 for 36 to 50, demo first. Above 50, custom.",
+    a: "Published, flat, and never per person. Markets is $199/month for 1 to 15 people. Agency is $199/month solo, $399/month for 2 to 5 people, and $599/month for 6 to 15. Agency is the same product at every price; you pay for your size, and nothing is withheld. Month to month, cancel anytime. Larger agencies are published too: $899/month for 16 to 25 people, $1,199 for 26 to 35, $1,499 for 36 to 50, demo first. Above 50, custom.",
   },
   {
     q: "What is HarborIQ Markets?",
@@ -588,7 +588,7 @@ export default function Home() {
             Start today. Move the book when you&rsquo;re&nbsp;ready.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed">
-            Markets is ${PRICING.markets.monthly}/mo at any size, live the same
+            Markets is ${PRICING.markets.monthly}/mo for 1 to 15 people, live the same
             day. Agency runs the whole operation at ${PRICING.agency.solo.monthly}{" "}
             solo, ${PRICING.agency.team.monthly} for 2 to 5, and{" "}
             ${PRICING.agency.os.monthly} for 6 to 15. Published, month to month,
@@ -599,12 +599,10 @@ export default function Home() {
               href={MARKETS_START_URL}
               className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Start with Markets
+              Start free trial
             </a>
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DEMO_PAGE}
               className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
             >
               Book an Agency demo

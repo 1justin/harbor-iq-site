@@ -53,6 +53,11 @@ function classify(link: HTMLAnchorElement, currentHost: string) {
   if (url.hostname !== currentHost) {
     return { kind: "outbound" as const, destination: url.hostname };
   }
+  // Book-a-demo buttons now go to the on-site /demo page (2026-09-02);
+  // keep them in the "demo" bucket so the trend line does not break.
+  if (url.pathname === "/demo" && isCta) {
+    return { kind: "demo" as const, destination: "/demo" };
+  }
   // Internal links are already covered by pageviews; only styled CTAs are
   // worth an event, to keep the quota on things that signal intent.
   if (isCta) {

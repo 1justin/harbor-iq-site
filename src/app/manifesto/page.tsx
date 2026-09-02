@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ManifestoPrinciples } from "./ManifestoPrinciples";
 import { MANIFESTO_FAQS, MANIFESTO_SUBTITLE, PRINCIPLES } from "./principles";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "How we build software | The HarborIQ manifesto",
@@ -175,9 +175,7 @@ export default function ManifestoPage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DEMO_PAGE}
               className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
               Book a 20 minute demo

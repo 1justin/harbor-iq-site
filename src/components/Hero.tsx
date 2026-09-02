@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { DEMO_URL, MARKETS_START_URL, PRICING } from "@/lib/constants";
+import { DEMO_PAGE, MARKETS_START_URL, PRICING } from "@/lib/constants";
 import { HeroAnimation } from "./hero-experiment/HeroAnimation";
 import {
   CARD_WIDTH,
@@ -261,20 +261,22 @@ export function Hero() {
               href={MARKETS_START_URL}
               className="cta-primary btn-radius bg-copper px-7 py-3.5 text-center text-[16px] font-medium text-white hover:bg-bronze"
             >
-              Start with Markets
-            </a>
-            <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-secondary btn-radius border border-mist/40 px-7 py-3.5 text-center text-[16px] font-medium text-paper hover:border-paper"
-            >
-              Book a 20-minute demo
+              Start free trial
             </a>
           </div>
           <p className="hero-disclaimer mt-3 text-center text-[13px] text-mist md:text-left">
-            14-day free trial. ${PRICING.markets.monthly}/month. No migration
-            required.
+            14 days free, then ${PRICING.markets.monthly}/month for your whole
+            team. No migration required.
+          </p>
+          <p className="hero-disclaimer mt-2 text-center text-[14px] text-mist md:text-left">
+            Running the whole agency?{" "}
+            <a
+              href={DEMO_PAGE}
+              className="cta-secondary text-paper underline underline-offset-4 decoration-mist/50 hover:decoration-paper"
+            >
+              Book a 20-minute demo
+            </a>
+            .
           </p>
         </div>
 
