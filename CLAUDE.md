@@ -18,3 +18,9 @@ Product context: `../agency-os/CLAUDE.md` and `../agency-os/docs/harboriq-prd.md
 - Data lands in the sales database through `concierge_*` RPC functions (service-role only; the schema itself is not exposed to PostgREST). Which Supabase project that is lives in workspace-level docs, not here.
 - Required env vars (Vercel): `ANTHROPIC_API_KEY`, `SALES_DB_URL`, `SALES_DB_SERVICE_KEY`, `BRIEFING_EMAIL_TO`. Optional: `RESEND_API_KEY` (briefing email is skipped without it), `BRIEFING_EMAIL_FROM`.
 - Static export was retired 2026-08-26 to allow this API route; marketing pages still prerender static and nothing about their output changed.
+
+## Demo booking page (/demo, added 2026-09-02)
+- Every "Book a demo" button on the site points at `/demo` (`DEMO_PAGE` in `src/lib/constants.ts`), not at TidyCal directly. The page asks for first name, work email, and an optional agency name, then shows the TidyCal calendar inline with name and email prefilled. Whistle's ask: a prospect who drops off before picking a time is still a lead.
+- `/api/demo-intent` (`src/app/api/demo-intent/route.ts`) writes the record through the `concierge_capture_intent` RPC (a person, an optional organization, and a `demo_bookings` row with status `intent`) and emails Justin one line via Resend. It always answers 200 and the client shows the calendar whether or not it succeeded; the capture is never a reason not to book.
+- TidyCal's confirmation redirect still lands on `/demo-prep`, so the concierge is unchanged. `DEMO_URL` (the raw TidyCal link) remains for the reschedule link and the "open in a new tab" fallback.
+- Optional `?src=` on `/demo` carries channel attribution into the record (lowercase, letters, digits, hyphens; anything else falls back to `site`).

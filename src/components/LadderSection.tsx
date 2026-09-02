@@ -1,5 +1,5 @@
 import {
-  DEMO_URL,
+  DEMO_PAGE,
   IMPORT_TERMS,
   MARKETS_START_URL,
   PRICING,
@@ -66,7 +66,7 @@ export function LadderSection() {
           href={MARKETS_START_URL}
           className="cta-primary btn-radius mt-7 inline-block bg-copper px-6 py-3 text-[15px] font-medium text-white hover:bg-bronze"
         >
-          Start with Markets
+          Start free trial
         </a>
       </div>
 
@@ -103,9 +103,7 @@ export function LadderSection() {
           ))}
         </ul>
         <a
-          href={DEMO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={DEMO_PAGE}
           className="cta-secondary btn-radius mt-7 inline-block border border-mist/40 px-6 py-3 text-[15px] font-medium text-paper hover:border-paper"
         >
           Book an Agency demo

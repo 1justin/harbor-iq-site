@@ -78,7 +78,7 @@ export default function RootLayout({
               description:
                 "AI-powered agency management system for independent insurance agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting.",
               sameAs: [
-                "https://www.linkedin.com/company/harboriq",
+                "https://www.linkedin.com/company/harboriqsoftware",
                 "https://x.com/haraboriq",
               ],
               foundingDate: "2026",

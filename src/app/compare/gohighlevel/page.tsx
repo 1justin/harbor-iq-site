@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
-import { DEMO_URL, MARKETS_START_URL } from "@/lib/constants";
+import { DEMO_PAGE, MARKETS_START_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ vs GoHighLevel | They Win the Lead. We Run the Agency.",
@@ -194,9 +194,7 @@ export default function CompareGoHighLevelPage() {
               Start with Markets
             </a>
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DEMO_PAGE}
               className="inline-block ml-3 text-interactive text-[15px] font-medium underline underline-offset-4"
             >
               or book an Agency demo

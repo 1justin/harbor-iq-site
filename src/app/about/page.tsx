@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About HarborIQ | Built for Independent Insurance Agencies",
@@ -224,9 +224,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DEMO_PAGE}
               className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
               Book a 20 minute demo

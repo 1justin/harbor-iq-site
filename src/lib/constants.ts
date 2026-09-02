@@ -1,4 +1,13 @@
+/** TidyCal booking page (the calendar itself). Used by the /demo embed and reschedule links. */
 export const DEMO_URL = "https://tidycal.com/cjmayer/harboriq-demo";
+export const TIDYCAL_PATH = "cjmayer/harboriq-demo";
+
+/**
+ * Where every "Book a demo" button points (2026-09-02). The on-site page
+ * captures name and email before the calendar, so a prospect who drops off
+ * before picking a time is still a lead. Booking still happens on TidyCal.
+ */
+export const DEMO_PAGE = "/demo";
 
 export const SITE_URL = "https://harboriq.co";
 

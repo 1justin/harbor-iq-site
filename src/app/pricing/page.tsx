@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import { FAQ } from "./FAQ";
 import { pricingFaqs } from "./faqData";
-import {
-  DEMO_URL,
-  IMPORT_TERMS,
-  MARKETS_ANNUAL_URL,
-  MARKETS_START_URL,
-  PRICING,
-} from "@/lib/constants";
+import { DEMO_PAGE, IMPORT_TERMS, PRICING } from "@/lib/constants";
+import { PricingLadder } from "@/components/PricingLadder";
 
 export const metadata: Metadata = {
   title: "Pricing | Markets $199 flat, Agency from $199 | HarborIQ",
@@ -22,28 +17,6 @@ export const metadata: Metadata = {
     images: [{ url: "/og/pricing.png", width: 1200, height: 630 }],
   },
 };
-
-const marketsIncludes = [
-  "Carrier Ask: cited answers, with the source date on every citation",
-  "Carrier profiles, reps, and function-specific contacts",
-  "Login vault for every carrier portal",
-  "Carrier document library and Carrier News",
-  "Knowledge base that builds itself from your team's questions",
-  "Team chat, training, license and CE tracking",
-  "Command Center daily priorities",
-  "Your whole team on one price, no fee per person",
-];
-
-const agencyIncludes = [
-  "Everything in Markets",
-  "Client records, policies, documents, claims, and payments",
-  "Pipeline for prospects, from first inquiry to bound",
-  "Renewals with escalation and price-change tracking",
-  "Commissions: splits, statements, payouts (Payday)",
-  "Reports: book of business, production, retention, executive view",
-  "Book import wizard (CSV and PDF) with dedupe and review staging",
-  "Client portal: passwordless, read-only policy access for insureds",
-];
 
 /*
  * JSON-LD blocks below use the standard Next.js pattern. Content is static,
@@ -132,22 +105,6 @@ const productSchema = {
   ],
 };
 
-function Check({ color = "#3B6FA0" }: { color?: string }) {
-  return (
-    <svg
-      width="18"
-      height="18"
-      fill="none"
-      stroke={color}
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      className="shrink-0 mt-0.5"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-    </svg>
-  );
-}
-
 export default function PricingPage() {
   return (
     <>
@@ -167,8 +124,8 @@ export default function PricingPage() {
             Priced by your size. Never per&nbsp;person.
           </h1>
           <p className="mt-4 text-[17px] md:text-[19px] text-charcoal leading-relaxed max-w-2xl mx-auto">
-            Published prices, month to month, cancel anytime. One product, two
-            ways in: start with your markets, or run the whole agency.
+            Published prices, month to month, cancel anytime. Two ways in, and
+            both prices depend on one thing: how many people work at your agency.
           </p>
         </div>
       </section>
@@ -176,160 +133,7 @@ export default function PricingPage() {
       {/* ─── THE TWO RUNGS ─── */}
       <section className="bg-paper py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start max-w-5xl mx-auto">
-            {/* Markets */}
-            <div className="bg-pure rounded-xl border border-ash p-8 flex flex-col">
-              <div className="flex-1">
-                <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">
-                  Start here · self-serve
-                </p>
-                <h3 className="mt-1 text-xl font-medium text-ink">Markets</h3>
-                <p className="mt-2 text-[15px] text-charcoal leading-relaxed">
-                  Run every carrier relationship in one place, and never guess
-                  appetite again. No system of record, so nothing has to move.
-                </p>
-                <p className="mt-6 text-3xl font-medium text-ink tracking-tight">
-                  ${PRICING.markets.monthly}
-                  <span className="text-lg text-stone font-normal">/month</span>
-                </p>
-                <p className="mt-1 text-[13px] text-stone">
-                  {PRICING.markets.seats}, one price. Live the same day.
-                </p>
-                <p className="mt-2 text-[13px] font-medium text-interactive">
-                  <a
-                    href={MARKETS_ANNUAL_URL}
-                    className="underline underline-offset-4 hover:text-deep"
-                  >
-                    Or ${PRICING.markets.annual.toLocaleString()}/year: twelve
-                    months for the price of ten.
-                  </a>
-                </p>
-                <div className="mt-6 space-y-3">
-                  {marketsIncludes.map((item) => (
-                    <div key={item} className="flex gap-3 text-[15px] text-charcoal">
-                      <Check />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <a
-                href={MARKETS_START_URL}
-                className="cta-primary mt-8 block text-center bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
-              >
-                Start with Markets
-              </a>
-              <p className="mt-3 text-[13px] text-stone text-center">
-                14-day free trial. No migration. Cancel anytime.
-              </p>
-            </div>
-
-            {/* Agency (visual anchor) */}
-            <div className="relative bg-midnight rounded-xl p-8 overflow-hidden shadow-lg shadow-midnight/30 flex flex-col">
-              <div className="absolute top-0 left-0 right-0 bg-anchor px-4 py-2">
-                <p className="text-[12px] font-medium text-ice text-center tracking-wide">
-                  The whole agency, one login
-                </p>
-              </div>
-              <div className="pt-8 flex-1">
-                <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-slate">
-                  Then move the book · with a demo
-                </p>
-                <h3 className="mt-1 text-xl font-medium text-paper">Agency</h3>
-                <p className="mt-2 text-[15px] text-mist leading-relaxed">
-                  Everything in Markets, plus the book. Your AMS, your CRM
-                  overlay, and your carrier tools collapse into one.
-                </p>
-
-                <div className="mt-6 divide-y divide-anchor/60 rounded-lg border border-anchor/60">
-                  {[
-                    PRICING.agency.solo,
-                    PRICING.agency.team,
-                    PRICING.agency.os,
-                  ].map((band) => (
-                    <div
-                      key={band.seats}
-                      className="flex items-baseline justify-between px-4 py-3"
-                    >
-                      <span className="text-[15px] text-mist">{band.seats}</span>
-                      <span className="text-[20px] font-medium text-paper tracking-tight">
-                        ${band.monthly}
-                        <span className="text-[13px] text-slate font-normal">
-                          /mo
-                        </span>
-                      </span>
-                    </div>
-                  ))}
-                  <details className="group">
-                    <summary className="flex items-baseline justify-between px-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <span className="text-[15px] text-mist">
-                        16 to 50 people
-                      </span>
-                      <span className="text-[14px] font-medium text-ice">
-                        <span className="group-open:hidden">
-                          From ${PRICING.large[0].monthly}/mo &darr;
-                        </span>
-                        <span className="hidden group-open:inline">
-                          Published, same product &uarr;
-                        </span>
-                      </span>
-                    </summary>
-                    {PRICING.large.map((band) => (
-                      <div
-                        key={band.seats}
-                        className="flex items-baseline justify-between px-4 py-3 border-t border-deep/40"
-                      >
-                        <span className="text-[15px] text-mist">
-                          {band.seats}
-                        </span>
-                        <span className="text-[20px] font-medium text-paper tracking-tight">
-                          ${band.monthly.toLocaleString()}
-                          <span className="text-[13px] text-slate font-normal">
-                            /mo
-                          </span>
-                        </span>
-                      </div>
-                    ))}
-                    <p className="px-4 py-3 text-[13px] text-slate border-t border-deep/40">
-                      Demo first at this size, then we set you up. Annual is
-                      eleven months&rsquo; price with the book import free.
-                      Above 50 people: custom, quoted on the call.
-                    </p>
-                  </details>
-                </div>
-
-                <p className="mt-4 text-[14px] leading-relaxed text-ice">
-                  Same product at every price. Nothing is withheld, you just pay
-                  for your size.
-                </p>
-                <p className="mt-2 text-[13px] text-slate">
-                  Annual: ${PRICING.agency.solo.annual.toLocaleString()} solo, ${PRICING.agency.team.annual.toLocaleString()} for
-                  2 to 5, ${PRICING.agency.os.annual.toLocaleString()} for 6 to 15. Eleven months&rsquo;
-                  price, and the book import free.
-                </p>
-
-                <div className="mt-6 space-y-3">
-                  {agencyIncludes.map((item) => (
-                    <div key={item} className="flex gap-3 text-[15px] text-mist">
-                      <Check color="#7BA3CC" />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <a
-                href={DEMO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-primary mt-8 block text-center bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
-              >
-                Book an Agency demo
-              </a>
-              <p className="mt-3 text-[13px] text-slate text-center">
-                {IMPORT_TERMS.annual}. {IMPORT_TERMS.monthly}.
-              </p>
-            </div>
-          </div>
+          <PricingLadder />
 
           {/* Import callout */}
           <div className="max-w-5xl mx-auto mt-8">
@@ -538,9 +342,7 @@ export default function PricingPage() {
             answer your questions, and stay longer if you want.
           </p>
           <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={DEMO_PAGE}
             className="cta-secondary inline-block mt-8 bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
           >
             Book an Agency demo

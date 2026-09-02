@@ -10,7 +10,7 @@ import { TestimonialCards } from "@/components/TestimonialCards";
 import { RoiCalculator } from "@/components/RoiCalculator";
 import { FounderBlock } from "@/components/FounderBlock";
 import { ResourcesGrid } from "@/components/ResourcesGrid";
-import { DEMO_URL, MARKETS_START_URL, PRICING } from "@/lib/constants";
+import { DEMO_PAGE, MARKETS_START_URL, PRICING } from "@/lib/constants";
 
 const homeFaqs = [
   {
@@ -599,12 +599,10 @@ export default function Home() {
               href={MARKETS_START_URL}
               className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Start with Markets
+              Start free trial
             </a>
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DEMO_PAGE}
               className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
             >
               Book an Agency demo

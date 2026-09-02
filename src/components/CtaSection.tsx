@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DEMO_URL, IMPORT_TERMS, MARKETS_START_URL, PRICING } from "@/lib/constants";
+import { DEMO_PAGE, IMPORT_TERMS, MARKETS_START_URL, PRICING } from "@/lib/constants";
 
 export function CtaSection({
   headline = "Start today. Move the book when you're ready.",
@@ -22,12 +22,10 @@ export function CtaSection({
             href={MARKETS_START_URL}
             className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
           >
-            Start with Markets
+            Start free trial
           </a>
           <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={DEMO_PAGE}
             className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
           >
             Book an Agency demo
