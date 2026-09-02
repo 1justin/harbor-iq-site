@@ -179,14 +179,25 @@ export function PricingLadder() {
               appetite again. No system of record, so nothing has to move.
             </p>
 
-            {band.marketsSelfServe ? (
+            {band.size === 1 ? (
+              <>
+                <p className="mt-6 text-3xl font-medium text-ink tracking-tight">
+                  Included in Agency
+                </p>
+                <p className="mt-1 text-[13px] text-stone">
+                  At one person, Agency is the same {usd(PRICING.agency.solo.monthly)} and adds the
+                  book. Start the free trial here if you want to see Markets
+                  first; nothing has to move.
+                </p>
+              </>
+            ) : band.marketsSelfServe ? (
               <>
                 <p className="mt-6 text-3xl font-medium text-ink tracking-tight">
                   {usd(PRICING.markets.monthly)}
                   <span className="text-lg text-stone font-normal">/month</span>
                 </p>
                 <p className="mt-1 text-[13px] text-stone">
-                  One price for {teamWord}. Same {usd(PRICING.markets.monthly)} at 1 person or 15. Live the same day.
+                  One price for {teamWord}. Live the same day.
                 </p>
                 <p className="mt-2 text-[13px] font-medium text-interactive">
                   <a
@@ -273,7 +284,7 @@ export function PricingLadder() {
                 </p>
                 <p className="mt-1 text-[13px] text-slate">
                   {band.size === 1
-                    ? `Same price as Markets, plus the book. One person, ${usd(band.agencyMonthly)}.`
+                    ? "One person. Everything in Markets, plus the book."
                     : `For ${band.label} people. Hire inside your band and the price does not move.`}
                 </p>
                 {band.agencyAnnual !== null && (
@@ -294,38 +305,6 @@ export function PricingLadder() {
                 </p>
               </>
             )}
-
-            <div className="mt-6 divide-y divide-anchor/60 rounded-lg border border-anchor/60">
-              {BANDS.filter((b) => b.agencyMonthly !== null).map((b) => {
-                const active = b.id === band.id;
-                return (
-                  <button
-                    key={b.id}
-                    type="button"
-                    onClick={() => setBandId(b.id)}
-                    aria-pressed={active}
-                    className={`flex w-full items-baseline justify-between px-4 py-2.5 text-left transition-colors ${
-                      active ? "bg-anchor/70" : "hover:bg-anchor/30"
-                    }`}
-                  >
-                    <span className={`text-[14px] ${active ? "text-paper" : "text-mist"}`}>
-                      {b.size === 1 ? "Solo" : `${b.label} people`}
-                    </span>
-                    <span
-                      className={`text-[17px] font-medium tracking-tight ${
-                        active ? "text-paper" : "text-mist"
-                      }`}
-                    >
-                      {usd(b.agencyMonthly as number)}
-                      <span className="text-[12px] text-slate font-normal">/mo</span>
-                    </span>
-                  </button>
-                );
-              })}
-              <p className="px-4 py-2.5 text-[13px] text-slate">
-                Above 50 people: custom, quoted on the call.
-              </p>
-            </div>
 
             <p className="mt-4 text-[14px] leading-relaxed text-ice">
               Same product at every price. Nothing is withheld, you just pay for
