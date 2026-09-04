@@ -23,6 +23,15 @@ export type BlogPost = {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: "build-your-own-agency-management-system",
+    title: "Should you build your own agency management system?",
+    excerpt:
+      "More independent agencies are building their own AMS with Airtable, Go High Level, Claude Code, or Cursor instead of buying one. Here's what's genuinely easy, what isn't, and what to weigh before you commit.",
+    date: "September 2026",
+    readTime: "7 min read",
+    publishAt: "2026-09-04",
+  },
+  {
     slug: "automate-policy-renewals-spreadsheet-cost",
     title:
       "The Renewal You Forgot to Run: Why Spreadsheet Renewal Tracking Costs You Clients",
