@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isPublished } from "../posts";
+import { DEMO_PAGE } from "@/lib/constants";
 
 const DESCRIPTION =
   "Yes, if it is small. A three-question test for what to build yourself, the six layers of a real agency system, and why the big version turns into an E&O problem.";
@@ -379,7 +380,7 @@ export default function PostPage() {
                 See Markets pricing
               </a>
               <a
-                href="/demo"
+                href={DEMO_PAGE}
                 className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors text-center"
               >
                 Book a 20 minute demo
