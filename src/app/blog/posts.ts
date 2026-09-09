@@ -26,9 +26,9 @@ export const POSTS: BlogPost[] = [
     slug: "build-your-own-agency-management-system",
     title: "Should you build your own agency management system?",
     excerpt:
-      "More independent agencies are building their own AMS with Airtable, Go High Level, Claude Code, or Cursor instead of buying one. Here's what's genuinely easy, what isn't, and what to weigh before you commit.",
+      "Yes, if it is small. A three-question test for what to build yourself, the six layers of a real agency system, and why the big version turns into an E&O problem.",
     date: "September 2026",
-    readTime: "7 min read",
+    readTime: "8 min read",
     publishAt: "2026-09-04",
   },
   {
