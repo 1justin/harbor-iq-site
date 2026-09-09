@@ -88,14 +88,13 @@ export async function generateBriefing(
 }
 
 /**
- * Sends the briefing via Resend's HTTP API. No-op (returns false) when the
- * key or recipient is not configured; the briefing is still stored in the
- * session record either way.
+ * One-off sales notification via Resend's HTTP API. No-op (returns false)
+ * when the key or recipient is not configured.
  */
-export async function sendBriefingEmail(
-  briefing: string,
-  meta: BriefingMeta,
-): Promise<boolean> {
+export async function sendSalesEmail(msg: {
+  subject: string;
+  text: string;
+}): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.BRIEFING_EMAIL_TO;
   if (!apiKey || !to) return false;
@@ -103,10 +102,6 @@ export async function sendBriefingEmail(
   const from =
     process.env.BRIEFING_EMAIL_FROM ??
     "HarborIQ Concierge <onboarding@resend.dev>";
-  const who = meta.prospectName ?? "Prospect";
-  const when = meta.scheduledAt ? ` · ${meta.scheduledAt}` : "";
-  const src =
-    meta.source && meta.source.includes("test") ? " [test]" : "";
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -114,17 +109,27 @@ export async function sendBriefingEmail(
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      subject: `Demo brief: ${who}${when}${src}`,
-      text: briefing,
-    }),
+    body: JSON.stringify({ from, to: [to], subject: msg.subject, text: msg.text }),
   });
   if (!res.ok) {
     console.error(
-      `briefing email failed: ${res.status} ${await res.text().catch(() => "")}`,
+      `sales email failed: ${res.status} ${await res.text().catch(() => "")}`,
     );
   }
   return res.ok;
+}
+
+/**
+ * Sends the briefing. The briefing is still stored in the session record
+ * whether or not the email goes out.
+ */
+export async function sendBriefingEmail(
+  briefing: string,
+  meta: BriefingMeta,
+): Promise<boolean> {
+  const who = meta.prospectName ?? "Prospect";
+  const when = meta.scheduledAt ? ` · ${meta.scheduledAt}` : "";
+  const src =
+    meta.source && meta.source.includes("test") ? " [test]" : "";
+  return sendSalesEmail({ subject: `Demo brief: ${who}${when}${src}`, text: briefing });
 }

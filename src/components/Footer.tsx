@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -68,9 +68,7 @@ export function Footer() {
                 Newsroom
               </Link>
               <a
-                href={DEMO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={DEMO_PAGE}
                 className="block text-slate hover:text-paper text-[15px] transition-colors"
               >
                 Book a demo

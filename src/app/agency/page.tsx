@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
-import { DEMO_URL, IMPORT_TERMS, PRICING } from "@/lib/constants";
+import { DEMO_PAGE, IMPORT_TERMS, PRICING } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ Agency | Your AMS, CRM, and Carrier Tools. One Login.",
@@ -63,9 +63,7 @@ export default function AgencyPage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DEMO_PAGE}
               className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors"
             >
               Book an Agency demo

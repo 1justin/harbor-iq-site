@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
 import { MarketsWedge } from "@/components/MarketsWedge";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ vs EZLynx | EZLynx Alternative for Independent Agencies",
@@ -45,7 +45,7 @@ const contrastCards = [
 ];
 
 const fullTable = [
-  ["Pricing model", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "Starts at $350/mo + per-user fees + add-ons"],
+  ["Pricing model", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "Starts at $350/mo + per-user fees + add-ons"],
   ["Per-user fees", "None. Flat price per agency within each size band.", "Yes. Costs scale with each user."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Requires separate CRM."],
   ["Comparative rating", "Roadmap, stated plainly. Today: appetite-first quoting and coverage-gap comparison.", "Traditional API-based comparative rater (their original product, and a good one)."],
@@ -260,9 +260,7 @@ export default function CompareEZLynxPage() {
             We&rsquo;ll show you what one operating system looks like in practice, in under twenty minutes. You can even bring your data.
           </p>
           <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={DEMO_PAGE}
             className="inline-block bg-interactive hover:bg-deep text-white btn-radius px-8 py-3 text-[15px] font-medium transition-colors"
           >
             Book a demo

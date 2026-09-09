@@ -58,7 +58,7 @@ export default function MarketsPage() {
           </h1>
           <p className="mt-5 text-[17px] md:text-[19px] text-mist leading-relaxed max-w-2xl mx-auto">
             Cited carrier answers for your whole team, with the source and its
-            date on every one. ${PRICING.markets.monthly} a month at any size,
+            date on every one. ${PRICING.markets.monthly} a month for 1 to 15 people,
             nothing to migrate, live the same day.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">

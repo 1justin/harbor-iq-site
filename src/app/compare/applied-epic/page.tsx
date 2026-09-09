@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
 import { MarketsWedge } from "@/components/MarketsWedge";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ vs Applied Epic | Applied Epic Alternative for Small Agencies",
@@ -46,7 +46,7 @@ const contrastCards = [
 
 const fullTable = [
   ["Built for", "1-15 person independent agencies", "Mid-to-large agencies and brokerages (50+ employees)"],
-  ["Pricing", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
+  ["Pricing", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
   ["Complexity", "20 features done well. Clean, modern interface.", "Hundreds of features. Steep learning curve. Extensive customization."],
   ["Onboarding", "Days. CSV import, guided wizard.", "Weeks to months. Enterprise implementation process."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Focused on existing client and policy management."],
@@ -339,9 +339,7 @@ export default function CompareAppliedEpicPage() {
             We&rsquo;ll show you what one operating system looks like in practice, in under twenty minutes. You can even bring your data.
           </p>
           <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={DEMO_PAGE}
             className="inline-block bg-interactive hover:bg-deep text-white btn-radius px-8 py-3 text-[15px] font-medium transition-colors"
           >
             Book a demo

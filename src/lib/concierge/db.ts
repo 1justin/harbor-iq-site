@@ -51,3 +51,15 @@ export async function saveTurn(
   });
   if (error) throw new Error(`concierge_save_turn failed: ${error.message}`);
 }
+
+/**
+ * Pre-calendar demo intent from /demo (2026-09-02): a person, an optional
+ * organization, and a demo_bookings row with status 'intent' and no time.
+ * When the same person completes the TidyCal booking, concierge_start
+ * records the real booking separately; the email joins the two.
+ */
+export async function captureIntent(payload: Json): Promise<{ person_id: string }> {
+  const { data, error } = await salesDb().rpc("concierge_capture_intent", { payload });
+  if (error) throw new Error(`concierge_capture_intent failed: ${error.message}`);
+  return data as { person_id: string };
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "The Real Cost of Per-User Pricing for Insurance Agencies | HarborIQ",
@@ -123,13 +123,11 @@ export default function PostPage() {
               Priced by agency size, never per person.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              Markets is $199/mo at any size. Agency is $199 solo, $399 for 2 to 5, and $599 for 6 to 15. Free book import with annual&nbsp;prepay.
+              Markets is $199/mo for 1 to 15 people. Agency is $199 solo, $399 for 2 to 5, and $599 for 6 to 15. Free book import with annual&nbsp;prepay.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
               <a
-                href={DEMO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={DEMO_PAGE}
                 className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors text-center"
               >
                 Book a 20 minute demo

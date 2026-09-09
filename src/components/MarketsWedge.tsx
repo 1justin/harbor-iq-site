@@ -31,7 +31,7 @@ export function MarketsWedge({ competitor }: { competitor: string }) {
           </p>
           <p>
             And you do not have to switch to get it. Markets is ${PRICING.markets.monthly}{" "}
-            a month at any size, runs alongside {competitor}, and is live the
+            a month for 1 to 15 people, runs alongside {competitor}, and is live the
             same day. Keep your AMS. Fix the carrier problem today. Move the
             book when you are ready, or never.
           </p>

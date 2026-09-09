@@ -1,12 +1,12 @@
 import {
-  DEMO_URL,
+  DEMO_PAGE,
   IMPORT_TERMS,
   MARKETS_START_URL,
   PRICING,
 } from "@/lib/constants";
 
 /**
- * The two-rung ladder (ratified 2026-07-16): Markets flat at any size,
+ * The two-rung ladder (ratified 2026-07-16): Markets flat for 1 to 15,
  * Agency priced by size with identical features. The only feature line in
  * the product is the book. This section replaces the abstract "new core"
  * diagram with the actual offer.
@@ -44,7 +44,7 @@ export function LadderSection() {
           <span className="font-medium text-paper">
             ${PRICING.markets.monthly}/mo
           </span>{" "}
-          · {PRICING.markets.seats.toLowerCase()} · whole team included
+          · {PRICING.markets.seats} · whole team included
         </p>
         <p className="mt-4 text-[15px] leading-relaxed text-mist">
           Run every carrier relationship in one place and never guess appetite
@@ -66,7 +66,7 @@ export function LadderSection() {
           href={MARKETS_START_URL}
           className="cta-primary btn-radius mt-7 inline-block bg-copper px-6 py-3 text-[15px] font-medium text-white hover:bg-bronze"
         >
-          Start with Markets
+          Start free trial
         </a>
       </div>
 
@@ -103,9 +103,7 @@ export function LadderSection() {
           ))}
         </ul>
         <a
-          href={DEMO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={DEMO_PAGE}
           className="cta-secondary btn-radius mt-7 inline-block border border-mist/40 px-6 py-3 text-[15px] font-medium text-paper hover:border-paper"
         >
           Book an Agency demo

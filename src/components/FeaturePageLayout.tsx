@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { CtaSection } from "./CtaSection";
 import Link from "next/link";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 type Benefit = { title: string; description: string };
 type Step = { step: number; title: string; description: string };
@@ -46,9 +46,7 @@ export function FeaturePageLayout({
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DEMO_PAGE}
               className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors"
             >
               Book a 20 minute demo

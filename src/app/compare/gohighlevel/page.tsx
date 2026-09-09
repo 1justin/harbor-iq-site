@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
-import { DEMO_URL, MARKETS_START_URL } from "@/lib/constants";
+import { DEMO_PAGE, MARKETS_START_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ vs GoHighLevel | They Win the Lead. We Run the Agency.",
@@ -180,7 +180,7 @@ export default function CompareGoHighLevelPage() {
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                   <span>
                     You want to start without moving anything: Markets is $199
-                    at any size and touches nothing you run today.
+                    for 1 to 15 people and touches nothing you run today.
                   </span>
                 </li>
               </ul>
@@ -194,9 +194,7 @@ export default function CompareGoHighLevelPage() {
               Start with Markets
             </a>
             <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={DEMO_PAGE}
               className="inline-block ml-3 text-interactive text-[15px] font-medium underline underline-offset-4"
             >
               or book an Agency demo

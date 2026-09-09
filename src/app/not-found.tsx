@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 export default function NotFound() {
   return (
@@ -40,9 +40,7 @@ export default function NotFound() {
           Back to homepage
         </Link>
         <a
-          href={DEMO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={DEMO_PAGE}
           className="cta-secondary bg-interactive text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-deep transition-colors"
         >
           Book a 20 minute demo

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
 import { MarketsWedge } from "@/components/MarketsWedge";
-import { DEMO_URL } from "@/lib/constants";
+import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ vs HawkSoft | Compare Insurance Agency Management Systems",
@@ -45,7 +45,7 @@ const contrastCards = [
 ];
 
 const fullTable = [
-  ["Pricing model", "Never per person. Markets $199 flat at any size; Agency $199 / $399 / $599 by agency size. Published.", "$250/mo base + $94/user/month"],
+  ["Pricing model", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "$250/mo base + $94/user/month"],
   ["5-person agency cost", "$399/mo (Agency, identical features at every size)", "$720/month ($250 + 5 × $94)"],
   ["10-person agency cost", "$599/mo (Agency, 6 to 15 people)", "$1,190/month ($250 + 10 × $94)"],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Client management only."],
@@ -293,9 +293,7 @@ export default function CompareHawkSoftPage() {
             We&rsquo;ll show you what one operating system looks like in practice, in under twenty minutes. You can even bring your data.
           </p>
           <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={DEMO_PAGE}
             className="inline-block bg-interactive hover:bg-deep text-white btn-radius px-8 py-3 text-[15px] font-medium transition-colors"
           >
             Book a demo
