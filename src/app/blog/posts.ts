@@ -26,7 +26,7 @@ export const POSTS: BlogPost[] = [
     slug: "build-your-own-agency-management-system",
     title: "Should you build your own agency management system?",
     excerpt:
-      "Yes, if it is small. A three-question test for what to build yourself, the six layers of a real agency system, and why the big version turns into an E&O problem.",
+      "We do not recommend it. If you feel you must, start small: a three-question test for what is safe to build yourself, the six layers of a real agency system, and why the big version turns into an E&O problem.",
     date: "September 2026",
     readTime: "8 min read",
     publishAt: "2026-09-04",

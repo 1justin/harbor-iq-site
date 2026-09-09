@@ -5,7 +5,7 @@ import { isPublished } from "../posts";
 import { DEMO_PAGE } from "@/lib/constants";
 
 const DESCRIPTION =
-  "Yes, if it is small. A three-question test for what to build yourself, the six layers of a real agency system, and why the big version turns into an E&O problem.";
+  "We do not recommend it. If you feel you must, start small: a three-question test for what is safe to build yourself, the six layers of a real agency system, and why the big version turns into an E&O problem.";
 
 export const metadata: Metadata = {
   title: "Should You Build Your Own Agency Management System? | HarborIQ",
@@ -58,7 +58,7 @@ const faqSchema = {
       name: "Should I build my own insurance agency management system?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Build something small. A tool you could replace in a weekend, that no client's coverage depends on, and that holds no data a client could sue you over is a good thing to build yourself. A full system of record that holds client PII and tracks renewals is not, because a quiet failure there becomes an E&O claim, and someone has to maintain it for as long as the agency exists.",
+        text: "We do not recommend it. If you feel you must, keep it small: a tool you could replace in a weekend, that no client's coverage depends on, and that holds no data a client could sue you over. A full system of record that holds client PII and tracks renewals is not, because a quiet failure there becomes an E&O claim, and someone has to maintain it for as long as the agency exists.",
       },
     },
     {
@@ -155,11 +155,12 @@ export default function PostPage() {
             The short answer
           </p>
           <p className="mt-2 text-[17px] text-ink font-medium leading-snug">
-            Yes, build something small. Build the things you can afford to lose. Buy the things a
-            client could sue you&nbsp;over.
+            We do not recommend it. If you feel you must, start small and be clear about what you are
+            taking on. Build only what you can afford to lose. Buy the things a client could sue
+            you&nbsp;over.
           </p>
           <p className="mt-4 text-[15px] text-charcoal">
-            Three questions before you build anything:
+            If you are going to build anyway, three questions first:
           </p>
           <ol className="mt-2 space-y-1.5 text-[15px] text-charcoal list-decimal pl-5">
             <li>If it broke, could you replace it in a weekend?</li>
@@ -170,8 +171,8 @@ export default function PostPage() {
             </li>
           </ol>
           <p className="mt-3 text-[15px] text-charcoal">
-            Yes, no, no: build it. Anything else, and the rest of this article is about why the big
-            version turns into an errors and omissions&nbsp;problem.
+            Yes, no, no: it is safe to build, and it will stay small. Anything else, and the rest of this
+            article is about why the big version turns into an errors and omissions&nbsp;problem.
           </p>
         </div>
 
@@ -276,10 +277,10 @@ export default function PostPage() {
           </p>
 
           <h2 className="text-xl font-medium text-ink mt-10 mb-4">
-            What should you build&nbsp;yourself?
+            If you build anyway, what is safe to&nbsp;build?
           </h2>
           <p>
-            Anything that passes the three questions at the top. An intake form on your website that emails
+            Only things that pass the three questions at the top. An intake form on your website that emails
             you the answers. A renewal reminder list you check against the carrier&rsquo;s own notice, so the
             carrier is still the system of record. A commission tracker for your own producers. A list of
             carrier reps and their phone numbers. Each of those could be rebuilt in a weekend, none of them
@@ -366,7 +367,7 @@ export default function PostPage() {
 
           <div className="mt-12 p-6 bg-linen rounded-xl border border-ash">
             <p className="text-[16px] text-ink font-medium">
-              Build small. Buy the layers a client could sue you&nbsp;over.
+              If you must build, build small. Buy the layers a client could sue you&nbsp;over.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
               HarborIQ Markets is $199 a month for 1 to 15 people, self-serve, and sits alongside whatever
@@ -395,9 +396,9 @@ export default function PostPage() {
               Should I build my own insurance agency management system?
             </h3>
             <p>
-              Build something small. A tool you could replace in a weekend, that no client&rsquo;s coverage
-              depends on, and that holds no data a client could sue you over is a good thing to build
-              yourself. A full system of record that holds client PII and tracks renewals is not, because a
+              We do not recommend it. If you feel you must, keep it small: a tool you could replace in a
+              weekend, that no client&rsquo;s coverage depends on, and that holds no data a client could sue
+              you over. A full system of record that holds client PII and tracks renewals is not, because a
               quiet failure there becomes an E&amp;O claim, and someone has to maintain it for as long as the
               agency&nbsp;exists.
             </p>
