@@ -23,6 +23,15 @@ export type BlogPost = {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: "two-kinds-of-questions",
+    title: "The two kinds of questions your agency asks all day",
+    excerpt:
+      "Questions about your book have had a report for twenty years. Questions about your carriers still live in PDFs, portals, and one person's memory. Sort eight real ones and see where the day goes.",
+    date: "September 2026",
+    readTime: "6 min read",
+    publishAt: "2026-09-18",
+  },
+  {
     slug: "build-your-own-agency-management-system",
     title: "Should you build your own agency management system?",
     excerpt:
