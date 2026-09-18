@@ -91,15 +91,17 @@ export default function PostPage() {
         <div className="mt-10 p-6 bg-linen rounded-xl border border-ash">
           <p className="text-[12px] uppercase tracking-wider text-stone font-medium">The short version</p>
           <p className="mt-2 text-[17px] text-ink font-medium leading-snug">
-            Every question in an agency is either about your book or about your carriers. Software has
-            answered the first kind for twenty years. The second kind still lives in PDFs, portals, old
-            emails, and one person&rsquo;s memory. That is where the day&nbsp;goes.
+            Every question in an agency is either about your book or about your carriers. Legacy
+            management systems have answered the first kind for twenty years. They have never answered the
+            second, so it still lives in PDFs, portals, old emails, and one person&rsquo;s memory. That is
+            where the day goes, and it is the kind HarborIQ Markets was built to&nbsp;answer.
           </p>
         </div>
 
         <div className="mt-10 space-y-6 text-[17px] text-charcoal leading-[1.75]">
           <p>
-            Sort a few yourself. These are real questions from agency floors. Tap where each one&nbsp;belongs.
+            Sort a few yourself. These are real questions from agency floors. Tap where each one belongs,
+            and watch which ones the system you run today can actually&nbsp;answer.
           </p>
 
           <QuestionSorter />

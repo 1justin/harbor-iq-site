@@ -15,9 +15,9 @@ const QUESTIONS: { q: string; kind: Kind }[] = [
 ];
 
 const VERDICT: Record<Kind, string> = {
-  book: "About your book. Your management system has a report for this, and it has for years.",
+  book: "About your book. The management system you run today already answers this. Counting what you own is what legacy software is good at.",
   carrier:
-    "About your carriers. No report answers this. It lives in a PDF, a portal, an old email, or the head of whoever has been there longest.",
+    "About your carriers. The management system you run today cannot answer this. The answer sits in a PDF, a portal, an old email, or the head of whoever has been there longest. This is the kind HarborIQ Markets answers, with the page it came from.",
 };
 
 export default function QuestionSorter() {
@@ -45,17 +45,30 @@ export default function QuestionSorter() {
   return (
     <div className="my-2 rounded-xl border border-ash bg-linen p-6" aria-live="polite">
       <p className="text-[12px] uppercase tracking-wider text-stone font-medium">
-        Try it &middot; {done ? "Result" : `Question ${i + 1} of ${QUESTIONS.length}`}
+        Can the system you run today answer it? &middot;{" "}
+        {done ? "Result" : `Question ${i + 1} of ${QUESTIONS.length}`}
       </p>
 
       {done ? (
         <div>
           <p className="mt-2 text-[19px] text-ink font-medium leading-snug">
-            {carrierCount} of those {QUESTIONS.length} questions were about your carriers, not your book.
+            A legacy management system answers {QUESTIONS.length - carrierCount} of those {QUESTIONS.length}{" "}
+            questions. The other {carrierCount} are about your carriers, and it has nothing to&nbsp;say.
           </p>
-          <p className="mt-3 text-[15px] text-charcoal">
-            You sorted {right} of {QUESTIONS.length} the way we did. The split is the point: the questions
-            software already answers are the minority. The rest are where the day&nbsp;goes.
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-[14px]">
+            <div className="rounded-lg border border-ash bg-paper p-4">
+              <p className="text-stone uppercase tracking-wider text-[11px] font-medium">Your system today</p>
+              <p className="mt-1 text-ink font-medium">{QUESTIONS.length - carrierCount} answered, about your book</p>
+              <p className="mt-1 text-charcoal">{carrierCount} left to portals, PDFs, and memory</p>
+            </div>
+            <div className="rounded-lg border border-interactive bg-paper p-4">
+              <p className="text-interactive uppercase tracking-wider text-[11px] font-medium">HarborIQ Markets</p>
+              <p className="mt-1 text-ink font-medium">Answers the other {carrierCount}</p>
+              <p className="mt-1 text-charcoal">From your carriers&rsquo; own guides, with the page it came from</p>
+            </div>
+          </div>
+          <p className="mt-3 text-[14px] text-stone">
+            You sorted {right} of {QUESTIONS.length} the way we did.
           </p>
           <button
             type="button"
