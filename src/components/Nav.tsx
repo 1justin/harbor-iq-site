@@ -20,6 +20,7 @@ const compareLinks = [
   { href: "/compare/hawksoft", label: "vs HawkSoft" },
   { href: "/compare/nowcerts", label: "vs NowCerts" },
   { href: "/compare/gohighlevel", label: "vs GoHighLevel" },
+  { href: "/compare/build-your-own", label: "vs Building your own" },
 ];
 
 export function Nav() {

@@ -134,6 +134,11 @@ const startingPoints = [
     label: "Running GoHighLevel for your CRM?",
     summary: "GHL wins the lead. HarborIQ runs the agency. Only one of those jobs knows what a renewal is.",
   },
+  {
+    href: "/compare/build-your-own",
+    label: "Built your own system?",
+    summary: "Then you are who we build for. Building it was the cheap part. Run the numbers on what it costs to keep.",
+  },
 ];
 
 export default function ComparePage() {
