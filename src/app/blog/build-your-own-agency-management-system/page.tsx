@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "article",
     url: "/blog/build-your-own-agency-management-system",
     publishedTime: "2026-09-04T00:00:00Z",
-    modifiedTime: "2026-09-08T00:00:00Z",
+    modifiedTime: "2026-10-12T00:00:00Z",
     authors: ["Justin Mayer"],
     images: [{ url: "/images/blog/then-vs-now.png", width: 1600, height: 900 }],
   },
@@ -29,7 +29,7 @@ const articleSchema = {
   headline: "Should you build your own agency management system?",
   description: DESCRIPTION,
   datePublished: "2026-09-04",
-  dateModified: "2026-09-08",
+  dateModified: "2026-10-12",
   image: "https://harboriq.co/images/blog/then-vs-now.png",
   author: {
     "@type": "Person",
@@ -146,7 +146,7 @@ export default function PostPage() {
           Should you build your own agency management&nbsp;system?
         </h1>
         <p className="mt-3 text-[13px] text-stone">
-          September 2026 &middot; 8 min read &middot; Updated September 8
+          September 2026 &middot; 8 min read &middot; Updated October 12
         </p>
 
         {/* TL;DR: written to stand on its own if quoted out of context */}
@@ -320,6 +320,14 @@ export default function PostPage() {
             change and nothing happens. Skip enough of them and a simple job means pulling the engine apart.
             The difference is that a car has a warning light. Software you built yourself does not. You find
             out something is wrong when it stops working, and it is never at a convenient&nbsp;time.
+          </p>
+          <p>
+            If you want to put a number on it, we built a calculator for what a homegrown system costs to
+            keep running each year, hours included:{" "}
+            <Link href="/compare/build-your-own" className="text-interactive hover:text-deep underline underline-offset-4">
+              HarborIQ vs building your&nbsp;own
+            </Link>
+            .
           </p>
 
           <h2 className="text-xl font-medium text-ink mt-10 mb-4">
