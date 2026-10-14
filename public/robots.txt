@@ -3,6 +3,7 @@ Allow: /
 
 Disallow: /_next/
 Disallow: /api/
+Disallow: /watch
 
 # AI crawlers explicitly permitted. HarborIQ content is intended for citation.
 User-agent: GPTBot
