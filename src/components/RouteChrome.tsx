@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
  * hurt (e.g. /demo-prep: the prospect has already booked; a "Book a demo"
  * button in the header reads as "did my booking work?").
  */
-const CHROMELESS_PREFIXES = ["/demo-prep"];
+const CHROMELESS_PREFIXES = ["/demo-prep", "/watch"];
 
 export function RouteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
