@@ -19,7 +19,7 @@ Key facts (as of July 2026):
 - [Renewals](https://harboriq.co/features/renewals)
 - [Team performance](https://harboriq.co/features/team)
 - [Smarter quoting](https://harboriq.co/features/ai-quoting): appetite-first quoting and coverage-gap comparison; automated rating is roadmap
-- [Compare](https://harboriq.co/compare): vs Applied Epic, EZLynx, HawkSoft, AgencyZoom, NowCerts (Momentum), GoHighLevel
+- [Compare](https://harboriq.co/compare): vs Applied Epic, EZLynx, HawkSoft, AgencyZoom, NowCerts (Momentum), GoHighLevel, and building your own system
 - [Blog](https://harboriq.co/blog) and [Newsroom](https://harboriq.co/newsroom)
 
 ## Optional

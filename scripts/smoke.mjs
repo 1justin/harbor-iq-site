@@ -46,6 +46,7 @@ const PAGES = [
   { path: "/manifesto", chrome: true },
   { path: "/features/pipeline", chrome: true },
   { path: "/compare/applied-epic", chrome: true },
+  { path: "/compare/build-your-own", chrome: true },
   { path: "/blog/real-cost-of-per-user-pricing", chrome: true },
 ];
 
