@@ -7,13 +7,8 @@ import { useState, useEffect, useRef } from "react";
 
 const featureLinks = [
   { href: "/free", label: "Free workspace" },
-  { href: "/pricing#intelligence", label: "Intelligence" },
-  { href: "/pricing#agency-os", label: "Agency OS" },
-  { href: "/features/pipeline", label: "Pipeline CRM" },
-  { href: "/features/renewals", label: "Renewals" },
-  { href: "/features/carriers", label: "Carrier intelligence" },
-  { href: "/features/team", label: "Team Performance" },
-  { href: "/features/ai-quoting", label: "Smarter Quoting" },
+  { href: "/intelligence", label: "Intelligence" },
+  { href: "/agency", label: "Agency OS" },
 ];
 
 const compareLinks = [
@@ -137,9 +132,6 @@ export function Nav() {
           <Link href="/pricing" className="text-paper hover:text-mist text-[15px] transition-colors">
             Pricing
           </Link>
-          <Link href="/find-an-agency" className="whitespace-nowrap text-paper hover:text-mist text-[15px] transition-colors">
-            Find an agency
-          </Link>
           <Link href="/about" className="text-paper hover:text-mist text-[15px] transition-colors">
             About
           </Link>
@@ -150,11 +142,11 @@ export function Nav() {
             href={DEMO_PAGE}
             className="cta-secondary whitespace-nowrap text-paper hover:text-mist text-[15px] transition-colors"
           >
-            Book a demo
+            Agency OS demo
           </a>
           <a
             href={START_FREE_URL}
-            className="cta-primary whitespace-nowrap bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium hover:bg-bronze transition-colors"
+            className="cta-primary whitespace-nowrap bg-copper text-midnight btn-radius px-4 py-2 text-[15px] font-medium hover:bg-copper-light transition-colors"
           >
             Start free
           </a>
@@ -230,9 +222,6 @@ export function Nav() {
           <Link href="/pricing" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             Pricing
           </Link>
-          <Link href="/find-an-agency" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
-            Find an agency
-          </Link>
           <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             About
           </Link>
@@ -249,7 +238,7 @@ export function Nav() {
             <a
               href={START_FREE_URL}
               onClick={() => setMobileOpen(false)}
-              className="cta-primary block bg-copper text-white btn-radius px-4 py-2 text-[15px] font-medium text-center"
+              className="cta-primary block bg-copper text-midnight btn-radius px-4 py-2 text-[15px] font-medium text-center"
             >
               Start free
             </a>
@@ -258,7 +247,7 @@ export function Nav() {
               onClick={() => setMobileOpen(false)}
               className="cta-secondary block text-center text-mist text-[15px]"
             >
-              Book a demo
+              Agency OS demo
             </a>
           </div>
         </div>

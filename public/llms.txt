@@ -14,12 +14,8 @@ Key facts (as of October 2026):
 - [Home](https://harboriq.co/): what HarborIQ does, how carrier questions work, the free workspace, and plans
 - [Pricing](https://harboriq.co/pricing): full published pricing for the free workspace, Intelligence, and Agency OS
 - [Start free](https://harboriq.co/start): sign up for the free workspace or Intelligence
-- [Carrier intelligence](https://harboriq.co/features/carriers): carrier questions answered from carrier documents, with sources
-- [Agency OS](https://harboriq.co/agency): the full agency system of record
-- [Pipeline CRM](https://harboriq.co/features/pipeline)
-- [Renewals](https://harboriq.co/features/renewals)
-- [Team performance](https://harboriq.co/features/team)
-- [Smarter quoting](https://harboriq.co/features/ai-quoting): appetite-first quoting and coverage-gap comparison; automated rating is roadmap
+- [Intelligence](https://harboriq.co/intelligence): carrier questions answered from carrier documents, with sources; $29 per agency per month
+- [Agency OS](https://harboriq.co/agency): the full agency system of record, including pipeline CRM, renewals, appetite-first quoting with coverage-gap comparison (automated rating is roadmap), and team performance
 - [Compare](https://harboriq.co/compare): vs Applied Epic, EZLynx, HawkSoft, AgencyZoom, NowCerts (Momentum), GoHighLevel
 - [Book a demo](https://harboriq.co/demo): a 20-minute Agency OS walkthrough
 - [Blog](https://harboriq.co/blog) and [Newsroom](https://harboriq.co/newsroom)

@@ -201,7 +201,7 @@ export function NewCore() {
 
         {/* HarborIQ hub */}
         <span
-          className="nc-hub absolute inline-flex items-center rounded-full bg-copper px-5 py-2.5 text-[15px] font-semibold tracking-tight text-white shadow-[0_0_30px_rgba(196,147,90,0.35)] md:text-[16px]"
+          className="nc-hub absolute inline-flex items-center rounded-full bg-copper px-5 py-2.5 text-[15px] font-semibold tracking-tight text-midnight shadow-[0_0_30px_rgba(196,147,90,0.35)] md:text-[16px]"
           style={{
             left: `${(CX / 600) * 100}%`,
             top: `${(CY / 480) * 100}%`,

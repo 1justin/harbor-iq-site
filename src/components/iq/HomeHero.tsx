@@ -31,6 +31,7 @@ function usePlayer() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
       setPhase({ q: ex.question, a: ex.answer, source: true });
+      // Only advances if the visitor pressed play; reduced motion starts paused.
       if (onDone) at(9000, onDone);
       return;
     }
@@ -41,7 +42,8 @@ function usePlayer() {
     words.forEach((_, i) => at(qDone + i * 30, () => setPhase((p) => ({ ...p, a: words.slice(0, i + 1).join(" ") }))));
     const aDone = qDone + words.length * 30 + 250;
     at(aDone, () => setPhase((p) => ({ ...p, source: true })));
-    if (onDone) at(aDone + 5200, onDone);
+    // Hold the finished answer long enough to read the source before moving on.
+    if (onDone) at(aDone + 7000, onDone);
   }, []);
 
   useEffect(() => clear, []);
@@ -131,7 +133,7 @@ function Ctas({ center = false }: { center?: boolean }) {
       <div className={`mt-8 flex flex-col gap-3 sm:flex-row sm:items-center ${center ? "justify-center" : ""}`}>
         <Link
           href={START_FREE_URL}
-          className="cta-primary btn-radius bg-copper px-7 py-3.5 text-center text-[16px] font-medium text-white hover:bg-bronze"
+          className="cta-primary btn-radius bg-copper px-7 py-3.5 text-center text-[16px] font-medium text-midnight hover:bg-copper-light"
         >
           Start free
         </Link>
@@ -151,12 +153,55 @@ function Ctas({ center = false }: { center?: boolean }) {
 export function HomeHero({ background = "calm" }: { background?: "calm" | "water" }) {
   const { phase, play } = usePlayer();
   const [idx, setIdx] = useState(0);
+  const [run, setRun] = useState(0);
+  // Rotation stops when the visitor pauses or picks an example, and never
+  // starts for reduced-motion visitors (WCAG 2.2.2 Pause, Stop, Hide).
+  const reducedMotion = useSyncExternalStore(
+    (cb) => {
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+      mq.addEventListener("change", cb);
+      return () => mq.removeEventListener("change", cb);
+    },
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false,
+  );
+  const [choice, setChoice] = useState<boolean | null>(null);
+  const auto = choice ?? !reducedMotion;
+  const autoRef = useRef(auto);
+  const doneRef = useRef(false);
   const ex = EXCHANGES[idx];
+  const next = () => setIdx((i) => (i + 1) % EXCHANGES.length);
 
   useEffect(() => {
-    const t = window.setTimeout(() => play(EXCHANGES[idx], () => setIdx((i) => (i + 1) % EXCHANGES.length)), 600);
+    autoRef.current = auto;
+  }, [auto]);
+
+  useEffect(() => {
+    doneRef.current = false;
+    const t = window.setTimeout(
+      () =>
+        play(EXCHANGES[idx], () => {
+          doneRef.current = true;
+          if (autoRef.current) next();
+        }),
+      600,
+    );
     return () => window.clearTimeout(t);
-  }, [idx, play]);
+  }, [idx, run, play]);
+
+  const toggleAuto = () => {
+    const on = !auto;
+    autoRef.current = on;
+    setChoice(on);
+    if (on && doneRef.current) next();
+  };
+
+  const pick = (i: number) => {
+    autoRef.current = false;
+    setChoice(false);
+    setIdx(i);
+    setRun((r) => r + 1);
+  };
 
   return (
     <section className="relative overflow-hidden bg-anchor" aria-labelledby="hero-heading">
@@ -184,7 +229,10 @@ export function HomeHero({ background = "calm" }: { background?: "calm" | "water
             <span className="h-2.5 w-2.5 rounded-full bg-harbor/60" aria-hidden="true" />
             <span className="ml-1 text-[13px] font-medium text-paper">HarborIQ · Carrier Ask</span>
           </div>
-          <div className="min-h-[300px] px-5 py-5 md:px-6" aria-live="polite">
+          <p className="sr-only">
+            Example question: {ex.question} Answer: {ex.answer} Source: {ex.citation}
+          </p>
+          <div className="min-h-[300px] px-5 py-5 md:px-6" aria-hidden="true">
             <p className="ml-auto min-h-[44px] max-w-[88%] rounded-lg bg-ice px-4 py-2.5 text-[15px] text-ink">{phase.q || " "}</p>
             {phase.a && (
               <div className="mt-4">
@@ -195,10 +243,40 @@ export function HomeHero({ background = "calm" }: { background?: "calm" | "water
           </div>
           <div className="flex items-center justify-between border-t border-ash px-5 py-3">
             <span className="text-[12px] text-stone">Real answer. Carrier names changed for this page.</span>
-            <span className="flex gap-1.5" aria-hidden="true">
+            <span className="flex items-center">
               {EXCHANGES.map((e, i) => (
-                <span key={e.id} className={`h-1.5 rounded-full transition-all ${i === idx ? "w-5 bg-interactive" : "w-1.5 bg-ash"}`} />
+                <button
+                  key={e.id}
+                  type="button"
+                  onClick={() => pick(i)}
+                  aria-label={`Show example ${i + 1} of ${EXCHANGES.length}: ${e.question}`}
+                  aria-current={i === idx ? "true" : undefined}
+                  className="group rounded-full p-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-interactive"
+                >
+                  <span
+                    className={`block h-1.5 rounded-full transition-all ${
+                      i === idx ? "w-5 bg-interactive" : "w-1.5 bg-fog group-hover:bg-stone"
+                    }`}
+                  />
+                </button>
               ))}
+              <button
+                type="button"
+                onClick={toggleAuto}
+                aria-label={auto ? "Pause rotating examples" : "Play rotating examples"}
+                className="ml-1.5 flex h-6 w-6 items-center justify-center rounded-full text-stone hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-interactive"
+              >
+                {auto ? (
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <rect x="6" y="4" width="4" height="16" rx="1" />
+                    <rect x="14" y="4" width="4" height="16" rx="1" />
+                  </svg>
+                ) : (
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z" />
+                  </svg>
+                )}
+              </button>
             </span>
           </div>
         </div>

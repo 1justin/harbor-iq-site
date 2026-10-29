@@ -30,29 +30,14 @@ export function Footer() {
               <Link href="/free" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Free workspace
               </Link>
-              <Link href="/pricing#intelligence" className="block text-slate hover:text-paper text-[15px] transition-colors">
+              <Link href="/intelligence" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Intelligence
               </Link>
-              <Link href="/pricing#agency-os" className="block text-slate hover:text-paper text-[15px] transition-colors">
+              <Link href="/agency" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Agency OS
               </Link>
               <Link href="/find-an-agency" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Find an agency
-              </Link>
-              <Link href="/features/pipeline" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Pipeline CRM
-              </Link>
-              <Link href="/features/renewals" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Renewals
-              </Link>
-              <Link href="/features/carriers" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Carrier intelligence
-              </Link>
-              <Link href="/features/team" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Team Performance
-              </Link>
-              <Link href="/features/ai-quoting" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Smarter Quoting
+                Find an agency <span className="text-[12px] uppercase tracking-wider text-stone">Preview</span>
               </Link>
               <Link href="/pricing" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Pricing
@@ -86,7 +71,7 @@ export function Footer() {
                 href={DEMO_PAGE}
                 className="block text-slate hover:text-paper text-[15px] transition-colors"
               >
-                Book a demo
+                Agency OS demo
               </a>
             </div>
           </div>
