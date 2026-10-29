@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
-import { MarketsWedge } from "@/components/MarketsWedge";
+import { IntelligenceWedge } from "@/components/IntelligenceWedge";
 import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ const contrastCards = [
 ];
 
 const fullTable = [
-  ["Pricing model", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "$250/mo base + $94/user/month"],
+  ["Pricing model", "Never per person. Free workspace $0; Intelligence $29 per agency a month; Agency OS $199 / $399 / $599 by agency size. Published.", "$250/mo base + $94/user/month"],
   ["5-person agency cost", "$399/mo (Agency, identical features at every size)", "$720/month ($250 + 5 × $94)"],
   ["10-person agency cost", "$599/mo (Agency, 6 to 15 people)", "$1,190/month ($250 + 10 × $94)"],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Client management only."],
@@ -360,7 +360,7 @@ export default function CompareHawkSoftPage() {
         </div>
       </section>
 
-      <MarketsWedge competitor="HawkSoft" />
+      <IntelligenceWedge competitor="HawkSoft" />
 
       <ManifestoStrip />
       <CtaSection />

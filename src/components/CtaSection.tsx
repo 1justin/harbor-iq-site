@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { DEMO_PAGE, IMPORT_TERMS, MARKETS_START_URL, PRICING } from "@/lib/constants";
+import { AGENCY_OS_DEMO_URL, IMPORT_TERMS, INTELLIGENCE, PRICING, START_FREE_URL } from "@/lib/constants";
 
 export function CtaSection({
   headline = "Start today. Move the book when you're ready.",
-  description = `Markets is $${PRICING.markets.monthly}/mo for 1 to 15 people, live the same day. Agency runs the whole operation at $${PRICING.agency.solo.monthly} solo, $${PRICING.agency.team.monthly} for 2 to 5, and $${PRICING.agency.os.monthly} for 6 to 15. Published, month to month, never per person.`,
+  description = `Start with a free workspace, or Intelligence at $${INTELLIGENCE.monthly} per agency a month. Agency OS runs the whole operation at $${PRICING.agency.solo.monthly} solo, $${PRICING.agency.team.monthly} for 2 to 5, and $${PRICING.agency.os.monthly} for 6 to 15. Published, month to month, never per person.`,
 }: {
   headline?: string;
   description?: string;
@@ -19,16 +19,16 @@ export function CtaSection({
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={MARKETS_START_URL}
+            href={START_FREE_URL}
             className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
           >
-            Start free trial
+            Start free
           </a>
           <a
-            href={DEMO_PAGE}
+            href={AGENCY_OS_DEMO_URL}
             className="cta-secondary bg-interactive text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-deep transition-colors"
           >
-            Book an Agency demo
+            Book an Agency OS walkthrough
           </a>
         </div>
         <p className="mt-5 text-mist text-[13px]">

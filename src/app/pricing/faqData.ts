@@ -1,51 +1,53 @@
-/** Single source for pricing FAQs. page.tsx builds the FAQPage JSON-LD from this. */
-export const pricingFaqs = [
+import { INTELLIGENCE as I, LAUNCH, PRICING } from "@/lib/constants";
+import type { Faq } from "@/components/iq/Blocks";
+
+/**
+ * Pricing FAQ (2026-10-28 positioning). Free quantities are not ratified, so
+ * no answer states a number for them; see CLAUDE.md before adding one.
+ */
+export const pricingFaqs: Faq[] = [
   {
-    q: "What is the difference between Markets and Agency?",
-    a: "One product, one difference: the book. Markets is the carrier intelligence layer every plan includes: Carrier Ask with cited answers, carrier profiles and reps, the login vault, documents, Carrier News, and the team layer (chat, training, license and CE tracking). Agency adds the system of record: clients, policies, pipeline, renewals, commissions, and reports. There is no other feature line.",
+    q: "What is included in free carrier research?",
+    a: `A limited number of carrier checks with sources, dates, and key conditions, plus a small private guide upload so you can try your own information. Free results keep the evidence and the limitations you need to judge them. Intelligence adds deeper comparison, follow-up research, and ${I.checksPerMonth} checks each month.`,
   },
   {
-    q: "Wait, those prices are for my whole team? Not per user?",
-    a: "Not per user. Not per login. Not per agent. Markets is $199/month whether you are 1 person or 15. Agency is priced by agency size: $199 solo, $399 for 2 to 5 people, $599 for 6 to 15. Hire freely inside your band; your price does not move.",
+    q: "What counts as a carrier check?",
+    a: "One ordinary carrier question and its source-backed answer. Asking about several carriers in the same question is still one check. Your balance is shared across the agency and shown before you ask.",
   },
   {
-    q: "Is the $599 Agency different from the $399 Agency?",
-    a: "No. Agency is the same product at every price. Nothing is withheld, no feature gates, no locked reports. You pay for your size because value scales with size, and that is the honest reason. There is nothing hiding in a higher tier.",
+    q: "What happens when we use our carrier checks?",
+    a: `Wait for the monthly reset, or buy a $${I.pack.price} pack of ${I.pack.checks} more. There are no automatic top-ups. Your existing answers and documents stay available.`,
   },
   {
-    q: "What does the book import cost when I move to Agency?",
-    a: "Free with annual prepay, one month's fee on monthly. Our import wizard handles CSV and PDF, deduplicates, matches carrier names, and stages anything it cannot place for review instead of guessing. Onboarding is measured in days.",
+    q: "What changes when we pay annually?",
+    a: `You pay $${I.annual} upfront instead of $${I.monthly} each month, which saves $${I.annualSavings}. You still receive ${I.checksPerMonth} checks each month, shared across your agency. Optional packs are bought separately.`,
   },
   {
-    q: "Is there a free trial?",
-    a: "Markets has a 14-day free trial: card at checkout, first charge on day 15, cancel before then and you pay nothing. Agency does not need one, and that is deliberate: your demo happens in the real product, and Markets itself is the try-before-you-move-the-book path. Nothing about your agency should be on a clock while a book migration is involved.",
+    q: "Do reminders verify our licensing or CE requirements?",
+    a: "No. You enter the deadlines and choose who gets the reminder and when. HarborIQ does not calculate state CE requirements, verify licenses, or guarantee compliance.",
   },
   {
-    q: "Is there a discount for paying annually?",
-    a: "Every annual plan gives you about two months of value back. Markets Annual is $1,990, twelve months for the price of ten. Agency Annual is eleven months' price ($2,189 solo, $4,389 for 2 to 5, $6,589 for 6 to 15) and your book import is free on top. The math is printed because we want you to check it.",
+    q: "Do I have to book a demo to start?",
+    a: "No demo is needed for the free workspace or Intelligence. A walkthrough is there for Agency OS, because moving your book is a bigger decision.",
   },
   {
-    q: "Why is Markets the same price for a solo agent and a 15-person team?",
-    a: "Because the alternative is charging per person, and we refuse to do it. Inside a band, a bigger team gets more value from the same carrier layer and the price stays put. Above 15 people the band steps up, but it is still one price for the agency, never a fee per login.",
+    q: "What does a free marketplace profile do?",
+    a: "It describes what your agency insures, where you serve clients, and how to reach you, so people looking for an agency can find you. A listing does not guarantee rankings, recommendations, or leads. Your private carrier guides and client information stay separate from the public profile.",
   },
   {
-    q: "What happens if we use a lot of AI?",
-    a: "Every plan includes a generous allowance sized for normal agency work, and a $50 per month overage cap is on by default. You see usage in the app and get a warning at 80%. Most agencies never notice the allowance exists.",
+    q: "Is Agency OS priced the same way as Intelligence?",
+    a: `No. Agency OS is priced by agency size: $${PRICING.agency.solo.monthly} solo, $${PRICING.agency.team.monthly} for 2 to 5 people, $${PRICING.agency.os.monthly} for 6 to 15, and published bands up to 50. Everyone in your band is included and every band gets the same features. Never a fee per person.`,
   },
   {
-    q: "Can I cancel anytime?",
-    a: "Yes. Month to month is the default. No long-term contracts, no termination fees, and your data is always exportable. It is your book, not ours.",
+    q: "Do I have to replace my AMS or CRM?",
+    a: "No. Keep them, or move more into HarborIQ when it helps. You choose the sources and workflows you use.",
   },
-  {
-    q: "What if I have more than 15 employees?",
-    a: "Those prices are published too. Agency is $899/month for 16 to 25 people, $1,199 for 26 to 35, and $1,499 for 36 to 50, with the same annual terms. Markets is $399, $599, and $799 for the same bands. Same product, nothing withheld. At this size we start with a demo rather than self-serve checkout. Above 50 people, we quote custom on the call.",
-  },
-  {
-    q: "Do I need to install anything?",
-    a: "No. HarborIQ is a web-based platform. Works in any modern browser. No downloads, no IT department required.",
-  },
-  {
-    q: "Is AI going to replace my agents?",
-    a: "No. Full stop. HarborIQ makes your agents faster and smarter, not obsolete. AI handles the repetitive work (re-typing data, remembering follow-ups, digging through carrier PDFs) so your team can do what actually requires a human: building relationships, advising clients, and closing business. The agent is the value. The AI is the tool.",
-  },
+  ...(LAUNCH.chatgpt
+    ? [
+        {
+          q: "Does the ChatGPT connection include a ChatGPT subscription?",
+          a: "No. HarborIQ is a separate service. Your ChatGPT account must support the connection, and setup explains the permissions it needs. You can also use HarborIQ directly.",
+        },
+      ]
+    : []),
 ];

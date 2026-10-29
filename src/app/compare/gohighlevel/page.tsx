@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
-import { DEMO_PAGE, MARKETS_START_URL } from "@/lib/constants";
+import { AGENCY_OS_DEMO_URL, START_FREE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ vs GoHighLevel | They Win the Lead. We Run the Agency.",
@@ -179,8 +179,8 @@ export default function CompareGoHighLevelPage() {
                 <li className="flex gap-3">
                   <svg width="18" height="18" fill="none" stroke="#2E8B57" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 mt-0.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                   <span>
-                    You want to start without moving anything: Markets is $199
-                    for 1 to 15 people and touches nothing you run today.
+                    You want to start without moving anything: the free workspace
+                    and Intelligence ($29 per agency a month) touch nothing you run today.
                   </span>
                 </li>
               </ul>
@@ -188,16 +188,16 @@ export default function CompareGoHighLevelPage() {
           </div>
           <div className="mt-10 text-center">
             <a
-              href={MARKETS_START_URL}
+              href={START_FREE_URL}
               className="cta-primary inline-block bg-copper text-white btn-radius px-7 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
             >
-              Start with Markets
+              Start free
             </a>
             <a
-              href={DEMO_PAGE}
+              href={AGENCY_OS_DEMO_URL}
               className="inline-block ml-3 text-interactive text-[15px] font-medium underline underline-offset-4"
             >
-              or book an Agency demo
+              or book an Agency OS walkthrough
             </a>
           </div>
         </div>

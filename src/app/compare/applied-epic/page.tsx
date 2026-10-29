@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
-import { MarketsWedge } from "@/components/MarketsWedge";
+import { IntelligenceWedge } from "@/components/IntelligenceWedge";
 import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ const contrastCards = [
 
 const fullTable = [
   ["Built for", "1-15 person independent agencies", "Mid-to-large agencies and brokerages (50+ employees)"],
-  ["Pricing", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
+  ["Pricing", "Never per person. Free workspace $0; Intelligence $29 per agency a month; Agency OS $199 / $399 / $599 by agency size. Published.", "Contract-based, negotiated per agency. Per-user fees standard."],
   ["Complexity", "20 features done well. Clean, modern interface.", "Hundreds of features. Steep learning curve. Extensive customization."],
   ["Onboarding", "Days. CSV import, guided wizard.", "Weeks to months. Enterprise implementation process."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Focused on existing client and policy management."],
@@ -406,7 +406,7 @@ export default function CompareAppliedEpicPage() {
         </div>
       </section>
 
-      <MarketsWedge competitor="Applied Epic" />
+      <IntelligenceWedge competitor="Applied Epic" />
 
       <ManifestoStrip />
       <CtaSection />

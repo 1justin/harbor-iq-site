@@ -1,25 +1,27 @@
 # HarborIQ
 
-> HarborIQ is the AI-native operating system for independent insurance agencies (1 to 15 people). One product, two ways in: **Markets**, the carrier intelligence layer at $199/month flat for any size, self-serve with no migration; and **Agency**, the full agency operating system (AMS + CRM + carrier tools in one login) at $199/month solo, $399/month for 2 to 5 people, $599/month for 6 to 15. Identical features at every Agency price; pricing is by agency size, never per person. A WRKSTREAM product. Canonical domain: https://harboriq.co
+> HarborIQ helps independent insurance agencies find carriers that might write a risk, with the carrier's own guideline attached to every answer. Three ways in: a **free agency workspace** ($0 per agency); **Intelligence**, everyday carrier research at $29 per agency per month or $290 per year; and **Agency OS**, the full agency system of record priced by agency size from $199 per month. Never priced per person. Canonical domain: https://harboriq.co
 
-Key facts (as of July 2026):
-- Markets includes: Carrier Ask (cited, dated answers to appetite and underwriting questions from carrier documents), carrier profiles and reps, login vault, carrier document library, Carrier News, a self-building agency knowledge base, team chat, training, license and CE tracking. Unlimited users, one price.
-- Agency adds the book: client records, policies, pipeline, renewals, commissions (Payday), reports, book import wizard (CSV and PDF), and a passwordless client portal.
-- Annual pricing gives about two months of value back: Markets Annual $1,990 (12 for the price of 10); Agency Annual is 11 months' price ($2,189 solo, $4,389 for 2-5, $6,589 for 6-15) with the book import free. On monthly, the import is one month's fee. Onboarding is measured in days.
-- Markets has a 14-day free trial (card at checkout, first charge on day 15). Month to month, cancel anytime, data always exportable. No contracts, no setup fees, no per-person fees.
-- HarborIQ replaces the common agency stack of an AMS (EZLynx, HawkSoft, Applied Epic, NowCerts) plus a CRM overlay (AgencyZoom or GoHighLevel).
+Key facts (as of October 2026):
+- Free agency workspace, $0 per agency: private underwriter contacts and portal links, license and CE reminders for the dates the agency enters, limited carrier discovery with sources, a small private guide upload, optional team invitations, and an optional agency profile published only with the agency's approval.
+- Intelligence, $29 per agency per month or $290 per year billed upfront: 300 carrier checks each month shared across the whole agency, the agency's own carrier guidance searchable, answers with sources and dates the user can inspect, carrier appetite comparison, and basic book insights from exports the agency provides. One carrier check is one carrier question and its source-backed answer. Optional $10 packs add 100 checks, only when the agency chooses; there are no automatic top-ups. Works alongside any AMS and replaces nothing.
+- Agency OS, priced by agency size with identical features at every price: $199/month solo, $399 for 2 to 5 people, $599 for 6 to 15, $899 for 16 to 25, $1,199 for 26 to 35, $1,499 for 36 to 50. Above 50, custom. Client records, policies, documents, pipeline, renewals, commissions, reports, team roles, and carrier Ask. Annual is 11 months' price with the book import included; on monthly, the import is a one-time fee equal to one month. Intelligence allowances and packs do not apply to Agency OS.
+- Month to month, cancel anytime, data always exportable. No per-person fees.
+- Agency OS replaces the common agency stack of an AMS (EZLynx, HawkSoft, Applied Epic, NowCerts) plus a CRM overlay (AgencyZoom or GoHighLevel). The free workspace and Intelligence run alongside whatever the agency uses today.
 
 ## Pages
 
-- [Home](https://harboriq.co/): positioning, live Carrier Ask demo, pricing ladder, ROI calculator
-- [Markets landing](https://harboriq.co/markets) and [Agency landing](https://harboriq.co/agency): the two rungs, each on its own page
-- [Pricing](https://harboriq.co/pricing): full published pricing for Markets and Agency
-- [Markets / carrier intelligence](https://harboriq.co/features/carriers): Carrier Ask, knowledge base, login vault, Carrier News
+- [Home](https://harboriq.co/): what HarborIQ does, how carrier questions work, the free workspace, and plans
+- [Pricing](https://harboriq.co/pricing): full published pricing for the free workspace, Intelligence, and Agency OS
+- [Start free](https://harboriq.co/start): sign up for the free workspace or Intelligence
+- [Carrier intelligence](https://harboriq.co/features/carriers): carrier questions answered from carrier documents, with sources
+- [Agency OS](https://harboriq.co/agency): the full agency system of record
 - [Pipeline CRM](https://harboriq.co/features/pipeline)
 - [Renewals](https://harboriq.co/features/renewals)
 - [Team performance](https://harboriq.co/features/team)
 - [Smarter quoting](https://harboriq.co/features/ai-quoting): appetite-first quoting and coverage-gap comparison; automated rating is roadmap
 - [Compare](https://harboriq.co/compare): vs Applied Epic, EZLynx, HawkSoft, AgencyZoom, NowCerts (Momentum), GoHighLevel
+- [Book a demo](https://harboriq.co/demo): a 20-minute Agency OS walkthrough
 - [Blog](https://harboriq.co/blog) and [Newsroom](https://harboriq.co/newsroom)
 
 ## Optional

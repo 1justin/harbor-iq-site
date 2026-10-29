@@ -56,8 +56,8 @@ const FAQ = [
     a: "Only if it shows its source and date, and only if it is willing to say it does not know. An answer about appetite becomes a submission, so a confident guess is worse than no answer. Look for citations you can click and an explicit statement when the documentation is not there.",
   },
   {
-    q: "Do I have to replace my agency management system to use HarborIQ Markets?",
-    a: "No. Markets runs next to the system you already have. There is nothing to migrate. Setup is a shared folder: you drop in appetite guides, underwriting PDFs, and useful carrier emails, unorganized, and it takes about 30 minutes.",
+    q: "Do I have to replace my agency management system to use HarborIQ Intelligence?",
+    a: "No. Intelligence runs next to the system you already have. There is nothing to migrate. Setup is a shared folder: you drop in appetite guides, underwriting PDFs, and useful carrier emails, unorganized, and it takes about 30 minutes.",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function PostPage() {
             Every question in an agency is either about your book or about your carriers. Legacy
             management systems have answered the first kind for twenty years. They have never answered the
             second, so it still lives in PDFs, portals, old emails, and one person&rsquo;s memory. That is
-            where the day goes, and it is the kind HarborIQ Markets was built to&nbsp;answer.
+            where the day goes, and it is the kind HarborIQ Intelligence was built to&nbsp;answer.
           </p>
         </div>
 
@@ -192,7 +192,7 @@ export default function PostPage() {
           <p>
             No, and this is the part legacy workflows get wrong. The carrier question does not belong to
             your management system, so fixing it does not require leaving your management system. HarborIQ
-            Markets runs beside whatever you use. Setup is a shared folder. You drop in appetite guides,
+            Intelligence runs beside whatever you use. Setup is a shared folder. You drop in appetite guides,
             underwriting PDFs, and the carrier emails worth keeping, unorganized, and it takes about thirty
             minutes. Then anyone on the team can ask, from wherever they are&nbsp;working.
           </p>
@@ -207,7 +207,7 @@ export default function PostPage() {
               Ask your carriers a question. Get the page it came&nbsp;from.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              HarborIQ Markets is $199 a month for 1 to 15 people, self-serve, with a 14-day free trial. It
+              HarborIQ Intelligence is $29 per agency a month, and you can start with a free workspace. It
               runs next to the system you already&nbsp;have.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
@@ -215,7 +215,7 @@ export default function PostPage() {
                 href="/pricing"
                 className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors text-center"
               >
-                See Markets pricing
+                See pricing
               </a>
               <a
                 href={DEMO_PAGE}

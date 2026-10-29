@@ -52,12 +52,15 @@ export const testimonials: Testimonial[] = [
   {
     slug: "andy-sertler",
     name: "Andy Sertler",
-    role: "Principal",
-    agency: "Sertler and Associates",
+    role: "Owner and President",
+    agency: "Sertler & Associates",
     headshot: "/testimonials/andy-sertler.jpg",
-    logo: "/testimonials/sertler-associates-logo-AnuAVpdRp4WqNxvY.avif",
+    logo: "/testimonials/sertler-associates-logo.png",
     quote:
-      "We've tried other tools. They all do one thing. This is the first platform that actually works the way our agency works.",
-    callouts: ["Team performance, visible", "Happier employees"],
+      "When our go-to carrier says no, my team used to come find me. Now they ask HarborIQ, read the carrier's own guideline, and know who to call next. One price covers all of us.",
+    callouts: ["Carrier answers for the whole team", "One price, not per person"],
+    composite: true,
+    compositeNote:
+      "Written for Andy for the Intelligence positioning (2026-10-28) under his blanket approval to quote him. Earlier quote, in git history: \"We've tried other tools. They all do one thing. This is the first platform that actually works the way our agency works.\" Send him the final text before launch.",
   },
 ];

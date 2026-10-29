@@ -74,7 +74,7 @@ const faqSchema = {
       name: "Can I use HarborIQ if I already built my own system?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. HarborIQ Markets sits alongside a homegrown system rather than replacing it. It adds the carrier layer most builds do not have: appetite and product guides you can ask questions of, with the page the answer came from, plus a carrier directory and login vault. $199 a month for 1 to 15 people, self-serve, nothing to migrate.",
+        text: "Yes. HarborIQ Intelligence sits alongside a homegrown system rather than replacing it. It adds the carrier layer most builds do not have: appetite and product guides you can ask questions of, with the page the answer came from. $29 per agency a month, with a free workspace for carrier contacts and license reminders. Nothing to migrate.",
       },
     },
     {
@@ -354,9 +354,9 @@ export default function PostPage() {
 
           <p>
             The rows a homegrown build skips are the ones that sit beside it, not underneath it. HarborIQ
-            Markets is the carrier layer on its own: appetite and product guides your team can ask questions
-            of, in plain English, with the page the answer came from, plus a carrier directory and a login
-            vault. It runs next to whatever you built. Nothing to migrate, nothing to&nbsp;replace.
+            Intelligence is the carrier layer on its own: appetite and product guides your team can ask
+            questions of, in plain English, with the page the answer came from. The free workspace adds a
+            place for underwriter contacts and portal links. It runs next to whatever you built. Nothing to migrate, nothing to&nbsp;replace.
           </p>
           <p>
             One more row to think about, because it comes up later than it should. If you ever sell the
@@ -370,15 +370,15 @@ export default function PostPage() {
               If you must build, build small. Buy the layers a client could sue you&nbsp;over.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              HarborIQ Markets is $199 a month for 1 to 15 people, self-serve, and sits alongside whatever
-              your agency already runs. Priced by agency size, never per&nbsp;person.
+              HarborIQ Intelligence is $29 per agency a month, with a free workspace to start, and sits
+              alongside whatever your agency already runs. Never per&nbsp;person.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
               <a
                 href="/pricing"
                 className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors text-center"
               >
-                See Markets pricing
+                See pricing
               </a>
               <a
                 href={DEMO_PAGE}
@@ -422,10 +422,10 @@ export default function PostPage() {
               Can I use HarborIQ if I already built my own system?
             </h3>
             <p>
-              Yes. HarborIQ Markets sits alongside a homegrown system rather than replacing it. It adds the
-              carrier layer most builds do not have: appetite and product guides you can ask questions of,
-              with the page the answer came from, plus a carrier directory and login vault. $199 a month for
-              1 to 15 people, self-serve, nothing to&nbsp;migrate.
+              Yes. HarborIQ Intelligence sits alongside a homegrown system rather than replacing it. It adds
+              the carrier layer most builds do not have: appetite and product guides you can ask questions of,
+              with the page the answer came from. $29 per agency a month, with a free workspace for carrier
+              contacts and license reminders. Nothing to&nbsp;migrate.
             </p>
           </div>
 

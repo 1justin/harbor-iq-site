@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MARKETS_START_URL } from "@/lib/constants";
+import { START_FREE_URL } from "@/lib/constants";
 
 /**
  * Homepage "ask it yourself" section.
@@ -17,14 +17,14 @@ import { MARKETS_START_URL } from "@/lib/constants";
  * IP. Real names return once carrier agreements are signed.
  */
 
-type Exchange = {
+export type Exchange = {
   id: string;
   question: string;
   answer: string;
   citation: string;
 };
 
-const EXCHANGES: Exchange[] = [
+export const EXCHANGES: Exchange[] = [
   {
     id: "roof",
     question: "Will Meridian Mutual write a home with a 1978 roof?",
@@ -111,7 +111,7 @@ export function AskDemo() {
   };
 
   return (
-    <section className="bg-linen py-14 md:py-20">
+    <section id="ask-demo" className="scroll-mt-16 bg-linen py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <p className="mb-4 text-[13px] font-medium uppercase tracking-wider text-interactive">
@@ -213,10 +213,10 @@ export function AskDemo() {
               That was 3 carriers. The other 72 are inside.
             </p>
             <a
-              href={MARKETS_START_URL}
+              href={START_FREE_URL}
               className="cta-primary btn-radius mt-4 inline-block bg-copper px-6 py-3 text-[15px] font-medium text-white hover:bg-bronze"
             >
-              Start with Markets
+              Try a carrier question free
             </a>
           </div>
         </div>

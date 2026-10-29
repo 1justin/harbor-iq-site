@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
-import { MarketsWedge } from "@/components/MarketsWedge";
+import { IntelligenceWedge } from "@/components/IntelligenceWedge";
 import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ const contrastCards = [
 
 const fullTable = [
   ["Category", "Operating system: AMS + CRM + AI in one platform", "Overlay: sales-automation CRM on top of your existing AMS"],
-  ["Pricing model", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "From ~$79/mo plus the AMS underneath. Higher tiers gate 2-way email and SMS."],
+  ["Pricing model", "Never per person. Free workspace $0; Intelligence $29 per agency a month; Agency OS $199 / $399 / $599 by agency size. Published.", "From ~$79/mo plus the AMS underneath. Higher tiers gate 2-way email and SMS."],
   ["Client and policy management", "Included. One record across pipeline, policy, renewals, claims.", "Not included. AgencyZoom is pipeline and engagement only."],
   ["Carrier intelligence", "Built in. Cited appetite answers, carrier news, login vault, self-building knowledge base.", "Not included. AgencyZoom has no carrier layer."],
   ["Sales pipeline", "Native Kanban, multiple stages, AI-assisted next-best-action.", "Native and well-developed. Their strongest feature."],
@@ -388,7 +388,7 @@ export default function CompareAgencyZoomPage() {
         </div>
       </section>
 
-      <MarketsWedge competitor="AgencyZoom" />
+      <IntelligenceWedge competitor="AgencyZoom" />
 
       <ManifestoStrip />
       <CtaSection />

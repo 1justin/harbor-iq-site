@@ -12,42 +12,19 @@ export const DEMO_PAGE = "/demo";
 export const SITE_URL = "https://harboriq.co";
 
 /**
- * Markets self-serve checkout (Creem, live 2026-07-19). Fulfillment is
- * founder-touched per the lifecycle playbook: /welcome sets the one-business-
- * day expectation, so this does not depend on the app signup launch gate.
- * When billing linkage lands in the app, checkout hands off to signup instead.
+ * Markets ($199 flat) was retired on the site 2026-10-28 for Intelligence.
+ * Its Creem checkout products still exist and are no longer linked anywhere:
+ * monthly prod_2N5qJIZuziOzFUnuhqh3lH, annual prod_6dbVKduZTPA4CwnqCaeM8o.
+ * What happens to existing Markets subscribers is an open decision
+ * (agency-os docs/decisions.md, 2026-10-28).
  */
-export const MARKETS_START_URL =
-  "https://www.creem.io/payment/prod_2N5qJIZuziOzFUnuhqh3lH";
-
-/** Markets annual: 12 months for the price of 10. */
-export const MARKETS_ANNUAL_URL =
-  "https://www.creem.io/payment/prod_6dbVKduZTPA4CwnqCaeM8o";
 
 /**
- * Canonical two-rung ladder, ratified 2026-07-16 (agency-os docs/decisions.md).
- * Markets: $199 flat for 1 to 15, self-serve; published bands above 15
- * (2026-09-02). Agency: same product at every price, priced by agency size
- * only. No per-seat fees, no feature gates between bands. Above 50: custom.
+ * Agency OS pricing (two-rung ladder ratified 2026-07-16; Markets rung retired
+ * 2026-10-28). Same product at every price, priced by agency size only. No
+ * per-seat fees, no feature gates between bands. Above 50: custom.
  */
 export const PRICING = {
-  markets: {
-    monthly: 199,
-    /** 12 months for the price of 10 (ratified 2026-07-19). */
-    annual: 1990,
-    seats: "1 to 15 people",
-    /**
-     * Markets above 15 people (ratified 2026-09-02, Justin's pricing
-     * analysis). Published, demo-first at this size, no self-serve checkout.
-     * Above 50: custom, quoted live. Annual terms for these bands are not
-     * yet ratified, so the site shows monthly only.
-     */
-    large: [
-      { monthly: 399, seats: "16 to 25 people" },
-      { monthly: 599, seats: "26 to 35 people" },
-      { monthly: 799, seats: "36 to 50 people" },
-    ],
-  },
   agency: {
     /** Agency annual = 11 x monthly, plus the book import free. */
     solo: { monthly: 199, annual: 2189, seats: "Solo" },
@@ -65,6 +42,40 @@ export const PRICING = {
     { monthly: 1499, annual: 16489, seats: "36 to 50 people" },
   ],
 } as const;
+
+/**
+ * HarborIQ Intelligence, ratified 2026-10-28 (agency-os docs/decisions.md).
+ * Replaces Markets on the site. Per agency, not per person. One check is one
+ * ordinary carrier question and its source-backed answer. Annual keeps the
+ * same 300 checks each month; it does not front-load 3,600.
+ */
+export const INTELLIGENCE = {
+  monthly: 29,
+  annual: 290,
+  /** 12 x $29 minus $290. */
+  annualSavings: 58,
+  checksPerMonth: 300,
+  pack: { price: 10, checks: 100 },
+} as const;
+
+/**
+ * What is live. Flip a flag only when the product path behind it exists.
+ * Until then, free and Intelligence CTAs go to the /demo capture page with a
+ * source tag, so every click is still a lead.
+ */
+export const LAUNCH = {
+  /** ChatGPT connection: no present-tense claim until it ships. */
+  chatgpt: false,
+  /** Free workspace and marketplace pages: noindex and out of the sitemap until live. */
+  freeWorkspaceIndexed: false,
+  marketplaceIndexed: false,
+} as const;
+
+export const SIGNUP_PAGE = "/start";
+export const START_FREE_URL = SIGNUP_PAGE;
+export const START_INTELLIGENCE_URL = `${SIGNUP_PAGE}?plan=intelligence`;
+export const AGENCY_OS_DEMO_URL = `${DEMO_PAGE}?src=agency-os`;
+export const LIST_AGENCY_URL = `${SIGNUP_PAGE}?goal=profile`;
 
 /** Book import: the upgrade moment, not an onboarding SKU. */
 export const IMPORT_TERMS = {

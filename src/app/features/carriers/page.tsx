@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { FeaturePageLayout } from "@/components/FeaturePageLayout";
-import { PRICING } from "@/lib/constants";
+import { INTELLIGENCE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Carrier Intelligence for Independent Insurance Agents | HarborIQ Markets",
+  title: "Carrier Intelligence for Independent Insurance Agents | HarborIQ",
   description:
     "Carrier Ask answers appetite and underwriting questions from carrier documents with cited, dated sources. Profiles, reps, login vault, Carrier News, and a knowledge base that builds itself. $199/month for 1 to 15 people.",
   alternates: { canonical: "/features/carriers" },
   openGraph: {
-    title: "Carrier Intelligence for Independent Agents | HarborIQ Markets",
+    title: "Carrier Intelligence for Independent Agents | HarborIQ",
     description:
       "Ask any carrier question, get a cited answer with a date on it. Every carrier relationship in one place. $199/month for 1 to 15 people, no migration.",
     url: "/features/carriers",
@@ -18,11 +18,11 @@ export const metadata: Metadata = {
 export default function CarriersPage() {
   return (
     <FeaturePageLayout
-      eyebrow="HarborIQ Markets"
+      eyebrow="HarborIQ carrier intelligence"
       headline="Never guess appetite&nbsp;again."
-      description="Markets runs every carrier relationship in one place. Ask any appetite or underwriting question and get a cited answer, with the source and its date attached. No system of record, no migration; your whole team is live the same day."
+      description="HarborIQ keeps every carrier relationship in one place. Ask any appetite or underwriting question and get a cited answer, with the source and its date attached. No system of record, no migration; your whole team is live the same day."
       heroImage="/images/harboriq-ai-tools-features.webp"
-      heroImageAlt="HarborIQ Markets showing Carrier Ask answering an appetite question with a cited source"
+      heroImageAlt="HarborIQ showing Carrier Ask answering an appetite question with a cited source"
       benefits={[
         {
           title: "Carrier Ask: cited answers in seconds",
@@ -55,7 +55,7 @@ export default function CarriersPage() {
           step: 1,
           title: "Add your carrier appointments",
           description:
-            "Enter your appointed carriers and drop in the documents you have. Markets starts answering from them the same day.",
+            "Enter your appointed carriers and drop in the documents you have. HarborIQ starts answering from them the same day.",
         },
         {
           step: 2,
@@ -94,7 +94,7 @@ export default function CarriersPage() {
         },
         {
           feature: "Price",
-          harboriq: `$${PRICING.markets.monthly}/month flat, 1 to 15 people`,
+          harboriq: `Free to start; Intelligence $${INTELLIGENCE.monthly} per agency a month`,
           competitors: "Not sold anywhere as one layer",
         },
       ]}
@@ -105,9 +105,9 @@ export default function CarriersPage() {
             Availability
           </p>
           <p className="text-[16px] text-charcoal leading-relaxed">
-            Everything on this page is HarborIQ Markets: ${PRICING.markets.monthly}/month
-            for 1 to 15 people, one price for the whole team,
-            self-serve, no migration. It is also included in every Agency plan.
+            Underwriter contacts and portal links are in the free workspace. Carrier
+            questions with sources come with Intelligence, ${INTELLIGENCE.monthly} per agency a
+            month, one price for the whole team. Agency OS includes everything on this page.
           </p>
         </div>
       </section>
