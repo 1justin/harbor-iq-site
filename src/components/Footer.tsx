@@ -19,7 +19,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-3 text-slate text-[15px] leading-relaxed">
-              One platform. Every carrier. Zero&nbsp;busywork.
+              Carrier answers with the source attached, for independent insurance&nbsp;agencies.
             </p>
           </div>
 
@@ -27,6 +27,18 @@ export function Footer() {
           <div>
             <h4 className="text-paper text-[13px] font-medium uppercase tracking-wider mb-4">Product</h4>
             <div className="space-y-3">
+              <Link href="/free" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Free workspace
+              </Link>
+              <Link href="/pricing#intelligence" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Intelligence
+              </Link>
+              <Link href="/pricing#agency-os" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Agency OS
+              </Link>
+              <Link href="/find-an-agency" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Find an agency
+              </Link>
               <Link href="/features/pipeline" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Pipeline CRM
               </Link>
@@ -34,7 +46,7 @@ export function Footer() {
                 Renewals
               </Link>
               <Link href="/features/carriers" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Markets (Carrier Intelligence)
+                Carrier intelligence
               </Link>
               <Link href="/features/team" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Team Performance
@@ -52,6 +64,9 @@ export function Footer() {
           <div>
             <h4 className="text-paper text-[13px] font-medium uppercase tracking-wider mb-4">Resources</h4>
             <div className="space-y-3">
+              <Link href="/watch" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Product films
+              </Link>
               <Link href="/compare" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Compare
               </Link>

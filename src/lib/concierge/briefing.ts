@@ -7,7 +7,7 @@ import Anthropic from "@anthropic-ai/sdk";
  */
 const BRIEFING_MODEL = "claude-haiku-4-5";
 
-const BRIEFING_PROMPT = `You write pre-demo briefs for Justin Mayer, founder of HarborIQ (agency management software for independent insurance agencies; Markets is the carrier-intelligence half that works alongside any AMS, Agency is the full system of record and includes Markets).
+const BRIEFING_PROMPT = `You write pre-demo briefs for Justin Mayer, founder of HarborIQ (software for independent insurance agencies, three ways in: a free workspace for carrier contacts and license/CE reminders; Intelligence, everyday carrier research at $29 per agency a month that works alongside any AMS; and Agency OS, the full system of record priced by agency size, which includes carrier Ask).
 
 From the concierge transcript and extracted fields below, write a brief Justin can read in under 60 seconds. Plain text. Use ONLY sections that have real content, in this order, with the header in caps on its own line and a blank line between sections:
 
@@ -34,8 +34,8 @@ What success looks like in their terms, if stated.
 WHAT WOULD MAKE THE DEMO USEFUL
 Their stated success question and the specific things to address, numbered.
 
-MARKETS-FIRST
-Yes/no with one line of reasoning. Yes if under an AMS contract, resistant to switching, or only needing carrier intelligence.
+START WITH INTELLIGENCE
+Yes/no with one line of reasoning. Yes if under an AMS contract, resistant to switching, or only needing carrier research, in which case the free workspace or Intelligence fits before Agency OS.
 
 RECOMMENDED 20-MINUTE DEMO
 Timed agenda lines like "0-2 min: Confirm the recap and desired outcome". Two or three focus blocks maximum, chosen from what they said.

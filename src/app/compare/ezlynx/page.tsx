@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
 import { ManifestoStrip } from "@/components/ManifestoStrip";
-import { MarketsWedge } from "@/components/MarketsWedge";
+import { IntelligenceWedge } from "@/components/IntelligenceWedge";
 import { DEMO_PAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ const contrastCards = [
 ];
 
 const fullTable = [
-  ["Pricing model", "Never per person. Markets $199 flat for 1 to 15 people; Agency $199 / $399 / $599 by agency size. Published.", "Starts at $350/mo + per-user fees + add-ons"],
+  ["Pricing model", "Never per person. Free workspace $0; Intelligence $29 per agency a month; Agency OS $199 / $399 / $599 by agency size. Published.", "Starts at $350/mo + per-user fees + add-ons"],
   ["Per-user fees", "None. Flat price per agency within each size band.", "Yes. Costs scale with each user."],
   ["Pipeline CRM", "Built-in prospect tracking with stages and follow-ups.", "Not included. Requires separate CRM."],
   ["Comparative rating", "Roadmap, stated plainly. Today: appetite-first quoting and coverage-gap comparison.", "Traditional API-based comparative rater (their original product, and a good one)."],
@@ -327,7 +327,7 @@ export default function CompareEZLynxPage() {
         </div>
       </section>
 
-      <MarketsWedge competitor="EZLynx" />
+      <IntelligenceWedge competitor="EZLynx" />
 
       <ManifestoStrip />
       <CtaSection />

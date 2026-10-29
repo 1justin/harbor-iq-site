@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/CtaSection";
-import { DEMO_PAGE, IMPORT_TERMS, PRICING } from "@/lib/constants";
+import { DEMO_PAGE, IMPORT_TERMS, INTELLIGENCE, PRICING } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ Agency | Your AMS, CRM, and Carrier Tools. One Login.",
@@ -38,8 +38,8 @@ const MODULES = [
     body: "Book of business, production ranking, retention, and an executive view. Numbers you can actually run the agency from.",
   },
   {
-    title: "Everything in Markets",
-    body: "Carrier Ask with cited answers, Carrier News, the login vault, the self-building knowledge base, team chat, and license and CE tracking, included.",
+    title: "The carrier tools, included",
+    body: "Carrier Ask with cited answers, Carrier News, the login vault, the self-building knowledge base, team chat, and license and CE tracking.",
   },
 ];
 
@@ -116,16 +116,12 @@ export default function AgencyPage() {
               the migration serves.
             </p>
             <p>
-              Not ready to move the book? Start with{" "}
-              <a
-                href="/markets"
-                className="text-interactive underline underline-offset-4"
-              >
-                Markets
+              Not ready to move the book? Start with a{" "}
+              <a href="/free" className="text-interactive underline underline-offset-4">
+                free workspace
               </a>{" "}
-              at ${PRICING.markets.monthly}/mo. It runs alongside your current
-              AMS, and the upgrade to Agency is one import, whenever you say
-              so.
+              or Intelligence at ${INTELLIGENCE.monthly} per agency a month. Both run alongside your current AMS,
+              and the move to Agency OS is one import, whenever you say so.
             </p>
           </div>
         </div>

@@ -40,7 +40,10 @@ const VIEWPORTS = [
 const PAGES = [
   { path: "/", chrome: true },
   { path: "/pricing", chrome: true },
-  { path: "/markets", chrome: true },
+  { path: "/free", chrome: true },
+  { path: "/start", chrome: true },
+  { path: "/find-an-agency", chrome: true },
+  { path: "/find-an-agency/sample-chicago-agency", chrome: true },
   { path: "/agency", chrome: true },
   { path: "/about", chrome: true },
   { path: "/manifesto", chrome: true },

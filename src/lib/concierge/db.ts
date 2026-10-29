@@ -63,3 +63,31 @@ export async function captureIntent(payload: Json): Promise<{ person_id: string 
   if (error) throw new Error(`concierge_capture_intent failed: ${error.message}`);
   return data as { person_id: string };
 }
+
+export type PriorSignup = {
+  first_name: string | null;
+  email: string;
+  agency: string | null;
+  source: string | null;
+  created_at: string;
+  match: "same email" | "same email domain" | "same agency name";
+};
+
+/**
+ * Earlier signups that look like the same agency (2026-10-28), for the founder
+ * alert email only. Needs db/2026-10-28_concierge_find_prior_signups.sql; until
+ * that is applied, or if the lookup fails, it returns [] and signup carries on.
+ */
+export async function findPriorSignups(email: string, agency: string): Promise<PriorSignup[]> {
+  try {
+    const { data, error } = await salesDb().rpc("concierge_find_prior_signups", {
+      p_email: email,
+      p_agency: agency,
+    });
+    if (error) throw error;
+    return Array.isArray(data) ? (data as PriorSignup[]) : [];
+  } catch (err) {
+    console.warn("prior-signup lookup skipped:", err instanceof Error ? err.message : err);
+    return [];
+  }
+}

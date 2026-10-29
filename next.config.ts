@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Markets ($199) was retired 2026-10-28; Intelligence replaced it.
+  async redirects() {
+    return [{ source: "/markets", destination: "/pricing#intelligence", permanent: true }];
+  },
 };
 
 export default nextConfig;

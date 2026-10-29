@@ -96,7 +96,7 @@ export default function WelcomePage() {
               works.&rdquo;
             </blockquote>
             <figcaption className="mt-2 text-[13px] text-stone">
-              Andy Sertler, Principal, Sertler and Associates
+              Andy Sertler, Owner and President, Sertler &amp; Associates
             </figcaption>
           </figure>
 

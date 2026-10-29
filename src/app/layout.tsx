@@ -12,9 +12,9 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://harboriq.co"),
-  title: "HarborIQ | Agency Management System for Independent Insurance Agencies",
+  title: "HarborIQ | Carrier answers and agency management for independent insurance agencies",
   description:
-    "AI-powered agency management system (AMS) for independent insurance agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting. Flat monthly pricing, no per-user fees.",
+    "Find carriers that might write a risk, with the guidance behind every answer. Free agency workspace, Intelligence at $29 per agency per month, or the full Agency OS priced by agency size.",
   alternates: {
     canonical: "/",
   },
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "HarborIQ | Agency Management System for Independent Insurance Agencies",
+    title: "Who else might write this risk? | HarborIQ",
     description:
-      "One product, two ways in. Markets: carrier intelligence at $199/mo for 1 to 15 people. Agency: the whole operation in one login, from $199/mo. Never per person.",
+      "Carrier answers with the source attached. Free agency workspace, Intelligence at $29 per agency per month, Agency OS from $199/month. Never per person.",
     type: "website",
     locale: "en_US",
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: "/og/default.png",
         width: 1200,
         height: 630,
-        alt: "You built this agency. Your software should act like it. HarborIQ, for independent insurance agencies.",
+        alt: "Who else might write this risk? HarborIQ, for independent insurance agencies.",
       },
     ],
   },
@@ -60,7 +60,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
         <link rel="manifest" href="/manifest.json" />
@@ -76,7 +76,7 @@ export default function RootLayout({
               url: "https://harboriq.co",
               logo: "https://harboriq.co/images/harboriq-favicon-512.png",
               description:
-                "AI-powered agency management system for independent insurance agencies. Pipeline CRM, renewals, team tracking, AI-assisted quoting.",
+                "Carrier answers and agency management for independent insurance agencies: source-backed carrier appetite research, a free agency workspace, and Agency OS for the book, pipeline, and renewals.",
               sameAs: [
                 "https://www.linkedin.com/company/harboriqsoftware",
                 "https://x.com/haraboriq",

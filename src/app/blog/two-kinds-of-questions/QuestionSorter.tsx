@@ -17,7 +17,7 @@ const QUESTIONS: { q: string; kind: Kind }[] = [
 const VERDICT: Record<Kind, string> = {
   book: "About your book. The management system you run today already answers this. Counting what you own is what legacy software is good at.",
   carrier:
-    "About your carriers. The management system you run today cannot answer this. The answer sits in a PDF, a portal, an old email, or the head of whoever has been there longest. This is the kind HarborIQ Markets answers, with the page it came from.",
+    "About your carriers. The management system you run today cannot answer this. The answer sits in a PDF, a portal, an old email, or the head of whoever has been there longest. This is the kind HarborIQ Intelligence answers, with the page it came from.",
 };
 
 export default function QuestionSorter() {
@@ -62,7 +62,7 @@ export default function QuestionSorter() {
               <p className="mt-1 text-charcoal">{carrierCount} left to portals, PDFs, and memory</p>
             </div>
             <div className="rounded-lg border border-interactive bg-paper p-4">
-              <p className="text-interactive uppercase tracking-wider text-[11px] font-medium">HarborIQ Markets</p>
+              <p className="text-interactive uppercase tracking-wider text-[11px] font-medium">HarborIQ Intelligence</p>
               <p className="mt-1 text-ink font-medium">Answers the other {carrierCount}</p>
               <p className="mt-1 text-charcoal">From your carriers&rsquo; own guides, with the page it came from</p>
             </div>
