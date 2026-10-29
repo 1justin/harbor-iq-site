@@ -151,7 +151,7 @@ export function DemoBooking() {
       <button
         type="submit"
         disabled={submitting}
-        className="cta-primary mt-6 w-full bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors disabled:opacity-70"
+        className="cta-primary mt-6 w-full bg-copper text-midnight btn-radius px-6 py-3 text-[15px] font-medium hover:bg-copper-light transition-colors disabled:opacity-70"
       >
         {submitting ? "One moment" : "Choose a time"}
       </button>

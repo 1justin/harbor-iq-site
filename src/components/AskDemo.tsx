@@ -214,7 +214,7 @@ export function AskDemo() {
             </p>
             <a
               href={START_FREE_URL}
-              className="cta-primary btn-radius mt-4 inline-block bg-copper px-6 py-3 text-[15px] font-medium text-white hover:bg-bronze"
+              className="cta-primary btn-radius mt-4 inline-block bg-copper px-6 py-3 text-[15px] font-medium text-midnight hover:bg-copper-light"
             >
               Try a carrier question free
             </a>

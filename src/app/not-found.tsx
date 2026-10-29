@@ -35,7 +35,7 @@ export default function NotFound() {
       <div className="flex flex-col sm:flex-row gap-4">
         <Link
           href="/"
-          className="cta-primary bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors"
+          className="cta-primary bg-copper text-midnight btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-copper-light transition-colors"
         >
           Back to homepage
         </Link>

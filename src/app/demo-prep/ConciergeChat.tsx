@@ -365,7 +365,7 @@ export function ConciergeChat(props: Props) {
               <button
                 type="submit"
                 disabled={busy || !sessionId || !input.trim()}
-                className="w-9 h-9 rounded-md bg-copper hover:bg-bronze text-white flex items-center justify-center transition-colors disabled:opacity-40"
+                className="w-9 h-9 rounded-md bg-copper hover:bg-copper-light text-midnight flex items-center justify-center transition-colors disabled:opacity-40"
                 aria-label="Send"
               >
                 &#8593;
