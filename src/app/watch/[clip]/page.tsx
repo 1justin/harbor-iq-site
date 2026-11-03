@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { findClip, CLIPS, FULL_TOUR } from "@/lib/watch/clips";
+import { findClip, CLIPS, FULL_TOUR, CARRIER_CLIP } from "@/lib/watch/clips";
 import { resolveToken } from "@/lib/watch/db";
 import { WatchView } from "../WatchView";
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const SOURCE = /^[a-z0-9-]{1,40}$/;
 
 export function generateStaticParams() {
-  return [...CLIPS, FULL_TOUR].map((c) => ({ clip: c.slug }));
+  return [...CLIPS, FULL_TOUR, CARRIER_CLIP].map((c) => ({ clip: c.slug }));
 }
 
 /**
@@ -31,8 +31,8 @@ export default async function WatchClipPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { clip: slug } = await params;
-  const clip = findClip(slug);
-  if (!clip) notFound();
+  const requested = findClip(slug);
+  if (!requested) notFound();
 
   const query = await searchParams;
   const token = typeof query.v === "string" ? query.v : undefined;
@@ -40,6 +40,9 @@ export default async function WatchClipPage({
   const campaignParam = typeof query.c === "string" ? query.c.slice(0, 80) : undefined;
 
   const greeting = await resolveToken(token);
+  // Carrier campaign links were minted on /watch/ask before the carrier film
+  // existed; a carrier token opens the carrier film whichever slug it carries.
+  const clip = greeting?.campaign?.startsWith("carriers") && requested.slug === "ask" ? CARRIER_CLIP : requested;
   const source =
     greeting?.source ?? (rawSource && SOURCE.test(rawSource) ? rawSource : token ? "email" : "direct");
   const campaign = greeting?.campaign ?? campaignParam;

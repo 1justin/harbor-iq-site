@@ -8,6 +8,9 @@ export const TIDYCAL_PATH = "cjmayer/harboriq-demo";
  * before picking a time is still a lead. Booking still happens on TidyCal.
  */
 export const DEMO_PAGE = "/demo";
+// Carrier track (2026-11-03): where the carrier watch page sends a rep to book.
+// The 15-minute carrier TidyCal type (created 2026-11-03).
+export const CARRIER_BOOKING_URL = "https://tidycal.com/cjmayer/harboriq-intro-for-carriers";
 
 export const SITE_URL = "https://harboriq.co";
 

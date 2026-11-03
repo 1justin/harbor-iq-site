@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
+  CARRIER_CLIP,
+  CARRIER_THEME,
   CLIPS,
   FULL_TOUR,
   THEMES,
@@ -14,7 +16,7 @@ import {
   type Clip,
 } from "@/lib/watch/clips";
 import type { WatchEventName } from "@/lib/watch/db";
-import { DEMO_PAGE } from "@/lib/constants";
+import { CARRIER_BOOKING_URL, DEMO_PAGE } from "@/lib/constants";
 
 type Props = {
   initialSlug: string;
@@ -157,12 +159,25 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
     markWatched(current.slug);
   };
 
-  const watchedCount = useMemo(() => CLIPS.filter((c) => watched.has(c.slug)).length, [watched]);
-  const themeLabel = THEMES.find((t) => t.id === current.theme)?.label ?? "";
-  const greeting = firstName
-    ? `${firstName}, these are the clips I mentioned. Short ones, no sign-up.`
-    : "Short walkthroughs, organized by what you are trying to do. No sign-up.";
-  const demoHref = `${DEMO_PAGE}?src=watch${token ? `&ref=${token}` : ""}`;
+  // A viewer who arrived on the carrier film sees it pinned above the agency clips.
+  const carrier = current.theme === "carriers" || watched.has(CARRIER_CLIP.slug);
+  const themes = carrier ? [CARRIER_THEME, ...THEMES] : THEMES;
+  const clips = useMemo(() => (carrier ? [CARRIER_CLIP, ...CLIPS] : CLIPS), [carrier]);
+  const watchedCount = useMemo(() => clips.filter((c) => watched.has(c.slug)).length, [clips, watched]);
+  const themeLabel = themes.find((t) => t.id === current.theme)?.label ?? "";
+  const greeting = carrier
+    ? firstName
+      ? `${firstName}, this is the quick look I mentioned. About a minute, no sign-up.`
+      : "A quick look at HarborIQ for carrier teams. About a minute, no sign-up."
+    : firstName
+      ? `${firstName}, these are the clips I mentioned. Short ones, no sign-up.`
+      : "Short walkthroughs, organized by what you are trying to do. No sign-up.";
+  const demoHref = carrier
+    ? `${CARRIER_BOOKING_URL}${CARRIER_BOOKING_URL.includes("?") ? "&" : "?"}src=carrier${token ? `&ref=${token}` : ""}`
+    : `${DEMO_PAGE}?src=watch${token ? `&ref=${token}` : ""}`;
+  const askLine = carrier ? "Bring a couple of your documents. We will run it on your own products." : "Seen something you want to talk through? Bring your scenarios.";
+  const ctaLabel = carrier ? "Book 15 minutes" : "Talk to a real person";
+  const ctaNote = carrier ? "A short call, your guide on screen" : "20 minutes with someone on the team";
 
   return (
     <div className="min-h-screen bg-paper text-ink">
@@ -208,19 +223,17 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
             <p className="mt-2 text-[16px] text-charcoal leading-relaxed max-w-2xl">{current.blurb}</p>
 
             <div className="mt-6 rounded-xl border border-ash bg-linen p-5">
-              <p className="text-[15px] text-ink mb-3">
-                Seen something you want to talk through? Bring your scenarios.
-              </p>
+              <p className="text-[15px] text-ink mb-3">{askLine}</p>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <Link
                   href={demoHref}
                   onClick={() => send("cta_click", current.slug)}
                   className="cta-primary inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-[15px] font-medium text-midnight hover:bg-copper-light transition-colors"
                 >
-                  Talk to a real person
+                  {ctaLabel}
                   <span aria-hidden="true">&rarr;</span>
                 </Link>
-                <span className="text-sm text-stone">20 minutes with someone on the team</span>
+                <span className="text-sm text-stone">{ctaNote}</span>
               </div>
             </div>
           </section>
@@ -229,15 +242,15 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
             <div className="flex items-baseline justify-between mb-2">
               <p className="text-sm text-stone">Browse by what you are trying to do</p>
               <p className="text-xs text-interactive tabular-nums">
-                {watchedCount} of {CLIPS.length} watched
+                {watchedCount} of {clips.length} watched
               </p>
             </div>
 
-            {THEMES.map((theme) => (
+            {themes.map((theme) => (
               <div key={theme.id} className="mt-4 first:mt-0">
                 <p className="text-xs font-medium text-anchor mb-1.5">{theme.label}</p>
                 <ul className="space-y-1">
-                  {CLIPS.filter((c) => c.theme === theme.id).map((clip) => {
+                  {clips.filter((c) => c.theme === theme.id).map((clip) => {
                     const active = clip.slug === current.slug;
                     const done = watched.has(clip.slug);
                     return (
