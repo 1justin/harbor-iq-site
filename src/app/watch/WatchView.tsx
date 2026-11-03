@@ -176,8 +176,6 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
     ? `${CARRIER_BOOKING_URL}${CARRIER_BOOKING_URL.includes("?") ? "&" : "?"}src=carrier${token ? `&ref=${token}` : ""}`
     : `${DEMO_PAGE}?src=watch${token ? `&ref=${token}` : ""}`;
   const askLine = carrier ? "Bring a couple of your documents. We will run it on your own products." : "Seen something you want to talk through? Bring your scenarios.";
-  // The carrier film is titled for the company watching it when the token carries one.
-  const title = carrier && company ? `HarborIQ intro for ${company}` : current.title;
   const ctaLabel = carrier ? "Book 15 minutes" : "Talk to a real person";
   const ctaNote = carrier ? "A short call, your guide on screen" : "20 minutes with someone on the team";
 
@@ -221,7 +219,7 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
             <p className="mt-4 text-xs font-medium tracking-wider uppercase text-interactive">
               {themeLabel} &middot; {formatDuration(current.seconds)}
             </p>
-            <h1 className="mt-1 text-2xl md:text-3xl font-medium tracking-tight">{title}</h1>
+            <h1 className="mt-1 text-2xl md:text-3xl font-medium tracking-tight">{current.title}</h1>
             <p className="mt-2 text-[16px] text-charcoal leading-relaxed max-w-2xl">{current.blurb}</p>
 
             <div className="mt-6 rounded-xl border border-ash bg-linen p-5">
