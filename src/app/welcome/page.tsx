@@ -59,7 +59,7 @@ export default function WelcomePage() {
           <div className="mt-8">
             <a
               href={CARRIER_LIST_MAILTO}
-              className="cta-primary inline-block bg-copper text-white btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-bronze transition-colors"
+              className="cta-primary inline-block bg-copper text-midnight btn-radius px-7 py-3.5 text-[16px] font-medium hover:bg-copper-light transition-colors"
             >
               Send us your carrier list
             </a>

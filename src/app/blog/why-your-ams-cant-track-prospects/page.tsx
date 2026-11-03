@@ -135,7 +135,7 @@ export default function PostPage() {
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
               <a
                 href={DEMO_PAGE}
-                className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors text-center"
+                className="cta-primary bg-copper text-midnight btn-radius px-6 py-3 text-[15px] font-medium hover:bg-copper-light transition-colors text-center"
               >
                 Book a 20 minute demo
               </a>

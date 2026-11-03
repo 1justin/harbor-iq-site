@@ -185,7 +185,7 @@ export default function CompareAgencyZoomPage() {
 
                 {/* Central HarborIQ pill — larger, more presence */}
                 <div className="flex justify-center mb-7">
-                  <div className="bg-copper text-white rounded-full px-7 py-3 text-[17px] font-semibold tracking-tight shadow-[0_0_35px_rgba(196,147,90,0.55)]">
+                  <div className="bg-copper text-midnight rounded-full px-7 py-3 text-[17px] font-semibold tracking-tight shadow-[0_0_35px_rgba(196,147,90,0.55)]">
                     HarborIQ
                   </div>
                 </div>

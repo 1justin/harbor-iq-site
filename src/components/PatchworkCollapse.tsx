@@ -192,7 +192,7 @@ export function PatchworkCollapse() {
           <path d="M5 12h14" />
           <path d="M12 5l7 7-7 7" />
         </svg>
-        <span className="pc-harbor-pill inline-flex items-center rounded-full bg-copper px-6 py-2.5 text-[15px] font-semibold tracking-tight text-white md:text-[16px]">
+        <span className="pc-harbor-pill inline-flex items-center rounded-full bg-copper px-6 py-2.5 text-[15px] font-semibold tracking-tight text-midnight md:text-[16px]">
           HarborIQ
         </span>
       </div>

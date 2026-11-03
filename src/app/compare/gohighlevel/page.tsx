@@ -189,7 +189,7 @@ export default function CompareGoHighLevelPage() {
           <div className="mt-10 text-center">
             <a
               href={START_FREE_URL}
-              className="cta-primary inline-block bg-copper text-white btn-radius px-7 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
+              className="cta-primary inline-block bg-copper text-midnight btn-radius px-7 py-3 text-[15px] font-medium hover:bg-copper-light transition-colors"
             >
               Start free
             </a>

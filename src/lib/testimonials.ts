@@ -43,11 +43,11 @@ export const testimonials: Testimonial[] = [
     headshot: "/testimonials/alex-ricketts.jpg",
     logo: "/testimonials/sertler-associates-logo-AnuAVpdRp4WqNxvY.avif",
     quote:
-      "I have been doing this for years and nothing has come close to how HarborIQ thinks about my day. The screens are clean, the summary catches what I would miss, and the carrier work that used to eat my afternoons is finally somebody else's problem.",
+      "Finding the right carrier is now as easy as a Google search. Our team spends its time binding policies, not clicking through portals.",
     callouts: ["Hours back every afternoon", "1 login, not 6"],
     composite: true,
     compositeNote:
-      "Faithful composite of recorded reactions across multiple demo sessions, approved by Alex. Source notes archived with the founder.",
+      "Rewritten 2026-10-29 for the Intelligence positioning under Alex's blanket approval to quote her (Justin). Earlier composite of recorded demo reactions, in git history: \"...the carrier work that used to eat my afternoons is finally somebody else's problem.\"",
   },
   {
     slug: "andy-sertler",

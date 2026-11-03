@@ -215,7 +215,7 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
                 <Link
                   href={demoHref}
                   onClick={() => send("cta_click", current.slug)}
-                  className="cta-primary inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-[15px] font-medium text-white hover:bg-bronze transition-colors"
+                  className="cta-primary inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-[15px] font-medium text-midnight hover:bg-copper-light transition-colors"
                 >
                   Talk to a real person
                   <span aria-hidden="true">&rarr;</span>

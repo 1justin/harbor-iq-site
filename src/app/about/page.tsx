@@ -225,7 +225,7 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={DEMO_PAGE}
-              className="cta-primary bg-copper text-white btn-radius px-6 py-3 text-[15px] font-medium hover:bg-bronze transition-colors"
+              className="cta-primary bg-copper text-midnight btn-radius px-6 py-3 text-[15px] font-medium hover:bg-copper-light transition-colors"
             >
               Book a 20 minute demo
             </a>

@@ -18,9 +18,11 @@
   --color-linen: #F5F3EF;
   --color-pure: #FFFFFF;
 
-  /* Warm Accent (v2.0: copper reserved for primary CTA only) */
+  /* Warm Accent (v2.0: copper reserved for primary CTA only; CTA label is midnight, not white, for 5.7:1 contrast) */
   --color-copper: #C4935A;
   --color-bronze: #9A6E3A;
+  /* Primary CTA hover (2026-10-29): lighter copper keeps the navy label at 7:1. */
+  --color-copper-light: #D4A672;
 
   /* Neutrals */
   --color-ink: #1A1A18;
@@ -149,8 +151,8 @@ p {
     white-space: nowrap;
     transition: background-color 0.15s, border-color 0.15s;
   }
-  .iq-btn-copper { background: var(--color-copper); color: #fff; }
-  .iq-btn-copper:hover { background: var(--color-bronze); }
+  .iq-btn-copper { background: var(--color-copper); color: var(--color-midnight); }
+  .iq-btn-copper:hover { background: var(--color-copper-light); }
   .iq-btn-navy { background: var(--color-interactive); color: #fff; }
   .iq-btn-navy:hover { background: var(--color-deep); }
   .iq-btn-outline { background: transparent; color: var(--color-paper); border-color: rgb(197 212 232 / 0.4); }

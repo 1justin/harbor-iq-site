@@ -33,7 +33,7 @@ export function IntelligenceWedge({ competitor }: { competitor: string }) {
         </div>
         <Link
           href={START_FREE_URL}
-          className="cta-primary btn-radius mt-8 inline-block bg-copper px-7 py-3 text-[15px] font-medium text-white transition-colors hover:bg-bronze"
+          className="cta-primary btn-radius mt-8 inline-block bg-copper px-7 py-3 text-[15px] font-medium text-midnight transition-colors hover:bg-copper-light"
         >
           Start free
         </Link>

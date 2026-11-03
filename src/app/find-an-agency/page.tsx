@@ -89,7 +89,7 @@ export default function MarketplacePage() {
 
       <section className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-10 md:flex-row md:items-center md:justify-between">
         <p className="text-[17px] font-medium text-ink">Looking for carrier answers for your agency?</p>
-        <TextCta href="/pricing#intelligence">Explore HarborIQ Intelligence <Arrow /></TextCta>
+        <TextCta href="/intelligence">Explore HarborIQ Intelligence <Arrow /></TextCta>
       </section>
     </>
   );

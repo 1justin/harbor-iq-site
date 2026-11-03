@@ -82,7 +82,7 @@ export default function FreeWorkspacePage() {
             </p>
             <a
               href="#choose-first-step"
-              className="cta-primary btn-radius mt-8 inline-block bg-copper px-7 py-3.5 text-[16px] font-medium text-white hover:bg-bronze"
+              className="cta-primary btn-radius mt-8 inline-block bg-copper px-7 py-3.5 text-[16px] font-medium text-midnight hover:bg-copper-light"
             >
               Set up your free workspace
             </a>
@@ -119,7 +119,7 @@ export default function FreeWorkspacePage() {
       {/* ─── Included ─── */}
       <section className="bg-linen py-14 md:py-20" aria-labelledby="included-heading">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHead id="included-heading" eyebrow="Included free" heading="Useful even if you never upgrade." />
+          <SectionHead id="included-heading" eyebrow="Included free" heading="Useful on day one. Smarter with every file you add." />
           <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
             {included.map((x) => (
               <div key={x.t} className="iq-card p-7">
@@ -138,20 +138,37 @@ export default function FreeWorkspacePage() {
         </div>
       </section>
 
-      {/* ─── Setup film ─── */}
+      {/* ─── Carrier directory film ─── */}
       <section className="bg-paper py-14 md:py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[0.85fr_1.15fr] md:gap-14">
-          <div>
-            <p className="iq-eyebrow mb-4">When you want more in one place</p>
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[1.15fr_0.85fr] md:gap-14">
+          <div className="md:order-2">
+            <p className="iq-eyebrow mb-4">Carrier directory</p>
             <h2 className="text-2xl font-medium leading-tight tracking-tight text-ink md:text-3xl">
-              Bring in more when it helps.
+              Every carrier and every contact, in one place.
             </h2>
             <p className="mt-4 text-[16px] leading-relaxed text-charcoal">
-              Start with one carrier or one date. If you later move your book into Agency OS, the import is done with
-              you, not handed to you.
+              Each carrier gets a card with its product lines, states, and your rep. Open it and the contacts are sorted
+              by department, so anyone on the team knows who handles underwriting and who handles claims.
             </p>
           </div>
-          <Film slug="getting-your-data-in" label="Getting your data in" caption="How the Agency OS import works, with demo data." />
+          <Film slug="carrier-directory" label="Carrier directory" caption="Carrier cards and contacts by department, with demo data." />
+        </div>
+      </section>
+
+      {/* ─── Get it in once film ─── */}
+      <section className="bg-linen py-14 md:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[0.85fr_1.15fr] md:gap-14">
+          <div>
+            <p className="iq-eyebrow mb-4">Put it in once</p>
+            <h2 className="text-2xl font-medium leading-tight tracking-tight text-ink md:text-3xl">
+              Add it once. Your whole team uses it every day.
+            </h2>
+            <p className="mt-4 text-[16px] leading-relaxed text-charcoal">
+              Drag in your carrier contacts, portal links, and license dates. After that, reminders go out on their own
+              and everyone can find what they need without asking around.
+            </p>
+          </div>
+          <Film slug="licensing" label="License and CE tracking" caption="Licenses and CE dates for the whole team, with demo data." />
         </div>
       </section>
 
@@ -167,7 +184,7 @@ export default function FreeWorkspacePage() {
               Compare requirements against a risk, ask deeper follow-up questions across the information you authorize,
               and keep researching all month.
             </p>
-            <TextCta href="/pricing#intelligence" light className="mt-6">See Intelligence pricing <Arrow /></TextCta>
+            <TextCta href="/intelligence#pricing" light className="mt-6">See Intelligence pricing <Arrow /></TextCta>
           </div>
           <div className="rounded-xl border border-interactive/50 bg-anchor/60 p-7">
             <p className="text-[40px] font-medium leading-none tracking-tight text-paper">

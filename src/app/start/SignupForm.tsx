@@ -136,7 +136,7 @@ export function SignupForm() {
       <button
         type="submit"
         disabled={state === "sending"}
-        className="cta-primary btn-radius mt-6 w-full bg-copper px-6 py-3.5 text-[16px] font-medium text-white transition-colors hover:bg-bronze disabled:opacity-70"
+        className="cta-primary btn-radius mt-6 w-full bg-copper px-6 py-3.5 text-[16px] font-medium text-midnight transition-colors hover:bg-copper-light disabled:opacity-70"
       >
         {state === "sending" ? "One moment" : intelligence ? "Start Intelligence" : "Create my free workspace"}
       </button>

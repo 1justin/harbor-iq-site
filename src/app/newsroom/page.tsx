@@ -171,7 +171,7 @@ export default function NewsroomPage() {
             </div>
             <a
               href="mailto:justin@wrkstream.com?subject=Press%20inquiry"
-              className="bg-copper hover:bg-bronze text-white btn-radius px-6 py-3 text-[15px] font-medium transition-colors text-center whitespace-nowrap"
+              className="bg-copper hover:bg-copper-light text-midnight btn-radius px-6 py-3 text-[15px] font-medium transition-colors text-center whitespace-nowrap"
             >
               Email Justin
             </a>
@@ -477,7 +477,7 @@ export default function NewsroomPage() {
           </p>
           <a
             href="mailto:justin@wrkstream.com?subject=Press%20inquiry"
-            className="inline-block mt-8 bg-copper hover:bg-bronze text-white btn-radius px-8 py-3 text-[15px] font-medium transition-colors"
+            className="inline-block mt-8 bg-copper hover:bg-copper-light text-midnight btn-radius px-8 py-3 text-[15px] font-medium transition-colors"
           >
             Email Justin
           </a>
