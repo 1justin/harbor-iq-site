@@ -62,7 +62,7 @@ export const CARRIER_CLIP: Clip = {
   theme: "carriers",
   title: "HarborIQ from your side of the desk",
   blurb: "Your guide gets a home agencies actually use, the answer comes from your current guide with the source, page and date, and the system around it is free to the agency once onboarded.",
-  seconds: 79,
+  seconds: 82,
   file: "harboriq_carrier_c01_your-side-of-the-desk_v01_16x9",
 };
 
