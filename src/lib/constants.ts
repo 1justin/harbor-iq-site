@@ -9,8 +9,8 @@ export const TIDYCAL_PATH = "cjmayer/harboriq-demo";
  */
 export const DEMO_PAGE = "/demo";
 // Carrier track (2026-11-03): where the carrier watch page sends a rep to book.
-// Swap for the 15-minute carrier TidyCal link once Justin creates it.
-export const CARRIER_BOOKING_URL = DEMO_PAGE;
+// The 15-minute carrier TidyCal type (created 2026-11-03).
+export const CARRIER_BOOKING_URL = "https://tidycal.com/cjmayer/harboriq-intro-for-carriers";
 
 export const SITE_URL = "https://harboriq.co";
 
