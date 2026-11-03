@@ -6,7 +6,7 @@
  * inside a theme is the order on the page.
  */
 
-export type ThemeId = "overview" | "book" | "grow" | "team";
+export type ThemeId = "overview" | "book" | "grow" | "team" | "carriers";
 
 export type Clip = {
   slug: string;
@@ -51,11 +51,27 @@ export const FULL_TOUR: Clip = {
   file: "harboriq_tour_l1_the-full-tour_v01_16x9",
 };
 
+/**
+ * The carrier track (2026-11-03). Carrier territory leaders get their own film
+ * and their own ask. It is not in CLIPS, so agencies never see it in the list;
+ * a viewer who lands on it sees it pinned above the agency clips.
+ */
+export const CARRIER_THEME: { id: ThemeId; label: string } = { id: "carriers", label: "For carriers" };
+export const CARRIER_CLIP: Clip = {
+  slug: "for-carriers",
+  theme: "carriers",
+  title: "HarborIQ from your side of the desk",
+  blurb: "Your guides get a home agencies actually use, the answer comes from your current guide with the source and date, and the system around it is free to the agency once onboarded.",
+  seconds: 72,
+  file: "harboriq_carrier_c01_your-side-of-the-desk_v01_16x9",
+};
+
 export const DEFAULT_CLIP = "meet-harboriq";
 
 export function findClip(slug: string | undefined): Clip | null {
   if (!slug) return null;
   if (slug === FULL_TOUR.slug) return FULL_TOUR;
+  if (slug === CARRIER_CLIP.slug) return CARRIER_CLIP;
   return CLIPS.find((c) => c.slug === slug) ?? null;
 }
 
