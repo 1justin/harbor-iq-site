@@ -79,7 +79,7 @@ export const START_FREE_URL = SIGNUP_PAGE;
 export const START_INTELLIGENCE_URL = `${SIGNUP_PAGE}?plan=intelligence`;
 export const AGENCY_OS_DEMO_URL = `${DEMO_PAGE}?src=agency-os`;
 /** Self-serve free signup in the app. No personal data in the URL; src is attribution only. */
-export const APP_FREE_SIGNUP_URL = "https://harboriq.vercel.app/signup?plan=free&src=start";
+export const APP_FREE_SIGNUP_URL = "https://app.harboriq.co/signup?plan=free&src=start";
 export const LIST_AGENCY_URL = `${SIGNUP_PAGE}?goal=profile`;
 
 /** Book import: the upgrade moment, not an onboarding SKU. */
