@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState, type FormEvent } from "react";
-import { AGENCY_OS_DEMO_URL, INTELLIGENCE } from "@/lib/constants";
+import { AGENCY_OS_DEMO_URL, APP_FREE_SIGNUP_URL, INTELLIGENCE } from "@/lib/constants";
 
 const GOAL_LABELS: Record<string, string> = {
   markets: "Find a potential market",
@@ -61,15 +61,26 @@ export function SignupForm() {
           </svg>
         </div>
         <h2 className="text-[24px] font-medium tracking-tight text-ink">
-          You&rsquo;re signed up, {firstName.trim() || "thanks"}.
+          {intelligence ? `You\u2019re signed up, ${firstName.trim() || "thanks"}.` : `Your workspace is ready, ${firstName.trim() || "thanks"}.`}
         </h2>
-        <p className="mt-3 text-[16px] leading-relaxed text-charcoal">
-          We&rsquo;ll email <span className="font-medium text-ink">{email.trim()}</span> to set up your{" "}
-          {intelligence ? "Intelligence workspace" : "free workspace"}.{" "}
-          {intelligence
-            ? "Nothing is charged until you confirm the plan."
-            : "No card, no subscription."}
-        </p>
+        {intelligence ? (
+          <p className="mt-3 text-[16px] leading-relaxed text-charcoal">
+            We&rsquo;ll email <span className="font-medium text-ink">{email.trim()}</span> to set up your Intelligence
+            workspace. Nothing is charged until you confirm the plan.
+          </p>
+        ) : (
+          <>
+            <p className="mt-3 text-[16px] leading-relaxed text-charcoal">
+              Create your login to open it. It takes about a minute. No card, no subscription.
+            </p>
+            <a
+              href={APP_FREE_SIGNUP_URL}
+              className="cta-primary btn-radius mt-5 inline-block bg-copper px-6 py-3.5 text-[16px] font-medium text-midnight transition-colors hover:bg-copper-light"
+            >
+              Create my login
+            </a>
+          </>
+        )}
         <p className="mt-6 border-t border-ash pt-5 text-[15px] text-charcoal">
           Want to see the whole platform first?{" "}
           <Link href={AGENCY_OS_DEMO_URL} className="cta-secondary text-interactive underline underline-offset-4 hover:text-deep">

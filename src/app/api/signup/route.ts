@@ -83,7 +83,9 @@ export async function POST(req: NextRequest) {
             ``,
           ]
         : []),
-      `They were told we will email them to set it up. Reply to get them started.`,
+      plan === "intelligence"
+        ? `They were told we will email them to set it up. Reply to get them started.`
+        : `They were sent to the self-serve signup (/signup?plan=free). Check the HarborIQ users table for ${email} to see if they finished; if not, a short nudge works.`,
     ].join("\n"),
   }).catch((err: unknown) => console.error("signup email failed:", err));
 
