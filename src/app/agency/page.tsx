@@ -11,12 +11,12 @@ import { AGENCY_OS_DEMO_URL, IMPORT_TERMS, INTELLIGENCE, PRICING } from "@/lib/c
  */
 
 export const metadata: Metadata = {
-  title: "HarborIQ Agency OS | Your AMS, CRM, and Carrier Tools. One Login.",
-  description: `The full agency operating system: clients, policies, pipeline, renewals, quoting, team performance, commissions, and Carrier Ask, in one login. $${PRICING.agency.solo.monthly}/mo solo, $${PRICING.agency.team.monthly} for 2 to 5 people, $${PRICING.agency.os.monthly} for 6 to 15. Identical features at every price.`,
+  title: "HarborIQ Agency OS | The whole agency on one record",
+  description: `Clients, policies, pipeline, renewals, quoting, team performance, commissions and carrier answers in one login, beside the AMS you keep for downloads and accounting. $${PRICING.agency.solo.monthly}/mo solo, $${PRICING.agency.team.monthly} for 2 to 5 people, $${PRICING.agency.os.monthly} for 6 to 15. Identical features at every price.`,
   alternates: { canonical: "/agency" },
   openGraph: {
-    title: "HarborIQ Agency OS | Your AMS, CRM, and Carrier Tools. One Login.",
-    description: "One login replaces the stack. Priced by agency size, never per person. Free book import with annual prepay.",
+    title: "HarborIQ Agency OS | The whole agency on one record",
+    description: "The whole agency on one record, beside the AMS you keep. Priced by agency size, never per person. Free book import with annual prepay.",
     url: "/agency",
     images: [{ url: "/og/agency.png", width: 1200, height: 630 }],
   },
@@ -121,10 +121,10 @@ export default function AgencyPage() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="mb-4 text-[13px] font-medium uppercase tracking-wider text-ice">HarborIQ Agency OS</p>
           <h1 className="text-3xl font-medium leading-tight tracking-tight text-paper md:text-5xl">
-            Your AMS, your CRM, and your carrier tools. One&nbsp;login.
+            The whole agency on one record.
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-mist md:text-[19px]">
-            Run the whole agency here, and see what to work on today, this week, and this quarter. $
+            Clients, policies, pipeline, renewals and the carrier answers in one login, and what to work on today, this week and this quarter. Your AMS keeps the carrier downloads and the accounting; HarborIQ is the working copy your team opens all day. $
             {PRICING.agency.solo.monthly}/mo solo, ${PRICING.agency.team.monthly}/mo for 2 to 5 people, $
             {PRICING.agency.os.monthly}/mo for 6 to 15. Same product at every price.
           </p>
@@ -231,8 +231,8 @@ export default function AgencyPage() {
               <Link href="/intelligence" className="text-interactive underline underline-offset-4">
                 Intelligence
               </Link>{" "}
-              at ${INTELLIGENCE.monthly} per agency a month. Both run alongside your current AMS, and the move to Agency
-              OS is one import, whenever you say so.
+              at ${INTELLIGENCE.monthly} per agency a month. All three run alongside your current AMS, and adding the rest of
+              Agency OS is one import, whenever you say so.
             </p>
           </div>
         </div>

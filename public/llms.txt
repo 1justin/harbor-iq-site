@@ -1,23 +1,28 @@
 # HarborIQ
 
-> HarborIQ helps independent insurance agencies find carriers that might write a risk, with the carrier's own guideline attached to every answer. Three ways in: a **free agency workspace** ($0 per agency); **Intelligence**, everyday carrier research at $29 per agency per month or $290 per year; and **Agency OS**, the full agency system of record priced by agency size from $199 per month. Never priced per person. Canonical domain: https://harboriq.co
+> HarborIQ answers an independent insurance agency's carrier questions from the agency's own carrier guides, with the page cited, and keeps the book, renewals, tasks and inbox in one client record beside the AMS the agency already has. Two ways to start: a **free agency workspace** ($0 per agency) and **Intelligence** at $29 per agency per month, or $290 per year, for agencies up to 30 people. Never priced per person. Canonical domain: https://harboriq.co
 
-Key facts (as of October 2026):
-- Free agency workspace, $0 per agency: private underwriter contacts and portal links, license and CE reminders for the dates the agency enters, limited carrier discovery with sources, a small private guide upload, optional team invitations, and an optional agency profile published only with the agency's approval.
-- Intelligence, $29 per agency per month or $290 per year billed upfront: 300 carrier checks each month shared across the whole agency, the agency's own carrier guidance searchable, answers with sources and dates the user can inspect, carrier appetite comparison, and basic book insights from exports the agency provides. One carrier check is one carrier question and its source-backed answer. Optional $10 packs add 100 checks, only when the agency chooses; there are no automatic top-ups. Works alongside any AMS and replaces nothing.
-- Agency OS, priced by agency size with identical features at every price: $199/month solo, $399 for 2 to 5 people, $599 for 6 to 15, $899 for 16 to 25, $1,199 for 26 to 35, $1,499 for 36 to 50. Above 50, custom. Client records, policies, documents, pipeline, renewals, commissions, reports, team roles, and carrier Ask. Annual is 11 months' price with the book import included; on monthly, the import is a one-time fee equal to one month. Intelligence allowances and packs do not apply to Agency OS.
-- Month to month, cancel anytime, data always exportable. No per-person fees.
-- Agency OS replaces the common agency stack of an AMS (EZLynx, HawkSoft, Applied Epic, NowCerts) plus a CRM overlay (AgencyZoom or GoHighLevel). The free workspace and Intelligence run alongside whatever the agency uses today.
+Key facts (as of November 2026):
+- Intelligence, $29 per agency per month or $290 per year billed upfront, covers every person at the agency up to 30 people; larger agencies ask for a quote. 300 carrier checks each month shared across the agency; one carrier check is one carrier question and its source-backed answer. Optional $10 packs add 100 checks, only when the agency chooses. No automatic top-ups.
+- Intelligence includes the agency record: clients, policies, renewals built from expiration dates with an owner and days out, tasks and notes on the client record, and Gmail connected to it. Outlook is coming soon.
+- Free agency workspace, $0 per agency: the same record, private underwriter contacts and portal links, license and CE reminders, and a limited number of carrier checks with sources.
+- HarborIQ works beside the AMS, not instead of it. Agencies export the book from Applied Epic, EZLynx, HawkSoft, NowCerts or AMS360 as CSV or XLSX; HarborIQ maps the columns and keeps a working copy. There is no live AMS sync today. The AMS keeps carrier downloads and accounting.
+- HarborIQ replaces the generic CRM (GoHighLevel, AgencyZoom), the renewal spreadsheet, sticky notes and memory. It does not replace the AMS or the carriers.
+- Carrier knowledge comes from the guides the agency loads: any carrier, any state, any line of business. Answers are only ever drawn from those documents, with the page cited. Agency data is never used to train AI models.
+- Agency OS, the whole agency on one record (book, pipeline, renewals, commissions, reports, team), is sold by walkthrough only and priced by agency size, never per person. Ask on a demo.
+- Month to month, cancel anytime, full export any time. Built by an agency operator.
 
 ## Pages
 
-- [Home](https://harboriq.co/): what HarborIQ does, how carrier questions work, the free workspace, and plans
-- [Pricing](https://harboriq.co/pricing): full published pricing for the free workspace, Intelligence, and Agency OS
-- [Start free](https://harboriq.co/start): sign up for the free workspace or Intelligence
-- [Intelligence](https://harboriq.co/intelligence): carrier questions answered from carrier documents, with sources; $29 per agency per month
-- [Agency OS](https://harboriq.co/agency): the full agency system of record, including pipeline CRM, renewals, appetite-first quoting with coverage-gap comparison (automated rating is roadmap), and team performance
-- [Compare](https://harboriq.co/compare): vs Applied Epic, EZLynx, HawkSoft, AgencyZoom, NowCerts (Momentum), GoHighLevel
-- [Book a demo](https://harboriq.co/demo): a 20-minute Agency OS walkthrough
+- [Home](https://harboriq.co/): what HarborIQ does, the Ask screen, the record, plans
+- [Pricing](https://harboriq.co/pricing): free workspace and Intelligence, published in full; Agency OS by walkthrough
+- [Start](https://harboriq.co/start): sign up for the free workspace or Intelligence
+- [Intelligence](https://harboriq.co/intelligence): carrier questions answered from carrier documents, with sources
+- [Works with](https://harboriq.co/works-with): mail, spreadsheets, documents and files it reads; the AMSs it is compatible with; what it replaces; how it works
+- [HarborIQ with Applied Epic](https://harboriq.co/works-with/applied-epic), [EZLynx](https://harboriq.co/works-with/ezlynx), [HawkSoft](https://harboriq.co/works-with/hawksoft), [NowCerts](https://harboriq.co/works-with/nowcerts), [AMS360](https://harboriq.co/works-with/ams360)
+- [HarborIQ instead of GoHighLevel](https://harboriq.co/works-with/gohighlevel) and [AgencyZoom](https://harboriq.co/works-with/agencyzoom)
+- [Agency OS](https://harboriq.co/agency): the whole agency on one record, beside the AMS you keep
+- [Book a walkthrough](https://harboriq.co/demo): 20 minutes
 - [Blog](https://harboriq.co/blog) and [Newsroom](https://harboriq.co/newsroom)
 
 ## Optional
