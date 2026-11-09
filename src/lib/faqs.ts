@@ -18,7 +18,7 @@ export const FAQ_CARRIER_CHECK: Faq = {
 
 export const FAQ_KEEP_AMS: Faq = {
   q: "Can I keep my AMS or CRM?",
-  a: "Yes. Use HarborIQ alongside the tools you have, or bring more of your work into Agency OS when you choose. You decide which information and workflows come into HarborIQ.",
+  a: "Yes. Use HarborIQ alongside the tools you have. You decide which information and workflows come into HarborIQ.",
 };
 
 export const FAQ_SOURCES: Faq = {

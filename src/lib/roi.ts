@@ -99,7 +99,7 @@ export const ROI_OVERLAYS: RoiOverlay[] = [
     id: "agencyzoom",
     label: `${OVERLAY_COSTS.agencyzoom.label} (from $${OVERLAY_COSTS.agencyzoom.monthly}/mo)`,
     monthly: OVERLAY_COSTS.agencyzoom.monthly,
-    source: "AgencyZoom's published starting price is $79/mo.",
+    source: "AgencyZoom's published plans run $99 to $349/mo with seven seats included (checked 2026-11-09); $99 is the floor.",
   },
   {
     id: "gohighlevel",

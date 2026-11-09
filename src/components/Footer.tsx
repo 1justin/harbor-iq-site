@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { DEMO_PAGE } from "@/lib/constants";
+import { } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -52,8 +52,8 @@ export function Footer() {
               <Link href="/watch" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Product films
               </Link>
-              <Link href="/compare" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Compare
+              <Link href="/works-with" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                Works with
               </Link>
               <Link href="/about" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 About
@@ -67,12 +67,6 @@ export function Footer() {
               <Link href="/newsroom" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Newsroom
               </Link>
-              <a
-                href={DEMO_PAGE}
-                className="block text-slate hover:text-paper text-[15px] transition-colors"
-              >
-                Agency OS demo
-              </a>
             </div>
           </div>
 

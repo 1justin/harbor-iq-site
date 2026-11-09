@@ -103,7 +103,7 @@ export function agencyBandFor(size: number) {
  */
 export const OVERLAY_COSTS = {
   none: { label: "No CRM overlay", monthly: 0 },
-  agencyzoom: { label: "AgencyZoom", monthly: 79 },
+  agencyzoom: { label: "AgencyZoom", monthly: 99 }, // single-location plan, seven seats, published 2026-11-09
   gohighlevel: { label: "GoHighLevel", monthly: 197 },
 } as const;
 

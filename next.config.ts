@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
       { source: "/features/renewals", destination: "/agency#renewals", permanent: true },
       { source: "/features/ai-quoting", destination: "/agency#quoting", permanent: true },
       { source: "/features/team", destination: "/agency#team", permanent: true },
+      // Compare pages became "Works with" pages 2026-11-09.
+      { source: "/compare", destination: "/works-with", permanent: true },
+      { source: "/compare/:slug", destination: "/works-with/:slug", permanent: true },
     ];
   },
 };
