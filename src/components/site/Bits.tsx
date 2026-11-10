@@ -77,7 +77,9 @@ export function Villains() {
     {
       name: `A generic CRM at $${ghl} a month`,
       what: "GoHighLevel and its cousins were built for gyms and dentists. They do not know what a policy is, or a carrier, or a renewal.",
-      instead: `HarborIQ knows all three and costs $${I.monthly} for the whole agency.`,
+      instead: LAUNCH.freeCrm
+        ? `HarborIQ knows all three. The CRM is free for the whole agency, and Intelligence is $${I.monthly}.`
+        : `HarborIQ knows all three and costs $${I.monthly} for the whole agency.`,
     },
   ];
   return (
@@ -260,7 +262,7 @@ const IN_ICONS: Record<SliceId, React.ReactNode> = {
   appetite: <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M4 20a8 8 0 0 1 16 0" />,
 };
 
-/** What goes in, what comes out: four rows, one line each. Quiet stand-in for the loop on the homepage. */
+/** What goes in, what comes out: four rows, one line each. A text-only stand-in for HarborLoop; the homepage shows the diagram itself again (2026-11-10). */
 export function InOut({ className = "" }: { className?: string }) {
   return (
     <div className={className}>

@@ -6,15 +6,13 @@ Last updated: November 2026. Canonical domain: https://harboriq.co
 
 HarborIQ is software for independent P&C insurance agencies. It answers the team's carrier questions from the agency's own carrier guides, with the carrier's page cited, and keeps the book, renewals, tasks and inbox in one client record. It sits beside the agency management system the agency already has. Built by WRKSTREAM LLC.
 
-**Free agency workspace ($0 per agency).** The client record (clients, policies, renewals, tasks, notes, who owns what), private underwriter contacts and portal links, license and CE reminders, and a limited number of carrier checks with sources. No subscription needed.
+**Free CRM ($0 for the whole agency).** Clients and prospects, sales pipeline, renewals, follow-ups, notes, carrier contacts, and periodic CSV imports from the AMS. An agency can start with one client, without importing its book. No credit card and no subscription needed. Carrier research, reporting and analytics are not part of the free CRM.
 
-**HarborIQ Intelligence ($49 per agency per month, or $490 per year billed upfront).** The same record plus 300 carrier checks a month shared across the whole agency, the agency's own carrier guides searchable with the page cited, and Gmail connected to the client record. Covers agencies up to 30 people; larger agencies ask for a quote.
-
-**HarborIQ Agency OS.** The whole agency on one record: book, pipeline, renewals, commissions, reports, team roles and the carrier tools, in one login, beside the AMS the agency keeps for carrier downloads and accounting.
+**HarborIQ Intelligence ($49 per agency per month, or $490 per year billed upfront).** Everything in the free CRM, plus AI carrier appetite and product research with source-backed answers, 300 carrier checks a month shared across the whole agency with optional top-ups, the agency's own carrier guides searchable with the page cited, reporting and analytics, and Gmail connected to the client record. Covers agencies up to 30 people; larger agencies ask for a quote.
 
 ## How much does HarborIQ cost?
 
-- Free agency workspace: $0 per agency.
+- Free CRM: $0 for the whole agency. No credit card.
 - Intelligence: $49 per agency per month, or $490 per year billed upfront (two months free). Introductory price: $29 per month, or $290 for the first year, guaranteed for the first 12 months for agencies that start a paid subscription by December 31, 2026. It is a price guarantee, not a contract: cancel any time. Covers every person at the agency, up to 30 people. 300 carrier checks each month, shared across the agency. Optional $10 packs add 100 more checks, only when the agency chooses. No automatic top-ups and no surprise usage bills.
 - What counts as a carrier check: one carrier question and its source-backed answer. Browsing the book, renewals, contacts and tasks is never metered.
 - Agencies larger than 30 people ask for a quote. It stays nominal next to a generic CRM.

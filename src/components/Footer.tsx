@@ -19,7 +19,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-3 text-slate text-[15px] leading-relaxed">
-              Carrier answers with the source attached, for independent insurance&nbsp;agencies.
+              A free CRM and carrier answers with the source attached, for independent insurance&nbsp;agencies.
             </p>
           </div>
 
@@ -28,13 +28,10 @@ export function Footer() {
             <h4 className="text-paper text-[13px] font-medium uppercase tracking-wider mb-4">Product</h4>
             <div className="space-y-3">
               <Link href="/free" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Free workspace
+                Free CRM
               </Link>
               <Link href="/intelligence" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Intelligence
-              </Link>
-              <Link href="/agency" className="block text-slate hover:text-paper text-[15px] transition-colors">
-                Agency OS
               </Link>
               <Link href="/find-an-agency" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Find an agency <span className="text-[12px] uppercase tracking-wider text-stone">Preview</span>

@@ -13,7 +13,67 @@ type Goal = {
   receipt: string;
 };
 
-const GOALS: Goal[] = [
+/** Free CRM starting points (2026-11-10). Each id is a /start?goal= value and a signup source tag. */
+const CRM_GOALS: Goal[] = [
+  {
+    id: "client",
+    label: "Add my first client",
+    h: "Put one client where the whole team can see them.",
+    p: "Start with the client who called this morning. Add their policies, a contact, and the note you would otherwise keep in your head.",
+    steps: [
+      "Create your login and add one client or household.",
+      "Add a policy with its renewal date, and a note about what they need next.",
+    ],
+    receipt: "You get: one complete client record, with its renewal already on the list.",
+  },
+  {
+    id: "pipeline",
+    label: "Track a prospect",
+    h: "Keep the quote you are working on from going cold.",
+    p: "Add a prospect, set the stage, and give the next step a person and a date.",
+    steps: [
+      "Add the prospect and what they want quoted.",
+      "Move them from prospect to quoting to bound as it happens.",
+    ],
+    receipt: "You get: a pipeline the whole team can see, starting with one deal.",
+  },
+  {
+    id: "renewals",
+    label: "See what renews next",
+    h: "Know what renews next, and who owns it.",
+    p: "Every policy with a date becomes a renewal with an owner and a days-out count. Add policies by hand or import them.",
+    steps: [
+      "Add a client\u2019s policies with their expiration dates, or import a CSV.",
+      "Open the renewal list and give an owner to anything without one.",
+    ],
+    receipt: "You get: one renewal list built from policy dates, not from memory.",
+  },
+  {
+    id: "import",
+    label: "Import a CSV from my AMS",
+    h: "Bring in the clients you already have.",
+    p: "Export clients and policies from your AMS as a CSV. HarborIQ maps the columns, and you check the matches before you confirm.",
+    steps: [
+      "Export from Applied Epic, EZLynx, HawkSoft, NowCerts, AMS360 or a spreadsheet.",
+      "Check the column matches and import. Export again whenever you want the list refreshed.",
+    ],
+    receipt: "You get: your clients and renewals in one list. Nothing changes in your AMS.",
+  },
+  {
+    id: "contacts",
+    label: "Organize my carrier contacts",
+    h: "Find the right underwriter without hunting through email.",
+    p: "Keep the contact and portal link for one carrier in a private place your team can find.",
+    steps: [
+      "Add one carrier and the contact or portal link you already use.",
+      "Add the rest as you call them. Invite a colleague when it helps.",
+    ],
+    receipt: "You get: one useful carrier record. No complete carrier list required.",
+  },
+];
+
+/** The free workspace starting points, used only by LegacyWorkspace (LAUNCH.freeCrm false). */
+const LEGACY_GOALS: Goal[] = [
   {
     id: "markets",
     label: "Find a potential market",
@@ -60,14 +120,15 @@ const GOALS: Goal[] = [
   },
 ];
 
-export function FirstStepPicker() {
+export function FirstStepPicker({ legacy = false }: { legacy?: boolean }) {
+  const GOALS = legacy ? LEGACY_GOALS : CRM_GOALS;
   const [active, setActive] = useState(GOALS[0].id);
   const goal = GOALS.find((g) => g.id === active) ?? GOALS[0];
 
   return (
     <div className="mt-8 grid gap-6 md:grid-cols-[0.75fr_1.25fr] md:gap-12">
       <fieldset className="flex flex-col gap-2.5">
-        <legend className="sr-only">Choose your first workspace task</legend>
+        <legend className="sr-only">Choose your first step</legend>
         {GOALS.map((g) => (
           <label
             key={g.id}

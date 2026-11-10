@@ -82,7 +82,7 @@ const aboutSchema = {
     "@type": "Organization",
     name: "HarborIQ",
     url: "https://harboriq.co",
-    description: "Software for independent insurance agencies, built with a working agency: carrier answers with the page cited, and a free workspace beside the AMS.",
+    description: "Software for independent insurance agencies, built with a working agency: carrier answers with the page cited, and a free CRM beside the AMS.",
     founder: { "@type": "Person", name: "Justin Mayer", jobTitle: "Founder and CEO", sameAs: ["https://www.linkedin.com/in/cjustinmayer"] },
   },
 };

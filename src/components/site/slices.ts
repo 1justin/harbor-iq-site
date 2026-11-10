@@ -2,6 +2,57 @@
 
 export type SliceId = "ask" | "book" | "inbox" | "appetite";
 
+/** One path through the loop diagram: what goes in, what comes out, who wins. */
+export type LoopItem = {
+  id: string;
+  input: string;
+  inputSub: string;
+  output: string;
+  winners: string[];
+  caption: string;
+};
+
+/**
+ * The Intelligence version of the loop (2026-11-10): the same diagram, with
+ * only what Intelligence adds on top of the free CRM. Carrier research with
+ * cited answers, and reporting on the book. Keep input labels short: the
+ * diagram boxes are 290 units wide.
+ */
+export const INTEL_SLICES: LoopItem[] = [
+  {
+    id: "appetite",
+    input: "Appetite guides",
+    inputSub: "The PDFs from your carrier portals",
+    output: "Who writes it, page cited",
+    winners: ["CSR", "Client"],
+    caption: "A CSR types the risk the way the client described it. The answer names the carriers that want it, with the page of each guide beside it.",
+  },
+  {
+    id: "rules",
+    input: "Underwriting guidelines",
+    inputSub: "Rules, exclusions and program limits",
+    output: "What the carrier needs first",
+    winners: ["Producer", "Carrier"],
+    caption: "Minimum years in business, revenue limits, excluded counties. Your producer sees the conditions before the submission goes out, so the carrier gets risks it can write.",
+  },
+  {
+    id: "bulletins",
+    input: "Bulletins and updates",
+    inputSub: "Each one dated, so you know what is current",
+    output: "The same answer for everyone",
+    winners: ["Owner", "New hires"],
+    caption: "Your newest producer and your most experienced one get the same cited answer. What your veterans know stays with the agency.",
+  },
+  {
+    id: "reporting",
+    input: "Your book in the free CRM",
+    inputSub: "Clients, pipeline and renewals",
+    output: "What to work on this week",
+    winners: ["Owner", "Producer"],
+    caption: "Intelligence reads the clients, pipeline and renewals you already keep in the free CRM and shows your priorities, a summary of what happened, and how the team is closing.",
+  },
+];
+
 export const SLICES: {
   id: SliceId;
   input: string;

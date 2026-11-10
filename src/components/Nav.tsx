@@ -6,7 +6,7 @@ import { START_INTELLIGENCE_URL } from "@/lib/constants";
 import { useState, useEffect, useRef } from "react";
 
 const featureLinks = [
-  { href: "/free", label: "Free workspace" },
+  { href: "/free", label: "Free CRM" },
   { href: "/intelligence", label: "Intelligence" },
 ];
 
