@@ -189,11 +189,7 @@ export default function IntelligencePage() {
         }
         note={
           <>
-            No demo needed. Running the whole agency?{" "}
-            <Link href="/agency" className="text-paper underline underline-offset-4">
-              See Agency OS
-            </Link>
-            .
+            No demo needed. Nothing is charged until you confirm.
           </>
         }
       />

@@ -67,7 +67,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Gated pages join the sitemap only once their product paths exist (see LAUNCH).
   const gated: MetadataRoute.Sitemap = [
-    ...(LAUNCH.freeWorkspaceIndexed ? [{ url: `${BASE}/free`, lastModified: new Date("2026-11-03"), changeFrequency: "monthly" as const, priority: 0.7 }] : []),
+    ...(LAUNCH.freeWorkspaceIndexed ? [{ url: `${BASE}/free`, lastModified: new Date("2026-11-10"), changeFrequency: "monthly" as const, priority: 0.8 },
+      { url: `${BASE}/start`, lastModified: new Date("2026-11-10"), changeFrequency: "monthly" as const, priority: 0.5 }] : []),
     ...(LAUNCH.marketplaceIndexed ? [{ url: `${BASE}/find-an-agency`, lastModified: new Date("2026-11-03"), changeFrequency: "weekly" as const, priority: 0.6 }] : []),
   ];
 

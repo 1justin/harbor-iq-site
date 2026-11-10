@@ -1,4 +1,4 @@
-import { INTELLIGENCE as I } from "@/lib/constants";
+import { INTELLIGENCE as I, LAUNCH } from "@/lib/constants";
 import type { SliceId } from "@/components/site/slices";
 import type { Faq } from "@/components/iq/Blocks";
 
@@ -189,7 +189,9 @@ export const FITS: FitConfig[] = [
     loopHeading: "What the record looks like without the sync",
     loopSub: "Your book comes in from the AMS export. Renewals, tasks and the inbox live on the record, and the carrier answers sit beside it.",
     faqs: [
-      { q: "Does HarborIQ have a sales pipeline?", a: "Agency OS does, with stages and follow-ups. Intelligence gives you the record, the renewals and the carrier answers. If the pipeline is the only thing you use AgencyZoom for, say so on the walkthrough and we will show you both." },
+      { q: "Does HarborIQ have a sales pipeline?", a: LAUNCH.freeCrm
+        ? "Yes. The free CRM includes a sales pipeline with stages and follow-ups, and Intelligence adds the carrier answers beside it. If the pipeline is the only thing you use AgencyZoom for, start free and see whether it covers you."
+        : "Not in the free workspace or Intelligence today. HarborIQ gives you the carrier answers and a place for your carrier contacts and deadlines. If the pipeline is the only thing you use AgencyZoom for, keep AgencyZoom for it." },
       { q: "Does HarborIQ request Google reviews?", a: "No. If that automation matters to you, keep AgencyZoom for it." },
       { q: "How do I move over?", a: "Export your book from the AMS and your contacts from AgencyZoom as CSV. HarborIQ maps the columns and we check the first import with you." },
     ],

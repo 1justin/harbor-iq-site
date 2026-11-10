@@ -105,10 +105,9 @@ export default function PostPage() {
             full platform from day one without anyone calculating whether the per-seat cost is&nbsp;&ldquo;worth&nbsp;it.&rdquo;
           </p>
           <p>
-            At HarborIQ, a 1-person agency pays $199/month. A 5-person agency pays $399/month.
-            A 10-person agency pays $599/month. No per-user fees. No add-ons for basic features.
-            Pipeline CRM, client management, AI-assisted quoting, team performance, and client
-            engagement. All included. One login, one price, one&nbsp;platform.
+            At HarborIQ, one price covers the whole agency, whether it is one person or thirty.
+            The free workspace costs $0, and Intelligence is $49 per agency a month. No per-user
+            fees, and no add-ons for basic features. One login, one price, one&nbsp;team.
           </p>
 
           <h2 className="text-xl font-medium text-ink mt-10 mb-4">What to ask your current&nbsp;vendor</h2>
@@ -120,10 +119,10 @@ export default function PostPage() {
 
           <div className="mt-12 p-6 bg-linen rounded-xl border border-ash">
             <p className="text-[16px] text-ink font-medium">
-              Priced by agency size, never per person.
+              One price for the agency, never per person.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              Start with a free workspace, or Intelligence at $49 per agency a month. Agency OS is $199 solo, $399 for 2 to 5, and $599 for 6 to 15. Free book import with annual&nbsp;prepay.
+              Start with a free workspace, or Intelligence at $49 per agency a month. Never a fee per&nbsp;person.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
               <a

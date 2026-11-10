@@ -9,13 +9,12 @@ Key facts (as of November 2026):
 - HarborIQ works beside the AMS, not instead of it. Agencies export the book from Applied Epic, EZLynx, HawkSoft, NowCerts or AMS360 as CSV or XLSX; HarborIQ maps the columns and keeps a working copy. There is no live AMS sync today. The AMS keeps carrier downloads and accounting.
 - HarborIQ replaces the generic CRM (GoHighLevel, AgencyZoom), the renewal spreadsheet, sticky notes and memory. It does not replace the AMS or the carriers.
 - Carrier knowledge comes from the guides the agency loads: any carrier, any state, any line of business. Answers are only ever drawn from those documents, with the page cited. Agency data is never used to train AI models.
-- Agency OS, the whole agency on one record (book, pipeline, renewals, commissions, reports, team), is sold by walkthrough only and priced by agency size, never per person. Ask on a demo.
 - Month to month, cancel anytime, full export any time. Built by an agency operator.
 
 ## Pages
 
 - [Home](https://harboriq.co/): what HarborIQ does, the Ask screen, the record, plans
-- [Pricing](https://harboriq.co/pricing): free workspace and Intelligence, published in full; Agency OS by walkthrough
+- [Pricing](https://harboriq.co/pricing): free workspace and Intelligence, published in full
 - [Start](https://harboriq.co/start): sign up for the free workspace or Intelligence
 - [Intelligence](https://harboriq.co/intelligence): carrier questions answered from carrier documents, with sources
 - [Works with](https://harboriq.co/works-with): mail, spreadsheets, documents and files it reads; the AMSs it is compatible with; what it replaces; how it works
