@@ -115,7 +115,7 @@ export default function AboutPage() {
           <div className="md:col-span-8">
             {story.map((c, i) => (
               <div key={c.title} className={`grid gap-1.5 py-5 md:grid-cols-[130px_1fr] md:gap-5 ${i === 0 ? "border-t border-ink" : "border-t border-ash"}`}>
-                <p className="pt-0.5 text-[12px] font-semibold uppercase tracking-[0.06em] text-interactive">{c.title}</p>
+                <h3 className="pt-0.5 text-[12px] font-semibold uppercase tracking-[0.06em] text-interactive">{c.title}</h3>
                 <p className="text-[17px] leading-[1.6] text-charcoal">{c.text}</p>
               </div>
             ))}

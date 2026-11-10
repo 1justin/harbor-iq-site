@@ -112,7 +112,7 @@ export const LAUNCH = {
    * routes, so no page may say "free CRM". Flip only when the app session
    * "Ship the free CRM in the app" is merged and verified in production.
    */
-  freeCrm: false,
+  freeCrm: true,
   /** Free workspace and marketplace pages: noindex and out of the sitemap until live. */
   freeWorkspaceIndexed: true,
   marketplaceIndexed: false,

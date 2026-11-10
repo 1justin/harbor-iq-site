@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FirstStepPicker } from "./FirstStepPicker";
 import { Film } from "@/components/iq/Film";
+import { CrmFrame } from "@/components/site/CrmFrame";
+import { ClientListScreen, ClientPageScreen, RenewalsScreen, FollowupScreen } from "@/components/site/Screens";
+import { WorkspaceFrame } from "@/components/site/WorkspaceFrame";
 import { Arrow, FaqSection, FinalCta, SectionHead, TextCta, type Faq } from "@/components/iq/Blocks";
 import { INTELLIGENCE as I, LAUNCH, START_FREE_URL, currentIntelligenceMonthly, introActive } from "@/lib/constants";
 
@@ -80,13 +83,28 @@ const freeFaqs: Faq[] = [
   },
 ];
 
+const crmFaqs: Faq[] = [
+  freeFaqs[0],
+  {
+    q: "Do I have to import my whole book to start?",
+    a: "No. Create your workspace, add one client, and you are working. Add clients as you go, or import a CSV from your AMS whenever you are ready. Nothing is required up front.",
+  },
+  {
+    q: "How do my clients get in?",
+    a: "Add them by hand, or import a CSV export from your AMS. Imports are periodic, so export again whenever you want the list refreshed. HarborIQ does not sync with your AMS automatically.",
+  },
+  freeFaqs[2],
+  freeFaqs[3],
+  freeFaqs[4],
+];
+
 export default function FreeWorkspacePage() {
   const crm = LAUNCH.freeCrm;
   return (
     <>
       {/* ─── Hero ─── */}
       <section className="bg-anchor">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.2fr_0.8fr] md:items-center md:gap-14 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1fr_1.15fr] md:items-center md:gap-14 md:py-20">
           <div className="text-center md:text-left">
             <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-paper">
               {crm ? "Free CRM · $0 per agency" : "Free agency workspace · $0 per agency"}
@@ -108,16 +126,13 @@ export default function FreeWorkspacePage() {
             </a>
             <p className="mt-3 text-[13px] text-mist">{crm ? "No card. No import needed to start. Free for the whole agency." : "No subscription needed. Start with one task."}</p>
           </div>
-          <aside className="rounded-xl border border-harbor/40 bg-midnight/40 p-7">
-            <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-slate">One place to begin</p>
-            <h2 className="mt-2 text-[24px] font-medium leading-snug tracking-tight text-paper">
-              You do not have to set up everything.
-            </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-mist">
-              Add the carrier you called this morning. Or the license deadline you keep meaning to put on a calendar.
-              Start there. Bring more into HarborIQ when it helps.
+          <div>
+            {crm ? <CrmFrame /> : <WorkspaceFrame />}
+            <h2 className="mt-5 text-[20px] font-medium leading-snug tracking-tight text-paper">You do not have to set up everything.</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-mist">
+              Add the carrier you called this morning, or the license deadline you keep meaning to put on a calendar, and start there.
             </p>
-          </aside>
+          </div>
         </div>
       </section>
 
@@ -163,6 +178,44 @@ export default function FreeWorkspacePage() {
         </div>
       </section>
 
+      {/* ─── CRM: clients and prospects, pipeline ─── */}
+      {crm && (
+        <section className="bg-paper py-14 md:py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <p className="iq-eyebrow mb-4">Clients and prospects</p>
+            <h2 className="max-w-[26ch] text-2xl font-medium leading-tight tracking-tight text-ink md:text-3xl">
+              Everyone on the team sees the same client.
+            </h2>
+            <p className="mt-4 max-w-[62ch] text-[16px] leading-relaxed text-charcoal">
+              Search the book, open a client, and see every policy, renewal date, owner and note on one page. Prospects sit in the same list and move from prospect to quoting to bound, so the next person always knows where a deal stands.
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-12 md:items-start">
+              <div className="md:col-span-7"><ClientListScreen /></div>
+              <div className="md:col-span-5"><ClientPageScreen /></div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ─── CRM: renewals and follow-ups ─── */}
+      {crm && (
+        <section className="bg-linen py-14 md:py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <p className="iq-eyebrow mb-4">Renewals and follow-ups</p>
+            <h2 className="max-w-[28ch] text-2xl font-medium leading-tight tracking-tight text-ink md:text-3xl">
+              Nothing renews, and no follow-up slips, without an owner.
+            </h2>
+            <p className="mt-4 max-w-[62ch] text-[16px] leading-relaxed text-charcoal">
+              Every policy with a date becomes a renewal with an owner and a days-out count. Every follow-up has a person and a due date, and it sits on the client record where the whole team can see it.
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-2 md:items-start">
+              <RenewalsScreen />
+              <FollowupScreen />
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ─── Carrier directory film ─── */}
       <section className="bg-paper py-14 md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[1.15fr_0.85fr] md:gap-14">
@@ -180,6 +233,8 @@ export default function FreeWorkspacePage() {
         </div>
       </section>
 
+      {!crm && (
+        <>
       {/* ─── Get it in once film ─── */}
       <section className="bg-linen py-14 md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[0.85fr_1.15fr] md:gap-14">
@@ -196,6 +251,9 @@ export default function FreeWorkspacePage() {
           <Film slug="licensing" label="License and CE tracking" caption="Licenses and CE dates for the whole team, with demo data." />
         </div>
       </section>
+
+        </>
+      )}
 
       {/* ─── Upgrade ─── */}
       <section className="bg-midnight py-14 md:py-20">
@@ -232,7 +290,7 @@ export default function FreeWorkspacePage() {
         </div>
       </section>
 
-      <FaqSection items={freeFaqs} />
+      <FaqSection items={crm ? crmFaqs : freeFaqs} />
 
       <FinalCta
         heading={crm ? "Start with one client." : "Make one part of your day easier."}
