@@ -64,6 +64,8 @@ function buildFaqs(): Faq[] {
   ];
 }
 
+const BUILT_FOR = ["Independent agencies", "One owner to fifty staff", "Personal and commercial lines", "Their clients and carriers"];
+
 const RECORD = ["Clients", "Policies", "Renewals", "Tasks", "Notes", "Who owns what"];
 
 const TICKS_CRM = ["Clients and prospects", "Sales pipeline", "Renewals and follow-ups", "Notes and relationships", "Carrier contacts"];
@@ -116,6 +118,13 @@ export default function Home() {
                   Carrier appetite answers with the page cited, from your own guides. {I.checksPerMonth} shared checks a month{crm ? ", plus reporting." : "."}
                 </p>
               </div>
+            </div>
+            {/* Built for: one row, like a byline for the whole page (restored). */}
+            <div className="flex flex-col gap-3 border-t border-paper/15 py-6 md:flex-row md:items-baseline md:gap-10">
+              <span className="whitespace-nowrap text-[13px] text-mist/70">Built for</span>
+              <ul className="flex flex-wrap gap-x-8 gap-y-2 text-[17px] text-paper md:text-[19px]">
+                {BUILT_FOR.map((b) => <li key={b}>{b}</li>)}
+              </ul>
             </div>
           </div>
         </section>
