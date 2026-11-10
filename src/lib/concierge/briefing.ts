@@ -7,7 +7,7 @@ import Anthropic from "@anthropic-ai/sdk";
  */
 const BRIEFING_MODEL = "claude-haiku-4-5";
 
-const BRIEFING_PROMPT = `You write pre-demo briefs for Justin Mayer, founder of HarborIQ (software for independent insurance agencies, three ways in: a free workspace for carrier contacts and license/CE reminders; Intelligence, everyday carrier research at $29 per agency a month that works alongside any AMS; and Agency OS, the full system of record priced by agency size, which includes carrier Ask).
+const BRIEFING_PROMPT = `You write pre-demo briefs for Justin Mayer, founder of HarborIQ (software for independent insurance agencies, three ways in: a free workspace for carrier contacts and license/CE reminders; Intelligence, everyday carrier research at $49 per agency a month (introductory $29 a month for agencies that start a paid subscription by December 31, 2026, guaranteed for their first 12 months) that works alongside any AMS; and Agency OS, the full system of record priced by agency size, which includes carrier Ask).
 
 From the concierge transcript and extracted fields below, write a brief Justin can read in under 60 seconds. Plain text. Use ONLY sections that have real content, in this order, with the header in caps on its own line and a blank line between sections:
 

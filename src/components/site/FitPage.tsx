@@ -3,7 +3,7 @@ import { H2, TrustStrip, btn } from "@/components/site/Bits";
 import { HarborLoop } from "@/components/site/HarborLoop";
 import { FaqSection } from "@/components/iq/Blocks";
 import type { FitConfig } from "@/lib/works-with";
-import { INTELLIGENCE as I, START_INTELLIGENCE_URL, DEMO_PAGE } from "@/lib/constants";
+import { START_INTELLIGENCE_URL, DEMO_PAGE, currentIntelligenceMonthly } from "@/lib/constants";
 
 /** The "HarborIQ with <AMS>" / "HarborIQ instead of <CRM>" page, on the Applied Epic pattern (2026-11-09). */
 export function FitPage({ fit }: { fit: FitConfig }) {
@@ -24,7 +24,7 @@ export function FitPage({ fit }: { fit: FitConfig }) {
           <h1 className="mt-3 max-w-3xl text-[40px] font-medium leading-[1.04] tracking-[-0.02em] text-ink md:text-[56px]">{fit.h1}</h1>
           <p className="mt-5 max-w-[62ch] text-[18px] leading-relaxed text-charcoal">{fit.intro}</p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link href={START_INTELLIGENCE_URL} className={btn.copper}>Start Intelligence, ${I.monthly} a month</Link>
+            <Link href={START_INTELLIGENCE_URL} className={btn.copper}>Start Intelligence, ${currentIntelligenceMonthly()} a month</Link>
             <Link href={DEMO_PAGE} className="text-[15px] font-medium text-interactive underline-offset-4 hover:underline">Book a 20-minute walkthrough</Link>
           </div>
         </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { H2, TrustStrip, btn } from "@/components/site/Bits";
 import { HarborLoop } from "@/components/site/HarborLoop";
 import { FaqSection, type Faq } from "@/components/iq/Blocks";
-import { INTELLIGENCE as I, START_INTELLIGENCE_URL, DEMO_PAGE } from "@/lib/constants";
+import { INTELLIGENCE as I, START_INTELLIGENCE_URL, DEMO_PAGE, currentIntelligenceMonthly } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "HarborIQ with Applied Epic | Keep Epic, add carrier answers",
@@ -53,7 +53,7 @@ export default function WithEpicPage() {
             <h1 className="mt-3 max-w-3xl text-[40px] font-medium leading-[1.04] tracking-[-0.02em] text-ink md:text-[56px]">HarborIQ with Applied Epic.</h1>
             <p className="mt-5 max-w-[62ch] text-[18px] leading-relaxed text-charcoal">Epic runs the agency&rsquo;s books. HarborIQ answers the questions Epic was never asked: who writes this risk, what renews next, who owns the client. Export the book once and keep both.</p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href={START_INTELLIGENCE_URL} className={btn.copper}>Start Intelligence, ${I.monthly} a month</Link>
+              <Link href={START_INTELLIGENCE_URL} className={btn.copper}>Start Intelligence, ${currentIntelligenceMonthly()} a month</Link>
               <Link href={DEMO_PAGE} className="text-[15px] font-medium text-interactive underline-offset-4 hover:underline">Book a 20-minute walkthrough</Link>
             </div>
           </div>

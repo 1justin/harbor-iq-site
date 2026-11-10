@@ -207,7 +207,7 @@ export default function PostPage() {
               Ask your carriers a question. Get the page it came&nbsp;from.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              HarborIQ Intelligence is $29 per agency a month, and you can start with a free workspace. It
+              HarborIQ Intelligence is $49 per agency a month, and you can start with a free workspace. It
               runs next to the system you already&nbsp;have.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">

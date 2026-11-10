@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://harboriq.co"),
   title: "HarborIQ | Carrier answers and agency management for independent insurance agencies",
   description:
-    "Carrier answers in seconds, cited to the page, beside the AMS you already have. Free agency workspace, or Intelligence at $29 a month for the whole agency.",
+    "Carrier answers in seconds, cited to the page, beside the AMS you already have. Free agency workspace, or Intelligence at $49 a month for the whole agency.",
   alternates: {
     canonical: "/",
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Who else might write this risk? | HarborIQ",
     description:
-      "Carrier answers with the source attached. Free agency workspace, or Intelligence at $29 a month for the whole agency. Never per person.",
+      "Carrier answers with the source attached. Free agency workspace, or Intelligence at $49 a month for the whole agency. Never per person.",
     type: "website",
     locale: "en_US",
     images: [
@@ -77,7 +77,7 @@ export default function RootLayout({
               url: "https://harboriq.co",
               logo: "https://harboriq.co/images/harboriq-favicon-512.png",
               description:
-                "Carrier answers and the agency record for independent insurance agencies: source-backed carrier appetite answers, a free agency workspace, and Intelligence at $29 a month for the whole agency.",
+                "Carrier answers and the agency record for independent insurance agencies: source-backed carrier appetite answers, a free agency workspace, and Intelligence at $49 a month for the whole agency (introductory $29 through December 31, 2026).",
               sameAs: [
                 "https://www.linkedin.com/company/harboriqsoftware",
                 "https://x.com/haraboriq",

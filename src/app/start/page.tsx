@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { SignupForm } from "./SignupForm";
-import { INTELLIGENCE as I, LAUNCH } from "@/lib/constants";
+import { INTELLIGENCE as I, LAUNCH, currentIntelligenceMonthly, introActive } from "@/lib/constants";
+
+/** Hourly, so the introductory price lapses on its own after December 31, 2026. */
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Start free | HarborIQ for independent insurance agencies",
@@ -45,16 +48,18 @@ export default function StartPage() {
             ))}
           </ul>
           <div className="mt-8 rounded-xl border border-ash bg-paper px-6 py-5">
-            <p className="text-[15px] font-medium text-ink">${I.monthly} a month covers your whole agency</p>
+            <p className="text-[15px] font-medium text-ink">${currentIntelligenceMonthly()} a month covers your whole agency</p>
             <p className="mt-1.5 text-[15px] leading-relaxed text-charcoal">
-              Intelligence is ${I.monthly} per agency a month, or ${I.annual} a year, with {I.checksPerMonth} carrier
-              checks shared across your team. Never per person.
+              {introActive()
+                ? `Introductory price: $${I.intro.monthly} per agency a month for your first ${I.intro.months} months when you start by ${I.intro.untilLabel}, then $${I.monthly}. Annual is $${I.intro.annual} for the first year, then $${I.annual}. A price guarantee, not a contract: cancel any time. `
+                : `Intelligence is $${I.monthly} per agency a month, or $${I.annual} a year. `}
+              {I.checksPerMonth} carrier checks are shared across your team. Never per person.
             </p>
           </div>
         </div>
 
         <Suspense fallback={null}>
-          <SignupForm />
+          <SignupForm intro={introActive()} />
         </Suspense>
       </div>
     </section>
