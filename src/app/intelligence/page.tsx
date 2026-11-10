@@ -3,7 +3,10 @@ import Link from "next/link";
 import { CtaLink, FaqSection, FinalCta, SectionHead } from "@/components/iq/Blocks";
 import { Film } from "@/components/iq/Film";
 import { FAQ_CARRIER_CHECK, FAQ_KEEP_AMS, FAQ_SETUP, FAQ_SOURCES } from "@/lib/faqs";
-import { INTELLIGENCE, START_FREE_URL, START_INTELLIGENCE_URL } from "@/lib/constants";
+import { INTELLIGENCE, START_FREE_URL, START_INTELLIGENCE_URL, currentIntelligenceMonthly, introActive } from "@/lib/constants";
+
+/** Hourly, so the introductory price lapses on its own after December 31, 2026. */
+export const revalidate = 3600;
 
 /**
  * Intelligence product page (2026-10-29). Order: outcome and price, the Ask
@@ -12,7 +15,7 @@ import { INTELLIGENCE, START_FREE_URL, START_INTELLIGENCE_URL } from "@/lib/cons
  */
 
 const I = INTELLIGENCE;
-const OFFER = `$${I.monthly} a month per agency. ${I.checksPerMonth} carrier checks. Your whole team included.`;
+const offerLine = () => `$${currentIntelligenceMonthly()} a month per agency. ${I.checksPerMonth} carrier checks. Your whole team included.`;
 
 export const metadata: Metadata = {
   title: `HarborIQ Intelligence | Carrier answers for independent agencies, $${I.monthly} per agency`,
@@ -60,7 +63,7 @@ export default function IntelligencePage() {
             Ask any appetite or underwriting question. Get the answer with the carrier&rsquo;s own guideline and its date
             attached.
           </p>
-          <p className="mt-5 text-[16px] font-medium text-paper">{OFFER}</p>
+          <p className="mt-5 text-[16px] font-medium text-paper">{offerLine()}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <CtaLink href={START_INTELLIGENCE_URL}>Start Intelligence</CtaLink>
             <CtaLink href={START_FREE_URL} variant="outline">
@@ -119,11 +122,11 @@ export default function IntelligencePage() {
         </div>
       </section>
 
-      {/* ─── WHAT $29 GETS YOU ─── */}
+      {/* ─── WHAT INTELLIGENCE COSTS ─── */}
       <section className="bg-paper py-14 md:py-20" id="pricing" aria-labelledby="intel-price-heading">
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-6 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
           <div>
-            <p className="iq-eyebrow mb-4">What ${I.monthly} gets you</p>
+            <p className="iq-eyebrow mb-4">What ${currentIntelligenceMonthly()} gets you</p>
             <h2 id="intel-price-heading" className="text-2xl font-medium leading-tight tracking-tight text-ink md:text-3xl">
               One price for the whole agency. Never per&nbsp;person.
             </h2>
@@ -140,11 +143,17 @@ export default function IntelligencePage() {
             </p>
           </div>
           <div className="iq-card p-7">
+            {introActive() && <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.06em] text-interactive">Introductory price</p>}
             <p className="text-[40px] font-medium leading-none tracking-tight text-ink">
-              ${I.monthly}
+              ${currentIntelligenceMonthly()}
               <span className="ml-2 text-[15px] font-normal tracking-normal text-charcoal">per agency / month</span>
+              {introActive() && <span className="ml-2 text-[15px] font-normal tracking-normal text-stone"><s>${I.monthly}</s> standard</span>}
             </p>
-            <p className="mt-2 text-[14px] text-charcoal">Or ${I.annual} a year, billed upfront.</p>
+            <p className="mt-2 text-[14px] text-charcoal">
+              {introActive()
+                ? `Lock in $${I.intro.monthly} a month for your first ${I.intro.months} months when you start by ${I.intro.untilLabel}. A price guarantee, not a contract: cancel any time. Annual: $${I.intro.annual} for the first year, then $${I.annual}. Get 2 months free with annual billing.`
+                : `Or $${I.annual} a year, billed upfront. Get 2 months free with annual billing.`}
+            </p>
             <ul className="mt-5 space-y-2.5">
               {[
                 `${I.checksPerMonth} carrier checks each month, shared across your agency`,
@@ -171,7 +180,7 @@ export default function IntelligencePage() {
 
       <FinalCta
         heading="Get your first carrier answer today."
-        body={`$${I.monthly} a month for your whole agency, or $${I.annual} a year. ${I.checksPerMonth} checks a month, no automatic top-ups.`}
+        body={`$${currentIntelligenceMonthly()} a month for your whole agency${introActive() ? ` through ${I.intro.untilLabel} (standard $${I.monthly})` : `, or $${I.annual} a year`}. ${I.checksPerMonth} checks a month, no automatic top-ups.`}
         action={<CtaLink href={START_INTELLIGENCE_URL}>Start Intelligence</CtaLink>}
         secondary={
           <CtaLink href={START_FREE_URL} variant="outline">

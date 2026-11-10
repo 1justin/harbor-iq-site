@@ -3,21 +3,39 @@ import Link from "next/link";
 import { FirstStepPicker } from "./FirstStepPicker";
 import { Film } from "@/components/iq/Film";
 import { Arrow, FaqSection, FinalCta, SectionHead, TextCta, type Faq } from "@/components/iq/Blocks";
-import { INTELLIGENCE as I, LAUNCH } from "@/lib/constants";
+import { INTELLIGENCE as I, LAUNCH, START_FREE_URL, currentIntelligenceMonthly, introActive } from "@/lib/constants";
 
-export const metadata: Metadata = {
-  title: "Free Agency Workspace | Carrier contacts and deadlines in one place | HarborIQ",
-  description:
-    "A free workspace for independent insurance agencies: private carrier contacts and portal links, license and CE reminders for the dates you enter, and limited carrier discovery with sources.",
-  alternates: { canonical: "/free" },
-  // Held out of search until free signup is live (LAUNCH in constants).
-  robots: LAUNCH.freeWorkspaceIndexed ? undefined : { index: false, follow: true },
-  openGraph: {
-    title: "Your carrier contacts and important deadlines. In one free workspace. | HarborIQ",
-    url: "/free",
-    images: [{ url: "/og/free.png", width: 1200, height: 630 }],
-  },
-};
+/** Hourly, so the introductory price lapses on its own after December 31, 2026. */
+export const revalidate = 3600;
+
+export function generateMetadata(): Metadata {
+  const crm = LAUNCH.freeCrm;
+  return {
+    title: crm
+      ? "Free CRM for independent insurance agencies | Clients, pipeline, renewals | HarborIQ"
+      : "Free Agency Workspace | Carrier contacts and deadlines in one place | HarborIQ",
+    description: crm
+      ? "A free CRM for independent insurance agencies: clients and prospects, sales pipeline, renewals and follow-ups, notes, periodic CSV imports from your AMS, and carrier contacts. Free for the whole agency. Start with one client."
+      : "A free workspace for independent insurance agencies: private carrier contacts and portal links, license and CE reminders for the dates you enter, and limited carrier discovery with sources.",
+    alternates: { canonical: "/free" },
+    // Held out of search until free signup is live (LAUNCH in constants).
+    robots: LAUNCH.freeWorkspaceIndexed ? undefined : { index: false, follow: true },
+    openGraph: {
+      title: crm
+        ? "A free CRM for independent insurance agencies. Start with one client. | HarborIQ"
+        : "Your carrier contacts and important deadlines. In one free workspace. | HarborIQ",
+      url: "/free",
+      images: [{ url: "/og/free.png", width: 1200, height: 630 }],
+    },
+  };
+}
+
+const includedCrm: { t: string; d: string; link?: { href: string; label: string } }[] = [
+  { t: "Clients and prospects", d: "Every client and prospect in one list the whole team can see, with the notes and relationships behind each one." },
+  { t: "Sales pipeline", d: "Prospect, quoting and bound, so nothing sits in someone\u2019s inbox. Move a deal along and the next person sees it." },
+  { t: "Renewals and follow-ups", d: "Every policy with a date becomes a renewal with an owner and a days-out count, and every follow-up has a person and a due date." },
+  { t: "Carrier contacts, your way in", d: "Underwriter contacts and portal links, kept in one place. Import a CSV from your AMS when you are ready; start with one client if you are not." },
+];
 
 const included = [
   {
@@ -63,6 +81,7 @@ const freeFaqs: Faq[] = [
 ];
 
 export default function FreeWorkspacePage() {
+  const crm = LAUNCH.freeCrm;
   return (
     <>
       {/* ─── Hero ─── */}
@@ -70,23 +89,24 @@ export default function FreeWorkspacePage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.2fr_0.8fr] md:items-center md:gap-14 md:py-20">
           <div className="text-center md:text-left">
             <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-paper">
-              Free agency workspace · $0 per agency
+              {crm ? "Free CRM · $0 per agency" : "Free agency workspace · $0 per agency"}
             </p>
             <h1 className="mt-4 text-[36px] font-medium leading-[1.08] tracking-[-0.02em] text-paper md:text-[52px]">
-              Your carrier contacts and important deadlines.{" "}
-              <span className="text-interactive">In one free&nbsp;workspace.</span>
+              {crm ? "A free CRM for independent insurance agencies." : "Your carrier contacts and important deadlines."}{" "}
+              <span className="text-interactive">{crm ? "Start with one\u00a0client." : "In one free\u00a0workspace."}</span>
             </h1>
             <p className="mt-5 text-[17px] leading-relaxed text-mist md:text-[19px]">
-              Keep underwriter contacts and portal links handy. Set reminders for license and CE dates. Try carrier
-              discovery with the sources behind the answer.
+              {crm
+                ? "Clients and prospects, pipeline, renewals and follow-ups, notes, and carrier contacts, for the whole agency. Keep your AMS and import a CSV from it when you are ready."
+                : "Keep underwriter contacts and portal links handy. Set reminders for license and CE dates. Try carrier discovery with the sources behind the answer."}
             </p>
             <a
-              href="#choose-first-step"
+              href={crm ? START_FREE_URL : "#choose-first-step"}
               className="cta-primary btn-radius mt-8 inline-block bg-copper px-7 py-3.5 text-[16px] font-medium text-midnight hover:bg-copper-light"
             >
-              Set up your free workspace
+              {crm ? "Start the free CRM" : "Set up your free workspace"}
             </a>
-            <p className="mt-3 text-[13px] text-mist">No subscription needed. Start with one task.</p>
+            <p className="mt-3 text-[13px] text-mist">{crm ? "No card. No import needed to start. Free for the whole agency." : "No subscription needed. Start with one task."}</p>
           </div>
           <aside className="rounded-xl border border-harbor/40 bg-midnight/40 p-7">
             <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-slate">One place to begin</p>
@@ -101,6 +121,8 @@ export default function FreeWorkspacePage() {
         </div>
       </section>
 
+      {!crm && (
+        <>
       {/* ─── First step ─── */}
       <section className="scroll-mt-16 bg-paper py-14 md:py-20" id="choose-first-step" aria-labelledby="first-step-heading">
         <div className="mx-auto max-w-6xl px-6">
@@ -116,12 +138,15 @@ export default function FreeWorkspacePage() {
         </div>
       </section>
 
+        </>
+      )}
+
       {/* ─── Included ─── */}
       <section className="bg-linen py-14 md:py-20" aria-labelledby="included-heading">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHead id="included-heading" eyebrow="Included free" heading="Useful on day one. Smarter with every file you add." />
           <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
-            {included.map((x) => (
+            {(crm ? includedCrm : included).map((x) => (
               <div key={x.t} className="iq-card p-7">
                 <h3 className="text-lg font-medium text-ink">{x.t}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-charcoal">
@@ -188,10 +213,14 @@ export default function FreeWorkspacePage() {
           </div>
           <div className="rounded-xl border border-interactive/50 bg-anchor/60 p-7">
             <p className="text-[40px] font-medium leading-none tracking-tight text-paper">
-              ${I.monthly}
+              ${currentIntelligenceMonthly()}
               <span className="ml-2 text-[15px] font-normal tracking-normal text-mist">per agency / month</span>
             </p>
-            <p className="mt-2 text-[14px] text-mist">Or ${I.annual} a year, billed upfront.</p>
+            <p className="mt-2 text-[14px] text-mist">
+              {introActive()
+                ? `Introductory price for your first ${I.intro.months} months when you start by ${I.intro.untilLabel}, then $${I.monthly}. A price guarantee, not a contract: cancel any time. Annual: $${I.intro.annual} for the first year.`
+                : `Or $${I.annual} a year, billed upfront. Get 2 months free with annual billing.`}
+            </p>
             <p className="mt-4 text-[15px] leading-relaxed text-mist">
               <span className="font-medium text-paper">{I.checksPerMonth} carrier checks each month,</span> shared
               across your agency. ${I.pack.price} adds {I.pack.checks} more, only when you choose.
@@ -206,11 +235,13 @@ export default function FreeWorkspacePage() {
       <FaqSection items={freeFaqs} />
 
       <FinalCta
-        heading="Make one part of your day easier."
-        body="Choose the contact, deadline, or carrier question you want to start with. Your free workspace can grow from there."
+        heading={crm ? "Start with one client." : "Make one part of your day easier."}
+        body={crm
+          ? "Add your first client and you are working. Bring in more as you go, or import a CSV from your AMS when you are ready."
+          : "Choose the contact, deadline, or carrier question you want to start with. Your free workspace can grow from there."}
         action={
-          <a href="#choose-first-step" className="cta-primary iq-btn iq-btn-copper">
-            Choose your first step
+          <a href={crm ? START_FREE_URL : "#choose-first-step"} className="cta-primary iq-btn iq-btn-copper">
+            {crm ? "Start the free CRM" : "Choose your first step"}
           </a>
         }
         note="Free for your agency. No Intelligence subscription required."

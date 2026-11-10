@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { DEMO_PAGE } from "@/lib/constants";
+import { DEMO_PAGE, LAUNCH, START_FREE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About HarborIQ | Built for Independent Insurance Agencies",
@@ -52,9 +52,47 @@ const nameChapters = [
   },
 ];
 
+/**
+ * The line that connects Andy's original wish list to what HarborIQ is today
+ * (added 2026-11-10). It names only what ships: the CRM sentence appears only
+ * when the free CRM does (LAUNCH.freeCrm). No roadmap claims.
+ */
+const todayChapter = {
+  title: "Today",
+  text: LAUNCH.freeCrm
+    ? "Andy\u2019s list was long, so we began with the two pieces an agency touches every day: one place for clients, pipeline and renewals, which is the free CRM, and answers from the carriers you write, which is Intelligence."
+    : "Andy\u2019s list was long, so we began with the piece that costs an agency the most time: answers from the carriers you write, with the page cited. That is Intelligence, and it comes with a free workspace for carrier contacts and deadlines.",
+};
+
+/** Teasers of manifesto principles. Titles match /manifesto; the full 18 live there. */
+const principles = [
+  { t: "We publish our price.", d: "It is on the website. You do not need a call to learn the number." },
+  { t: "We do not charge per seat.", d: "Hiring a producer should be a growth decision, not a budget conversation with your vendor." },
+  { t: "We do not sell your own data back to you.", d: "See every record and export all of them, free, on any plan. Intelligence adds reporting on top. It is never the price of your own data." },
+  { t: "Renewal is not a trap.", d: "We email you before it renews, and cancelling takes a click, not a sixty-day notice." },
+];
+
+/* Static data serialized with JSON.stringify: no user input reaches it. */
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About HarborIQ",
+  url: "https://harboriq.co/about",
+  mainEntity: {
+    "@type": "Organization",
+    name: "HarborIQ",
+    url: "https://harboriq.co",
+    description: "Software for independent insurance agencies, built with a working agency: carrier answers with the page cited, and a free workspace beside the AMS.",
+    founder: { "@type": "Person", name: "Justin Mayer", jobTitle: "Founder and CEO", sameAs: ["https://www.linkedin.com/in/cjustinmayer"] },
+  },
+};
+
 export default function AboutPage() {
+  const story = [...originChapters, todayChapter];
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
+
       {/* ─── HEADER ─── */}
       <section className="bg-midnight pt-16 pb-12 md:pt-24 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
@@ -67,173 +105,116 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── ORIGIN STORY TIMELINE ─── */}
+      {/* ─── HOW IT STARTED ─── */}
       <section className="bg-paper py-14 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl relative pl-[88px]">
-            {/* Vertical timeline line */}
-            <div className="absolute left-[31px] top-[80px] bottom-[80px] w-px bg-ash" />
-
-            {originChapters.map((chapter, i) => (
-              <div key={i} className="relative flex gap-6 items-start py-6">
-                <div className="absolute left-[-88px] w-16 h-16 shrink-0">
-                  <Image
-                    src={chapter.icon}
-                    alt={chapter.title}
-                    width={64}
-                    height={64}
-                    className="w-16 h-16"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-2">
-                    {chapter.title}
-                  </h3>
-                  <p className="text-[17px] text-charcoal leading-[1.65]">{chapter.text}</p>
-                </div>
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-4">
+            <p className="text-[13px] text-stone">How it started</p>
+            <h2 className="mt-2 text-[28px] font-medium leading-[1.12] tracking-tight text-ink">One lunch, one laptop, two hours of quoting.</h2>
+          </div>
+          <div className="md:col-span-8">
+            {story.map((c, i) => (
+              <div key={c.title} className={`grid gap-1.5 py-5 md:grid-cols-[130px_1fr] md:gap-5 ${i === 0 ? "border-t border-ink" : "border-t border-ash"}`}>
+                <p className="pt-0.5 text-[12px] font-semibold uppercase tracking-[0.06em] text-interactive">{c.title}</p>
+                <p className="text-[17px] leading-[1.6] text-charcoal">{c.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── WHY "HARBORIQ" ─── */}
-      <section className="bg-linen py-14 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[13px] font-medium text-interactive uppercase tracking-wider mb-8">
-            The name
-          </p>
-
-          <div className="max-w-3xl relative pl-[88px]">
-            <div className="absolute left-[31px] top-[80px] bottom-[80px] w-px bg-ash" />
-
-            {nameChapters.map((chapter, i) => (
-              <div key={i} className="relative flex gap-6 items-start py-6">
-                <div className="absolute left-[-88px] w-16 h-16 shrink-0">
-                  <Image
-                    src={chapter.icon}
-                    alt={chapter.title}
-                    width={64}
-                    height={64}
-                    className="w-16 h-16"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-ink mb-2">{chapter.title}</h3>
-                  <p className="text-[17px] text-charcoal leading-[1.65]">{chapter.text}</p>
-                </div>
+      {/* ─── THE NAME ─── */}
+      <section className="bg-linen py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="text-[13px] text-stone">The name</p>
+          <div className="mt-6 grid gap-10 md:grid-cols-2 md:gap-16">
+            {nameChapters.map((c) => (
+              <div key={c.title} className="border-t border-ink pt-5">
+                <h3 className="text-lg font-medium text-ink">{c.title}</h3>
+                <p className="mt-2 text-[16px] leading-[1.65] text-charcoal">{c.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── MANIFESTO TEASER ─── */}
+      {/* ─── THE PEOPLE ─── */}
       <section className="bg-paper py-14 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight mb-6">
-            What we believe
-          </h2>
-          <div className="max-w-3xl">
-            <p className="text-[18px] text-charcoal leading-[1.65]">
-              We wrote down how we build software: eighteen promises about
-              pricing, data, support, and your right to leave, published where
-              you can hold us to them. It starts with &ldquo;We publish our
-              price&rdquo; and ends with &ldquo;You can leave.&rdquo;
-            </p>
-            <Link
-              href="/manifesto"
-              className="inline-block mt-6 text-[16px] font-medium text-interactive hover:text-deep transition-colors"
-            >
-              Read the manifesto &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TEAM ─── */}
-      <section className="bg-linen py-14 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-medium text-ink tracking-tight mb-12">
-            Team
-          </h2>
-
-          <div className="space-y-12">
-            {/* Justin: horizontal layout */}
-            <div className="flex flex-col md:flex-row items-start gap-6">
-              <div className="w-[120px] h-[120px] rounded-full overflow-hidden border border-ash shrink-0">
-                <Image
-                  src="/images/justin-mayer-casual-portrait.jpg"
-                  alt="Justin Mayer"
-                  width={120}
-                  height={120}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="text-[13px] text-stone">The people</p>
+          <div className="mt-6 grid gap-12 md:grid-cols-2 md:gap-16">
+            <div className="grid grid-cols-[56px_1fr] gap-[18px] border-t border-ink pt-5">
+              <Image src="/images/justin-mayer-casual-portrait.jpg" alt="Justin Mayer" width={56} height={56} className="h-14 w-14 rounded-full object-cover object-[center_20%]" />
               <div>
                 <h3 className="text-lg font-medium text-ink">Justin Mayer</h3>
-                <p className="text-[13px] text-stone font-medium uppercase tracking-wider mt-1">Founder | CEO</p>
-                <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-xl">
-                  Product builder who&rsquo;s worked inside Fortune 500 companies and built from scratch as a founder. Knows what enterprise tooling looks like and builds it without the enterprise price tag. Started HarborIQ after watching agents spend two hours doing what should take twenty&nbsp;minutes.
+                <p className="text-[13px] text-stone">Founder and CEO</p>
+                <p className="mt-2.5 max-w-[50ch] text-[15.5px] leading-relaxed text-charcoal">
+                  A mechanical engineer with an MBA and nine patents. Justin led product at Honeywell and Life Fitness and co-founded an AI company that was acquired. He started HarborIQ after watching an agency spend two hours on one quote.
                 </p>
-                <div className="mt-4 flex gap-3">
-                  <a
-                    href="https://www.linkedin.com/in/cjustinmayer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-stone hover:text-harbor transition-colors"
-                    aria-label="Justin Mayer on LinkedIn"
-                  >
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </a>
-                </div>
+                <a href="https://www.linkedin.com/in/cjustinmayer" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-[14px] font-medium text-interactive underline-offset-4 hover:underline">Justin on LinkedIn</a>
               </div>
             </div>
-
-            {/* Design partner */}
-            <div className="pt-8 border-t border-ash">
-              <p className="text-[13px] text-interactive font-medium uppercase tracking-wider mb-3">Design Partner</p>
-              <h3 className="text-lg font-medium text-ink">Sertler &amp; Associates</h3>
-              <p className="text-[13px] text-stone mt-1">Chicagoland, IL</p>
-              <p className="mt-3 text-[16px] text-charcoal leading-relaxed max-w-xl">
-                Our founding design partner. Andy and Alex have shaped every feature in HarborIQ through real-world feedback from their agency in the Chicago&nbsp;suburbs.
-              </p>
-              <a
-                href="https://sdabrokers.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-3 text-[15px] font-medium text-interactive hover:text-deep transition-colors"
-              >
-                sdabrokers.com &rarr;
-              </a>
+            <div className="grid grid-cols-[72px_1fr] gap-[18px] border-t border-ink pt-5">
+              <div className="flex">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/testimonials/andy-sertler.jpg" alt="Andy Sertler" width={40} height={40} loading="lazy" className="h-10 w-10 rounded-full border-2 border-paper object-cover object-[center_22%]" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/testimonials/alex-ricketts.jpg" alt="Alex Ricketts" width={40} height={40} loading="lazy" className="-ml-2.5 h-10 w-10 rounded-full border-2 border-paper object-cover object-[center_22%]" />
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-ink">Sertler &amp; Associates</h3>
+                <p className="text-[13px] text-stone">Founding design partner, Illinois</p>
+                <p className="mt-2.5 max-w-[50ch] text-[15.5px] leading-relaxed text-charcoal">
+                  Andy Sertler and Alex Ricketts have shaped HarborIQ through weekly feedback from a working agency, since the first conversation.
+                </p>
+                <a href="https://sdabrokers.com" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-[14px] font-medium text-interactive underline-offset-4 hover:underline">sdabrokers.com</a>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── HOW WE OPERATE ─── */}
+      <section className="bg-anchor py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="text-[13px] text-mist">How we operate</p>
+          <h2 className="mt-2 max-w-[22ch] text-[30px] font-medium leading-[1.12] tracking-tight text-paper md:text-[34px]">Not how software vendors usually do it.</h2>
+          <div className="mt-10 grid gap-8 md:grid-cols-4 md:gap-0">
+            {principles.map((x, i) => (
+              <div key={x.t} className={`md:pr-7 ${i ? "md:border-l md:border-paper/20 md:pl-7" : ""}`}>
+                <p className="text-[13px] tracking-[0.06em] text-mist">{String(i + 1).padStart(2, "0")}</p>
+                <h3 className="mt-2.5 text-[20px] font-medium leading-[1.2] tracking-tight text-paper">{x.t}</h3>
+                <p className="mt-2.5 text-[15px] leading-relaxed text-mist">{x.d}</p>
+              </div>
+            ))}
+          </div>
+          <Link href="/manifesto" className="mt-9 inline-block text-[15px] font-medium text-paper underline-offset-4 hover:underline">
+            Read all 18 principles in the manifesto &rarr;
+          </Link>
         </div>
       </section>
 
       {/* ─── BOTTOM CTA ─── */}
-      <section className="bg-anchor py-14 md:py-20">
+      <section className="bg-midnight py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <h2 className="text-2xl md:text-3xl font-medium text-paper leading-tight tracking-tight">
-            Ready to stop drowning in&nbsp;tabs?
+            See whether it beats what you do&nbsp;today.
           </h2>
           <p className="mt-3 text-[16px] text-mist leading-relaxed">
-            Pick a time. 20 minutes is enough to decide. Stay longer if you&nbsp;want.
+            Start free in a few minutes, or book 20 minutes to talk it through.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={DEMO_PAGE}
+            <Link
+              href={START_FREE_URL}
               className="cta-primary bg-copper text-midnight btn-radius px-6 py-3 text-[15px] font-medium hover:bg-copper-light transition-colors"
             >
-              Book a 20 minute demo
-            </a>
+              Start free
+            </Link>
             <Link
-              href="/pricing"
+              href={DEMO_PAGE}
               className="cta-secondary border border-slate text-mist btn-radius px-6 py-3 text-[15px] font-medium hover:border-paper hover:text-paper transition-colors"
             >
-              See pricing
+              Book a 20 minute demo
             </Link>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SLICES, type SliceId } from "@/components/site/slices";
-import { INTELLIGENCE as I, START_INTELLIGENCE_URL, START_FREE_URL, DEMO_PAGE, OVERLAY_COSTS } from "@/lib/constants";
+import { PlansPanel } from "@/components/site/PlansPanel";
+import { INTELLIGENCE as I, OVERLAY_COSTS, LAUNCH, introActive } from "@/lib/constants";
 
 /** Shared pieces for the site pages (built as mocks 2026-11-08, ported 2026-11-09). */
 
@@ -189,79 +190,63 @@ export function TrustStrip({ light = false }: { light?: boolean }) {
   );
 }
 
-/** Plans with Intelligence first. Free is the quiet fallback. Agency OS is tabled from the public site (2026-11-09): one quiet line on the pricing page, walkthrough only. */
-export function Plans({ detailed = false, copperCta = false, heading = "Intelligence. One price for the whole agency." }: { detailed?: boolean; copperCta?: boolean; heading?: string }) {
-  const intel = [
-    `${I.checksPerMonth} carrier checks a month, shared by the whole team`,
-    "Your own carrier guides, searchable, with the page cited",
-    "Your book, renewals and follow-ups in one record",
-    `Optional $${I.pack.price} packs of ${I.pack.checks} more checks. Never automatic.`,
-  ];
-  const free = ["Try carrier questions with sources", "Underwriter contacts and portal links", "License and CE reminders"];
+/**
+ * Plans with Intelligence first, Free as the quiet door. Layout and copy live in
+ * PlansPanel (a client component, for the billing toggle). The introductory
+ * offer and the free-CRM wording are decided here, on the server: introActive()
+ * ends the offer after December 31, 2026, and LAUNCH.freeCrm keeps CRM and
+ * reporting claims off the page until the app delivers them. Pages that render
+ * this must set `export const revalidate = 3600` so the offer lapses by itself.
+ * Agency OS is not a purchasing option here (2026-11-10).
+ */
+export function Plans({ copperCta = false, heading = "Start free. Add Intelligence when the team starts asking." }: { detailed?: boolean; copperCta?: boolean; heading?: string }) {
   return (
-    <section id="intelligence" className="bg-paper py-16 md:py-24">
+    <section id="plans" className="bg-paper py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <H2 sub="Most agencies start here. The price covers everyone on the team, up to 30 people.">{heading}</H2>
-        <div className="mt-10 grid gap-6 md:grid-cols-12">
-          <div className="rounded-xl border-2 border-interactive bg-paper p-7 md:col-span-7">
-            <div className="flex flex-wrap items-baseline justify-between gap-3">
-              <h3 className="text-[22px] font-medium text-ink">Intelligence</h3>
-              <p className="text-ink"><span className="text-[40px] font-medium leading-none tracking-tight">${I.monthly}</span> <span className="text-[15px] text-charcoal">per agency, per month</span></p>
-            </div>
-            <p className="mt-2 text-[15px] text-charcoal">or ${I.annual} a year, two months free. Covers agencies up to 30 people; larger than that, <Link href={DEMO_PAGE} className="text-interactive underline-offset-4 hover:underline">ask us for a quote</Link>. Nothing is charged until you confirm.</p>
-            <ul className="mt-5 space-y-2.5 border-t border-ash pt-5">
-              {intel.map((t) => (
-                <li key={t} className="flex gap-3 text-[15px] text-charcoal"><span className="text-success" aria-hidden="true">✓</span>{t}</li>
-              ))}
-            </ul>
-            <Link href={START_INTELLIGENCE_URL} className={`${copperCta ? btn.copper : btn.navy} mt-7 w-full sm:w-auto`}>Start Intelligence</Link>
-          </div>
-          <div className="rounded-xl border border-ash bg-linen/60 p-7 md:col-span-5">
-            <div className="flex items-baseline justify-between gap-3">
-              <h3 className="text-[19px] font-medium text-ink">Free workspace</h3>
-              <p className="text-[15px] text-charcoal">$0</p>
-            </div>
-            <p className="mt-2 text-[15px] text-charcoal">Not ready for a subscription? Start here and move up when the team asks for more.</p>
-            <ul className="mt-5 space-y-2.5 border-t border-ash pt-5">
-              {free.map((t) => (
-                <li key={t} className="flex gap-3 text-[15px] text-charcoal"><span className="text-success" aria-hidden="true">✓</span>{t}</li>
-              ))}
-            </ul>
-            <Link href={START_FREE_URL} className="mt-7 inline-block text-[15px] font-medium text-interactive underline-offset-4 hover:underline">Start the free workspace</Link>
-          </div>
-        </div>
-        {detailed && (
-          <p id="agency-os" className="mt-8 max-w-[70ch] text-[15px] leading-relaxed text-charcoal">
-            Never a fee per person, on any plan. When you want the whole agency on HarborIQ, with your book, pipeline and renewals in one place, <Link href={DEMO_PAGE} className="text-interactive underline-offset-4 hover:underline">book a walkthrough</Link> and we will show you <Link href="/agency" className="text-interactive underline-offset-4 hover:underline">Agency OS</Link>. It is priced by agency size and it is the one plan we walk you through.
-          </p>
-        )}
+        <H2 sub="One price for the whole agency, up to 30 people. Never a fee per person.">{heading}</H2>
+        <PlansPanel intro={introActive()} crm={LAUNCH.freeCrm} copperCta={copperCta} />
       </div>
     </section>
   );
 }
 
+/**
+ * Testimonials, restrained (mocked 2026-11-10): quote and attribution lead, a
+ * small headshot (44px, so the source photos are never enlarged), no cards and
+ * no invented callouts. Both are Sertler & Associates, who approved reasonable
+ * testimonial language; every claim must stay true of the product.
+ */
 export function Quotes() {
   const q = [
     {
       name: "Andy Sertler",
-      role: "Owner, Sertler & Associates",
+      role: "Owner and President, Sertler & Associates",
+      photo: "/testimonials/andy-sertler.jpg",
       quote: "When our go-to carrier says no, my team used to come find me. Now they ask HarborIQ, read the carrier's own guideline, and know who to call next. One price covers all of us.",
     },
     {
       name: "Alex Ricketts",
       role: "Office Manager, Sertler & Associates",
+      photo: "/testimonials/alex-ricketts.jpg",
       quote: "Finding the right carrier is now as easy as a Google search. Our team spends its time binding policies, not clicking through portals.",
     },
   ];
   return (
-    <section className="bg-linen py-16 md:py-24">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2">
-        {q.map((t) => (
-          <figure key={t.name} className="border-l-2 border-interactive pl-6">
-            <blockquote className="text-[20px] leading-snug text-ink md:text-[22px]">&ldquo;{t.quote}&rdquo;</blockquote>
-            <figcaption className="mt-4 text-[15px] text-charcoal"><span className="font-medium text-ink">{t.name}</span>, {t.role}</figcaption>
-          </figure>
-        ))}
+    <section className="bg-linen py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <p className="text-[13px] text-stone">From the agency that helped build it</p>
+        <div className="mt-7 grid gap-12 md:grid-cols-2 md:gap-16">
+          {q.map((t) => (
+            <figure key={t.name} className="border-t border-ink pt-6">
+              <blockquote className="max-w-[34ch] text-[21px] leading-[1.45] tracking-[-0.005em] text-ink">&ldquo;{t.quote}&rdquo;</blockquote>
+              <figcaption className="mt-5 flex items-center gap-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={t.photo} alt={t.name} width={44} height={44} loading="lazy" className="h-11 w-11 rounded-full bg-paper object-cover object-[center_22%]" />
+                <span><span className="block text-[15px] font-medium text-ink">{t.name}</span><span className="text-[13.5px] text-stone">{t.role}</span></span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );

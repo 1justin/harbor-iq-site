@@ -16,7 +16,7 @@ export const PRINCIPLES: Principle[] = [
   },
   {
     title: "We do not sell your own data back to you.",
-    body: "Reporting is not a premium tier. Analytics is not an add-on. You generated it. You should be able to see it.",
+    body: "Your records are yours. You can see every one of them and export all of them, free, on any plan. Intelligence adds AI answers and reporting built on top of your records. It is never the price of getting your own data back.",
   },
   {
     title: "Integrations are not a revenue line.",
@@ -47,7 +47,7 @@ export const PRINCIPLES: Principle[] = [
     body: "So we take as much of it off your desk as we can. Every hour you spend feeding a database is an hour you did not spend in front of a client. Your job is to sell insurance and take care of people. Ours is to make sure nothing else gets in the way.",
   },
   {
-    title: "AI is the architecture, not an upsell.",
+    title: "AI is the architecture, not a bolt-on.",
     body: "You cannot bolt intelligence onto a system designed in 1998 and call it modern. We started from the other end. That is the entire reason we exist.",
   },
   {

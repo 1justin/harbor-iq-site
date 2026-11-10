@@ -74,7 +74,7 @@ const faqSchema = {
       name: "Can I use HarborIQ if I already built my own system?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. HarborIQ Intelligence sits alongside a homegrown system rather than replacing it. It adds the carrier layer most builds do not have: appetite and product guides you can ask questions of, with the page the answer came from. $29 per agency a month, with a free workspace for carrier contacts and license reminders. Nothing to migrate.",
+        text: "Yes. HarborIQ Intelligence sits alongside a homegrown system rather than replacing it. It adds the carrier layer most builds do not have: appetite and product guides you can ask questions of, with the page the answer came from. $49 per agency a month, with a free workspace for carrier contacts and license reminders. Nothing to migrate.",
       },
     },
     {
@@ -370,7 +370,7 @@ export default function PostPage() {
               If you must build, build small. Buy the layers a client could sue you&nbsp;over.
             </p>
             <p className="mt-2 text-[15px] text-charcoal">
-              HarborIQ Intelligence is $29 per agency a month, with a free workspace to start, and sits
+              HarborIQ Intelligence is $49 per agency a month, with a free workspace to start, and sits
               alongside whatever your agency already runs. Never per&nbsp;person.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
@@ -424,7 +424,7 @@ export default function PostPage() {
             <p>
               Yes. HarborIQ Intelligence sits alongside a homegrown system rather than replacing it. It adds
               the carrier layer most builds do not have: appetite and product guides you can ask questions of,
-              with the page the answer came from. $29 per agency a month, with a free workspace for carrier
+              with the page the answer came from. $49 per agency a month, with a free workspace for carrier
               contacts and license reminders. Nothing to&nbsp;migrate.
             </p>
           </div>

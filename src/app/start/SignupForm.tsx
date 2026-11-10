@@ -16,7 +16,7 @@ const inputBase =
   "btn-radius w-full border border-ash bg-paper px-3.5 py-3 text-[16px] text-ink focus:border-interactive focus:outline-none focus:ring-2 focus:ring-interactive/20";
 const labelBase = "mb-1.5 block text-[14px] font-medium text-ink";
 
-export function SignupForm() {
+export function SignupForm({ intro = false }: { intro?: boolean }) {
   const params = useSearchParams();
   const intelligence = params.get("plan") === "intelligence";
   const urlGoal = params.get("goal") ?? "";
@@ -99,7 +99,9 @@ export function SignupForm() {
       </h2>
       <p className="mt-1.5 text-[14px] text-stone">
         {intelligence
-          ? `$${INTELLIGENCE.monthly} per agency a month, or $${INTELLIGENCE.annual} a year. Nothing is charged until you confirm.`
+          ? intro
+            ? `$${INTELLIGENCE.intro.monthly} per agency a month for your first ${INTELLIGENCE.intro.months} months (standard $${INTELLIGENCE.monthly}), or $${INTELLIGENCE.intro.annual} for the first year. Nothing is charged until you confirm.`
+            : `$${INTELLIGENCE.monthly} per agency a month, or $${INTELLIGENCE.annual} a year. Nothing is charged until you confirm.`
           : "Free for your agency. No card needed."}
       </p>
 

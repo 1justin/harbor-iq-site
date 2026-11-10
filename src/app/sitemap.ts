@@ -16,14 +16,14 @@ const BASE = "https://harboriq.co";
 type Entry = { path: string; changed: string; freq: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number };
 
 const LAST_CHANGED: Entry[] = [
-  { path: "/", changed: "2026-11-09", freq: "weekly", priority: 1.0 },
-  { path: "/pricing", changed: "2026-11-09", freq: "monthly", priority: 0.9 },
+  { path: "/", changed: "2026-11-10", freq: "weekly", priority: 1.0 },
+  { path: "/pricing", changed: "2026-11-10", freq: "monthly", priority: 0.9 },
   { path: "/works-with", changed: "2026-11-09", freq: "monthly", priority: 0.9 },
   { path: "/works-with/applied-epic", changed: "2026-11-09", freq: "monthly", priority: 0.8 },
-  { path: "/intelligence", changed: "2026-11-03", freq: "monthly", priority: 0.8 },
+  { path: "/intelligence", changed: "2026-11-10", freq: "monthly", priority: 0.8 },
   { path: "/agency", changed: "2026-11-09", freq: "monthly", priority: 0.6 },
-  { path: "/about", changed: "2026-11-03", freq: "monthly", priority: 0.6 },
-  { path: "/manifesto", changed: "2026-11-03", freq: "yearly", priority: 0.5 },
+  { path: "/about", changed: "2026-11-10", freq: "monthly", priority: 0.6 },
+  { path: "/manifesto", changed: "2026-11-10", freq: "yearly", priority: 0.5 },
   { path: "/blog", changed: "2026-11-03", freq: "weekly", priority: 0.7 },
   { path: "/newsroom", changed: "2026-11-03", freq: "monthly", priority: 0.6 },
   { path: "/privacy", changed: "2026-04-22", freq: "yearly", priority: 0.3 },

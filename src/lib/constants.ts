@@ -47,19 +47,56 @@ export const PRICING = {
 } as const;
 
 /**
- * HarborIQ Intelligence, ratified 2026-10-28 (agency-os docs/decisions.md).
- * Replaces Markets on the site. Per agency, not per person. One check is one
- * ordinary carrier question and its source-backed answer. Annual keeps the
- * same 300 checks each month; it does not front-load 3,600.
+ * HarborIQ Intelligence. Per agency, not per person. One check is one ordinary
+ * carrier question and its source-backed answer. Annual keeps the same 300
+ * checks each month; it does not front-load 3,600.
+ *
+ * `monthly` and `annual` are the STANDARD price ($49 and $490, set 2026-11-10;
+ * $29 and $290 before that, ratified 2026-10-28). Evergreen copy, schema and
+ * comparisons use the standard price, because that is the price that lasts.
+ * The introductory offer lives in `intro` and is shown only where `introActive()`
+ * is true: agencies that start a paid subscription by `intro.until` pay
+ * `intro.monthly` (or `intro.annual` for the first year) for their first
+ * `intro.months` months. A price guarantee, not a contract: cancel any time.
+ * Annual is 10x monthly (two months free) at both prices.
  */
 export const INTELLIGENCE = {
-  monthly: 29,
-  annual: 290,
-  /** 12 x $29 minus $290. */
-  annualSavings: 58,
+  monthly: 49,
+  annual: 490,
+  /** 12 x $49 minus $490. */
+  annualSavings: 98,
   checksPerMonth: 300,
   pack: { price: 10, checks: 100 },
+  intro: {
+    monthly: 29,
+    annual: 290,
+    /** 12 x $29 minus $290. */
+    annualSavings: 58,
+    months: 12,
+    /** Last day to start a paid subscription at the introductory price. */
+    until: "2026-12-31",
+    /** Human-readable form for copy. */
+    untilLabel: "December 31, 2026",
+  },
 } as const;
+
+/**
+ * True through the end of INTELLIGENCE.intro.until, Central time. Pages that
+ * call this must revalidate (see `INTRO_REVALIDATE_SECONDS`) so the offer
+ * disappears on its own instead of waiting for the next deploy.
+ */
+export function introActive(now: Date = new Date()): boolean {
+  const end = new Date(`${INTELLIGENCE.intro.until}T23:59:59-06:00`);
+  return now.getTime() <= end.getTime();
+}
+
+/** Pages showing the introductory offer re-render at least this often. */
+export const INTRO_REVALIDATE_SECONDS = 3600;
+
+/** The price a visitor would pay today: introductory while the offer lasts, else standard. */
+export function currentIntelligenceMonthly(now: Date = new Date()): number {
+  return introActive(now) ? INTELLIGENCE.intro.monthly : INTELLIGENCE.monthly;
+}
 
 /**
  * What is live. Flip a flag only when the product path behind it exists.
@@ -69,6 +106,13 @@ export const INTELLIGENCE = {
 export const LAUNCH = {
   /** ChatGPT connection: no present-tense claim until it ships. */
   chatgpt: false,
+  /**
+   * Free CRM (clients, pipeline, renewals, follow-ups) open to the free rung in
+   * the app. Until the app gate split ships, free agencies cannot open those
+   * routes, so no page may say "free CRM". Flip only when the app session
+   * "Ship the free CRM in the app" is merged and verified in production.
+   */
+  freeCrm: false,
   /** Free workspace and marketplace pages: noindex and out of the sitemap until live. */
   freeWorkspaceIndexed: false,
   marketplaceIndexed: false,

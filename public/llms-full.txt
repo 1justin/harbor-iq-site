@@ -8,14 +8,14 @@ HarborIQ is software for independent P&C insurance agencies. It answers the team
 
 **Free agency workspace ($0 per agency).** The client record (clients, policies, renewals, tasks, notes, who owns what), private underwriter contacts and portal links, license and CE reminders, and a limited number of carrier checks with sources. No subscription needed.
 
-**HarborIQ Intelligence ($29 per agency per month, or $290 per year billed upfront).** The same record plus 300 carrier checks a month shared across the whole agency, the agency's own carrier guides searchable with the page cited, and Gmail connected to the client record. Covers agencies up to 30 people; larger agencies ask for a quote.
+**HarborIQ Intelligence ($49 per agency per month, or $490 per year billed upfront).** The same record plus 300 carrier checks a month shared across the whole agency, the agency's own carrier guides searchable with the page cited, and Gmail connected to the client record. Covers agencies up to 30 people; larger agencies ask for a quote.
 
 **HarborIQ Agency OS.** The whole agency on one record: book, pipeline, renewals, commissions, reports, team roles and the carrier tools, in one login, beside the AMS the agency keeps for carrier downloads and accounting. Sold with a 20-minute walkthrough, not self-serve, and priced by agency size, never per person.
 
 ## How much does HarborIQ cost?
 
 - Free agency workspace: $0 per agency.
-- Intelligence: $29 per agency per month, or $290 per year billed upfront (two months free). Covers every person at the agency, up to 30 people. 300 carrier checks each month, shared across the agency. Optional $10 packs add 100 more checks, only when the agency chooses. No automatic top-ups and no surprise usage bills.
+- Intelligence: $49 per agency per month, or $490 per year billed upfront (two months free). Introductory price: $29 per month, or $290 for the first year, guaranteed for the first 12 months for agencies that start a paid subscription by December 31, 2026. It is a price guarantee, not a contract: cancel any time. Covers every person at the agency, up to 30 people. 300 carrier checks each month, shared across the agency. Optional $10 packs add 100 more checks, only when the agency chooses. No automatic top-ups and no surprise usage bills.
 - What counts as a carrier check: one carrier question and its source-backed answer. Browsing the book, renewals, contacts and tasks is never metered.
 - Agencies larger than 30 people ask for a quote. It stays nominal next to a generic CRM.
 - Agency OS: priced by agency size with identical features at every size, quoted on the walkthrough. Annual is eleven months' price and includes the book import; on monthly billing the import is a one-time fee equal to one month.
@@ -44,7 +44,7 @@ Applied Epic, EZLynx, HawkSoft, NowCerts (Momentum) and AMS360 (Vertafore) stay 
 
 The generic CRM, the renewal spreadsheet, sticky notes and the person who knows. Not the AMS, and not the carriers.
 
-Reference published prices, checked November 2026: GoHighLevel $97 to $297 per month per account plus usage fees for texts, email and AI, and it cannot tell a policy from a deal; AgencyZoom $99 to $349 per month with seven seats included and more seats through sales, a sales pipeline that syncs with the AMS. HarborIQ Intelligence is $29 per month for the whole agency up to 30 people, with no seat count, and it knows carriers, policies and renewals. Pages: https://harboriq.co/works-with/gohighlevel and https://harboriq.co/works-with/agencyzoom.
+Reference published prices, checked November 2026: GoHighLevel $97 to $297 per month per account plus usage fees for texts, email and AI, and it cannot tell a policy from a deal; AgencyZoom $99 to $349 per month with seven seats included and more seats through sales, a sales pipeline that syncs with the AMS. HarborIQ Intelligence is $49 per month for the whole agency (introductory $29 through December 31, 2026) up to 30 people, with no seat count, and it knows carriers, policies and renewals. Pages: https://harboriq.co/works-with/gohighlevel and https://harboriq.co/works-with/agencyzoom.
 
 ## What about quoting and raters?
 
