@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroAsk } from "@/components/site/HeroAsk";
-import { AskScreen, ImportScreen, RenewalsScreen, FollowupScreen } from "@/components/site/Screens";
+import { AskScreen, ImportScreen, RenewalsScreen, FollowupScreen, ClientListScreen, ClientPageScreen } from "@/components/site/Screens";
 import { CrmFrame } from "@/components/site/CrmFrame";
-import { FeatureSlice, Villains, Integrations, TrustStrip, Plans, Quotes, InOut, btn } from "@/components/site/Bits";
+import { WorkspaceFrame } from "@/components/site/WorkspaceFrame";
+import { FeatureSlice, Villains, Integrations, TrustStrip, Plans, Quotes, H2, InOut, btn } from "@/components/site/Bits";
 import { FaqSection, type Faq } from "@/components/iq/Blocks";
 import { FAQ_CARRIER_CHECK, FAQ_KEEP_AMS, FAQ_SETUP, FAQ_SOURCES } from "@/lib/faqs";
 import { DEMO_PAGE, INTELLIGENCE as I, LAUNCH, START_FREE_URL, START_INTELLIGENCE_URL, currentIntelligenceMonthly, introActive } from "@/lib/constants";
@@ -63,6 +64,8 @@ function buildFaqs(): Faq[] {
   ];
 }
 
+const RECORD = ["Clients", "Policies", "Renewals", "Tasks", "Notes", "Who owns what"];
+
 const TICKS_CRM = ["Clients and prospects", "Sales pipeline", "Renewals and follow-ups", "Notes and relationships", "Carrier contacts"];
 const TICKS_WORKSPACE = ["Carrier contacts and portal links", "License and CE reminders for the dates you enter", "A few cited carrier answers to try", "Your whole team, no per-person fee"];
 
@@ -120,7 +123,7 @@ export default function Home() {
         {/* The free offer, shown as the product when the app delivers it. */}
         <section className="bg-paper py-16 md:py-24">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-12 md:gap-14">
-            <div className={crm ? "md:col-span-5" : "md:col-span-8"}>
+            <div className="md:col-span-5">
               <p className="text-[13px] text-stone">{crm ? "Free CRM" : "Free workspace"}</p>
               <h2 className="mt-2 max-w-[22ch] text-[30px] font-medium leading-[1.1] tracking-tight text-ink md:text-[38px]">
                 {crm ? "Every client, renewal and follow-up in one place." : "Your carrier contacts and deadlines, free, beside your AMS."}
@@ -140,7 +143,7 @@ export default function Home() {
                 <span className="text-[13px] text-stone">{crm ? "Free for the whole agency. No card. No import needed to start." : "Free for the whole agency. No card."}</span>
               </p>
             </div>
-            {crm && <CrmFrame className="md:col-span-7" />}
+            {crm ? <CrmFrame className="md:col-span-7" /> : <WorkspaceFrame className="md:col-span-7" />}
           </div>
         </section>
 
@@ -160,6 +163,25 @@ export default function Home() {
               </div>
               <InOut className="mt-10 md:col-span-5 md:mt-2" />
             </div>
+          </div>
+        </section>
+
+        {/* The record: product screens, restored (it was dropped in the 2026-11-10 rewrite). Included with every plan. */}
+        <section className="bg-linen py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-6">
+            <H2 sub={`Clients, policies, renewals, tasks, notes and who owns what, in one place the whole team can see. It is the part every agency already needs, so it comes with the free workspace and with Intelligence at $${I.monthly}. Import your book from the AMS or a spreadsheet and the record is there the same day.`}>
+              The record comes with every plan.
+            </H2>
+            <div className="mt-10 grid gap-6 md:grid-cols-12 md:items-start">
+              <div className="md:col-span-7"><ClientListScreen /></div>
+              <div className="md:col-span-5"><ClientPageScreen /></div>
+            </div>
+            <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-[15px] text-charcoal">
+              {RECORD.map((r) => (
+                <li key={r} className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-interactive" aria-hidden="true" />{r}</li>
+              ))}
+            </ul>
+            <p className="mt-4 text-[14px] text-stone">Not a replacement for your AMS. The working copy your team actually opens, with the carrier answers beside it.</p>
           </div>
         </section>
 

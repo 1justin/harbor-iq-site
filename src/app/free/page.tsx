@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FirstStepPicker } from "./FirstStepPicker";
 import { Film } from "@/components/iq/Film";
+import { CrmFrame } from "@/components/site/CrmFrame";
+import { WorkspaceFrame } from "@/components/site/WorkspaceFrame";
 import { Arrow, FaqSection, FinalCta, SectionHead, TextCta, type Faq } from "@/components/iq/Blocks";
 import { INTELLIGENCE as I, LAUNCH, START_FREE_URL, currentIntelligenceMonthly, introActive } from "@/lib/constants";
 
@@ -86,7 +88,7 @@ export default function FreeWorkspacePage() {
     <>
       {/* ─── Hero ─── */}
       <section className="bg-anchor">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.2fr_0.8fr] md:items-center md:gap-14 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1fr_1.15fr] md:items-center md:gap-14 md:py-20">
           <div className="text-center md:text-left">
             <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-paper">
               {crm ? "Free CRM · $0 per agency" : "Free agency workspace · $0 per agency"}
@@ -108,16 +110,12 @@ export default function FreeWorkspacePage() {
             </a>
             <p className="mt-3 text-[13px] text-mist">{crm ? "No card. No import needed to start. Free for the whole agency." : "No subscription needed. Start with one task."}</p>
           </div>
-          <aside className="rounded-xl border border-harbor/40 bg-midnight/40 p-7">
-            <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-slate">One place to begin</p>
-            <h2 className="mt-2 text-[24px] font-medium leading-snug tracking-tight text-paper">
-              You do not have to set up everything.
-            </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-mist">
-              Add the carrier you called this morning. Or the license deadline you keep meaning to put on a calendar.
-              Start there. Bring more into HarborIQ when it helps.
+          <div>
+            {crm ? <CrmFrame /> : <WorkspaceFrame />}
+            <p className="mt-4 text-[14px] leading-relaxed text-mist">
+              You do not have to set up everything. Add the carrier you called this morning, or the license deadline you keep meaning to put on a calendar, and start there.
             </p>
-          </aside>
+          </div>
         </div>
       </section>
 
