@@ -83,8 +83,8 @@ const KNOWLEDGE = [
 type Tile = { name: string; line: string; href?: string; logo?: string };
 
 const AMS: Tile[] = [
-  { name: "Applied Epic", logo: "/logos/fav-appliedsystems.png", line: "System of record, downloads, accounting. HarborIQ beside it.", href: "/works-with/applied-epic" },
-  { name: "EZLynx", logo: "/logos/fav-ezlynx.png", line: "Export the book once. Re-export when it changes.", href: "/works-with/ezlynx" },
+  { name: "Applied Epic", logo: "/logos/applied.png", line: "System of record, downloads, accounting. HarborIQ beside it.", href: "/works-with/applied-epic" },
+  { name: "EZLynx", logo: "/logos/ezlynx.png", line: "Export the book once. Re-export when it changes.", href: "/works-with/ezlynx" },
   { name: "HawkSoft", logo: "/logos/fav-hawksoft.png", line: "Same export, same mapping, same day.", href: "/works-with/hawksoft" },
   { name: "NowCerts", logo: "/logos/fav-nowcerts.png", line: "Keep it for what it does. Ask HarborIQ the rest.", href: "/works-with/nowcerts" },
   { name: "AMS360", logo: "/logos/fav-vertafore.png", line: "Standard export in. Renewals and answers out.", href: "/works-with/ams360" },
