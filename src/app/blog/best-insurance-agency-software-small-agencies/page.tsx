@@ -147,11 +147,9 @@ export default function PostPage() {
 
           <h2 className="text-xl font-medium text-ink mt-10 mb-4">Where HarborIQ&nbsp;fits</h2>
           <p>
-            We built HarborIQ for exactly this agency. It is an AI-native operating system for independent
-            agencies of one to fifteen people, which means the pipeline, client management, multi-carrier
-            quoting, team performance, and client engagement live in one platform with one login. There
-            are no per-person fees, so a 1-person agency pays $199 a month, a 5-person agency pays $399, and
-            a 10-person agency pays $599. The same full platform, whether you are one person or&nbsp;ten.
+            We built HarborIQ for exactly this agency. It gives independent agencies of one to fifteen people carrier answers with the page cited, beside the AMS
+            they already have, and a free workspace to start. There are no per-person fees: Intelligence is $49 per
+            agency a month, the same whether you are one person or&nbsp;ten.
           </p>
           <p>
             The point is not that HarborIQ has the longest feature list. It is that the features are the

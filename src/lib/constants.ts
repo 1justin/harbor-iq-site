@@ -114,7 +114,7 @@ export const LAUNCH = {
    */
   freeCrm: false,
   /** Free workspace and marketplace pages: noindex and out of the sitemap until live. */
-  freeWorkspaceIndexed: false,
+  freeWorkspaceIndexed: true,
   marketplaceIndexed: false,
 } as const;
 

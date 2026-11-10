@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaLink, FinalCta } from "@/components/iq/Blocks";
 import { Film } from "@/components/iq/Film";
-import { AGENCY_OS_DEMO_URL, IMPORT_TERMS, INTELLIGENCE, PRICING } from "@/lib/constants";
+import { AGENCY_OS_DEMO_URL, IMPORT_TERMS, INTELLIGENCE } from "@/lib/constants";
 
 /**
  * Agency OS product page. Since 2026-10-29 it also carries what used to be
@@ -12,11 +12,11 @@ import { AGENCY_OS_DEMO_URL, IMPORT_TERMS, INTELLIGENCE, PRICING } from "@/lib/c
 
 export const metadata: Metadata = {
   title: "HarborIQ Agency OS | The whole agency on one record",
-  description: `Clients, policies, pipeline, renewals, quoting, team performance, commissions and carrier answers in one login, beside the AMS you keep for downloads and accounting. $${PRICING.agency.solo.monthly}/mo solo, $${PRICING.agency.team.monthly} for 2 to 5 people, $${PRICING.agency.os.monthly} for 6 to 15. Identical features at every price.`,
+  description: `Clients, policies, pipeline, renewals, quoting, team performance, commissions and carrier answers in one login, beside the AMS you keep for downloads and accounting. Walkthrough only.`,
   alternates: { canonical: "/agency" },
   openGraph: {
     title: "HarborIQ Agency OS | The whole agency on one record",
-    description: "The whole agency on one record, beside the AMS you keep. Priced by agency size, never per person. Free book import with annual prepay.",
+    description: "The whole agency on one record, beside the AMS you keep. Shown on a 20-minute walkthrough, never priced per person.",
     url: "/agency",
     images: [{ url: "/og/agency.png", width: 1200, height: 630 }],
   },
@@ -124,9 +124,7 @@ export default function AgencyPage() {
             The whole agency on one record.
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-mist md:text-[19px]">
-            Clients, policies, pipeline, renewals and the carrier answers in one login, and what to work on today, this week and this quarter. Your AMS keeps the carrier downloads and the accounting; HarborIQ is the working copy your team opens all day. $
-            {PRICING.agency.solo.monthly}/mo solo, ${PRICING.agency.team.monthly}/mo for 2 to 5 people, $
-            {PRICING.agency.os.monthly}/mo for 6 to 15. Same product at every price.
+            Clients, policies, pipeline, renewals and the carrier answers in one login, and what to work on today, this week and this quarter. Your AMS keeps the carrier downloads and the accounting; HarborIQ is the working copy your team opens all day. Shown on a 20-minute walkthrough.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <a
@@ -240,7 +238,7 @@ export default function AgencyPage() {
 
       <FinalCta
         heading="See it with your own book in mind."
-        body={`A 20-minute walkthrough of Agency OS, built around how your agency works today. $${PRICING.agency.solo.monthly} solo, $${PRICING.agency.team.monthly} for 2 to 5 people, $${PRICING.agency.os.monthly} for 6 to 15. Never per person.`}
+        body={`A 20-minute walkthrough of Agency OS, built around how your agency works today. Never per person.`}
         action={<CtaLink href={AGENCY_OS_DEMO_URL}>Book an Agency OS demo</CtaLink>}
         secondary={
           <CtaLink href="/pricing#agency-os" variant="outline">
