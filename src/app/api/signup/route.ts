@@ -12,6 +12,9 @@ const clean = (s: unknown, max = 200): string | undefined => {
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const GOALS = new Set(["markets", "contacts", "deadlines", "profile"]);
+// Campaign tag from a cold-email link (?src=A) and the opaque watch token (?v=).
+const SRC = /^[a-z0-9-]{1,20}$/;
+const TOKEN = /^[a-f0-9]{12}$/;
 
 /**
  * Free workspace and Intelligence signups from /start (2026-10-28). Self-serve
@@ -39,7 +42,14 @@ export async function POST(req: NextRequest) {
   const agency = clean(body.agency, 120);
   const plan = body.plan === "intelligence" ? "intelligence" : "free";
   const goal = typeof body.goal === "string" && GOALS.has(body.goal) ? body.goal : undefined;
-  const source = plan === "intelligence" ? "intelligence" : goal ? `free-${goal}` : "free-workspace";
+  const baseSource = plan === "intelligence" ? "intelligence" : goal ? `free-${goal}` : "free-workspace";
+  // The campaign tag rides on the source as a suffix (free-workspace.a), so
+  // existing `like 'free-%'` queries still match and no schema change is needed.
+  const rawSrc = typeof body.src === "string" ? body.src.toLowerCase() : "";
+  const src = SRC.test(rawSrc) ? rawSrc : undefined;
+  const rawToken = typeof body.v === "string" ? body.v.toLowerCase() : "";
+  const token = TOKEN.test(rawToken) ? rawToken : undefined;
+  const source = src ? `${baseSource}.${src}` : baseSource;
 
   if (!email || !EMAIL.test(email)) {
     return NextResponse.json({ ok: false, error: "email" }, { status: 400 });
@@ -72,6 +82,7 @@ export async function POST(req: NextRequest) {
       `Agency: ${agency}`,
       `Email domain: ${email.split("@")[1]}`,
       `Source: ${source}`,
+      ...(token ? [`Watch token: ${token} (join to sales.watch_tokens for the lead)`] : []),
       ``,
       ...(prior.length
         ? [
