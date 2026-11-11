@@ -175,9 +175,18 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
   const demoHref = carrier
     ? `${CARRIER_BOOKING_URL}${CARRIER_BOOKING_URL.includes("?") ? "&" : "?"}src=carrier${token ? `&ref=${token}` : ""}`
     : `${DEMO_PAGE}?src=watch${token ? `&ref=${token}` : ""}`;
-  const askLine = carrier ? "Bring a couple of your documents. We will run it on your own products." : "Seen something you want to talk through? Bring your scenarios.";
-  const ctaLabel = carrier ? "Book 15 minutes" : "Talk to a real person";
-  const ctaNote = carrier ? "A short call, your guide on screen" : "20 minutes with someone on the team";
+  // Agency viewers get the free signup as the main action; the walkthrough
+  // stays as a quiet second link. The campaign suffix (-A, -B) becomes the
+  // ?src= tag, and the opaque token rides along as ?v= so a signup can be tied
+  // back to the lead who watched. Carrier viewers are unchanged.
+  const arm = campaign?.match(/-([a-z])$/i)?.[1]?.toLowerCase();
+  const startHref = `/start?src=${arm ?? "watch"}${token ? `&v=${token}` : ""}`;
+  const askLine = carrier
+    ? "Bring a couple of your documents. We will run it on your own products."
+    : "Like what you see? Set it up free. Your whole team can use it, and there is no card.";
+  const ctaLabel = carrier ? "Book 15 minutes" : "Start free";
+  const ctaNote = carrier ? "A short call, your guide on screen" : "Free for your whole agency";
+  const primaryHref = carrier ? demoHref : startHref;
 
   return (
     <div className="min-h-screen bg-paper text-ink">
@@ -226,7 +235,7 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
               <p className="text-[15px] text-ink mb-3">{askLine}</p>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <Link
-                  href={demoHref}
+                  href={primaryHref}
                   onClick={() => send("cta_click", current.slug)}
                   className="cta-primary inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-[15px] font-medium text-midnight hover:bg-copper-light transition-colors"
                 >
@@ -234,6 +243,11 @@ export function WatchView({ initialSlug, token, firstName, company, source, camp
                   <span aria-hidden="true">&rarr;</span>
                 </Link>
                 <span className="text-sm text-stone">{ctaNote}</span>
+                {!carrier && (
+                  <Link href={demoHref} className="text-sm text-interactive underline underline-offset-4 hover:text-deep">
+                    or talk to a real person
+                  </Link>
+                )}
               </div>
             </div>
           </section>

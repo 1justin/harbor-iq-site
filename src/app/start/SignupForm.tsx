@@ -20,6 +20,10 @@ export function SignupForm({ intro = false }: { intro?: boolean }) {
   const params = useSearchParams();
   const intelligence = params.get("plan") === "intelligence";
   const urlGoal = params.get("goal") ?? "";
+  // Campaign tag (?src=A or B from cold email) and the watch-page token (?v=),
+  // forwarded so /api/signup can record which email brought the signup.
+  const urlSrc = params.get("src") ?? "";
+  const urlToken = params.get("v") ?? "";
 
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,6 +47,8 @@ export function SignupForm({ intro = false }: { intro?: boolean }) {
           company,
           plan: intelligence ? "intelligence" : "free",
           goal: goal || undefined,
+          src: urlSrc || undefined,
+          v: urlToken || undefined,
         }),
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean };
