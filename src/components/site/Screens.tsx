@@ -108,7 +108,12 @@ export function RenewalsScreen() {
   );
 }
 
-export function FollowupScreen() {
+/**
+ * Tasks on the client record. With `inbox` (the default) the connected Gmail
+ * thread sits beside them; the Free CRM page passes inbox={false} and shows the
+ * client's notes there, because that page lists only what the free CRM includes.
+ */
+export function FollowupScreen({ inbox = true }: { inbox?: boolean }) {
   return (
     <Chrome label="HarborIQ · Whitfield Roofing">
       <div className="grid gap-3 sm:grid-cols-[1fr_1fr]">
@@ -120,13 +125,23 @@ export function FollowupScreen() {
             <li className="flex items-start gap-2 text-stone line-through"><span className="mt-1 h-3 w-3 shrink-0 rounded-sm bg-success" aria-hidden="true" />Request loss runs</li>
           </ul>
         </div>
-        <div className="rounded-md border border-ash p-3">
-          <p className="text-[12px] text-stone">Inbox · Gmail</p>
-          <div className="mt-2 space-y-2 text-[13px]">
-            <div><p className="font-medium text-ink">Jim Whitfield</p><p className="text-charcoal">Loss runs attached, let me know what else you need.</p></div>
-            <div><p className="font-medium text-ink">Lakeshore Mutual UW</p><p className="text-charcoal">Can quote, need updated roof inspection.</p></div>
+        {inbox ? (
+          <div className="rounded-md border border-ash p-3">
+            <p className="text-[12px] text-stone">Inbox · Gmail</p>
+            <div className="mt-2 space-y-2 text-[13px]">
+              <div><p className="font-medium text-ink">Jim Whitfield</p><p className="text-charcoal">Loss runs attached, let me know what else you need.</p></div>
+              <div><p className="font-medium text-ink">Lakeshore Mutual UW</p><p className="text-charcoal">Can quote, need updated roof inspection.</p></div>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="rounded-md border border-ash p-3">
+            <p className="text-[12px] text-stone">Notes</p>
+            <div className="mt-2 space-y-2 text-[13px]">
+              <div><p className="text-charcoal">Jim sent loss runs. Wants options before the 15th.</p><p className="text-stone">Maria, Nov 4</p></div>
+              <div><p className="text-charcoal">Underwriter can quote with an updated roof inspection.</p><p className="text-stone">Tom, Nov 2</p></div>
+            </div>
+          </div>
+        )}
       </div>
       <p className="mt-3 text-[12px] text-stone">One record per client. When staff change, the history stays.</p>
     </Chrome>
@@ -203,6 +218,55 @@ export function ClientPageScreen() {
           <p className="text-[12px] text-stone">Notes</p>
           <p className="mt-1.5 text-charcoal">Added a second crew in June. Wants the auto and WC on one renewal date next year. <span className="text-stone">· Maria, Oct 2</span></p>
         </div>
+      </div>
+    </Chrome>
+  );
+}
+
+/**
+ * Insights from the book (Intelligence): the priorities for the week, a summary
+ * of what happened, and how each person is closing. Mirrors what the app shows
+ * today (the daily directive, the activity feed, agent performance with closing
+ * ratio). Demo data; names match the other screens.
+ */
+export function InsightsScreen() {
+  const priorities: [string, string][] = [
+    ["Send Whitfield Roofing renewal options", "Renews in 12 days, no quote sent yet"],
+    ["Follow up with Northside Dental", "Quote delivered 6 days ago, no reply"],
+    ["Call Delgado Family about the umbrella", "Home and auto with you, no umbrella"],
+  ];
+  const team: [string, string, string, string][] = [
+    ["Maria", "14", "9", "64%"],
+    ["Tom", "11", "5", "45%"],
+    ["Priya", "8", "5", "63%"],
+  ];
+  return (
+    <Chrome label="HarborIQ · Insights">
+      <p className="text-[12px] text-stone">Your priorities this week</p>
+      <ol className="mt-2 overflow-hidden rounded-md border border-ash text-[13px]">
+        {priorities.map(([t, why], i) => (
+          <li key={t} className={`flex gap-3 px-3 py-2.5 ${i ? "border-t border-ash/70" : "bg-ice/40"}`}>
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ice text-[11px] font-medium text-interactive">{i + 1}</span>
+            <span><span className="block font-medium text-ink">{t}</span><span className="text-stone">{why}</span></span>
+          </li>
+        ))}
+      </ol>
+      <div className="mt-3 rounded-md border border-ash px-3 py-2.5 text-[13px]">
+        <p className="text-[12px] text-stone">Last week, in one paragraph</p>
+        <p className="mt-1 leading-snug text-charcoal">19 policies bound and 7 renewals kept. Three quotes are waiting on the client. Two renewals inside 30 days have no owner.</p>
+      </div>
+      <div className="mt-3 overflow-hidden rounded-md border border-ash text-[13px]">
+        <div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] bg-linen/60 px-3 py-1.5 text-[12px] text-stone">
+          <span>Team, last 30 days</span><span className="text-right">Quoted</span><span className="text-right">Bound</span><span className="text-right">Closing</span>
+        </div>
+        {team.map(([n, q, b, r]) => (
+          <div key={n} className="grid grid-cols-[1.2fr_1fr_1fr_1fr] border-t border-ash/70 px-3 py-2">
+            <span className="font-medium text-ink">{n}</span>
+            <span className="text-right text-charcoal">{q}</span>
+            <span className="text-right text-charcoal">{b}</span>
+            <span className="text-right font-medium text-ink">{r}</span>
+          </div>
+        ))}
       </div>
     </Chrome>
   );

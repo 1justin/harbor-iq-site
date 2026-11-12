@@ -4,7 +4,8 @@ import { HeroAsk } from "@/components/site/HeroAsk";
 import { AskScreen, ImportScreen, RenewalsScreen, FollowupScreen, ClientListScreen, ClientPageScreen } from "@/components/site/Screens";
 import { CrmFrame } from "@/components/site/CrmFrame";
 import { WorkspaceFrame } from "@/components/site/WorkspaceFrame";
-import { FeatureSlice, Villains, Integrations, TrustStrip, Plans, Quotes, H2, InOut, btn } from "@/components/site/Bits";
+import { HarborLoop } from "@/components/site/HarborLoop";
+import { FeatureSlice, Villains, Integrations, TrustStrip, Plans, Quotes, H2, btn } from "@/components/site/Bits";
 import { FaqSection, type Faq } from "@/components/iq/Blocks";
 import { FAQ_CARRIER_CHECK, FAQ_KEEP_AMS, FAQ_SETUP, FAQ_SOURCES } from "@/lib/faqs";
 import { DEMO_PAGE, INTELLIGENCE as I, LAUNCH, START_FREE_URL, START_INTELLIGENCE_URL, currentIntelligenceMonthly, introActive } from "@/lib/constants";
@@ -158,19 +159,20 @@ export default function Home() {
 
         <Quotes />
 
-        {/* How HarborIQ helps: the one explainer. The diagram lives on the Works with page now. */}
-        <section className="bg-paper py-16 md:py-24">
+        {/* How HarborIQ helps: the one explainer, with the moving loop diagram back under it (restored
+            2026-11-10; a plain four-row list stood in for it here from 2026-11-09). */}
+        <section id="see-it-work" className="scroll-mt-16 bg-paper py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6">
             <p className="text-[13px] text-stone">How HarborIQ helps</p>
-            <div className="mt-3 md:grid md:grid-cols-12 md:gap-12">
-              <div className="md:col-span-7">
+            <div className="mt-3">
+              <div className="max-w-3xl">
                 <h2 className="text-[30px] font-medium leading-[1.1] tracking-tight text-ink md:text-[40px]">The answers your team asks each other all day, with the page they came from.</h2>
                 <p className="mt-5 max-w-[60ch] text-[17px] leading-relaxed text-charcoal md:text-[18px]">
                   Who writes this. What renews next. Who owns it. HarborIQ reads your carrier guides and your book and answers from them, so the CSR says yes while the client is on the phone, the producer sees every renewal before it is late, and the carrier gets submissions that fit the guide it published. Your AMS stays where it is. Your team spends the day quoting and renewing, not searching.
                 </p>
-                <Link href="/works-with#how-it-works" className="mt-6 inline-block text-[15px] font-medium text-interactive underline-offset-4 hover:underline">See how it works</Link>
               </div>
-              <InOut className="mt-10 md:col-span-5 md:mt-2" />
+              <HarborLoop className="mt-10 md:mt-12" />
+              <Link href="/works-with" className="mt-6 inline-block text-[15px] font-medium text-interactive underline-offset-4 hover:underline">See what it works with</Link>
             </div>
           </div>
         </section>
@@ -178,7 +180,7 @@ export default function Home() {
         {/* The record: product screens, restored (it was dropped in the 2026-11-10 rewrite). Included with every plan. */}
         <section className="bg-linen py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6">
-            <H2 sub={`Clients, policies, renewals, tasks, notes and who owns what, in one place the whole team can see. It is the part every agency already needs, so it comes with the free workspace and with Intelligence at $${I.monthly}. Import your book from the AMS or a spreadsheet and the record is there the same day.`}>
+            <H2 sub={`Clients, policies, renewals, tasks, notes and who owns what, in one place the whole team can see. It is the part every agency already needs, so it comes with ${freeLabel} and with Intelligence at $${I.monthly}. Import your book from the AMS or a spreadsheet and the record is there the same day.`}>
               The record comes with every plan.
             </H2>
             <div className="mt-10 grid gap-6 md:grid-cols-12 md:items-start">

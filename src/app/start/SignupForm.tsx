@@ -3,9 +3,19 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState, type FormEvent } from "react";
-import { AGENCY_OS_DEMO_URL, APP_FREE_SIGNUP_URL, INTELLIGENCE } from "@/lib/constants";
+import { APP_FREE_SIGNUP_URL, DEMO_PAGE, INTELLIGENCE } from "@/lib/constants";
 
-const GOAL_LABELS: Record<string, string> = {
+/** Free CRM starting points; ids match the /free picker and the signup source tag. */
+const CRM_GOALS: Record<string, string> = {
+  client: "Add my first client",
+  pipeline: "Track a prospect",
+  renewals: "See what renews next",
+  import: "Import a CSV from my AMS",
+  contacts: "Organize carrier contacts",
+};
+
+/** The free workspace goals. Still honored when a link carries one (for example ?goal=profile). */
+const WORKSPACE_GOALS: Record<string, string> = {
   markets: "Find a potential market",
   contacts: "Organize carrier contacts",
   deadlines: "Remember license or CE dates",
@@ -16,7 +26,7 @@ const inputBase =
   "btn-radius w-full border border-ash bg-paper px-3.5 py-3 text-[16px] text-ink focus:border-interactive focus:outline-none focus:ring-2 focus:ring-interactive/20";
 const labelBase = "mb-1.5 block text-[14px] font-medium text-ink";
 
-export function SignupForm({ intro = false }: { intro?: boolean }) {
+export function SignupForm({ intro = false, crm = false }: { intro?: boolean; crm?: boolean }) {
   const params = useSearchParams();
   const intelligence = params.get("plan") === "intelligence";
   const urlGoal = params.get("goal") ?? "";
@@ -24,7 +34,11 @@ export function SignupForm({ intro = false }: { intro?: boolean }) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [agency, setAgency] = useState("");
-  const [goal, setGoal] = useState(GOAL_LABELS[urlGoal] ? urlGoal : "");
+  // The list offered follows the product that is live; a linked goal from the other list is kept as an extra option.
+  const base = crm ? CRM_GOALS : WORKSPACE_GOALS;
+  const linked = { ...WORKSPACE_GOALS, ...CRM_GOALS }[urlGoal];
+  const GOAL_LABELS: Record<string, string> = linked && !base[urlGoal] ? { ...base, [urlGoal]: linked } : base;
+  const [goal, setGoal] = useState(linked ? urlGoal : "");
   const [company, setCompany] = useState(""); // honeypot; humans never see it
   const [state, setState] = useState<"form" | "sending" | "done" | "error">("form");
 
@@ -61,7 +75,11 @@ export function SignupForm({ intro = false }: { intro?: boolean }) {
           </svg>
         </div>
         <h2 className="text-[24px] font-medium tracking-tight text-ink">
-          {intelligence ? `You\u2019re signed up, ${firstName.trim() || "thanks"}.` : `Your workspace is ready, ${firstName.trim() || "thanks"}.`}
+          {intelligence
+            ? `You\u2019re signed up, ${firstName.trim() || "thanks"}.`
+            : crm
+              ? `One step left, ${firstName.trim() || "thanks"}.`
+              : `Your workspace is ready, ${firstName.trim() || "thanks"}.`}
         </h2>
         {intelligence ? (
           <p className="mt-3 text-[16px] leading-relaxed text-charcoal">
@@ -71,7 +89,9 @@ export function SignupForm({ intro = false }: { intro?: boolean }) {
         ) : (
           <>
             <p className="mt-3 text-[16px] leading-relaxed text-charcoal">
-              Create your login to open it. It takes about a minute. No card, no subscription.
+              {crm
+                ? "Create your login, then add your first client. It takes about a minute. No credit card, no subscription."
+                : "Create your login to open it. It takes about a minute. No card, no subscription."}
             </p>
             <a
               href={APP_FREE_SIGNUP_URL}
@@ -82,8 +102,8 @@ export function SignupForm({ intro = false }: { intro?: boolean }) {
           </>
         )}
         <p className="mt-6 border-t border-ash pt-5 text-[15px] text-charcoal">
-          Want to see the whole platform first?{" "}
-          <Link href={AGENCY_OS_DEMO_URL} className="cta-secondary text-interactive underline underline-offset-4 hover:text-deep">
+          Want someone to walk you through it first?{" "}
+          <Link href={`${DEMO_PAGE}?src=start`} className="cta-secondary text-interactive underline underline-offset-4 hover:text-deep">
             Book a 20-minute walkthrough
           </Link>
           .
@@ -95,14 +115,16 @@ export function SignupForm({ intro = false }: { intro?: boolean }) {
   return (
     <form onSubmit={onSubmit} className="iq-card relative p-7 shadow-lg md:p-8" noValidate={false}>
       <h2 className="text-[22px] font-medium tracking-tight text-ink">
-        {intelligence ? "Start Intelligence" : "Set up your free workspace"}
+        {intelligence ? "Start Intelligence" : crm ? "Start your free CRM" : "Set up your free workspace"}
       </h2>
       <p className="mt-1.5 text-[14px] text-stone">
         {intelligence
           ? intro
             ? `$${INTELLIGENCE.intro.monthly} per agency a month for your first ${INTELLIGENCE.intro.months} months (standard $${INTELLIGENCE.monthly}), or $${INTELLIGENCE.intro.annual} for the first year. Nothing is charged until you confirm.`
             : `$${INTELLIGENCE.monthly} per agency a month, or $${INTELLIGENCE.annual} a year. Nothing is charged until you confirm.`
-          : "Free for your agency. No card needed."}
+          : crm
+            ? "Free for your whole agency. No credit card."
+            : "Free for your agency. No card needed."}
       </p>
 
       <div className="mt-6 space-y-4">
@@ -151,9 +173,9 @@ export function SignupForm({ intro = false }: { intro?: boolean }) {
         disabled={state === "sending"}
         className="cta-primary btn-radius mt-6 w-full bg-copper px-6 py-3.5 text-[16px] font-medium text-midnight transition-colors hover:bg-copper-light disabled:opacity-70"
       >
-        {state === "sending" ? "One moment" : intelligence ? "Start Intelligence" : "Create my free workspace"}
+        {state === "sending" ? "One moment" : intelligence ? "Start Intelligence" : crm ? "Create my free CRM" : "Create my free workspace"}
       </button>
-      <p className="mt-3 text-center text-[13px] text-stone">We&rsquo;ll only use your email to set up your workspace.</p>
+      <p className="mt-3 text-center text-[13px] text-stone">We&rsquo;ll only use your email to set up your {crm && !intelligence ? "CRM" : "workspace"}.</p>
     </form>
   );
 }

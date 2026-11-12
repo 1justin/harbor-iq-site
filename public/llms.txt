@@ -1,11 +1,11 @@
 # HarborIQ
 
-> HarborIQ answers an independent insurance agency's carrier questions from the agency's own carrier guides, with the page cited, and keeps the book, renewals, tasks and inbox in one client record beside the AMS the agency already has. Two ways to start: a **free agency workspace** ($0 per agency) and **Intelligence** at $49 per agency per month, or $490 per year, for agencies up to 30 people. Introductory price: $29 per month ($290 for the first year), guaranteed for the first 12 months, for agencies that start a paid subscription by December 31, 2026; it is a price guarantee, not a contract. Never priced per person. Canonical domain: https://harboriq.co
+> HarborIQ answers an independent insurance agency's carrier questions from the agency's own carrier guides, with the page cited, and keeps the book, renewals, tasks and inbox in one client record beside the AMS the agency already has. Two ways to start: a **free CRM** ($0 for the whole agency, no credit card) and **Intelligence** at $49 per agency per month, or $490 per year, for agencies up to 30 people. Introductory price: $29 per month ($290 for the first year), guaranteed for the first 12 months, for agencies that start a paid subscription by December 31, 2026; it is a price guarantee, not a contract. Never priced per person. Canonical domain: https://harboriq.co
 
 Key facts (as of November 2026):
 - Intelligence, $49 per agency per month or $490 per year billed upfront (two months free), covers every person at the agency up to 30 people; larger agencies ask for a quote. 300 carrier checks each month shared across the agency; one carrier check is one carrier question and its source-backed answer. Optional $10 packs add 100 checks, only when the agency chooses. No automatic top-ups.
-- Intelligence includes the agency record: clients, policies, renewals built from expiration dates with an owner and days out, tasks and notes on the client record, and Gmail connected to it. Outlook is coming soon.
-- Free agency workspace, $0 per agency: the same record, private underwriter contacts and portal links, license and CE reminders, and a limited number of carrier checks with sources.
+- Free CRM, $0 for the whole agency, no credit card: clients and prospects, sales pipeline, renewals built from expiration dates with an owner and days out, follow-ups, notes, carrier contacts, and periodic CSV imports from the AMS. An agency can start with one client. Carrier research, reporting and analytics are not part of the free CRM.
+- Intelligence includes everything in the free CRM and adds AI carrier appetite and product research with source-backed answers, the 300 shared monthly checks, and reporting and analytics. Gmail connects to the client record; Outlook is coming soon.
 - HarborIQ works beside the AMS, not instead of it. Agencies export the book from Applied Epic, EZLynx, HawkSoft, NowCerts or AMS360 as CSV or XLSX; HarborIQ maps the columns and keeps a working copy. There is no live AMS sync today. The AMS keeps carrier downloads and accounting.
 - HarborIQ replaces the generic CRM (GoHighLevel, AgencyZoom), the renewal spreadsheet, sticky notes and memory. It does not replace the AMS or the carriers.
 - Carrier knowledge comes from the guides the agency loads: any carrier, any state, any line of business. Answers are only ever drawn from those documents, with the page cited. Agency data is never used to train AI models.
@@ -14,13 +14,13 @@ Key facts (as of November 2026):
 ## Pages
 
 - [Home](https://harboriq.co/): what HarborIQ does, the Ask screen, the record, plans
-- [Pricing](https://harboriq.co/pricing): free workspace and Intelligence, published in full
-- [Start](https://harboriq.co/start): sign up for the free workspace or Intelligence
+- [Free CRM](https://harboriq.co/free): clients, prospects, pipeline, renewals, follow-ups and notes, free for the whole agency
+- [Pricing](https://harboriq.co/pricing): free CRM and Intelligence, published in full
+- [Start](https://harboriq.co/start): sign up for the free CRM or Intelligence
 - [Intelligence](https://harboriq.co/intelligence): carrier questions answered from carrier documents, with sources
 - [Works with](https://harboriq.co/works-with): mail, spreadsheets, documents and files it reads; the AMSs it is compatible with; what it replaces; how it works
 - [HarborIQ with Applied Epic](https://harboriq.co/works-with/applied-epic), [EZLynx](https://harboriq.co/works-with/ezlynx), [HawkSoft](https://harboriq.co/works-with/hawksoft), [NowCerts](https://harboriq.co/works-with/nowcerts), [AMS360](https://harboriq.co/works-with/ams360)
 - [HarborIQ instead of GoHighLevel](https://harboriq.co/works-with/gohighlevel) and [AgencyZoom](https://harboriq.co/works-with/agencyzoom)
-- [Agency OS](https://harboriq.co/agency): the whole agency on one record, beside the AMS you keep
 - [Book a walkthrough](https://harboriq.co/demo): 20 minutes
 - [Blog](https://harboriq.co/blog) and [Newsroom](https://harboriq.co/newsroom)
 

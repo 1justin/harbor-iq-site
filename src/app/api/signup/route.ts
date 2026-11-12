@@ -11,7 +11,8 @@ const clean = (s: unknown, max = 200): string | undefined => {
 };
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const GOALS = new Set(["markets", "contacts", "deadlines", "profile"]);
+/** Free CRM starting points (2026-11-10), plus the older workspace goals still reachable by link. */
+const GOALS = new Set(["client", "pipeline", "renewals", "import", "contacts", "markets", "deadlines", "profile"]);
 
 /**
  * Free workspace and Intelligence signups from /start (2026-10-28). Self-serve
@@ -62,11 +63,11 @@ export async function POST(req: NextRequest) {
 
   const who = firstName ?? "Someone";
   const where = ` at ${agency}`;
-  const what = plan === "intelligence" ? "Intelligence" : "Free workspace";
+  const what = plan === "intelligence" ? "Intelligence" : "Free CRM";
   await sendSalesEmail({
     subject: `${prior.length ? "[possible duplicate] " : ""}${what} signup: ${who}${where} (${email})`,
     text: [
-      `${who}${where} signed up for ${what === "Intelligence" ? "Intelligence" : "the free workspace"} on /start.`,
+      `${who}${where} signed up for ${what === "Intelligence" ? "Intelligence" : "the free CRM"} on /start.`,
       ``,
       `Email: ${email}`,
       `Agency: ${agency}`,
