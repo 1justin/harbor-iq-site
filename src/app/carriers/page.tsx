@@ -32,12 +32,10 @@ export const metadata: Metadata = {
 
 /** What a carrier rarely sees today, even with good submission data. */
 const UNSEEN = [
-  "Opportunities your agencies evaluate but never submit to you",
-  "Product lines where your quote share is slipping",
-  "Appetite or coverage gaps that send business elsewhere",
-  "Agencies with growing opportunity volume and little production with you",
-  "The specific action a product manager or territory rep could take to win more",
-];
+  { k: "Missed opportunities", v: "Business your agencies evaluate but never submit to you." },
+  { k: "Lost share", v: "Product lines and territories where agencies increasingly place business elsewhere." },
+  { k: "Growth actions", v: "Specific agencies, appetite gaps, and product improvements your team can act on." },
+]
 
 /** Who reads it. Distribution covers the field reps. */
 const TEAMS = [
@@ -65,7 +63,7 @@ const TEAMS = [
 
 /** How agency activity becomes carrier intelligence. */
 const FLOW = [
-  { h: "Agency activity", p: "Agencies log opportunities, run quotes, bind policies and ask carrier questions in HarborIQ as part of their day." },
+  { h: "Agency activity", p: "Agencies track opportunities, record quote and bind activity, and ask carrier questions in HarborIQ, alongside the AMS and carrier systems they already use." },
   { h: "Agency-controlled sharing", p: "Each agency chooses which carriers see its activity, and can change that at any time." },
   { h: "Carrier intelligence", p: "You get agency-level and territory-level insight, the weekly brief, and a next step for your team." },
 ];
@@ -117,7 +115,7 @@ const FAQS = [
   },
   {
     q: "Where does the data come from?",
-    a: "From the work independent agencies do in HarborIQ: the opportunities they log, the quotes they run, the policies they bind and the carrier questions they ask, limited to what each agency chooses to share with you. Nothing is pulled from your systems.",
+    a: "From the work independent agencies do in HarborIQ: the opportunities they track, the quote and bind activity they record, and the carrier questions they ask, limited to what each agency chooses to share with you. Nothing is pulled from your systems.",
   },
   {
     q: "Can we run growth incentives through HarborIQ?",
@@ -138,23 +136,14 @@ export default function CarriersPage() {
       {/* ─── HERO: light, the dashboard set in with depth ─── */}
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,var(--color-paper)_0%,var(--color-paper)_55%,var(--color-linen)_55%,var(--color-linen)_100%)] pt-14 md:pt-20">
         <div className="relative mx-auto max-w-6xl px-6">
-          <div className="grid gap-8 md:grid-cols-12 md:items-end">
-            <div className="md:col-span-7">
-              <p className={EYEBROW}>HarborIQ Distribution Intelligence, for carriers</p>
-              <h1 className="mt-3 text-[36px] font-medium leading-[1.08] tracking-[-0.02em] text-anchor md:text-[48px]">
-                See your whole agency network, not just your submission queue.
-              </h1>
-            </div>
-            <div className="md:col-span-5 md:pb-1.5">
-              <p className="text-[20px] font-medium leading-snug text-ink">
-                See the business you&rsquo;re missing. Know what to do next.
-              </p>
-              <p className="mt-3 text-[16px] leading-relaxed text-charcoal">
-                Your agencies work far more risks than they send you. From the activity they choose to share, HarborIQ shows where your share is slipping, why business goes elsewhere, and what your team can do about it.
-              </p>
-            </div>
-          </div>
-          <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+          <p className={EYEBROW}>HarborIQ Distribution Intelligence, for carriers</p>
+          <h1 className="mt-3 text-[36px] font-medium leading-[1.08] tracking-[-0.02em] text-anchor md:text-[48px]">
+            See your whole agency network, not just your submission queue.
+          </h1>
+          <p className="mt-5 text-[18px] leading-relaxed text-charcoal md:text-[20px]">
+            See where your share is slipping, why agencies place business elsewhere, and where your distribution team can win more.
+          </p>
+          <div className="mt-7 flex flex-col gap-3.5 sm:flex-row sm:items-center">
             <CtaLink href={BOOK}>See a carrier intelligence demo</CtaLink>
             <a href="#sample" className={btn.ghost}>See a sample view</a>
           </div>
@@ -174,11 +163,11 @@ export default function CarriersPage() {
             <p className="mt-5 max-w-[56ch] text-[17px] leading-relaxed text-charcoal">
               You know what gets submitted and bound with you, and you know your results vary by product, territory and agency. Every agency you appoint also represents your competitors. What your data can&rsquo;t show is the rest of what those agencies work:
             </p>
-            <ul className="mt-5 space-y-2.5">
+            <ul className="mt-5 space-y-3">
               {UNSEEN.map((t) => (
-                <li key={t} className="flex gap-3 text-[16px] leading-relaxed text-ink">
+                <li key={t.k} className="flex gap-3 text-[16px] leading-relaxed text-charcoal">
                   <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-copper" aria-hidden="true" />
-                  {t}
+                  <span><span className="font-medium text-ink">{t.k}:</span> {t.v}</span>
                 </li>
               ))}
             </ul>
@@ -274,7 +263,10 @@ export default function CarriersPage() {
             ))}
           </ol>
           <div className="mt-14 border-t border-ash pt-10">
-            <h3 className="max-w-2xl text-[22px] font-medium leading-snug text-ink">Your view gets sharper with every agency that joins. Your reps&rsquo; recommendation is how it grows.</h3>
+            <h3 className="max-w-2xl text-[22px] font-medium leading-snug text-ink">Start small. Every agency that joins shows you more.</h3>
+            <p className="mt-3 max-w-[64ch] text-[16px] leading-relaxed text-charcoal">
+              Start with a handful of agencies in one territory. As more agencies participate, you see more opportunities, identify stronger patterns, and uncover more ways to grow your share.
+            </p>
             <NetworkGrowth className="mt-8" />
           </div>
         </div>
