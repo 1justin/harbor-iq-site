@@ -136,16 +136,16 @@ export default function CarriersPage() {
       {/* ─── HERO: light, the dashboard set in with depth ─── */}
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,var(--color-paper)_0%,var(--color-paper)_55%,var(--color-linen)_55%,var(--color-linen)_100%)] pt-14 md:pt-20">
         <div className="relative mx-auto max-w-6xl px-6">
-          <p className={EYEBROW}>HarborIQ Distribution Intelligence, for carriers</p>
+          <p className={EYEBROW}>Distribution Intelligence for insurance carriers</p>
           <h1 className="mt-3 text-[36px] font-medium leading-[1.08] tracking-[-0.02em] text-anchor md:text-[48px]">
-            See your whole agency network, not just your submission queue.
+            See the business you&rsquo;re missing. Know what to do next.
           </h1>
           <p className="mt-5 text-[18px] leading-relaxed text-charcoal md:text-[20px]">
             See where your share is slipping, why agencies place business elsewhere, and where your distribution team can win more.
           </p>
           <div className="mt-7 flex flex-col gap-3.5 sm:flex-row sm:items-center">
             <CtaLink href={BOOK}>See a carrier intelligence demo</CtaLink>
-            <a href="#sample" className={btn.ghost}>See a sample view</a>
+            <a href="#sample" className={btn.ghost}>See sample insights</a>
           </div>
           <NetworkPulse className="mt-12 md:mt-14" />
           <p className="pb-14 pt-4 text-center text-[13px] text-stone md:pb-16">
@@ -315,7 +315,7 @@ export default function CarriersPage() {
           </ol>
           <div className="mt-10 flex flex-col gap-3.5 sm:flex-row sm:items-center">
             <CtaLink href={BOOK}>See a carrier intelligence demo</CtaLink>
-            <a href="#sample" className={btn.ghost}>See a sample view</a>
+            <a href="#sample" className={btn.ghost}>See sample insights</a>
           </div>
           <p className="mt-5 text-[13px] text-stone">For carrier distribution, product, sales operations and data teams.</p>
         </div>

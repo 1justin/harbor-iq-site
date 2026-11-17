@@ -280,8 +280,8 @@ export function IncentiveTracker({ className = "" }: { className?: string }) {
       <WindowBar title="Incentives · Lakeshore Mutual" />
       <div className="p-5 md:p-7">
         <p className="text-[12px] font-semibold uppercase tracking-[0.06em] text-interactive">Growth incentive</p>
-        <h3 className="mt-1 text-[20px] font-medium tracking-tight">Orlando life challenge</h3>
-        <p className="mt-1 text-[13px] text-charcoal">Most term life policies bound in 60 days wins a trip for the agency and its Lakeshore rep.</p>
+        <h3 className="mt-1 text-[20px] font-medium tracking-tight">Lakeshore Mutual Life Insurance Challenge</h3>
+        <p className="mt-1 text-[13px] text-charcoal">Most term life policies bound in 60 days wins a trip to Charleston, SC for both the agency and its Lakeshore rep.</p>
 
         <div className="mt-4">
           <div className="flex justify-between text-[12px] text-stone">
@@ -344,7 +344,7 @@ const BRIEF = [
     h: "Two Rivers Insurance quoted 38 term life policies last month and sent you 2.",
     p: "Most of their homeowners business already comes to you. The life conversations are happening with the same households.",
     who: "Territory rep",
-    act: "Bring the Orlando life challenge to Two Rivers this week.",
+    act: "Bring the Life Insurance Challenge to Two Rivers this week.",
   },
   {
     tag: "Appetite gap",
