@@ -34,7 +34,7 @@ const LOSSES = [
 function SampleTag({ dark = false }: { dark?: boolean }) {
   return (
     <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.06em] ${dark ? "bg-paper/10 text-mist" : "bg-linen text-stone"}`}>
-      Sample view
+      Sample · fictional data
     </span>
   );
 }

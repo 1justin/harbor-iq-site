@@ -28,6 +28,34 @@ export const metadata: Metadata = {
   },
 };
 
+/** Where the data comes from, in three steps. Each step says whether it is live. */
+const FLOW = [
+  { h: "Agency activity in HarborIQ", p: "Agencies log opportunities, run quotes, bind policies and ask carrier questions in HarborIQ as part of their day.", live: true },
+  { h: "Agency-controlled sharing", p: "Each agency chooses which carriers see its activity, and can turn it off at any time. Client records stay with the agency.", live: false },
+  { h: "Actionable carrier intelligence", p: "You get agency-level and territory-level insight, the weekly brief, and a next step for your team.", live: false },
+];
+
+const LIVE = [
+  "Free HarborIQ CRM beside the agency's AMS: clients, pipeline, renewals",
+  "Carrier answers from carrier guides, with the page cited",
+  "Agencies loading carrier guides and bulletins",
+  "Insights on an agency's own book",
+];
+
+const BUILDING = [
+  "Agency-controlled sharing with carriers",
+  "The carrier network view and weekly brief",
+  "Growth incentive tracking",
+  "Delivery to carrier data teams",
+];
+
+/** How a carrier engagement starts. */
+const ENGAGE = [
+  { h: "Identify participating agencies", p: "Pick a territory and a handful of agencies your reps already work closely with." },
+  { h: "Activate HarborIQ", p: "We set those agencies up beside their AMS, and each one chooses whether to share with you." },
+  { h: "Review initial insights", p: "Once the agencies are working in it, we walk through the first brief with your distribution and product teams." },
+];
+
 /** What's in it for each party. The rep is the hero (campaign v2 frame, 2026-11-01). */
 const WIIFM = [
   {
@@ -62,7 +90,7 @@ const TAKES = [
     rows: [
       { k: "Cost", v: "The CRM is free. Carrier answers are an optional upgrade the agency chooses." },
       { k: "What they rip out", v: "Nothing. HarborIQ runs beside their AMS. Their book and their workflow stay where they are." },
-      { k: "Setup", v: "We do it with them. They send us files as they are, messy is fine, and we have them running in about 30 minutes." },
+      { k: "Setup", v: "We do it with them. They send us files as they are, messy is fine, and we handle the setup." },
     ],
   },
 ];
@@ -96,8 +124,8 @@ const TEAMS = [
   },
   {
     who: "Technology and data",
-    see: "A clean, aggregated feed built from agency workflow, not scraped from portals or rebuilt from bordereaux.",
-    act: "Bring it into the tools your teams already use. We work through the format with you.",
+    see: "Where every number comes from: agency-authorized, aggregated activity from agency workflow, not scraped from portals or rebuilt from bordereaux.",
+    act: "Plan how it reaches the tools your teams already use. Format and delivery are set with each partner.",
   },
 ];
 
@@ -112,7 +140,7 @@ const NETWORK = [
 const DATA = [
   { h: "Agencies choose to share", p: "An agency decides which of its carriers see its activity, and can stop at any time." },
   { h: "You see your own agencies", p: "Your view covers agencies that work with you and share with you. Nothing about anyone else's network." },
-  { h: "No client details", p: "You see counts, lines, territories and reasons. Never a client's name or record." },
+  { h: "No client records", p: "You see agency-level counts, lines, territories and reasons. Never an insured's name, policy or record." },
   { h: "Other carriers stay unnamed", p: "When business goes elsewhere, you see why. You never see who." },
 ];
 
@@ -131,7 +159,7 @@ const FAQS = [
   },
   {
     q: "Our agencies don't want to learn another system.",
-    a: "We hear that every week, so we do the setup with them. They send their files as they are, we have them running in about 30 minutes, and the first thing most of them use is a plain question about a carrier's appetite, typed the way they'd say it.",
+    a: "We hear that every week, so we do the setup with them. They send their files as they are, we handle the setup, and the first thing most of them use is a plain question about a carrier's appetite, typed the way they'd say it.",
   },
   {
     q: "Now isn't a good time.",
@@ -143,7 +171,7 @@ const FAQS = [
   },
   {
     q: "Is Distribution Intelligence available today?",
-    a: "We are enrolling a small group of carrier partners now and building the carrier view with them. The screens on this page are sample views with a fictional carrier.",
+    a: "Parts of it. The agency side is live: the free CRM, carrier answers from carrier guides, and insights on an agency's own book. Agency-controlled sharing, the carrier view, the weekly brief and incentive tracking are in development with our first carrier partners. Every view on this page uses a fictional carrier and fictional data.",
   },
   {
     q: "Where does the data come from?",
@@ -160,7 +188,7 @@ export default function CarriersPage() {
     <>
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-anchor pb-16 pt-14 md:pb-20 md:pt-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(46,117,182,0.35),transparent_60%)]" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_70%_at_50%_0%,rgba(46,117,182,0.28),transparent_75%)]" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="max-w-3xl">
             <p className="text-[14px] font-medium text-ice">HarborIQ Distribution Intelligence</p>
@@ -168,15 +196,92 @@ export default function CarriersPage() {
               See your whole agency network, not just your submission queue.
             </h1>
             <p className="mt-6 max-w-[58ch] text-[18px] leading-relaxed text-mist md:text-[20px]">
-              Your independent agencies work far more risks than they send you. HarborIQ shows you what they quoted, what they asked about your products, and what went elsewhere. Then it helps you act on it, from a rep&rsquo;s next visit to a growth incentive your agencies actually follow.
+              Your independent agencies work far more risks than they send you. From the activity agencies authorize you to see, HarborIQ shows what they quoted, what they asked about your products, and what went elsewhere, with a next step for your team.
             </p>
             <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
-              <CtaLink href={BOOK}>Book 15 minutes</CtaLink>
+              <CtaLink href={BOOK}>See a carrier intelligence demo</CtaLink>
               <a href="#sample" className={btn.light}>See a sample view</a>
             </div>
-            <p className="mt-5 text-[14px] text-mist/80">Now enrolling carrier partners. Built with the carriers who join first.</p>
+            <p className="mt-5 text-[14px] text-mist/80">Now enrolling carrier partners. The views on this page use a fictional carrier and fictional data.</p>
           </div>
           <NetworkPulse className="mt-12 md:mt-14" />
+        </div>
+      </section>
+
+      {/* ─── THE WEEKLY BRIEF ─── */}
+      <section id="sample" className="scroll-mt-16 bg-linen py-16 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <p className="text-[13px] text-stone">The weekly brief</p>
+            <h2 className="mt-2 text-[28px] font-medium leading-[1.12] tracking-tight text-ink md:text-[34px]">Don&rsquo;t just see what&rsquo;s happening. Know what to do about it.</h2>
+            <p className="mt-4 max-w-[52ch] text-[17px] leading-relaxed text-charcoal">
+              A dashboard waits for someone to open it. The brief comes to your inbox each Monday with the three things worth acting on, and who should act: a rep, the product team, or both.
+            </p>
+            <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-stone">
+              Sample brief for Lakeshore Mutual, a fictional carrier. Agencies and numbers are invented.
+            </p>
+          </div>
+          <div className="md:col-span-7"><DistributionBrief /></div>
+        </div>
+      </section>
+
+      {/* ─── WHERE THE DATA COMES FROM ─── */}
+      <section className="bg-paper py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <H2 sub="Agencies decide what you see. You see agencies, lines and territories, never an insured's record.">Where the data comes from.</H2>
+          <ol className="mt-10 grid gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch">
+            {FLOW.map((f, i) => (
+              <li key={f.h} className="contents">
+                {i > 0 && (
+                  <span className="flex items-center justify-center text-[22px] text-slate" aria-hidden="true">
+                    <span className="md:hidden">↓</span>
+                    <span className="hidden md:inline">→</span>
+                  </span>
+                )}
+                <div className="iq-card flex flex-col p-6">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ice text-[15px] font-medium text-interactive">{i + 1}</span>
+                    <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.06em] ${f.live ? "bg-success/10 text-success" : "bg-linen text-stone"}`}>
+                      {f.live ? "Live today" : "With carrier partners"}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-[18px] font-medium text-ink">{f.h}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-charcoal">{f.p}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ─── LIVE TODAY VS. IN DEVELOPMENT ─── */}
+      <section className="bg-linen py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <H2 sub="There is no carrier data network to buy into yet. The first partners shape what it includes.">What&rsquo;s live today, and what we&rsquo;re building with carriers.</H2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <div className="iq-card p-7">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.06em] text-success">Live today, for agencies</p>
+              <ul className="mt-4 space-y-3">
+                {LIVE.map((t) => (
+                  <li key={t} className="flex gap-3 text-[15px] leading-relaxed text-ink">
+                    <span className="font-medium text-success" aria-hidden="true">✓</span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="iq-card p-7">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.06em] text-stone">In development with carrier partners</p>
+              <ul className="mt-4 space-y-3">
+                {BUILDING.map((t) => (
+                  <li key={t} className="flex gap-3 text-[15px] leading-relaxed text-charcoal">
+                    <span className="text-stone" aria-hidden="true">○</span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -249,46 +354,16 @@ export default function CarriersPage() {
         </div>
       </section>
 
-      {/* ─── THE WEEKLY BRIEF ─── */}
-      <section id="sample" className="scroll-mt-16 bg-linen py-16 md:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <p className="text-[13px] text-stone">The weekly brief</p>
-            <h2 className="mt-2 text-[28px] font-medium leading-[1.12] tracking-tight text-ink md:text-[34px]">Every insight comes with a next step.</h2>
-            <p className="mt-4 max-w-[52ch] text-[17px] leading-relaxed text-charcoal">
-              A dashboard waits for someone to open it. The brief comes to your inbox each Monday with the three things worth acting on, and who should act: a rep, the product team, or both.
-            </p>
-            <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-stone">
-              Sample brief for Lakeshore Mutual, a fictional carrier. Agencies and numbers are invented.
-            </p>
-          </div>
-          <div className="md:col-span-7"><DistributionBrief /></div>
-        </div>
-      </section>
-
       {/* ─── GROWTH INCENTIVES ─── */}
-      <section className="bg-paper py-16 md:py-24">
+      <section className="bg-linen py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-12">
           <div className="md:col-span-7 md:order-2 md:pl-6"><IncentiveTracker /></div>
           <div className="md:col-span-5 md:order-1">
-            <p className="text-[13px] text-stone">Growth incentives</p>
+            <p className="text-[13px] text-stone">One way to use it: growth incentives</p>
             <h2 className="mt-2 text-[28px] font-medium leading-[1.12] tracking-tight text-ink md:text-[34px]">Run the incentive, and see it work while it runs.</h2>
             <p className="mt-4 max-w-[52ch] text-[17px] leading-relaxed text-charcoal">
-              Most bound term life in 60 days wins Orlando. You know the kind. Today it lives in a flyer, a spreadsheet and a results email after it&rsquo;s over.
+              The 60-day contest your team already runs, tracked from the same agency activity. Standings update as agencies bind, and reps see who has quoted but not bound while there&rsquo;s still time to help.
             </p>
-            <ul className="mt-5 space-y-3">
-              {[
-                "Set the rules once: the product, the dates, the prize, the agencies in it.",
-                "Standings update from the work agencies already log in HarborIQ. No separate reporting.",
-                "Reps see who is close and who has quoted but not bound, while there's still time to help.",
-                "When it ends, you have the results and the lift, not a pile of self-reported counts.",
-              ].map((t) => (
-                <li key={t} className="flex gap-3 text-[15px] leading-relaxed text-charcoal">
-                  <span className="font-medium text-interactive" aria-hidden="true">✓</span>
-                  {t}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>
@@ -333,12 +408,32 @@ export default function CarriersPage() {
         </div>
       </section>
 
+      {/* ─── GETTING STARTED ─── */}
+      <section className="bg-paper py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <H2>How a carrier engagement starts.</H2>
+          <ol className="mt-10 grid gap-8 md:grid-cols-3">
+            {ENGAGE.map((e, i) => (
+              <li key={e.h} className="border-t border-ink pt-5">
+                <p className="text-[13px] font-semibold text-interactive">Step {i + 1}</p>
+                <h3 className="mt-1 text-[19px] font-medium text-ink">{e.h}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-charcoal">{e.p}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-10 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+            <CtaLink href={BOOK}>See a carrier intelligence demo</CtaLink>
+            <a href="#sample" className={btn.ghost}>See a sample view</a>
+          </div>
+        </div>
+      </section>
+
       {/* ─── DATA ─── */}
       <section className="bg-anchor py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-2xl">
             <h2 className="text-[28px] font-medium leading-[1.12] tracking-tight text-paper md:text-[36px]">The agency&rsquo;s data stays the agency&rsquo;s.</h2>
-            <p className="mt-3 text-[17px] leading-relaxed text-mist">Agencies keep their book in HarborIQ. Carriers see the channel, never the client.</p>
+            <p className="mt-3 text-[17px] leading-relaxed text-mist">Carriers see authorized, agency-level insights. Never an individual insured or client record.</p>
           </div>
           <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {DATA.map((d) => (
@@ -356,7 +451,7 @@ export default function CarriersPage() {
       <FinalCta
         heading="See what your agencies see."
         body="Fifteen minutes with the founder: how the carrier view works, what your agencies would get, and whether your team should be one of the first partners."
-        action={<CtaLink href={BOOK}>Book 15 minutes</CtaLink>}
+        action={<CtaLink href={BOOK}>See a carrier intelligence demo</CtaLink>}
         note="For carrier distribution, product, sales operations and data teams."
       />
     </>
