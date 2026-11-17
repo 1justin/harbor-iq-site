@@ -21,6 +21,7 @@ const LAST_CHANGED: Entry[] = [
   { path: "/works-with", changed: "2026-11-09", freq: "monthly", priority: 0.9 },
   { path: "/works-with/applied-epic", changed: "2026-11-09", freq: "monthly", priority: 0.8 },
   { path: "/intelligence", changed: "2026-11-10", freq: "monthly", priority: 0.8 },
+  { path: "/carriers", changed: "2026-11-17", freq: "monthly", priority: 0.7 },
   { path: "/agency", changed: "2026-11-09", freq: "monthly", priority: 0.6 },
   { path: "/about", changed: "2026-11-10", freq: "monthly", priority: 0.6 },
   { path: "/manifesto", changed: "2026-11-10", freq: "yearly", priority: 0.5 },

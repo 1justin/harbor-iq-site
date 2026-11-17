@@ -129,6 +129,9 @@ export function Nav() {
             )}
           </div>
 
+          <Link href="/carriers" className="text-paper hover:text-mist text-[15px] transition-colors">
+            Carriers
+          </Link>
           <Link href="/pricing" className="text-paper hover:text-mist text-[15px] transition-colors">
             Pricing
           </Link>
@@ -213,6 +216,9 @@ export function Nav() {
             )}
           </div>
 
+          <Link href="/carriers" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
+            Carriers
+          </Link>
           <Link href="/pricing" onClick={() => setMobileOpen(false)} className="block text-paper text-[15px]">
             Pricing
           </Link>

@@ -33,6 +33,9 @@ export function Footer() {
               <Link href="/intelligence" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Intelligence
               </Link>
+              <Link href="/carriers" className="block text-slate hover:text-paper text-[15px] transition-colors">
+                For carriers
+              </Link>
               <Link href="/find-an-agency" className="block text-slate hover:text-paper text-[15px] transition-colors">
                 Find an agency <span className="text-[12px] uppercase tracking-wider text-stone">Preview</span>
               </Link>
