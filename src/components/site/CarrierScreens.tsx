@@ -161,6 +161,78 @@ export function NetworkPulse({ className = "" }: { className?: string }) {
   );
 }
 
+const STANDINGS = [
+  { a: "Northfield Insurance Group", apps: 14, bound: 9, rep: "Dana K." },
+  { a: "Two Rivers Insurance", apps: 12, bound: 8, rep: "Dana K." },
+  { a: "Prairie Gate Agency", apps: 11, bound: 5, rep: "Marcus T." },
+  { a: "Lakeview Risk Partners", apps: 7, bound: 4, rep: "Marcus T." },
+];
+
+/** A growth incentive in flight: the rules, the standings, and who needs a push. */
+export function IncentiveTracker({ className = "" }: { className?: string }) {
+  const lead = STANDINGS[0].bound;
+  return (
+    <figure className={`overflow-hidden rounded-xl border border-ash bg-paper text-ink shadow-[0_30px_80px_-30px_rgba(15,36,64,0.35)] ${className}`}>
+      <div className="flex items-center gap-2 border-b border-ash bg-linen px-4 py-2.5">
+        <span className="h-2.5 w-2.5 rounded-full bg-fog" aria-hidden="true" />
+        <span className="h-2.5 w-2.5 rounded-full bg-fog" aria-hidden="true" />
+        <span className="h-2.5 w-2.5 rounded-full bg-fog" aria-hidden="true" />
+        <span className="ml-3 truncate text-[12px] text-stone">Incentives · Lakeshore Mutual</span>
+        <span className="ml-auto"><SampleTag /></span>
+      </div>
+      <div className="p-5 md:p-7">
+        <p className="text-[12px] font-semibold uppercase tracking-[0.06em] text-interactive">Growth incentive</p>
+        <h3 className="mt-1 text-[20px] font-medium tracking-tight">Orlando life challenge</h3>
+        <p className="mt-1 text-[13px] text-charcoal">Most term life policies bound in 60 days wins a trip for the agency and its Lakeshore rep.</p>
+
+        <div className="mt-4">
+          <div className="flex justify-between text-[12px] text-stone">
+            <span>Day 38 of 60</span>
+            <span>22 days left</span>
+          </div>
+          <div className="mt-1 h-2 overflow-hidden rounded-full bg-ice" aria-hidden="true">
+            <div className="h-full rounded-full bg-interactive" style={{ width: `${(38 / 60) * 100}%` }} />
+          </div>
+        </div>
+
+        <dl className="mt-5 grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-ash bg-ash text-center">
+          {[
+            { k: "Agencies in", v: "38" },
+            { k: "Applications", v: "126" },
+            { k: "Bound", v: "71" },
+          ].map((x) => (
+            <div key={x.k} className="bg-paper p-3">
+              <dt className="text-[12px] text-stone">{x.k}</dt>
+              <dd className="mt-0.5 text-[22px] font-medium leading-none tracking-tight">{x.v}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <h4 className="mt-5 text-[14px] font-medium">Standings</h4>
+        <ol className="mt-2 divide-y divide-ash border-y border-ash">
+          {STANDINGS.map((s, i) => (
+            <li key={s.a} className="flex items-center gap-3 py-2.5">
+              <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[12px] font-semibold ${i === 0 ? "bg-copper text-midnight" : "bg-ice text-anchor"}`}>{i + 1}</span>
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-[14px]">{s.a}</p>
+                <p className="text-[12px] text-stone">{s.apps} apps · rep {s.rep}</p>
+              </div>
+              <span className="shrink-0 text-[13px] tabular-nums text-charcoal">{s.bound} bound{i > 0 && <span className="text-stone"> · {lead - s.bound} back</span>}</span>
+            </li>
+          ))}
+        </ol>
+
+        <p className="mt-4 rounded-md bg-ice px-3 py-2 text-[13px] leading-relaxed text-anchor">
+          <span className="font-semibold">Needs a push.</span> 14 agencies have quoted life but bound nothing yet. Their reps get the list Monday.
+        </p>
+      </div>
+      <figcaption className="sr-only">
+        Sample incentive tracker for the fictional Lakeshore Mutual: a 60-day life insurance challenge with progress, totals, agency standings with their reps, and agencies that need a push.
+      </figcaption>
+    </figure>
+  );
+}
+
 const BRIEF = [
   {
     tag: "Product demand",

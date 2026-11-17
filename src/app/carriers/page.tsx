@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CtaLink, FaqSection, FinalCta } from "@/components/iq/Blocks";
-import { DistributionBrief, NetworkPulse } from "@/components/site/CarrierScreens";
+import { DistributionBrief, IncentiveTracker, NetworkPulse } from "@/components/site/CarrierScreens";
 import { H2, btn } from "@/components/site/Bits";
 import { CARRIER_BOOKING_URL } from "@/lib/constants";
 
@@ -27,6 +27,45 @@ export const metadata: Metadata = {
     url: "/carriers",
   },
 };
+
+/** What's in it for each party. The rep is the hero (campaign v2 frame, 2026-11-01). */
+const WIIFM = [
+  {
+    who: "For your company",
+    h: "See the business before it's decided.",
+    p: "Know what your agencies are working, where your appetite turns them away, and why business goes elsewhere. Act on it in weeks, not at the annual review.",
+  },
+  {
+    who: "For your field reps",
+    h: "Walk in knowing what the agency needs.",
+    p: "Reps see which agencies are growing and what they keep asking about your products. They show up with an answer, and bring back what the market wants.",
+  },
+  {
+    who: "For your agencies",
+    h: "Your appetite, at the moment they place the risk.",
+    p: "Agencies get your guide answered in seconds while the client is on the phone, plus a free CRM beside the system they already run. Fewer calls to your underwriters.",
+  },
+];
+
+/** What it takes, said plainly. No carrier price is published (Justin, 2026-11-17). */
+const TAKES = [
+  {
+    who: "Your company",
+    rows: [
+      { k: "Cost", v: "Partner terms are set with the first carriers who join. We go through them on the call." },
+      { k: "Integration", v: "None to start. Nothing connects to your policy or rating systems." },
+      { k: "Your time", v: "A kickoff, your current appetite guides, and a rep or two to recommend us." },
+    ],
+  },
+  {
+    who: "Your agencies",
+    rows: [
+      { k: "Cost", v: "The CRM is free. Carrier answers are an optional upgrade the agency chooses." },
+      { k: "What they rip out", v: "Nothing. HarborIQ runs beside their AMS. Their book and their workflow stay where they are." },
+      { k: "Setup", v: "We do it with them. They send us files as they are, messy is fine, and we have them running in about 30 minutes." },
+    ],
+  },
+];
 
 /** The six signals. Each one comes from work agencies already do in HarborIQ. */
 const SIGNALS = [
@@ -79,26 +118,42 @@ const DATA = [
 
 const FAQS = [
   {
+    q: "What does it cost us?",
+    a: "Partner terms are set with the first carriers who join, and we go through them on a 15-minute call. Nothing needs to be installed or integrated to start.",
+  },
+  {
+    q: "What does it cost our agencies?",
+    a: "The HarborIQ CRM is free for an agency. Carrier answers from your guides are an optional upgrade each agency decides on for itself. Agencies never pay per person.",
+  },
+  {
+    q: "Do our agencies have to replace their management system?",
+    a: "No. HarborIQ runs beside the AMS they already have. Nothing gets ripped out, and the agency can export everything any time.",
+  },
+  {
+    q: "Our agencies don't want to learn another system.",
+    a: "We hear that every week, so we do the setup with them. They send their files as they are, we have them running in about 30 minutes, and the first thing most of them use is a plain question about a carrier's appetite, typed the way they'd say it.",
+  },
+  {
+    q: "Now isn't a good time.",
+    a: "Every month your agencies quote without you is business you never see and can't win back. The first partners also shape what the carrier view includes. A 15-minute call commits you to nothing.",
+  },
+  {
+    q: "Can we run growth incentives through HarborIQ?",
+    a: "Yes, that's part of the carrier view we're building with our partners. You set the product, dates, prize and agencies, standings come from the work agencies already log, and reps see who needs a push while the incentive is still running.",
+  },
+  {
     q: "Is Distribution Intelligence available today?",
-    a: "We are enrolling a small group of carrier partners now and building the carrier view with them. The screens on this page are sample views with a fictional carrier. A 15-minute call is the way in.",
+    a: "We are enrolling a small group of carrier partners now and building the carrier view with them. The screens on this page are sample views with a fictional carrier.",
   },
   {
     q: "Where does the data come from?",
     a: "From the work independent agencies already do in HarborIQ: the opportunities they log, the quotes they run, the policies they bind and the carrier questions they ask. Nothing is pulled from your systems.",
   },
   {
-    q: "What do our agencies need to do?",
-    a: "Start with the free CRM, which runs beside the management system they already have. Agencies that choose to share with you are part of your view.",
-  },
-  {
     q: "What does it ask of our field reps?",
     a: "Recommend HarborIQ to the agencies they work with. The more of your agencies use it, the more complete your picture gets, and the more useful your reps are on every visit.",
   },
-  {
-    q: "Does this replace our agency portal or submission system?",
-    a: "No. Your portal shows what reaches you. HarborIQ shows the part of the agency's work that happens before and around that.",
-  },
-];
+]
 
 export default function CarriersPage() {
   return (
@@ -113,7 +168,7 @@ export default function CarriersPage() {
               See your whole agency network, not just your submission queue.
             </h1>
             <p className="mt-6 max-w-[58ch] text-[18px] leading-relaxed text-mist md:text-[20px]">
-              Your independent agencies work far more risks than they send you. HarborIQ shows you what they quoted, what they asked about your products, and what went elsewhere, with a next step for your team.
+              Your independent agencies work far more risks than they send you. HarborIQ shows you what they quoted, what they asked about your products, and what went elsewhere. Then it helps you act on it, from a rep&rsquo;s next visit to a growth incentive your agencies actually follow.
             </p>
             <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
               <CtaLink href={BOOK}>Book 15 minutes</CtaLink>
@@ -138,6 +193,21 @@ export default function CarriersPage() {
             <p className="text-[17px] leading-relaxed text-ink">
               HarborIQ is where independent agencies do that work: their pipeline, their quotes, and their carrier questions answered from the carriers&rsquo; own guides. Distribution Intelligence turns that activity into a view of your network you can act on.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WHAT'S IN IT ─── */}
+      <section className="bg-paper pb-16 md:pb-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-6 md:grid-cols-3">
+            {WIIFM.map((w) => (
+              <div key={w.who} className="iq-card p-7">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.06em] text-interactive">{w.who}</p>
+                <h3 className="mt-2 text-[19px] font-medium leading-snug text-ink">{w.h}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-charcoal">{w.p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -196,6 +266,33 @@ export default function CarriersPage() {
         </div>
       </section>
 
+      {/* ─── GROWTH INCENTIVES ─── */}
+      <section className="bg-paper py-16 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-12">
+          <div className="md:col-span-7 md:order-2 md:pl-6"><IncentiveTracker /></div>
+          <div className="md:col-span-5 md:order-1">
+            <p className="text-[13px] text-stone">Growth incentives</p>
+            <h2 className="mt-2 text-[28px] font-medium leading-[1.12] tracking-tight text-ink md:text-[34px]">Run the incentive, and see it work while it runs.</h2>
+            <p className="mt-4 max-w-[52ch] text-[17px] leading-relaxed text-charcoal">
+              Most bound term life in 60 days wins Orlando. You know the kind. Today it lives in a flyer, a spreadsheet and a results email after it&rsquo;s over.
+            </p>
+            <ul className="mt-5 space-y-3">
+              {[
+                "Set the rules once: the product, the dates, the prize, the agencies in it.",
+                "Standings update from the work agencies already log in HarborIQ. No separate reporting.",
+                "Reps see who is close and who has quoted but not bound, while there's still time to help.",
+                "When it ends, you have the results and the lift, not a pile of self-reported counts.",
+              ].map((t) => (
+                <li key={t} className="flex gap-3 text-[15px] leading-relaxed text-charcoal">
+                  <span className="font-medium text-interactive" aria-hidden="true">✓</span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* ─── THE NETWORK ─── */}
       <section className="bg-paper py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
@@ -211,6 +308,28 @@ export default function CarriersPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* ─── WHAT IT TAKES ─── */}
+      <section className="bg-linen py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <H2 sub="Agencies tell us they don't want to learn another system. Carriers tell us they don't want another integration. Neither is required.">What it takes, and what nobody rips out.</H2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {TAKES.map((t) => (
+              <div key={t.who} className="iq-card p-7">
+                <h3 className="text-[20px] font-medium text-ink">{t.who}</h3>
+                <dl className="mt-4 divide-y divide-ash border-t border-ash">
+                  {t.rows.map((r) => (
+                    <div key={r.k} className="grid gap-1 py-3.5 sm:grid-cols-[9rem_1fr] sm:gap-4">
+                      <dt className="text-[13px] font-semibold uppercase tracking-[0.06em] text-stone">{r.k}</dt>
+                      <dd className="text-[15px] leading-relaxed text-ink">{r.v}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
